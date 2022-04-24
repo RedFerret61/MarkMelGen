@@ -1,0 +1,213 @@
+Intro 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Intro 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Verse 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Pre-Chorus 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Chorus 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Bridge 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Break 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Outro 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10 11
+1 2 3 4 5 6 7 8 9 10 11 12
+
+
+
+Intro 3
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Verse 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Pre-Chorus 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Chorus 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Bridge 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Break 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+Outro 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+a b c d e f g h i
+a b c d e f g h i j
+a b c d e f g h i j k
+a b c d e f g h i j k l
+
+

@@ -1,0 +1,74 @@
+Verse 1
+a b 
+a b
+a b c d
+a b c d
+
+Verse 2
+a b 
+a b
+a b c d
+a b c d
+
+Prechorus 1
+a b c d e f
+a b c d e f
+
+
+Verse 3
+a b 
+a b
+a b c d
+a b c d
+
+Prechorus 2
+a b c d e f
+a b c d e f
+
+
+Chorus 1
+a b c d e f g h
+
+Chorus
+a b c d e f g h
+
+
+Bridge
+a b c d e f g h i j k l
+
+Verse 4
+a b 
+a b
+a b c d
+a b c d
+
+Prechorus 3
+a b c d e f
+a b c d e f
+
+Chorus
+a b c d e f g h
+
+Chorus
+a b c d e f g h
+
+Verse 4
+a b 
+a b
+a b c d
+a b c d
+
+Bridge
+a b c d e f g h i j k l
+
+Chorus
+a b c d e f g h
+
+Chorus
+a b c d e f g h
+
+Chorus
+a b c d e f g h
+
+Chorus
+a b c d e f g h

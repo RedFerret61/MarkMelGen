@@ -1,0 +1,86 @@
+Intro 1
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+
+Intro 2
+a
+a b
+a b c
+a b c d
+a b c d e
+a b c d e f
+a b c d e f g
+a b c d e f g h
+
+Verse 1
+1 2 3
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8
+
+Verse 2
+a b c
+a b c d e f g h i
+a b c d e f g h i
+a b c d e f g h
+
+Prechorus 1
+1 2 3 4 5 6 7 8
+
+Chorus 1
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Bridge
+1 2 3 4
+
+Break
+1 2 3 4 5 6 7 8
+
+Verse 3
+1 2 3
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8
+
+Prechorus 2
+1 2 3 4 5 6 7 8
+
+Chorus 2
+a b c d e f g h i j k l
+a b c d e f g h i j k l
+
+Verse 4
+a b c
+a b c d e f g h i
+a b c d e f g h i
+a b c d e f g h
+
+Bridge 2
+a b c d
+
+Outro 1
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7
+1 2 3 4 5 6
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+
+Outro 2
+a b c d e f g h
+a b c d e f g
+a b c d e f
+a b c d e
+a b c d
+a b c
+a b
+a

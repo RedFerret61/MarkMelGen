@@ -1,0 +1,95 @@
+Intro 1
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Intro 2
+a b c d e f g h
+a b c d e f g h i j k l
+a b c d e f g h
+a b c d e f g h i j k l
+
+Verse 1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+Verse 2
+a b c d e f g h i j k l m n o p
+a b c d e f g h i j k l m n o p q r s t
+a b c d e f g h i j k l m n o p
+a b c d e f g h i j k l m n o p q r s t
+
+Prechorus 1
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+
+Prechorus 2
+a b c d e f g h
+a b c d e f g h
+a b c d e f g h
+a b c d e f g h
+
+Chorus 1
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3 4 5 6 7 8 9 10 11 12
+
+Chorus 2
+a b c d e f g h i j k l
+a b c d e f g h i j k l
+a b c d e f g h i j k l
+a b c d e f g h i j k l
+
+Bridge 1
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+
+Bridge 2
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+Break 1 
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8
+
+Break 2
+a b c d e f g h
+a b c d e f g h
+a b c d e f g h
+a b c d e f g h
+a b c d e f g h
+a b c d e f g h
+
+Outro 1
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7
+1 2 3 4 5 6
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+
+Outro 2
+a b c d e f g h
+a b c d e f g
+a b c d e f
+a b c d e
+a b c d
+a b c
+a b
+a
