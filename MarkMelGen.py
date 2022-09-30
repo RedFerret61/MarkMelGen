@@ -31,7 +31,7 @@ import random
 import re
 import sys
 
-MARKMELGEN_VERSION = '0.9.0'
+MARKMELGEN_VERSION = '0.10.0'
 
 class Section(Enum):
     INTRO = 0
@@ -69,6 +69,8 @@ CALL_COUNT_MAX = 100
 
 
 CONF_FILENAME = ''
+
+DURATION_EQ = ''
 
 DURATION_SET = []
 
@@ -1237,6 +1239,7 @@ def set_duration_transition(song):
     number_of_notes = 0
     number_of_elements = len(song.flat)
     element_num = 0
+
     # Gather the duration transitions
     # for n in song.flat.notes:
     for n in song.flat:
@@ -1257,8 +1260,9 @@ def set_duration_transition(song):
                         # in python how to find if a key contains a Fraction with a particular number ?
                         # print(x - int(x) == 0)  # True if x is a whole number, False if it has decimals.
                         if dkey in dtransition:
-                            # if n.duration.quarterLength in dtransition[dkey]:
-                            if str(n.duration.quarterLength) in dtransition[dkey]:
+                            if n.duration.quarterLength in dtransition[dkey]:
+                            # if str(n.duration.quarterLength) in dtransition[dkey]: # does not match 0.5 etc
+                            # if float(n.duration.quarterLength) in dtransition[dkey]: # works but float() not required
                                 dtransition[dkey][n.duration.quarterLength] += 1
                             else:
                                 dtransition[dkey][n.duration.quarterLength] = 1
@@ -1266,7 +1270,7 @@ def set_duration_transition(song):
                             dtransition[dkey] = {n.duration.quarterLength: 1}
                     prev = last
                     if bad_duration == False:
-                        dtotal += 1
+                         dtotal += 1
                     bad_duration = False
                 last = n
             else:
@@ -1277,18 +1281,41 @@ def set_duration_transition(song):
     print('input music: number_of_rests = ', number_of_rests, ' number_of_notes = ', number_of_notes, 'number_of_elements =', number_of_elements)
     print('duration transitions with frequency',
           dtransition)
+    print('dtotal_frequency=',dtotal)
 
-    # Compute the probability for each transition -----------------------------------------------------------
-    ptotal = 0
+    # # Compute the probability for each transition -----------------------------------------------------------
+    # ptotal = 0
+    # for k, v in dtransition.items():
+    #     for i, j in v.items():
+    #         dtransition[k][i] = j / dtotal
+    #         ptotal = ptotal + dtransition[k][i]
+    #
+    # # print('dtotal Notes = ',dtotal) # eg 360
+    # # print('ptotal duration = ',ptotal) # e.g. 0.99
+    # # print(' ')
+    # print('duration transitions with probability', dtransition)
+
+    dtransition, dtotal = apply_duration_eq_to_dtransition_frequency(dtransition, dtotal, False)
+
+    print('After apply_duration_eq_to_dtransition_frequency')
+    print('duration transition with frequency=',
+          dtransition)
+    print('dtotal_frequency=',dtotal)
+
+
+    # Compute the probability for each dtransition
+    dtransition_dtotal_probability = 0.0
     for k, v in dtransition.items():
         for i, j in v.items():
             dtransition[k][i] = j / dtotal
-            ptotal = ptotal + dtransition[k][i]
-
-    # print('dtotal Notes = ',dtotal) # eg 360
-    # print('ptotal duration = ',ptotal) # e.g. 0.99
+            dtransition_dtotal_probability = dtransition_dtotal_probability + dtransition[k][i]
+    print('dtransition_dtotal_probability = ', dtransition_dtotal_probability)
+    # print('dtotal durations = ',dtotal)
     # print(' ')
     print('duration transitions with probability', dtransition)
+
+    #input('Press Enter to continue... end of set_duration_transition')
+
     return dtransition
 
 def get_frequency_total(transition):
@@ -1325,8 +1352,9 @@ def apply_tone_eq_to_transition_frequency(transition, total, is_cadence):
             print('tone_eq_num=',tone_eq_num,'tone_name=', tone_name,'tone_factor=', tone_factor)
             for k, v in transition.items():
                 for i, j in v.items():
+                    print('if i == tone_name', i, ' == ', tone_name)
                     if i == tone_name:
-                        # print('before transition[k][i]=',transition[k][i])
+                        print('before transition[k][i]=',transition[k][i])
                         if is_cadence:
                             transition[k][i] = int(math.ceil(transition[k][i] * tone_factor * cadence_factor))
                         else:
@@ -1337,6 +1365,50 @@ def apply_tone_eq_to_transition_frequency(transition, total, is_cadence):
         total = get_frequency_total(transition)
 
         return transition, total
+
+def apply_duration_eq_to_dtransition_frequency(dtransition, dtotal, is_cadence):
+    '''
+    given a duration transition and a dtotal, and if it is a cadence duration transition
+    apply DURATION_EQ to the transition
+    recalculate the dtotal frequency
+    return the transition, dtotal
+    '''
+    print('apply_duration_eq_to_dtransition_frequency...')
+
+    cadence_factor = 100.0
+
+    if DURATION_EQ == '':
+        return dtransition, dtotal
+    else:
+        # alter dtransition frequencies
+        for duration_eq_num in range(0, len(DURATION_EQ)):
+            duration_name = DURATION_EQ[duration_eq_num][0]
+            duration_factor = DURATION_EQ[duration_eq_num][1]
+            # print('duration_eq_num=',duration_eq_num,'duration_name=', duration_name,'duration_factor=', duration_factor)
+            for k, v in dtransition.items():
+                for i, j in v.items():
+                    # make a string fraction of the duration
+                    istring = 'Fraction(' + str(Fraction(i).numerator) + ', ' + str(Fraction(i).denominator)  + ')'
+                    # print('type(istring) =', type(istring) )
+                    # print('type(i) =', type(i), 'type(duration_name) =', type(duration_name) )
+                    # print('if i == duration_name', i, ' == ', duration_name)
+                    # if i == duration_name:
+                    # if float(i) == float(duration_name):
+                    # if str(i) in duration_name:
+                    if (str(i) in duration_name) or \
+                            (istring == duration_name):
+                        print('(istring == duration_name):', istring, ' == ', duration_name)
+                        print('before dtransition[k][i]=',dtransition[k][i])
+                        if is_cadence:
+                            dtransition[k][i] = int(math.ceil(dtransition[k][i] * duration_factor * cadence_factor))
+                        else:
+                            dtransition[k][i] = int(math.ceil(dtransition[k][i] * duration_factor))
+                        print('after dtransition[k][i]=',dtransition[k][i])
+
+        # recalculate dtotal frequency
+        dtotal = get_frequency_total(dtransition)
+
+        return dtransition, dtotal
 
 def set_note_transition(song):
     """
@@ -1424,7 +1496,7 @@ def set_note_transition(song):
 #     rest_phrase_transition = {}
 #
 #     # Gather the rest phrase length transitions.
-#     # Ignore rests longer than MAX_PHRASE_REST e.g. first rest, instrumental break rest, last rest
+#     # Ignore rests longer than MAX_PHRASE_REST e.g. first rest, instrumental solo rest, last rest
 #     prev = None
 #     last = None
 #     dtotal = 0
@@ -2248,6 +2320,24 @@ def set_cadence_duration_transition(song):
     print('cadence duration transitions with frequency',
           cdtransition)
 
+    cdtransition, cdtotal = apply_duration_eq_to_dtransition_frequency(cdtransition, cdtotal, True)
+
+    print('After apply_duration_eq_to_dtransition_frequency for cadence True')
+    print('cadence duration transition with frequency=',
+          cdtransition)
+    print('cdtotal_frequency=', cdtotal)
+
+    # Compute the probability for each cdtransition
+    cdtransition_cdtotal_probability = 0.0
+    for k, v in cdtransition.items():
+        for i, j in v.items():
+            cdtransition[k][i] = j / cdtotal
+            cdtransition_cdtotal_probability = cdtransition_cdtotal_probability + cdtransition[k][i]
+    print('cdtransition_cdtotal_probability = ', cdtransition_cdtotal_probability)
+    # print('cdtotal durations = ',cdtotal)
+    # print(' ')
+    print('cadence duration transitions with probability', cdtransition)
+
     # Compute the probability for each transition -----------------------------------------------------------
     ptotal = 0
     for k, v in cdtransition.items():
@@ -2260,6 +2350,9 @@ def set_cadence_duration_transition(song):
     # print(' ')
     print('cadence duration transitions with probability', cdtransition)
     # print(' ')
+
+    # No default cadence usually required,
+    # as all input music (with at least 3 notes) should have a final note.
 
     return cdtransition
 
@@ -3177,6 +3270,8 @@ def main():
     # score.show('text')
     show_text_in_stream(score, ts)
 
+    # replace any . with _ in output_filename
+    output_filename = output_filename.replace(".", "_")
     print('OUTPUT_PATH + output_filename', OUTPUT_PATH, output_filename)
 
     score.write(fp=OUTPUT_PATH + output_filename) # always write score to musicxml file
@@ -3198,7 +3293,7 @@ def parse_configuration_file(config):
     paths_options_expected = ['input_lyrics_path', 'input_music_path', 'output_path']
     filenames_options_expected = ['input_lyrics_filename', 'input_music_filename']
     markmelgen_options_expected = ['cadence_alternate_phrase_end', 'cadence_dur_min', 'cadence_section_end', 'cadence_tone_frequency',
-     'display_graphs', 'display_score', 'duration_set', 'dur_least', 'dur_longest', 'dur_prev_diff', 'dur_rational', 'dur_tuplet',
+     'display_graphs', 'display_score', 'duration_eq', 'duration_set', 'dur_least', 'dur_longest', 'dur_prev_diff', 'dur_rational', 'dur_tuplet',
      'instrument', 'max_phrase_rest', 'rest_note_line_offset', 'tempo_bpm',
      'time_sig_wanted', 'tone_ascent', 'tone_ascent_min_interval', 'tone_ascent_trigger_every_n_times', 'tone_descent',
      'tone_descent_max_interval', 'tone_descent_trigger_every_n_times', 'tone_eq', 'tone_interval', 'tones_on_key',
@@ -3350,6 +3445,7 @@ def get_config():
 
     global DISPLAY_GRAPHS
     global DISPLAY_SCORE
+    global DURATION_EQ
     global DURATION_SET
     global DUR_RATIONAL
     global DUR_TUPLET
@@ -3432,6 +3528,7 @@ def get_config():
     config.read(args.config)
 
     CONF_FILENAME = os.path.basename(args.config)
+    print('MarkMelGen version ' + MARKMELGEN_VERSION)
     print("args.config, CONF_FILENAME", args.config, CONF_FILENAME)
     # e.g. default  = MarkMelGen.conf MarkMelGen.conf
     # e.g. override = conf\test\All-Sections.conf All-Sections.conf
@@ -3524,6 +3621,25 @@ def get_config():
     DISPLAY_SCORE = config['markmelgen'].getboolean('DISPLAY_SCORE')
     print('DISPLAY_SCORE', DISPLAY_SCORE)
 
+    temp_DURATION_EQ = config['markmelgen']['DURATION_EQ']
+    print('string DURATION_EQ', temp_DURATION_EQ)
+
+    if temp_DURATION_EQ != '':
+        # ast.literal_eval: Safely evaluate an expression node or a string containing a Python literal or container display.
+        # The string or node provided may only consist of the following Python literal structures:
+        # strings, bytes, numbers, tuples, lists, dicts, sets, booleans, None, bytes and sets.
+        DURATION_EQ = ast.literal_eval(temp_DURATION_EQ)
+        print('Python literal structure DURATION_EQ', DURATION_EQ)
+        for duration_eq_num in range(0, len(DURATION_EQ)):
+            duration_name = DURATION_EQ[duration_eq_num][0]
+            duration_factor = DURATION_EQ[duration_eq_num][1]
+            # print('duration_eq_num=',duration_eq_num,'duration_name=', duration_name,'duration_factor=', duration_factor)
+            if duration_factor <= 0.0:
+                print('exit: Error DURATION_EQ factor <= 0.0')
+                sys.exit()
+    else:
+        DURATION_EQ = ''
+    # input('Press Enter to continue...')
 
     temp_DURATION_SET = config['markmelgen']['DURATION_SET']
     print('string DURATION_SET', temp_DURATION_SET)
@@ -3629,6 +3745,8 @@ def get_config():
             print("ValueError", temp_REST_NOTE_LINE_OFFSET , " is not a number")
             #throw ValueError(temp_REST_NOTE_LINE_OFFSET + " is not a number")
     print("REST_NOTE_LINE_OFFSET", REST_NOTE_LINE_OFFSET)
+    # copy markmelgen value to PER_SECTION values
+    PER_SECTION_REST_NOTE_LINE_OFFSET = [REST_NOTE_LINE_OFFSET] * PER_SECTION_LIST_LENGTH
 
     TEMPO_BPM = config['markmelgen'].getfloat('TEMPO_BPM')
     print('TEMPO_BPM', TEMPO_BPM)
@@ -3702,6 +3820,7 @@ def get_config():
 
     TONE_PREV_INTERVAL = config['markmelgen'].getint('TONE_PREV_INTERVAL')
     print('TONE_PREV_INTERVAL', TONE_PREV_INTERVAL)
+    PER_SECTION_TONE_PREV_INTERVAL = [TONE_PREV_INTERVAL] * PER_SECTION_LIST_LENGTH
 
     TONE_RANGE_BOTTOM = config['markmelgen']['TONE_RANGE_BOTTOM']
     print('TONE_RANGE_BOTTOM', TONE_RANGE_BOTTOM)
@@ -3785,6 +3904,7 @@ def get_config():
                 sys.exit()
     else:
         TONE_SCALE_SET = ''
+    PER_SECTION_TONE_SCALE_SET = [TONE_SCALE_SET] * PER_SECTION_LIST_LENGTH
     # input('Press Enter to continue...')
 
     TONE_SCALE_ON_ANHEMITONIC = config['markmelgen'].getboolean('TONE_SCALE_ON_ANHEMITONIC')
