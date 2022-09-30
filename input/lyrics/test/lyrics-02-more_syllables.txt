@@ -1,7 +1,7 @@
-intro 1
+Solo 1
 1 2 3 4
 
-intro 2
+Solo 2
 a b c d e
 
 Verse 1
@@ -10,7 +10,7 @@ Yet is in love with you e-nough
 Yet in love with you I am too
 Yet I love you true-ly
 
-Pre-Chorus 1
+Prechorus 1
 When you love your tick-et o
 But you love your life too o
 
@@ -26,7 +26,7 @@ I, I, I feel good a-bout love I do
 And to-geth-er we went like this oh yes oh
 Will I love you hon-ey? in-deed-ee-do
 
-Pre-Chorus 2
+Prechorus 2
 Than the way you love me now come
 Than the way you love me now come on
 
@@ -40,7 +40,7 @@ Bridge 1
 Eve-ry time you feel a-lone out there in the night
 And pull you in and love you so hard a-gainst your will
 
-break 1
+Solo 1
 1 2 3 4 5 6 7 8
 
 Chorus 3
@@ -53,7 +53,7 @@ Bridge 2
 Eve-ry time you feel a-lone out there in the night 1 
 And pull you in and love you so hard a-gainst your will 1 2
 
-break 2
+Solo 2
 1 2 3 4 5 6 7 8 a
 
 outro 1

@@ -40,7 +40,7 @@ Verse 1
 1 2 3 4 5 6 7 8 9 10 11
 1 2 3 4 5 6 7 8 9 10 11 12
 
-Pre-Chorus 1
+Prechorus 1
 1
 1 2
 1 2 3
@@ -82,7 +82,7 @@ Bridge 1
 1 2 3 4 5 6 7 8 9 10 11
 1 2 3 4 5 6 7 8 9 10 11 12
 
-Break 1
+Solo 1
 1
 1 2
 1 2 3
@@ -140,7 +140,7 @@ a b c d e f g h i j
 a b c d e f g h i j k
 a b c d e f g h i j k l
 
-Pre-Chorus 2
+Prechorus 2
 a
 a b
 a b c
@@ -182,7 +182,7 @@ a b c d e f g h i j
 a b c d e f g h i j k
 a b c d e f g h i j k l
 
-Break 2
+Solo 2
 a
 a b
 a b c
