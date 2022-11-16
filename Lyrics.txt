@@ -1,55 +1,63 @@
 INTRO
 1 2 3 4
-1 2 3 4
+1 2 3 4												    # 	reverse(intro,1)
 
 VERSE 1
-So I'm still in love with you
-Yet is in love with you e-nough
-Yet in love with you I am too
-Yet I love you true-ly
+So I'm still in love with you                           # 7 syllables
+Yet is in love with you e-nough                         # 8 syllables
+Yet in love with you I am                               #   copy(verse,1)
+Yet I do love you so true-ly                            #   copy(verse,2)
 
 PRECHORUS 1
-When you love your tick-et o
-But you love your life too o
+When you love your tick-et o                            # 7 syllables
+But you love your life too o                            # 	transpose(prechorus,1,-2)
 
 CHORUS 1
-Love stand-ing still, love stand strong
-Love stand though the na-tions rise
-Love stand-ing still, love stand strong
-Say the grea-test love of all
+Love stand-ing still, love stand strong                 # 7 syllables
+Love stand though the na-tions rise                     #   copy(chorus,1)
+Love stand-ing still, love stand strong                 # 	transpose(chorus,1, 5)
+And say the grea-test love of all                       # 8 syllables
 
 VERSE 2
-Oh, now eve-ry-bod-y sing,
+Oh, now eve-ry-bod-y sing,                              # 7,8,7,8 syllables
 I, I, I feel good a-bout love
-And to-geth-er we went like this
-Will I love you hon-ey?
+To-geth-er we went like this
+Yes I do love you so hon-ey
 
 PRECHORUS 2
-Than the way you love me now
-Than the way you love me now
+Than the way you love me now                            # 7 syllables
+Than the way you love me now                            # 7 syllables
 
 CHORUS 2
-Love stand-ing still, love stand strong
+Love stand-ing still, love stand strong                 # 7,7,7,8 syllables
 Love stand though the na-tions rise
 Love stand-ing still, love stand strong
-Say the grea-test love of all
+And say the grea-test love of all
 
-SOLO
-1 2 3 4 5 6 7 8 9
-1 2 3 4 5 6 7 8 9
+SOLO                                                    # invert more recognisable than reverse, and reverse more recognisable than reverse invert
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8              		                    #   invert(solo, 1, C5)
+1 2 3 4 5 6 7 8            	                            #   reverse(solo, 1)
+1 2 3 4 5 6 7 8           	                            #   invert(solo, 3, C5)
 
 BRIDGE 1
-Eve-ry time you feel a-lone out there in the night
-I pull you in and love you so hard just as you like
+Eve-ry time you feel a-lone out there in the night      # 12 syllables
+I pull you in and love you so just as you like          #   copy(bridge, 1)
 
 CHORUS 3
-Love stand-ing still, love stand strong
+Love stand-ing still, love stand strong                 # 7,7,7,8 syllables
 Love stand though the na-tions rise
 Love stand-ing still, love stand strong
-Say the grea-test love of all
+And say the grea-test love of all
+
+CHORUS 4
+Love stand-ing still, love stand strong                 # 7,7,7,8 syllables
+Love stand though the na-tions rise
+Love stand-ing still, love stand strong
+And say the grea-test love of all
 
 OUTRO 1
-1 2 3 4
-1 2 3 4
-1 2 3 4
-1 2 3 4
+1 2 3 4												    # 	copy(intro,1)
+1 2 3 4												    # 	transpose(outro,1,2)
+1 2 3 4												    # 	transpose(outro,1,4)
+1 2 3 4												    # 	transpose(outro,1,8)

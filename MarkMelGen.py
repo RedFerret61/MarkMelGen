@@ -3,35 +3,40 @@
 # Using Markov Chains to Generate New Music
 # See https://groups.google.com/g/music21list/c/WndF4uvp6_8/m/EkVLeLtlBQAJ
 #
-# If you just want to create Markov chain melodies, you can do it in the following way:
-# Choose a corpus of melodies (such as the Essen folk song melodies)
-# Iterate through the notes each melody, keeping track of the frequency that n notes moves to note x.
-# I usually do this with a dictionary. So, the end result for a trigram should be something like
+# To create Markov chain melodies:
+# Choose a corpus of melodies.
+# Iterate through the notes each melody, keeping track of the frequency that n notes moves to note x
+# with a dictionary. So, the end result for a trigram should be something like
 # Markov_dict = {('B', 'C'): {'A': .01, 'F': .02, 'B': .0 }, ('B', 'D'): {'A': .02, 'B': .01}, and so on...}. 
 # This gives you the transition probabilities.
-# To compose, I create a music21 stream, then choose a starting note/notes, then append further notes given the transitional probabilities.
-# Things get more complicated when you want to look at rhythms and harmonies as well as notes.
-# You also may want to normalize all songs to be in the same key.
+# To compose, choose starting notes, then append further notes given the transitional probabilities.
 
 import argparse
 import ast
 import configparser
+import contextlib
 import copy
 import datetime
-from enum import Enum, auto
-from fractions import Fraction
-from numpy.random import choice
 import json
 import math
 import music21
-from music21 import *
-# import numpy
+import pyparsing
 import os
 import random
 import re
 import sys
 
-MARKMELGEN_VERSION = '0.10.0'
+from enum import Enum, auto
+from fractions import Fraction
+from music21 import *
+from music21.musicxml.archiveTools import compressXML
+from music21.stream.makeNotation import consolidateCompletedTuplets
+from music21.stream.makeNotation import splitElementsToCompleteTuplets
+from numpy.random import choice
+
+MARKMELGEN_VERSION = '1.0.0'
+
+_section_name_matches = ['intro', 'verse', 'prechorus', 'chorus', 'solo', 'bridge', 'outro']
 
 class Section(Enum):
     INTRO = 0
@@ -63,10 +68,7 @@ CADENCE_TONE_FREQUENCY = ''
 CADENCE_TONE_PROBABILITY = ''
 CADENCE_TONE_SAMPLES = ''
 
-# CALL_COUNT_MAX = 10000
-# CALL_COUNT_MAX = 1000
 CALL_COUNT_MAX = 100
-
 
 CONF_FILENAME = ''
 
@@ -75,46 +77,22 @@ DURATION_EQ = ''
 DURATION_SET = []
 
 DUR_RATIONAL = False
-# DUR_RATIONAL = True
 
 DUR_TUPLET = False
-# DUR_TUPLET = True
 
 DUR_LEAST = 0
 # DUR_LEAST = 0.25
-# DUR_LEAST = 0.5
-# DUR_LEAST = 1.0
-# DUR_LEAST = 2.0
-# DUR_LEAST = 4.0
 # DUR_LEAST = Fraction(1, 12)
-# DUR_LEAST = Fraction(1, 6)
-# DUR_LEAST = Fraction(1, 3)
-# DUR_LEAST = Fraction(2, 3)
-# DUR_LEAST = Fraction(4, 3)
-# DUR_LEAST = Fraction(8, 3)
 
 DUR_LONGEST = 0
 # DUR_LONGEST = 0.25
-# DUR_LONGEST = 0.5
-# DUR_LONGEST = 1.0
-# DUR_LONGEST = 2.0
-# DUR_LONGEST = 4.0
 # DUR_LONGEST = Fraction(1, 6)
-# DUR_LONGEST = Fraction(1, 3)
-# DUR_LONGEST = Fraction(2, 3)
-# DUR_LONGEST = Fraction(4, 3)
-# DUR_LONGEST = Fraction(8, 3)
-# DUR_LONGEST = Fraction(16, 3)
 
 DUR_PREV_DIFF = 0  # where 0, do not compare with previous duration, 2 is duration is >= 1/2 previous and <= 2 x previous etc
 # DUR_PREV_DIFF = 0.5 # not valid so ignored
 # DUR_PREV_DIFF = 1   # not valid so ignored
 # DUR_PREV_DIFF = 1.1 
 # DUR_PREV_DIFF = 2
-# DUR_PREV_DIFF = 3
-# DUR_PREV_DIFF = 4
-# DUR_PREV_DIFF = 5
-# DUR_PREV_DIFF = 6
 
 DURATION_MIN_MUSIC21 = 0.0005 # actually 1/2048th
 
@@ -163,8 +141,6 @@ TEMPO_BPM = 0.0
 TIME_SIG_WANTED = None
 # TIME_SIG_WANTED = '3/4'
 # TIME_SIG_WANTED = '4/4'
-# TIME_SIG_WANTED = '6/8'
-# TIME_SIG_WANTED = '12/8'
 
 # Tone filters
 TONE_ASCENT = False # Turn off TONE_ASCENT
@@ -227,9 +203,7 @@ TONE_SCALE_HEMITONIC = [1, 3, 4, 5,
 TONE_SCALE_SET = ['A', 'C', 'D', 'D#', 'E', 'G']
 
 TONE_SCALE_ON_ANHEMITONIC = False
-# TONE_SCALE_ON_ANHEMITONIC = True
 TONE_SCALE_ON_HEMITONIC = False
-# TONE_SCALE_ON_HEMITONIC = True
 
 
 # ------------ FUNCTIONS -------------------------------------------
@@ -247,10 +221,6 @@ def add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num, lyri
     new_stream = music21.stream.Stream()
     new_stream.append(stream_line)
     # new_stream.show('text')
-
-    # show existing lyrics
-    # stream_line.show() # xml fragment hangs python on MuseScore
-    # new_stream.show() # xml fragment hangs python on MuseScore
 
     # split and count new lyric syllables
     syllable_line = split_hyphens(lyric_line)
@@ -298,11 +268,23 @@ def add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num, lyri
             n.lyric = ' ' + syllable_list[note_num] + ' ' + syllable_list[note_num + 1] + ' ' + syllable_list[
                 note_num + 2] + ' ' + syllable_list[note_num + 3] + ' ' + syllable_list[note_num + 4]
 
-    # stream_line.show() # xml fragment hangs python on MuseScore
-    # new_stream.show('text')
-    # new_stream.show() # xml fragment hangs python on MuseScore
+    return new_stream
 
-    # return stream_line
+
+def remove_lyrics_from_phrase(stream_line):
+    """
+    function that takes a stream of notes and rests, wipes any old lyrics
+    and returns the new stream
+    """
+
+    new_stream = music21.stream.Stream()
+    new_stream.append(stream_line)
+
+    # wipe any old lyrics
+    for n in new_stream.flat:
+        if type(n) == music21.note.Note or type(n) == music21.note.Rest:
+            n.lyric = None
+
     return new_stream
 
 def get_semitone_interval(tone_prev, tone):
@@ -589,12 +571,12 @@ def countKeySignatureByType(slist):
                     count[m][i] = count[m][i] + 1
 
         # Print results so easy to copy into e.g. Excel
-        print('countKeySignatureByType results: key signatures in each movement separated by type')
-        print('--> Key signature type')
-        print('v Movement in slist')
-        print('Key signature sharp (+1) and flats (-1):')
-        print(keylist)
-        print2DList(count)  # See print functions below
+        # print('countKeySignatureByType results: key signatures in each movement separated by type')
+        # print('--> Key signature type')
+        # print('v Movement in slist')
+        # print('Key signature sharp (+1) and flats (-1):')
+        # print(keylist)
+        # print2DList(count)  # See print functions below
 
     return [keylist, count]
 
@@ -932,16 +914,17 @@ def get_nameWithOctave_from_cadence_tones(n_prev):
 
 
 def generate_markov_phrase_with_lyrics(sect, ts, tone_scale, tone_mode, transition, keys, dtransition, dkeys, cad_transition, cad_dtransition,
-                                       rest_note_transition, lyric_line):
+                                       rest_note_transition, lyric_line, gmpwl_call_count):
     """
     function that uses musical markov chains and a lyric line to
     return a melodic stream with a line of lyrics
     """
-    print(
-        'generate_markov_phrase_with_lyrics: sect, ts, tone_scale, tone_mode, transition, keys, dtransition, dkeys, cad_transition, cad_dtransition, rest_note_transition, lyric_line =',
-        sect, ts, tone_scale, tone_mode, '\n---transition---', transition, '\n---keys---', keys, '\n---dtransition---',
-        dtransition, '\n---dkeys---', dkeys, '\n---cad_transition', cad_transition, '\n---cad_dtransition', cad_dtransition,
-        '\n---rest_note_transition---', rest_note_transition, '\n---lyric_line---', lyric_line)
+    if gmpwl_call_count == 1:
+        print(
+            'generate_markov_phrase_with_lyrics: sect, ts, tone_scale, tone_mode, transition, keys, dtransition, dkeys, cad_transition, cad_dtransition, rest_note_transition, lyric_line =',
+            sect, ts, tone_scale, tone_mode, '\n---transition---', transition, '\n---keys---', keys, '\n---dtransition---',
+            dtransition, '\n---dkeys---', dkeys, '\n---cad_transition', cad_transition, '\n---cad_dtransition', cad_dtransition,
+            '\n---rest_note_transition---', rest_note_transition, '\n---lyric_line---', lyric_line)
 
     p_stream = music21.stream.Stream()
 
@@ -1032,21 +1015,366 @@ def generate_markov_phrase_with_lyrics(sect, ts, tone_scale, tone_mode, transiti
     return p_stream
 
 
+def parse(d, c):
+    def parse_chain(d, c, p=[]):
+        if isinstance(d, ast.Name):
+            return [d.id] + p
+        if isinstance(d, ast.Call):
+            for i in d.args:
+                parse(i, c)
+            return parse_chain(d.func, c, p)
+        if isinstance(d, ast.Attribute):
+            return parse_chain(d.value, c, [d.attr] + p)
+
+    if isinstance(d, (ast.Call, ast.Attribute)):
+        c.append('.'.join(parse_chain(d, c)))
+    else:
+        for i in getattr(d, '_fields', []):
+            if isinstance(t := getattr(d, i), list):
+                for i in t:
+                    parse(i, c)
+            else:
+                parse(t, c)
+
+def get_name_and_args(a_string):
+    a_string = a_string.replace(" ", "") # remove all spaces from a_string
+    index = a_string.find('(')
+    if index == -1:
+        raise Exception("No '(' found")
+    else:
+        root_function, a_string = a_string[:index], a_string[index:]
+        # print('root_function, a_string ',root_function, a_string)
+        data = {}
+        data[root_function] = pyparsing.nestedExpr().parseString(a_string).asList()[0][0].split(',')
+        return data
+
+def is_post_processing_function(s):
+    """
+    function that parses a string and
+    returns true if it is a python function
+    """
+    s1 = 'copy'
+    s2 = 'transpose'
+    s3 = 'invert'
+    s4 = 'reverse'
+
+    result = True
+
+    try:
+        # print(ast.dump(ast.parse(s, mode='eval'), indent=4))
+        ast.dump(ast.parse(s, mode='eval'), indent=4)
+    except BaseException as err:
+        # print(f"Unexpected {err=}, {type(err)=}")
+        print('Not a function call')
+        result = False
+    # check contains a valid function name
+    if result:
+
+        # tree = ast.parse(s, mode='eval')
+        # print('tree =', tree)
+        results = []
+        parse(ast.parse(s), results)
+        # print('results = ', results)
+        # if not a known post_processing_function call
+        if results == []:
+            result = False
+            print('Cannot parse a function call')
+        else:
+            if (results[0].casefold() != s1.casefold()) and (results[0].casefold() != s2.casefold()) \
+                    and (results[0].casefold() != s3.casefold()) and (results[0].casefold() != s4.casefold()):
+                print('Not a known function call e.g.', s1, s2, s3, s4 )
+                result = False
+        # else:
+            # # get call attributes
+            # call_attributes = get_name_and_args(s)
+            # print('call_attributes', call_attributes)
+    return result
+
+def valid_copy_post_processing_function(v):
+    """
+    boolean function that checks the copy function arguments
+    e.g. copy(verse,1) to copy verse line 1
+    returns True if they are valid
+    """
+    result = True
+
+    # getting length of list
+    length = len(v)
+    if length != 2:
+        print('Checking valid_copy_post_processing_function. # wrong number of args')
+        result = False
+    else:
+        # Iterating the index
+        for i in range(length):
+            # print('arg_num arg', i, v[i])
+            # validate section name
+            if i == 0:
+                if v[i].casefold() not in _section_name_matches:
+                    result = False
+            # validate line number to copy is an integer > 1
+            if i == 1:
+                try:
+                    # if not int(v[i]).isnumeric():
+                    if not isinstance(int(v[i]), int):
+                        print('Checking valid_copy_post_processing_function arg 2: Expecting integer')
+                        result = False
+                        break
+                except ValueError:
+                    print('Checking valid_copy_post_processing_function arg 2: Expecting int')
+                    result = False
+                    break
+                if int(v[i]) < 1:
+                    print('Checking valid_copy_post_processing_function arg 2: Expecting integer > 0')
+                    result = False
+
+    return result
+
+
+def valid_transpose_post_processing_function(v):
+    """
+    boolean function that checks the transpose function arguments
+    e.g. transpose(verse,1,-4) to transpose verse line 1 down a fourth
+    GenericInterval permitted range -32 to 32, Note: 0 illegal.
+
+    Transposition by GenericInterval does what we want.  See the last example here:
+    https://web.mit.edu/music21/doc/usersGuide/usersGuide_18_intervals.html
+
+import music21
+from music21 import *
+s3 = converter.parse("tinyNotation: 4/4 c4 d e f g a b")
+s3.show()
+
+# key-aware modal transpositions on Streams:
+# negative GenericInterval also in key (tested -32 to 32) Note: 0 illegal
+s4 = s3.transpose(interval.GenericInterval(-3))
+s4.show()
+
+    returns True if they are valid
+    """
+    result = True
+
+    # getting length of list
+    length = len(v)
+    if length != 3:
+        print('Checking valid_transpose_post_processing_function. # wrong number of args')
+        result = False
+    else:
+        # Iterating the index
+        for i in range(length):
+            # print('arg_num arg', i, v[i])
+            # validate section name
+            if i == 0:
+                if v[i].casefold() not in _section_name_matches:
+                    result = False
+            # validate line number to copy is an integer > 1
+            if i == 1:
+                try:
+                    # if not int(v[i]).isnumeric():
+                    if not isinstance(int(v[i]), int):
+                        print('Checking valid_transpose_post_processing_function arg 2: Expecting integer')
+                        result = False
+                        break
+                except ValueError:
+                    print('Checking valid_transpose_post_processing_function arg 2: Expecting int')
+                    result = False
+                    break
+                if int(v[i]) < 1:
+                    print('Checking valid_transpose_post_processing_function arg 2: Expecting integer > 0')
+                    result = False
+            # validate GenericInterval permitted range -32 to 32, Note: 0 illegal.
+            if i == 2:
+                try:
+                    # if not int(v[i]).isnumeric():
+                    if not isinstance(int(v[i]), int):
+                        print('Checking valid_transpose_post_processing_function arg 2: Expecting integer')
+                        result = False
+                        break
+                except ValueError:
+                    print('Checking valid_transpose_post_processing_function arg 2: Expecting int')
+                    result = False
+                    break
+                if int(v[i]) == 0:
+                    print('Checking valid_transpose_post_processing_function arg 2: Not Expecting integer = 0')
+                    result = False
+                if (int(v[i]) < -32) or (int(v[i]) > 32) :
+                    print('Checking valid_transpose_post_processing_function arg 2 =',int(v[i]),'# Not Expecting integer < -32 or > 32')
+                    result = False
+    return result
+
+def valid_invert_post_processing_function(v):
+    """
+    boolean function that checks the invert function arguments
+    e.g. invert(verse,1,C4) to invert verse line 1 around C4
+
+import music21
+from music21 import *
+s1 = converter.parse("tinyNotation: 4/4 c4 d e f g a b")
+s2 = s1.invertDiatonic(note.Note('C4'), inPlace=False)
+s2.show()
+
+    returns True if they are valid
+    """
+    result = True
+
+    # getting length of list
+    length = len(v)
+    if length != 3:
+        print('Checking valid_invert_post_processing_function. # wrong number of args')
+        result = False
+    else:
+        # Iterating the index
+        for i in range(length):
+            # print('arg_num arg', i, v[i])
+            # validate section name
+            if i == 0:
+                if v[i].casefold() not in _section_name_matches:
+                    result = False
+            # validate line number to copy is an integer > 1
+            if i == 1:
+                try:
+                    # if not int(v[i]).isnumeric():
+                    if not isinstance(int(v[i]), int):
+                        print('Checking valid_invert_post_processing_function arg 2: Expecting integer')
+                        result = False
+                        break
+                except ValueError:
+                    print('Checking valid_invert_post_processing_function arg 2: Expecting int')
+                    result = False
+                    break
+                if int(v[i]) < 1:
+                    print('Checking valid_invert_post_processing_function arg 2: Expecting integer > 0')
+                    result = False
+            if i == 2:
+                try:
+                    n = note.Note(str(v[i]))
+                    print('invert around pitch', n,' pitch.nameWithOctave', n.nameWithOctave)
+                except BaseException as err:
+                    print(f"Unexpected {err=}, {type(err)=}")
+                    print('Checking valid_invert_post_processing_function arg 2: Expecting pitch e.g. C4')
+                    result = False
+
+    return result
+
+def valid_reverse_post_processing_function(v):
+    """
+    boolean function that checks the reverse function arguments
+    e.g. reverse(verse,1) to reverse verse line 1
+    returns True if they are valid
+    """
+    result = True
+
+    # getting length of list
+    length = len(v)
+    if length != 2:
+        print('Checking valid_reverse_post_processing_function. # wrong number of args')
+        result = False
+    else:
+        # Iterating the index
+        for i in range(length):
+            # print('arg_num arg', i, v[i])
+            # validate section name
+            if i == 0:
+                if v[i].casefold() not in _section_name_matches:
+                    result = False
+            # validate line number to reverse is an integer > 1
+            if i == 1:
+                try:
+                    # if not int(v[i]).isnumeric():
+                    if not isinstance(int(v[i]), int):
+                        print('Checking valid_reverse_post_processing_function arg 2: Expecting integer')
+                        result = False
+                        break
+                except ValueError:
+                    print('Checking valid_reverse_post_processing_function arg 2: Expecting int')
+                    result = False
+                    break
+                if int(v[i]) < 1:
+                    print('Checking valid_reverse_post_processing_function arg 2: Expecting integer > 0')
+                    result = False
+
+    return result
+
+
 def get_lyrics(qualified_filename):
     """
     function that reads a file and
     returns text
     """
+    comment_char = "#"
+    call_attributes_list = []
+    lines = []
 
     with open(qualified_filename) as file_in:
-        lines = []
         for line in file_in:
             line = line.strip()
+            call_attributes = None
+            # if line has comment
+            if comment_char in line:
+                ls = line.split(comment_char, maxsplit=1)
+                line = ls[0].strip()
+                comment = ls[1].strip()
+                print('')
+                print('Lyric = ', line)
+                print('Comment =', comment)
+                # try:
+                #     result = is_post_processing_function(comment)
+                # except BaseException as err:
+                #     print(f"Unexpected {err=}, {type(err)=}")
+                #     print('exit: invalid post processing function:', comment)
+                #     sys.exit()
+                if is_post_processing_function(comment):
+                    # print('Comment is_post_processing_function.')
+                    # validate ppf (correct type and number of args) e.g.
+                    #if copy then if not valid_copy_post processing function(s): exit
+                    #if transpose then if not valid_transpose_post processing function(s): exit
+
+                    # get call attributes
+                    try:
+                        call_attributes = get_name_and_args(comment)
+                    except BaseException as err:
+                        print(f"Unexpected {err=}, {type(err)=}")
+                        print('exit: invalid post processing function:', comment)
+                        sys.exit()
+                    call_attributes = get_name_and_args(comment)
+
+                    # loop on key and value
+                    for k, v in call_attributes.items():
+                        if k == 'copy':
+                            # print('found copy')
+                            if not valid_copy_post_processing_function(v):
+                                print('exit: invalid copy, e.g. expect: copy(verse,1) actual parse:', call_attributes )
+                                sys.exit()
+                            else:
+                                print('valid_copy_post_processing_function: ', call_attributes)
+                        if k == 'transpose':
+                            # print('found transpose')
+                            if not valid_transpose_post_processing_function(v):
+                                print('exit: invalid transpose, e.g. expect: transpose(verse,1,-4) actual parse:', call_attributes )
+                                sys.exit()
+                            else:
+                                print('valid_transpose_post_processing_function: ', call_attributes)
+                        if k == 'invert':
+                            # print('found invert')
+                            if not valid_invert_post_processing_function(v):
+                                print('exit: invalid invert, e.g. expect: invert(verse,1,C4) actual parse:', call_attributes )
+                                sys.exit()
+                            else:
+                                print('valid_invert_post_processing_function: ', call_attributes)
+                        if k == 'reverse':
+                            # print('found reverse')
+                            if not valid_reverse_post_processing_function(v):
+                                print('exit: invalid reverse, e.g. expect: reverse(verse,1) actual parse:', call_attributes )
+                                sys.exit()
+                            else:
+                                print('valid_reverse_post_processing_function: ', call_attributes)
+
             lines.append(line)
+            call_attributes_list.append(call_attributes)
 
     # print('lines', lines)
+    # print('call_attributes_list', call_attributes_list)
 
-    return lines
+    return lines, call_attributes_list
 
 
 # def hyphenate_lyrics(qualified_filename):
@@ -1352,9 +1680,9 @@ def apply_tone_eq_to_transition_frequency(transition, total, is_cadence):
             print('tone_eq_num=',tone_eq_num,'tone_name=', tone_name,'tone_factor=', tone_factor)
             for k, v in transition.items():
                 for i, j in v.items():
-                    print('if i == tone_name', i, ' == ', tone_name)
+                    # print('if i == tone_name', i, ' == ', tone_name)
                     if i == tone_name:
-                        print('before transition[k][i]=',transition[k][i])
+                        # print('before transition[k][i]=',transition[k][i])
                         if is_cadence:
                             transition[k][i] = int(math.ceil(transition[k][i] * tone_factor * cadence_factor))
                         else:
@@ -1707,11 +2035,6 @@ def valid_pitch(n_prev, n, tone_scale, tone_mode):
     if TONE_PREV_INTERVAL > 0 # maximum number of semitones between notes
 
     """
-
-    # print('TONE_PREV_INTERVAL, TONES_ON_KEY, TONES_OFF_KEY, TONE_SCALE_SET, tone_prev, tone, tone_scale =',
-    #       TONE_PREV_INTERVAL, TONES_ON_KEY, TONES_OFF_KEY, TONE_SCALE_SET, tone_prev, tone, tone_scale)
-
-    # assume tone innocent until proven guilty !
     result = True
 
     if TONES_ON_KEY == True and TONES_OFF_KEY == True:
@@ -1810,7 +2133,7 @@ def valid_pitch(n_prev, n, tone_scale, tone_mode):
                 print('TONE_ASCENT_COUNT =', TONE_ASCENT_COUNT)
                 print('TONE_ASCENT valid', AIntSemi ,'>= TONE_ASCENT_MIN_INTERVAL', TONE_ASCENT_MIN_INTERVAL, 'and tone', n.nameWithOctave, '> n_prev', n_prev.nameWithOctave)
             else:  # invalid
-                print('TONE_ASCENT invalid interval', AIntSemi ,'TONE_ASCENT_MIN_INTERVAL', TONE_ASCENT_MIN_INTERVAL, 'and tone', n.nameWithOctave, ' n_prev', n_prev.nameWithOctave)
+                # print('TONE_ASCENT invalid interval', AIntSemi ,'TONE_ASCENT_MIN_INTERVAL', TONE_ASCENT_MIN_INTERVAL, 'and tone', n.nameWithOctave, ' n_prev', n_prev.nameWithOctave)
                 result = False
 
             if n_prev >= note.Note(TONE_RANGE_MID):
@@ -1842,10 +2165,10 @@ def valid_pitch(n_prev, n, tone_scale, tone_mode):
             # valid
             if (int(AIntSemi) <= int(TONE_DESCENT_MAX_INTERVAL)) and n < n_prev:
                 TONE_DESCENT_COUNT = TONE_DESCENT_COUNT + 1
-                print('TONE_DESCENT_COUNT =', TONE_DESCENT_COUNT)
-                print('TONE_DESCENT valid', AIntSemi ,'<= TONE_DESCENT_MAX_INTERVAL', TONE_DESCENT_MAX_INTERVAL, 'and note', n.nameWithOctave, '< n_prev', n_prev.nameWithOctave)
+                # print('TONE_DESCENT_COUNT =', TONE_DESCENT_COUNT)
+                # print('TONE_DESCENT valid', AIntSemi ,'<= TONE_DESCENT_MAX_INTERVAL', TONE_DESCENT_MAX_INTERVAL, 'and note', n.nameWithOctave, '< n_prev', n_prev.nameWithOctave)
             else: # invalid
-                print('TONE_DESCENT invalid interval', AIntSemi ,'TONE_DESCENT_MAX_INTERVAL', TONE_DESCENT_MAX_INTERVAL, 'and note', n.nameWithOctave, ' n_prev', n_prev.nameWithOctave)
+                # print('TONE_DESCENT invalid interval', AIntSemi ,'TONE_DESCENT_MAX_INTERVAL', TONE_DESCENT_MAX_INTERVAL, 'and note', n.nameWithOctave, ' n_prev', n_prev.nameWithOctave)
                 result = False
 
             if n_prev <= note.Note(TONE_RANGE_MID):
@@ -2043,11 +2366,11 @@ def get_lines_per_section(lyrics, section_name_matches):
     for p in range(0, len(lyrics)):
         # print('                                           ', lyrics[p])
         # if section_name_matches:
-        if any(x in lyrics[p] for x in section_name_matches):
+        if any(x in lyrics[p].casefold() for x in section_name_matches):
             # print('found a section name')
             section_line_num = 0
 
-            if lyrics[p].startswith(('Intro', 'intro', 'INTRO')):
+            if lyrics[p].casefold().startswith(('intro')):
                 sect = Section.INTRO
                 if first_intro == False:
                     # print(' found first Intro')
@@ -2055,7 +2378,7 @@ def get_lines_per_section(lyrics, section_name_matches):
                 else:
                     # print(' found later Intro')
                     later_intro = True
-            elif lyrics[p].startswith(('Verse', 'verse', 'VERSE')):
+            elif lyrics[p].casefold().startswith(('verse')):
                 sect = Section.VERSE
                 if first_verse == False:
                     # print(' found first Verse')
@@ -2063,7 +2386,7 @@ def get_lines_per_section(lyrics, section_name_matches):
                 else:
                     # print(' found later Verse')
                     later_verse = True
-            elif lyrics[p].lower().startswith('prechorus'):
+            elif lyrics[p].casefold().startswith('prechorus'):
                 sect = Section.PRECHORUS
                 if first_prechorus == False:
                     # print(' found first Prechorus')
@@ -2071,7 +2394,7 @@ def get_lines_per_section(lyrics, section_name_matches):
                 else:
                     # print(' found later Prechorus')
                     later_prechorus = True
-            elif lyrics[p].startswith(('Chorus', 'chorus', 'CHORUS')):
+            elif lyrics[p].casefold().startswith(('chorus')):
                 sect = Section.CHORUS
                 if first_chorus == False:
                     # print(' found first Chorus')
@@ -2079,7 +2402,7 @@ def get_lines_per_section(lyrics, section_name_matches):
                 else:
                     # print(' found later Chorus')
                     later_chorus = True
-            elif lyrics[p].startswith(('Solo', 'solo', 'SOLO')):
+            elif lyrics[p].casefold().startswith(('solo')):
                 sect = Section.SOLO
                 if first_solo == False:
                     # print(' found first Solo')
@@ -2087,7 +2410,7 @@ def get_lines_per_section(lyrics, section_name_matches):
                 else:
                     # print(' found later Solo')
                     later_solo = True
-            elif lyrics[p].startswith(('Bridge', 'bridge', 'BRIDGE')):
+            elif lyrics[p].casefold().startswith(('bridge')):
                 sect = Section.BRIDGE
                 if first_bridge == False:
                     # print(' found first Bridge')
@@ -2095,7 +2418,7 @@ def get_lines_per_section(lyrics, section_name_matches):
                 else:
                     # print(' found later Bridge')
                     later_bridge = True
-            elif lyrics[p].startswith(('Outro', 'outro', 'OUTRO')):
+            elif lyrics[p].casefold().startswith(('outro')):
                 sect = Section.OUTRO
                 if first_outro == False:
                     # print(' found first Outro')
@@ -2150,15 +2473,87 @@ def show_text_of_note(n, ts):
     # print("Note: %s%d %0.1f" % (n.pitch.name, n.pitch.octave, n.duration.quarterLength))
 
     if type(n) == music21.note.Note:
-        print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o', n.offset, '\t + ql',
+        print('o %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o \t', n.offset, ' \t + ql \t',
               n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t note qLen lyric:\t', n.nameWithOctave, '\t',
               n.duration.quarterLength, '\t', n.lyric)
 
     if type(n) == music21.note.Rest:
         # print('offset_float %.4f' % n.offset, 'bar %.4f'% (n.offset / beat_count), 'rest quarterLength, offset_fraction, offset_end:', n.duration.quarterLength, n.offset, '%.4f' %offset_end )
-        print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o', n.offset, '\t + ql',
+        print('o %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o \t', n.offset, ' \t + ql \t',
               n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t rest quarterLength:', n.duration.quarterLength)
 
+
+def save_text_of_note(n, ts, f, num_notes, num_rests):
+    """
+    takes a note and the beats to the bar
+    and print the text to file f
+
+    Note: I tried adding n.sites.getSiteCount(), but it wasn't very useful e.g. first stream all notes and rests had sites 2,
+    later on a copy of the stream all notes and rests had sites 8
+    """
+    beat_count = ts.numerator / (ts.denominator / 4)
+    # print('beat_count = ts.numerator / (ts.denominator / 4)', beat_count, ts.numerator, ts.denominator)
+
+    offset_end = n.offset + n.duration.quarterLength
+    # calculate offset_bar_end = beat_count * ( truncated (n.offset / beat_count) + 1)
+    truncated_bar = int('%.0f' % (n.offset / beat_count))
+    offset_bar_end = beat_count * (truncated_bar + 1)
+    # print('offset_bar_end = beat_count * (truncated_bar + 1)', offset_bar_end, beat_count, truncated_bar)
+    if offset_end > offset_bar_end:
+        # print('WARNING next duration: \t\t\t\t  offset_end', offset_end, '>', 'offset_bar_end', offset_bar_end,'- Replace with tied note or rest to end of bar and rest at beginning of next bar.')
+        pass
+    # print("Note: %s%d %0.1f" % (n.pitch.name, n.pitch.octave, n.duration.quarterLength))
+
+    if type(n) == music21.note.Note:
+        try:
+            print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o \t', n.offset, '\t\t + ql',
+                  n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t note qLen lyric:\t', n.nameWithOctave, '\t',
+                  n.duration.quarterLength, '\t', n.lyric, n.duration.tuplets, 'type', n.duration.tuplets[0].type, 'tie', n.tie, file=f)
+        except IndexError:
+            print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count) + 1), '\t o \t', n.offset,
+                  '\t\t + ql',
+                  n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t note qLen lyric:\t', n.nameWithOctave,
+                  '\t',
+                  n.duration.quarterLength, '\t', n.lyric, n.duration.tuplets,  'tie', n.tie, file=f)
+        try:
+            print('nested tuplets[1].type', n.duration.tuplets[1].type, file=f)
+        except IndexError:
+            pass
+
+        num_notes = num_notes + 1
+
+    if type(n) == music21.note.Rest:
+        # print('offset_float %.4f' % n.offset, 'bar %.4f'% (n.offset / beat_count), 'rest quarterLength, offset_fraction, offset_end:', n.duration.quarterLength, n.offset, '%.4f' %offset_end )
+        # print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o \t', n.offset, '\t\t + ql',
+        #       n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t rest quarterLength:', n.duration.quarterLength, n.duration.tuplets, file=f)
+        try:
+            print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count) + 1), '\t o \t', n.offset,
+                  '\t\t + ql',
+                  n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t rest quarterLength:',
+                  n.duration.quarterLength, n.duration.tuplets, 'type', n.duration.tuplets[0].type, 'tie', n.tie, file=f)
+        except IndexError:
+            print('offset %.4f' % n.offset, '\t bar %.4f' % ((n.offset / beat_count)+1), '\t o \t', n.offset, '\t\t + ql',
+                  n.duration.quarterLength, '\t = o_end %.4f' % offset_end, '\t rest quarterLength:', n.duration.quarterLength, n.duration.tuplets,  'tie', n.tie, file=f)
+        try:
+            print('nested rest tuplets[1].type', n.duration.tuplets[1].type, file=f)
+        except IndexError:
+            pass
+
+        num_rests = num_rests + 1
+
+
+    return num_notes, num_rests
+
+def show_to_file(the_stream, the_file):
+    """
+    takes a stream and print it to a file
+    """
+    from contextlib import redirect_stdout
+
+    with open(the_file, 'w') as f:
+        with redirect_stdout(f):
+            the_stream.show('text', addEndTimes=True)
+    # print('this is goes back to stdout')
 
 def show_text_in_stream(song, ts):
     # print('show_text_in_stream ------------------------------------------------- stream.id = decimal, hex', song.id, hex(song.id))
@@ -2199,7 +2594,7 @@ def show_text_in_stream(song, ts):
             # Metadata represent data for a work or fragment, including
             # title, composer, dates, and other relevant information.
             print('music21.metadata.Metadata')
-            print('all =', song.metadata.all())
+            # print('all =', song.metadata.all())
             # print('title =', song.metadata.title) # crash if none
             # print('composer =', song.metadata.composer)
             # print('date = ', song.metadata.date)
@@ -2225,8 +2620,86 @@ def show_text_in_stream(song, ts):
 
     min_note, max_note = calc_the_note_range(song)
     print('min_note, max_note', min_note, max_note)
+    return
 
-    pass
+
+def save_text_in_stream(song, ts, filename):
+    """
+    given a song stream, ts time signature,
+    write a text version of the song to the filename
+    """
+    with open(filename, 'w') as f:
+
+        # print('show_text_in_stream ------------------------------------------------- stream.id = decimal, hex', song.id, hex(song.id))
+        print("show_text_in_stream ------------------------------------------------- stream.id f'{song}", song.id, file=f)
+
+        # song.show('text')
+
+        # if not song.isWellFormedNotation():
+        #     print("show_text_in_stream WARNING f'{song} is not well-formed; see isWellFormedNotation()")
+
+        offset_end = 0.0
+        num_notes = 0
+        num_rests = 0
+        # for n in song.flat.notes:
+        for n in song.flat:
+            # print('type(n) ', type(n) )
+            if type(n) == music21.clef.TrebleClef:
+                print('music21.clef.TrebleClef', file=f)
+
+            if type(n) == music21.expressions.TextExpression:
+                # print('music21.expressions.TextExpression')
+                print('TextExpression =', n.content, file=f)
+
+            if type(n) == music21.key.KeySignature:
+                # print('music21.key.KeySignature', song.tonic.name, song.mode)
+                print('music21.key.KeySignature', song.keySignature, file=f) # None
+                first = True
+                for sKS in song.flat.getElementsByClass('KeySignature'):
+                    if first:
+                        songKeySignature = sKS
+                        print('First KeySignature:', songKeySignature, file=f)  # e.g. <music21.key.KeySignature of 1 flat>
+                        print('.sharps:', songKeySignature.sharps, file=f)  # e.g. -1
+                        print('.getScale(major):',
+                              songKeySignature.getScale('major'), file=f)  # e.g. <music21.scale.MajorScale F major>
+                        first = False
+                    else:
+                        print('other KeySignature:', sKS, file=f)
+
+            if type(n) == music21.metadata.Metadata:
+                # Metadata represent data for a work or fragment, including
+                # title, composer, dates, and other relevant information.
+                print('music21.metadata.Metadata', file=f)
+                print('all =', song.metadata.all(), file=f)
+                # print('title =', song.metadata.title) # crash if none
+                # print('composer =', song.metadata.composer)
+                # print('date = ', song.metadata.date)
+                # print('lyricist = ', song.metadata.lyricist)
+
+            if type(n) == music21.meter.TimeSignature:
+                # get the timesignatures
+                first = True
+                for tSig in song.getTimeSignatures(): # may not be required, .cf song_section_values missed n=3/4 as tsig=4/4 on God_Save_The_Queen.mxl
+                    if first:
+                        songTimeSig = tSig
+                        print('First Time Signature:',
+                              songTimeSig, file=f)  # eg First Time Signature: <music21.meter.TimeSignature 4/4>
+                        first = False
+                    else:
+                        print('Other Time Signature:', tSig, file=f)
+
+            if type(n) == music21.note.Note or type(n) == music21.note.Rest:
+                # print('TBD show_text_of_note', file=f)
+                num_notes, num_rests = save_text_of_note(n, ts, f, num_notes, num_rests)
+
+            if type(n) == music21.tempo.MetronomeMark:
+                print('music21.tempo.MetronomeMark', n.number, file=f)
+
+        min_note, max_note = calc_the_note_range(song)
+        print('min_note, max_note', min_note, max_note, file=f)
+        print('num_notes, num_rests', num_notes, num_rests, file=f)
+
+
 
 
 def show_histograms(score, label):
@@ -2383,7 +2856,7 @@ def append_rest_note_transition(rest_note_transition, a_song):
 
     songTimeSig = a_song.recurse().getElementsByClass(meter.TimeSignature)[0]
     ts1 = songTimeSig
-    print('append_rest_note_transition(rest_note_transition, a_song), beat_count',rest_note_transition, a_song)
+    # print('append_rest_note_transition(rest_note_transition, a_song), beat_count',rest_note_transition, a_song)
     rn_key = ('0.0', '0.0')
     measure_ends_on_rest = False
     no_rests_found_in_song = True
@@ -2436,7 +2909,7 @@ def get_total_frequency(transition_with_frequencies):
             total_frequency = total_frequency + transition_with_frequencies[k][i]
             # print('k, v, i, j, transition_with_frequencies[k][i]', k, v, i, j, transition_with_frequencies[k][i] )
 
-    print('total_frequency:', total_frequency)
+    # print('total_frequency:', total_frequency)
 
     return total_frequency
 
@@ -2496,7 +2969,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
     for p in range(0, len(lyrics)):
         # print('                                           ', lyrics[p])
         # if section_name_matches:
-        if any(x in lyrics[p] for x in section_name_matches):
+        if any(x in lyrics[p].casefold() for x in _section_name_matches):
             # print('found a section name')
             previous_section_line_num = section_line_num
             section_line_num = 0
@@ -2506,7 +2979,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                 if section_line_count_mismatch(previous_sect, lines_per_section, previous_section_line_num):
                     wrong_number_of_lines_in_section = True
 
-            if lyrics[p].startswith(('Intro', 'intro', 'INTRO')):
+            if lyrics[p].casefold().startswith(('intro')):
                 sect = Section.INTRO
                 if first_intro == False:
                     # print(' found first Intro')
@@ -2515,7 +2988,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                     # print(' found later Intro')
                     later_intro = True
                     lines_per_section_repeat[0] = 0
-            elif lyrics[p].startswith(('Verse', 'verse', 'VERSE')):
+            elif lyrics[p].casefold().startswith(('verse')):
                 sect = Section.VERSE
                 if first_verse == False:
                     # print(' found first Verse')
@@ -2524,7 +2997,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                     # print(' found later Verse')
                     later_verse = True
                     lines_per_section_repeat[1] = 0
-            elif lyrics[p].lower().startswith('prechorus'):
+            elif lyrics[p].casefold().startswith('prechorus'):
                 sect = Section.PRECHORUS
                 if first_prechorus == False:
                     # print(' found first Prechorus')
@@ -2533,7 +3006,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                     # print(' found later Prechorus')
                     later_prechorus = True
                     lines_per_section_repeat[2] = 0
-            elif lyrics[p].startswith(('Chorus', 'chorus', 'CHORUS')):
+            elif lyrics[p].casefold().startswith(('chorus')):
                 sect = Section.CHORUS
                 if first_chorus == False:
                     # print(' found first Chorus')
@@ -2542,7 +3015,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                     # print(' found later Chorus')
                     later_chorus = True
                     lines_per_section_repeat[3] = 0
-            elif lyrics[p].startswith(('Solo', 'solo', 'SOLO')):
+            elif lyrics[p].casefold().startswith(('solo')):
                 sect = Section.SOLO
                 if first_solo == False:
                     # print(' found first Solo')
@@ -2551,7 +3024,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                     # print(' found later Solo')
                     later_solo = True
                     lines_per_section_repeat[4] = 0
-            elif lyrics[p].startswith(('Bridge', 'bridge', 'BRIDGE')):
+            elif lyrics[p].casefold().startswith(('bridge')):
                 sect = Section.BRIDGE
                 if first_bridge == False:
                     # print(' found first Bridge')
@@ -2560,7 +3033,7 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
                     # print(' found later Bridge')
                     later_bridge = True
                     lines_per_section_repeat[5] = 0
-            elif lyrics[p].startswith(('Outro', 'outro', 'OUTRO')):
+            elif lyrics[p].casefold().startswith(('outro')):
                 sect = Section.OUTRO
                 if first_outro == False:
                     # print(' found first Outro')
@@ -2649,8 +3122,188 @@ def get_section_values(sect):
 
     return
 
+# reverse function from https://github.com/cuthbertLab/music21-tools/blob/bb2d78b6ad18d68ac77418b41fd995f74de6afb4/trecento/quodJactatur.py#L267
+def reverse(self, *,
+            inPlace=False,
+            classesToMove=(key.KeySignature, meter.TimeSignature, clef.Clef,
+                           metadata.Metadata, instrument.Instrument, layout.SystemLayout),
+            makeNotation=False):
+    '''
+    reverse the order of stream members
+    '''
+    highestTime = self.highestTime
+
+    if inPlace is True:
+        returnObj = self
+        raise Exception("Whoops haven't written inPlace=True yet for reverse")
+    else:
+        returnObj = stream.Part()
+
+    sf = self.flat
+    for myEl in sf:
+        if isinstance(myEl, classesToMove):
+            continue
+
+        if myEl.duration is not None:
+            releaseTime = myEl.getOffsetBySite(sf) + myEl.duration.quarterLength
+        else:
+            releaseTime = myEl.getOffsetBySite(sf)
+        newOffset = highestTime - releaseTime
+
+        returnObj.insert(newOffset, myEl)
+
+    for thisP in returnObj.flat.pitches:
+        if thisP.accidental is not None:
+            thisP.accidental.displayStatus = None
+
+    if makeNotation is True:
+        return returnObj.makeNotation()
+    else:
+        return returnObj
+
+def has_tuplet(the_stream):
+    """
+    if the stream has a tuplet return True
+    """
+    has_tuplet = False
+
+    sf = the_stream.flat
+
+    for myEl in sf:
+        if type(myEl) == music21.note.Note or type(myEl) == music21.note.Rest:
+            try:
+                if myEl.duration.tuplets != ():
+                    has_tuplet = True
+            except IndexError:
+                pass
+
+    return has_tuplet
+
+
+# v1
+# def filter_output_stream_for_MuseScore(a_stream, ts, *,
+#             inPlace=False,
+#             classesToMove=(note.Note, note.Rest, expressions.TextExpression, tempo.MetronomeMark, key.KeySignature, meter.TimeSignature, clef.Clef,
+#                            metadata.Metadata, instrument.Instrument, layout.SystemLayout),
+#             makeNotation=False):
+#     """
+#     filter a stream for MuseScore 3.6.2
+#     (inPlace is True is not yet written)
+#     the elements are filtered in the current stream.
+#     if inPlace is False then a new stream is returned.
+#
+#     all elements of class classesToMove get moved.
+#     This puts the clefs, TimeSignatures, etc. in their proper locations.
+#     """
+#
+#     # f_stream = copy.deepcopy(a_stream) # deepcopy ok, just returning a_stream unchanged adds rests!
+#     # This function uses reverse function as template
+#
+#     if inPlace is True:
+#         returnObj = self
+#         raise Exception("Whoops haven't written inPlace=True yet for reverse")
+#     else:
+#         returnObj = stream.Part()
+#
+#     beat_count = ts.numerator / (ts.denominator / 4)
+#     print('filter_output_stream_for_MuseScore: beat_count:', beat_count)
+#
+#
+#
+#     # print('showing a_stream')
+#     # a_stream.show('text', addEndTimes=True)
+#     # dt = datetime.datetime.now().strftime("%Y_%m_%d-%H_%M_%S_%f")
+#     # show_to_file(a_stream, OUTPUT_PATH + dt + '-a_stream.txt')
+#
+#     sf = a_stream.flat
+#
+#     # s2 = a_stream.stripTies()
+#     # sf = s2.flat
+#
+#     # print('showing sf')
+#     # sf.show('text', addEndTimes=True)
+#     # show_to_file(sf, OUTPUT_PATH + dt + '-sf_stream.txt')
+#
+#     for myEl in sf:
+#         if isinstance(myEl, classesToMove):
+#             # returnObj.insert(myEl)
+#             if type(myEl) == music21.note.Note or type(myEl) == music21.note.Rest:
+#                 # n = copy.deepcopy(myEl)
+#                 offset_end = myEl.offset + myEl.duration.quarterLength
+#                 truncated_bar = int('%.0f' % (myEl.offset / beat_count))
+#                 offset_bar_end = beat_count * (truncated_bar + 1)
+#                 beat_slice_end = int('%.0f' % (myEl.offset)) * (truncated_bar + 1)
+#                 # beat_end_ofset = convert myEl.offset to integer and truncate + 1
+#                 beat_end_ofset = int(myEl.offset) + 1
+#                 print(myEl, 'offset %.4f' % myEl.offset, '\t bar %.4f' % ((myEl.offset / beat_count) + 1), '\t o \t', myEl.offset,
+#                       '\t\t + ql',
+#                       myEl.duration.quarterLength, '\t = o_end %.4f' % offset_end, 'beat start',  myEl.beat, ' beat_end_ofset', beat_end_ofset
+#                       )
+#                 if (offset_end > float(beat_end_ofset)):
+#                     # truncate note/rest duration and add rest of remaining duration
+#                     truncated_note_duration = float(beat_end_ofset) - myEl.offset
+#                     truncated_note_duration = common.opFrac(truncated_note_duration)
+#                     additional_rest_duration =  myEl.duration.quarterLength - truncated_note_duration
+#                     additional_rest_duration = common.opFrac(additional_rest_duration)
+#                     print('offset_end > float(beat_end_ofset). Truncate duration to', truncated_note_duration, 'add rest', additional_rest_duration )
+#                     # add note/rest and amend duration
+#                     myEl.duration.quarterLength = truncated_note_duration
+#                     returnObj.append(myEl)
+#                     # add rest with additional duration
+#                     r = music21.note.Rest()
+#                     r.duration.quarterLength = additional_rest_duration
+#                     returnObj.append(r)
+#                 else:
+#                     returnObj.append(myEl)
+#             else:
+#                 returnObj.append(myEl)
+#
+#     # input('Press Enter to continue...')
+#     # print('showing returnObj')
+#     # returnObj.show('text', addEndTimes=True)
+#
+#     if makeNotation is True:
+#         return returnObj.makeNotation()
+#     else:
+#         return returnObj
+
+
+def filter_output_stream_for_MuseScore(a_stream, ts, *,
+            inPlace=False,
+            classesToMove=(note.Note, note.Rest, expressions.TextExpression, tempo.MetronomeMark, key.KeySignature, meter.TimeSignature, clef.Clef,
+                           metadata.Metadata, instrument.Instrument, layout.SystemLayout),
+            makeNotation=False):
+    """
+    filter a stream for MuseScore 3.6.2
+    (inPlace is True is not yet written)
+    the elements are filtered in the current stream.
+    if inPlace is False then a new stream is returned.
+
+    all elements of class classesToMove get moved.
+    This puts the clefs, TimeSignatures, etc. in their proper locations.
+    """
+
+    if inPlace is True:
+        returnObj = self
+        raise Exception("Whoops haven't written inPlace=True yet for filter_output_stream_for_MuseScore")
+    else:
+        returnObj = stream.Part()
+
+    # strip ties, flatten, make measures, make ties
+    stripped = a_stream.stripTies().flatten()
+    # out1 = stripped.makeVoices()
+    out2 = stripped.makeNotation()
+    returnObj = out2.makeTies()
+
+    return returnObj
+
+
+
+
+
 def main():
     global INPUT_MUSIC_FULLY_QUALIFIED
+    gmpwl_call_count = 0
 
     if INPUT_MUSIC_FILENAME != '': # only one mxl file to process
         mxl_files = [INPUT_MUSIC_FILENAME]
@@ -2672,7 +3325,7 @@ def main():
     rest_note_transition = {}
 
     for mxl_file in mxl_files:
-        print('mxl_file ',mxl_file )
+        # print('mxl_file ',mxl_file )
         INPUT_MUSIC_FULLY_QUALIFIED = INPUT_MUSIC_PATH + mxl_file
         print('Processing INPUT_MUSIC_FULLY_QUALIFIED', INPUT_MUSIC_FULLY_QUALIFIED)
         a_song = music21.converter.parse(INPUT_MUSIC_FULLY_QUALIFIED)
@@ -2682,15 +3335,15 @@ def main():
 
         # analyze the key of the input song
         song_key = a_song.analyze('key')  # music21 generic algorithm for key finding
-        print('Input song raw song_key.tonic.name, song_key.mode = ', song_key.tonic.name,
-              song_key.mode)  # # e.g. song_key.tonic.name, song_key.mode =  B major or D minor
+        # print('Input song raw song_key.tonic.name, song_key.mode = ', song_key.tonic.name,
+        #       song_key.mode)  # # e.g. song_key.tonic.name, song_key.mode =  B major or D minor
 
         if (song_key.tonic.name == 'C' and song_key.mode == 'major') or (
                 song_key.tonic.name == 'A' and song_key.mode == 'minor'):
-            print('No need to normalise as already normal C major or A minor.')
+            # print('No need to normalise as already normal C major or A minor.')
             song_transpose_interval = 0
         else:
-            print('Need to normalise to C major or A minor.')
+            # print('Need to normalise to C major or A minor.')
             # if minor find interval to A
             if song_key.mode == 'minor':
                 song_transpose_interval = interval.Interval(song_key.tonic, pitch.Pitch('A'))
@@ -2700,50 +3353,26 @@ def main():
 
         # analyze the key of the transposed input song
         song_key = a_song.analyze('key')  # music21 generic algorithm for key finding
-        print('Transposed (if required) input song interval song_key.tonic.name, song_key.mode = ',
-              song_transpose_interval, song_key.tonic.name,
-              song_key.mode)  # # e.g. song_key.tonic.name, song_key.mode =  C major or A minor
+        # print('Transposed (if required) input song interval song_key.tonic.name, song_key.mode = ',
+        #       song_transpose_interval, song_key.tonic.name,
+        #       song_key.mode)  # # e.g. song_key.tonic.name, song_key.mode =  C major or A minor
 
         song.append(a_song)
 
     rest_note_transition = transition_frequency_to_probability(rest_note_transition)
     print('All music rest_note_transition:', rest_note_transition)
 
-    print()
-    print('countKeySignatureByType',slist)
-    keycount = countKeySignatureByType(slist)
-    print('keycount',keycount)
+    # print()
+    # print('countKeySignatureByType',slist)
+    # keycount = countKeySignatureByType(slist)
+    # print('keycount',keycount)
     # print('')
 
     if DISPLAY_GRAPHS == True:
         label = 'Input ' + INPUT_MUSIC_FILENAME
         show_histograms(song, label)
 
-    # song.show('text')
-    # song.show()
-    # show_text_in_stream(song)
-    # for n in song.flat.notes:
-    #     print("Note: %s%d %0.1f" % (n.pitch.name, n.pitch.octave, n.duration.quarterLength))
-
-
-    ##{0.0} <music21.instrument.Instrument 'P1: MusicXML Part: Grand Piano'>
-    ##{0.0} <music21.stream.Measure 1 offset=0.0>
-    ##    {0.0} <music21.layout.SystemLayout>
-    ##    {0.0} <music21.clef.Treble8vbClef>
-    ##    {0.0} <music21.key.Key of F major>
-    ##    {0.0} <music21.meter.TimeSignature 2/4>
-    ##    {0.0} <music21.note.Note C> ....
-
-    ##{0.0} <music21.stream.Part 90619024>
-    ##    {0.0} <music21.instrument.Whistle 'C Tin Whistle: C Tin Whistle'>
-    ##    {0.0} <music21.instrument.Whistle 'Whistle'>
-    ##    {0.0} <music21.tempo.MetronomeMark andante Quarter=74.0>
-    ##    {0.0} <music21.key.Key of F major>
-    ##    {0.0} <music21.meter.TimeSignature 4/4>
-    ##    {0.0} <music21.note.Rest rest>
-    ##    {3.0} <music21.note.Note C> ...
-
-    # get the timesignatures
+     # get the timesignatures
     first = True
     for tSig in song.getTimeSignatures():
         if first:
@@ -2768,14 +3397,6 @@ def main():
             print('other Tempo:', sT)
     if first == True:
         songTempo = tempo.MetronomeMark(number=120)
-
-    # A1-1.4 TBD Add intial key e.g. one flat. Add clef, time signature, eg treble clef, 4/4 - these may default but better to be explicit.
-    # The key signature is not need to play the midi file, but it is needed to display standard music notation.
-    # According to the MIDI spec, key signature events are meta events, as is the time signature.
-    # Note: the MIDI file can fail to include the key signature in the track containing the data.
-    # Different tracks can potentially have different key signatures, in such cases, probably we should consider the initial key signature to apply to all tracks.
-    # If there is a key-sig in Master-Track, the software will first consider it. If there are key-sig (s) in musical tracks, it will process them secondaryly.
-    # can also access via n.getContextByClass(key.KeySignature)
 
     first = True
     for sKS in song.flat.getElementsByClass('KeySignature'):
@@ -2809,11 +3430,6 @@ def main():
     # Gather the cadence duration transitions
     cad_dtransition = set_cadence_duration_transition(song)
 
-    # rest_phrase_transition = set_rest_phrase_lengths(song)
-    # # print('rest_phrase_transition 1:', rest_phrase_transition)
-    # rest_note_key = list(rest_phrase_transition.keys())[0]
-    # print('rest_note_key 1:', rest_note_key) # e.g. (0.5, 0.25)
-
     # Create a score based on the transition probabilities --------------------------------------------------------------------------------------
     #
     # A common arrangement of nested Streams is a
@@ -2831,7 +3447,7 @@ def main():
         print('ts = TIME_SIG_WANTED ', ts, TIME_SIG_WANTED)
 
     print('TIME_SIG numerator =', ts.numerator,' denominator =', ts.denominator,' beatCount', ts.beatCount)
-    print('duration.Duration whole, half, quarter, eighth, 16th ', duration.Duration('whole'), duration.Duration('half'), duration.Duration('quarter'), duration.Duration('eighth'), duration.Duration('half'), duration.Duration('16th'))
+    # print('duration.Duration whole, half, quarter, eighth, 16th ', duration.Duration('whole'), duration.Duration('half'), duration.Duration('quarter'), duration.Duration('eighth'), duration.Duration('half'), duration.Duration('16th'))
 
     # beat_count = ts.beatCount
     m1.insert(0, ts)
@@ -2843,73 +3459,22 @@ def main():
     # c1 = clef.TrebleClef()
     score.insert(0, clef.TrebleClef())
 
-    ## insert song Key Signature
-    # comment out using key from input music file 
-    # print('.sharps:', songKeySignature.sharps) # eg .sharps: -1
-    # score.keySignature = music21.key.KeySignature(songKeySignature.sharps)
-
-    # use key from musi21 analysis of input music file 
+    # use key from musi21 analysis of input music file
     if song_key.mode == 'major':
         the_Key = music21.key.Key(song_key.tonic.name)
     else:
         the_Key = music21.key.Key(song_key.tonic.name.lower())  # python convert uppercase to lowercase
 
-    print('the_Key.sharps =', the_Key.sharps)  # eg .sharps: -1
+    # print('the_Key.sharps =', the_Key.sharps)  # eg .sharps: -1
 
     score.keySignature = music21.key.KeySignature(the_Key.sharps)
-
-    score.show('t')
-
-    # Defect_20210808b Multiple bars of rests appended at start, only need any rests in bar before first note.
-    # e.g. if 4/4 and first rest is 57. "What is 57 mod 4?" you are asking "What is the Remainder when you divide 57 by 4 = 1?". So add rest = 1
-
-    # A1-1.6 20210725 append initial rests to start
-    # if first note a rest then append rest and continue until type is a note
-    # print('Looking for initial rests to copy over ...')
-    # first = True
-    # firstNoteRest = False
-    # for n in song.flat:  # does not find rests e.g. n =  <music21.note.Note C> ; n =  <music21.note.Note A>
-    # #    print(' n = ', n)
-    # if first:
-    # if type(n) == music21.note.Rest:
-    # firstNoteRest = True
-    # print(' First rest n.duration.quarterLength.', n.duration.quarterLength)
-    # n.duration.quarterLength = n.duration.quarterLength % 4
-    # print(' First rest remainder appended n.duration.quarterLength.', n.duration.quarterLength)
-    # score.append(n)
-
-    # first = False
-    # else:
-    # if firstNoteRest:
-    # if type(n) == music21.note.Rest:
-    # score.append(n)
-    # print(' Rest appended.')
-    # first = False
-    # else:
-    # #               print('Found initial rests.')
-    # break
 
     key = list(transition.keys())[0]
     print('key:', key)  # e.g. key: ('C', 'A')
 
     dkey = list(dtransition.keys())[0]
+
     # print('dkey:', dkey) # e.g. dkey: (1.0, 2.0)
-
-    # # Defect_20210808a first two notes of first phrase are not repeated. Workaround: remove adding first two notes
-    # # choose first note
-    # n = music21.note.Note(key[0])
-    # #print('First note', n) # e.g. <music21.note.Note C>
-    # n.duration.quarterLength = dkey[0] # eg n.duration.quarterLength: 1.0
-    # #print('n.duration.quarterLength:', n.duration.quarterLength) 
-    # score.append(n)
-
-    # # choose second note
-    # n = music21.note.Note(key[1]) 
-    # n.duration.quarterLength = dkey[1] 
-    # score.append(n)
-    # #print('Second note', n) # e.g. <music21.note.Note A>
-    # #print('n.duration.quarterLength:', n.duration.quarterLength) # eg 2.0
-
     # print('transition.keys():', transition.keys())   # eg dict_keys([('C', 'A'), ('A', 'A'), ('A', 'C'), ('C', 'D'), ('D', 'G'), ('G', 'G'), ('G', 'A'), ('A', 'B-'), ('B-', 'F'), ('F', 'F'), ('F', 'E'), ('E', 'C'), ('D', 'C'), ('C', 'B-'), ('B-', 'A'), ('D', 'D'), ('G', 'F'), ('E', 'F'), ('F', 'D'), ('C', 'F'), ('F', 'G'), ('A', 'D'), ('C', 'C'), ('A', 'E'), ('F', 'C'), ('A', 'F'), ('B-', 'D'), ('D', 'F'), ('F', 'B-'), ('B-', 'C'), ('A', 'G'), ('D', 'E-'), ('E-', 'D'), ('E-', 'E'), ('G', 'C'), ('C', 'G'), ('F', 'G#'), ('G#', 'A'), ('A', 'B'), ('B', 'C'), ('C', 'E'), ('F', 'A'), ('F', 'E-')])
     # print('list(transition.keys()):', list(transition.keys())) # eg [('C', 'A'), ('A', 'A'), ('A', 'C'), ('C', 'D'), ('D', 'G'), ('G', 'G'), ('G', 'A'), ('A', 'B-'), ('B-', 'F'), ('F', 'F'), ('F', 'E'), ('E', 'C'), ('D', 'C'), ('C', 'B-'), ('B-', 'A'), ('D', 'D'), ('G', 'F'), ('E', 'F'), ('F', 'D'), ('C', 'F'), ('F', 'G'), ('A', 'D'), ('C', 'C'), ('A', 'E'), ('F', 'C'), ('A', 'F'), ('B-', 'D'), ('D', 'F'), ('F', 'B-'), ('B-', 'C'), ('A', 'G'), ('D', 'E-'), ('E-', 'D'), ('E-', 'E'), ('G', 'C'), ('C', 'G'), ('F', 'G#'), ('G#', 'A'), ('A', 'B'), ('B', 'C'), ('C', 'E'), ('F', 'A'), ('F', 'E-')]
     keys = [' '.join(i) for i in list(transition.keys())]
@@ -2927,14 +3492,13 @@ def main():
 
     print('INPUT_LYRICS_FULLY_QUALIFIED', INPUT_LYRICS_FULLY_QUALIFIED)
     # hyphenated_lyrics = hyphenate_lyrics(INPUT_LYRICS_FULLY_QUALIFIED)
-    lyrics = get_lyrics(INPUT_LYRICS_FULLY_QUALIFIED)
+    lyrics, call_attributes_list = get_lyrics(INPUT_LYRICS_FULLY_QUALIFIED)
 
-    section_name_matches = ['Intro', 'Verse', 'Prechorus', 'Chorus', 'Solo', 'Bridge', 'Outro',
-                            'intro', 'verse', 'prechorus', 'chorus', 'solo', 'bridge', 'outro',
-                            'INTRO', 'VERSE', 'PRECHORUS', 'CHORUS', 'SOLO', 'BRIDGE', 'OUTRO', 'Prechorus']
-    lines_per_section = get_lines_per_section(lyrics, section_name_matches)
-    print('lines_per_section [Intro, Verse, Prechorus, Chorus, Solo, Bridge, Outro]', lines_per_section)
-    validate_later_lines_per_section(lyrics, section_name_matches, lines_per_section)
+    # input('Press Enter to continue...')
+
+    lines_per_section = get_lines_per_section(lyrics, _section_name_matches)
+    print('lines_per_section [intro, verse, prechorus, chorus, solo, bridge, outro]', lines_per_section)
+    validate_later_lines_per_section(lyrics, _section_name_matches, lines_per_section)
 
     first_intro = False
     later_intro = False
@@ -2957,7 +3521,7 @@ def main():
     for p in range(0, len(lyrics)):
         print('                                           ', lyrics[p])
         # if section_name_matches:
-        if any(x in lyrics[p] for x in section_name_matches):
+        if any(x in lyrics[p].casefold() for x in _section_name_matches):
             # print('found a section name')
             section_name_text = lyrics[p]
             section_line_num = 0
@@ -2969,7 +3533,7 @@ def main():
 
             p0.append(te)
 
-            if lyrics[p].startswith(('Intro', 'intro', 'INTRO')):
+            if lyrics[p].casefold().startswith(('intro')):
                 sect = Section.INTRO
                 if first_intro == False:
                     print(' found first Intro')
@@ -2977,7 +3541,7 @@ def main():
                 else:
                     print(' found later Intro')
                     later_intro = True
-            elif lyrics[p].startswith(('Verse', 'verse', 'VERSE')):
+            elif lyrics[p].casefold().startswith(('verse')):
                 sect = Section.VERSE
                 if first_verse == False:
                     print(' found first Verse')
@@ -2985,7 +3549,7 @@ def main():
                 else:
                     print(' found later Verse')
                     later_verse = True
-            elif lyrics[p].lower().startswith('prechorus'):
+            elif lyrics[p].casefold().startswith('prechorus'):
                 sect = Section.PRECHORUS
                 if first_prechorus == False:
                     print(' found first Prechorus')
@@ -2993,7 +3557,7 @@ def main():
                 else:
                     print(' found later Prechorus')
                     later_prechorus = True
-            elif lyrics[p].startswith(('Chorus', 'chorus', 'CHORUS')):
+            elif lyrics[p].casefold().startswith(('chorus')):
                 sect = Section.CHORUS
                 if first_chorus == False:
                     print(' found first Chorus')
@@ -3001,7 +3565,7 @@ def main():
                 else:
                     print(' found later Chorus')
                     later_chorus = True
-            elif lyrics[p].startswith(('Solo', 'solo', 'SOLO')):
+            elif lyrics[p].casefold().startswith(('solo')):
                 sect = Section.SOLO
                 if first_solo == False:
                     print(' found first Solo')
@@ -3009,7 +3573,7 @@ def main():
                 else:
                     print(' found later Solo')
                     later_solo = True
-            elif lyrics[p].startswith(('Bridge', 'bridge', 'BRIDGE')):
+            elif lyrics[p].casefold().startswith(('bridge')):
                 sect = Section.BRIDGE
                 if first_bridge == False:
                     print(' found first Bridge')
@@ -3017,7 +3581,7 @@ def main():
                 else:
                     print(' found later Bridge')
                     later_bridge = True
-            elif lyrics[p].startswith(('Outro', 'outro', 'OUTRO')):
+            elif lyrics[p].casefold().startswith(('outro')):
                 sect = Section.OUTRO
                 if first_outro == False:
                     print(' found first Outro')
@@ -3037,19 +3601,74 @@ def main():
             print('found first section line')
             section_line_num = section_line_num + 1
             print('section_line_num', section_line_num)
+            print('input lyrics line num (p)', p)
+            print('lyrics[p]', lyrics[p] )
+            print('call_attributes_list[p]', call_attributes_list[p] )
+            if call_attributes_list[p] != None:
+                # parse function call
+                for k, v in call_attributes_list[p].items():
+                        if k == 'copy' or k == 'transpose' or k == 'invert' or k == 'reverse':
+                            print('a_phrase = copy_phrase_with_lyrics from',v[0].casefold(), 'line', int(v[1]))
+                            # find section line to copy from
+                            try:
+                                if (v[0].casefold() == 'intro'):
+                                    new_section_stream = copy.deepcopy(intro_line_stream_list[int(v[1]) - 1])
+                                if (v[0].casefold() == 'verse'):
+                                    new_section_stream = copy.deepcopy(verse_line_stream_list[int(v[1]) - 1])
+                                if (v[0].casefold() == 'prechorus'):
+                                    new_section_stream = copy.deepcopy(prechorus_line_stream_list[int(v[1]) - 1])
+                                if (v[0].casefold() == 'chorus'):
+                                    new_section_stream = copy.deepcopy(chorus_line_stream_list[int(v[1]) - 1])
+                                if (v[0].casefold() == 'solo'):
+                                    new_section_stream = copy.deepcopy(solo_line_stream_list[int(v[1]) - 1])
+                                if (v[0].casefold() == 'outro'):
+                                    new_section_stream = copy.deepcopy(outro_line_stream_list[int(v[1]) - 1])
+                                if (v[0].casefold() == 'bridge'):
+                                    new_section_stream = copy.deepcopy(bridge_line_stream_list[int(v[1]) - 1])
+                            except BaseException as err:
+                                print(f"Unexpected {err=}, {type(err)=}")
+                                print('exit: invalid post processing function:', call_attributes_list[p])
+                                sys.exit()
+                            a_phrase = add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num,
+                                                                            lyrics[p], new_section_stream)
+                        if k == 'transpose':
+                            print('a_phrase = transpose_phrase_with_lyrics')
+                            transpose_phrase = add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num,
+                                                                            lyrics[p], new_section_stream)
+                            a_phrase = transpose_phrase.transpose(interval.GenericInterval(int(v[2])))
+                            # a_phrase = add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num,
+                            #                                     lyrics[p], new_section_stream)
+                        if k == 'invert':
+                            print('a_phrase = invert_phrase_with_lyrics')
+                            invert_phrase = add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num,
+                                                                            lyrics[p], new_section_stream)
+                            a_phrase = invert_phrase.invertDiatonic(note.Note(str(v[2])), inPlace=False)
 
-            # generate phrase with lyrics
-            a_phrase = generate_markov_phrase_with_lyrics(sect, ts, song_key.tonic.name, song_key.mode, transition, keys,
-                                                          dtransition, dkeys, cad_transition, cad_dtransition, rest_note_transition, lyrics[p])
+                        if k == 'reverse':
+                            print('a_phrase = reverse_phrase_with_lyrics')
+                            # # notes and rests reversed as desired, but also lyrics which should not be reversed
+                            # reverse_phrase = add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num,
+                            #                                                 lyrics[p], new_section_stream)
+                            # a_phrase = reverse(reverse_phrase, makeNotation = False)
+                            new_section_stream_without_lyrics = remove_lyrics_from_phrase(new_section_stream)
+                            reverse_phrase = reverse(new_section_stream_without_lyrics, makeNotation = False)
+                            a_phrase = add_new_lyrics_to_old_phrase(sect, section_name_text, section_line_num,
+                                                                            lyrics[p], reverse_phrase)
+                # input('Press Enter to continue...')
+            else:
+                # generate phrase with lyrics
+                gmpwl_call_count = gmpwl_call_count + 1
+                a_phrase = generate_markov_phrase_with_lyrics(sect, ts, song_key.tonic.name, song_key.mode, transition, keys,
+                                                              dtransition, dkeys, cad_transition, cad_dtransition, rest_note_transition, lyrics[p], gmpwl_call_count)
 
-            # if an alternating line cadence is desired and the line is an even number then amend cadence
-            if CADENCE_ALTERNATE_PHRASE_END == True and ((section_line_num % 2) == 0):
-                a_phrase = amend_cadence(a_phrase, song_key.tonic.name, ts)
+                # if an alternating line cadence is desired and the line is an even number then amend cadence
+                if CADENCE_ALTERNATE_PHRASE_END == True and ((section_line_num % 2) == 0):
+                    a_phrase = amend_cadence(a_phrase, song_key.tonic.name, ts)
 
-            last_section_line_num = is_last_line(section_line_num, sect, lines_per_section)
-            # if an end section cadence is desired and this is the last section line then amend cadence
-            if CADENCE_SECTION_END == True and last_section_line_num == True:
-                a_phrase = amend_cadence(a_phrase, song_key.tonic.name, ts)
+                last_section_line_num = is_last_line(section_line_num, sect, lines_per_section)
+                # if an end section cadence is desired and this is the last section line then amend cadence
+                if CADENCE_SECTION_END == True and last_section_line_num == True:
+                    a_phrase = amend_cadence(a_phrase, song_key.tonic.name, ts)
 
             p0.append(a_phrase)
 
@@ -3199,18 +3818,6 @@ def main():
         #   else
         #       fit lyrics to verse/chorus/Prechorus/Bridge phrase
 
-    # see https://github.com/cuthbertLab/music21/blob/master/music21/stream/makeNotation.py
-    # e.g.
-    # the double call below corrects for tiny errors in adding
-    # floats and Fractions in the sum() call -- the first opFrac makes it
-    # impossible to have 4.00000000001, but returns Fraction(4, 1). The
-    # second call converts Fraction(4, 1) to 4.0
-    # durSum = opFrac(opFrac(summed))
-    #
-    # barQL = lastTimeSignature.barDuration.quarterLength
-    #
-    # if durSum > barQL:
-
     # insert tempo
 
     # if TEMPO_BPM == 0.0:
@@ -3219,13 +3826,6 @@ def main():
     #   use TEMPO_BPM
     if TEMPO_BPM != 0.0:
         songTempo = tempo.MetronomeMark(number=TEMPO_BPM)
-
-    # examples of setting tempo:
-    # p0.insert([1, tempo.MetronomeMark('slow', 40, note.Note(type='half'))])
-    # tempo.MetronomeMark('slow', 40, note.Note(type='half'))
-    # p0.insert([0, tempo.MetronomeMark('slow', 123, note.Note(type='quarter'))])
-    # p0.insert([0, tempo.MetronomeMark(number=123.4)])
-    # p0.insert([0, tempo.MetronomeMark(number=songTempo.number)])
 
     mm = tempo.MetronomeMark(number=songTempo.number)
     # place MetronomeMark above the stave
@@ -3244,17 +3844,6 @@ def main():
     the_instrument = music21.instrument.Instrument(instrumentName=INSTRUMENT)
     p0.insert(0, the_instrument)
 
-    # On music21 6.7.1 commented out makeMeasures & makeTies as it added short (eg 1/12) notes with None Lyric
-    # and amends duration of note before e.g. 2/3 to 7/12
-    # On music21 7.1.0 uncommented makeMeasures
-    p0.makeMeasures(inPlace=True)
-
-    # cannot run makeTies without makeMeasures as get StreamException: cannot process a stream without measures
-    p0.makeTies(inPlace=True)  # not sure if this is required, as MuseScore and Frescobaldi show ties with only makeMeasures
-
-    # add metadata to output
-    # output_filename format is conf-lyric-music[-Endmusic]-DateTime
-    #
     d = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     dt = datetime.datetime.now().strftime("%Y_%m_%d-%H_%M_%S_%f")
     score.insert(0, metadata.Metadata())
@@ -3267,20 +3856,31 @@ def main():
         output_filename = os.path.splitext(CONF_FILENAME)[0] + '-' + os.path.splitext(INPUT_LYRICS_FILENAME)[0] + '-' + os.path.splitext(mxl_files[0])[0] + '-' + os.path.splitext(mxl_files[len(mxl_files)-1])[0] + '-' + dt
     score.metadata.composer = 'MarkMelGen ' + MARKMELGEN_VERSION + '\n' + CONF_FILENAME + '\n' + d
 
-    # score.show('text')
-    show_text_in_stream(score, ts)
-
     # replace any . with _ in output_filename
     output_filename = output_filename.replace(".", "_")
-    print('OUTPUT_PATH + output_filename', OUTPUT_PATH, output_filename)
 
-    score.write(fp=OUTPUT_PATH + output_filename) # always write score to musicxml file
+    # filter score
+    filtered_score = filter_output_stream_for_MuseScore(score, ts, makeNotation=True)
+
+    # write compressed musicxml output
+    with contextlib.redirect_stderr(open(os.devnull, 'w')):
+        filtered_score.write("xml", OUTPUT_PATH + output_filename + ".xml")
+        compressXML(OUTPUT_PATH + output_filename + ".xml", deleteOriginal=True)
+
+    show_text_in_stream(filtered_score, ts)
+
+    print(
+        'Final output ==============================================================================================================================================')
+    print(OUTPUT_PATH + output_filename + ".xml")
+
     if DISPLAY_GRAPHS == True:
         label = 'Output ' + INPUT_MUSIC_FILENAME
-        show_histograms(score, label)
+        show_histograms(filtered_score, label)
     if DISPLAY_SCORE == True:
-        score.show()  # xml fragment hangs python on MuseScore
-        # score.show('midi') # + exits python and starts MuseScore, but does not show lyrics or text expressions
+        with contextlib.redirect_stderr(open(os.devnull, 'w')):
+            filtered_score.show()  # hangs python on MuseScore
+
+
 
 
 def parse_configuration_file(config):
@@ -3305,48 +3905,56 @@ def parse_configuration_file(config):
 
     # sections
     sections_actual = config.sections()
-    print('sections_expected:', sections_expected)
-    print('sections_actual  :', sections_actual)
+    # print('sections_expected:', sections_expected)
+    # print('sections_actual  :', sections_actual)
     if sections_actual == sections_expected:
         print('Configuration file sections as expected.')
     else:
         print('exit: Error in configuration file. Actual sections does not equal expected sections.')
+        print('sections_expected:', sections_expected)
+        print('sections_actual  :', sections_actual)
         sys.exit()
 
     # paths
     paths_options_actual = config.options('paths')
-    print('paths_options_expected:', paths_options_expected)
-    print('paths_options_actual  :', paths_options_actual)
+    # print('paths_options_expected:', paths_options_expected)
+    # print('paths_options_actual  :', paths_options_actual)
     if paths_options_actual == paths_options_expected:
         print('Configuration file paths options as expected.')
     else:
         print('exit: Error in configuration file. Actual paths options does not equal expected paths options.')
+        print('paths_options_expected:', paths_options_expected)
+        print('paths_options_actual  :', paths_options_actual)
         sys.exit()
 
     # filenames
     filenames_options_actual = config.options('filenames')
-    print('filenames_options_expected:', filenames_options_expected)
-    print('filenames_options_actual  :', filenames_options_actual)
+    # print('filenames_options_expected:', filenames_options_expected)
+    # print('filenames_options_actual  :', filenames_options_actual)
     if filenames_options_actual == filenames_options_expected:
         print('Configuration file filenames options as expected.')
     else:
         print('exit: Error in configuration file. Actual filenames options does not equal expected filenames options.')
+        print('filenames_options_expected:', filenames_options_expected)
+        print('filenames_options_actual  :', filenames_options_actual)
         sys.exit()
 
     # markmelgen
     markmelgen_options_actual = config.options('markmelgen')
-    print('markmelgen_options_expected:', markmelgen_options_expected)
-    print('markmelgen_options_actual  :', markmelgen_options_actual)
+    # print('markmelgen_options_expected:', markmelgen_options_expected)
+    # print('markmelgen_options_actual  :', markmelgen_options_actual)
     if markmelgen_options_actual == markmelgen_options_expected:
         print('Configuration file markmelgen options as expected.')
     else:
         print('exit: Error in configuration file. Actual markmelgen options does not equal expected markmelgen options.')
+        print('markmelgen_options_expected:', markmelgen_options_expected)
+        print('markmelgen_options_actual  :', markmelgen_options_actual)
         sys.exit()
 
     # song_intro
     song_intro_options_actual = config.options('song_intro')
-    print('song_intro_options_potentially:      ', song_section_options_expected)
-    print('song_intro_options_actual     :      ', song_intro_options_actual)
+    # print('song_intro_options_potentially:      ', song_section_options_expected)
+    # print('song_intro_options_actual     :      ', song_intro_options_actual)
     # if song_intro_options_actual == song_section_options_expected:
     #     print('Configuration file song_intro options as expected.')
     # else:
@@ -3355,8 +3963,8 @@ def parse_configuration_file(config):
 
     # song_verse
     song_verse_options_actual = config.options('song_verse')
-    print('song_verse_options_potentially:      ', song_section_options_expected)
-    print('song_verse_options_actual     :      ', song_verse_options_actual)
+    # print('song_verse_options_potentially:      ', song_section_options_expected)
+    # print('song_verse_options_actual     :      ', song_verse_options_actual)
     # if song_verse_options_actual == song_section_options_expected:
     #     print('Configuration file song_verse options as expected.')
     # else:
@@ -3365,8 +3973,8 @@ def parse_configuration_file(config):
 
     # song_prechorus
     song_prechorus_options_actual = config.options('song_prechorus')
-    print('song_prechorus_options_potentially:  ', song_section_options_expected)
-    print('song_prechorus_options_actual     :  ', song_prechorus_options_actual)
+    # print('song_prechorus_options_potentially:  ', song_section_options_expected)
+    # print('song_prechorus_options_actual     :  ', song_prechorus_options_actual)
     # if song_prechorus_options_actual == song_section_options_expected:
     #     print('Configuration file song_prechorus options as expected.')
     # else:
@@ -3375,8 +3983,8 @@ def parse_configuration_file(config):
 
     # song_chorus
     song_chorus_options_actual = config.options('song_chorus')
-    print('song_chorus_options_potentially:     ', song_section_options_expected)
-    print('song_chorus_options_actual     :     ', song_chorus_options_actual)
+    # print('song_chorus_options_potentially:     ', song_section_options_expected)
+    # print('song_chorus_options_actual     :     ', song_chorus_options_actual)
     # if song_chorus_options_actual == song_section_options_expected:
     #     print('Configuration file song_chorus options as expected.')
     # else:
@@ -3385,8 +3993,8 @@ def parse_configuration_file(config):
 
     # song_solo
     song_solo_options_actual = config.options('song_solo')
-    print('song_solo_options_potentially:       ', song_section_options_expected)
-    print('song_solo_options_actual     :       ', song_solo_options_actual)
+    # print('song_solo_options_potentially:       ', song_section_options_expected)
+    # print('song_solo_options_actual     :       ', song_solo_options_actual)
     # if song_solo_options_actual == song_section_options_expected:
     #     print('Configuration file song_solo options as expected.')
     # else:
@@ -3395,8 +4003,8 @@ def parse_configuration_file(config):
 
     # song_bridge
     song_bridge_options_actual = config.options('song_bridge')
-    print('song_bridge_options_potentially:     ', song_section_options_expected)
-    print('song_bridge_options_actual     :     ', song_bridge_options_actual)
+    # print('song_bridge_options_potentially:     ', song_section_options_expected)
+    # print('song_bridge_options_actual     :     ', song_bridge_options_actual)
     # if song_bridge_options_actual == song_section_options_expected:
     #     print('Configuration file song_bridge options as expected.')
     # else:
@@ -3405,8 +4013,8 @@ def parse_configuration_file(config):
 
     # song_outro
     song_outro_options_actual = config.options('song_outro')
-    print('song_outro_options_potentially:      ', song_section_options_expected)
-    print('song_outro_options_actual     :      ', song_outro_options_actual)
+    # print('song_outro_options_potentially:      ', song_section_options_expected)
+    # print('song_outro_options_actual     :      ', song_outro_options_actual)
     # if song_outro_options_actual == song_section_options_expected:
     #     print('Configuration file song_outro options as expected.')
     # else:
@@ -3655,7 +4263,7 @@ def get_config():
             print('exit: Error DURATION_SET', DURATION_SET)
             sys.exit()
 
-        print('Python literal structure for DURATION_SET strings evaluated to:', DURATION_SET, type(DURATION_SET))
+        # print('Python literal structure for DURATION_SET strings evaluated to:', DURATION_SET, type(DURATION_SET))
         if not isinstance(DURATION_SET, list):
             print('exit: DURATION_SET is not a list e.g. []')
             sys.exit()
@@ -3890,7 +4498,7 @@ def get_config():
         # The string or node provided may only consist of the following Python literal structures:
         # strings, bytes, numbers, tuples, lists, dicts, sets, booleans, None, bytes and sets.
         TONE_SCALE_SET = ast.literal_eval(temp_TONE_SCALE_SET)
-        print('Python literal structure for TONE_SCALE_SET evaluated to:', TONE_SCALE_SET)
+        # print('Python literal structure for TONE_SCALE_SET evaluated to:', TONE_SCALE_SET)
         for tone_num in range(0, len(TONE_SCALE_SET)):
             tone_name = TONE_SCALE_SET[tone_num]
             # print('tone_num=',tone_num,'tone_name=', tone_name)
@@ -3916,14 +4524,15 @@ def get_config():
     # list section keys
     # print('list(config[DEFAULT].keys()))')
     # print(list(config['DEFAULT'].keys()))
-    print('list(config[markmelgen].keys()))')
-    print(list(config['markmelgen'].keys()))
+    # print('list(config[markmelgen].keys()))')
+    # print(list(config['markmelgen'].keys()))
 
-    print('From the config file, list the song sections and optional song section specific Keys:')
+    # print('From the config file, list the song sections and optional song section specific Keys:')
     for sec in Config_Song_Section:
         # print('{:15} = {}'.format(sec.name, sec.value))
         # print(list(config[sec.name].keys()))
-        print('{:15} = {}'.format(sec.name, list(config[sec.name].keys())))
+        # print('{:15} = {}'.format(sec.name, list(config[sec.name].keys())))
+        pass
 
     # read SECTION data
     for sect in Config_Song_Section:
@@ -3951,8 +4560,8 @@ def get_config():
                         print('exit: Error', sect.name, 'section_DURATION_SET', section_DURATION_SET)
                         sys.exit()
 
-                    print('Python literal structure for section_DURATION_SET strings evaluated to:', section_DURATION_SET,
-                          type(section_DURATION_SET))
+                    # print('Python literal structure for section_DURATION_SET strings evaluated to:', section_DURATION_SET,
+                    #       type(section_DURATION_SET))
                     if not isinstance(section_DURATION_SET, list):
                         print('exit: section_DURATION_SET is not a list e.g. []')
                         sys.exit()
@@ -4082,7 +4691,7 @@ def get_config():
                     # The string or node provided may only consist of the following Python literal structures:
                     # strings, bytes, numbers, tuples, lists, dicts, sets, booleans, None, bytes and sets.
                     section_TONE_SCALE_SET = ast.literal_eval(temp_TONE_SCALE_SET)
-                    print('Python literal structure for TONE_SCALE_SET evaluated to:', section_TONE_SCALE_SET)
+                    # print('Python literal structure for TONE_SCALE_SET evaluated to:', section_TONE_SCALE_SET)
                     for tone_num in range(0, len(section_TONE_SCALE_SET)):
                         tone_name = section_TONE_SCALE_SET[tone_num]
                         # print('tone_num=',tone_num,'tone_name=', tone_name)

@@ -282,6 +282,34 @@ def truncate_section(name):
         if name.lower().startswith(sec):
             return sec
 
+
+def show_histograms(score, label):
+    """
+    function that shows histograms of the score with the supplied label
+    """
+
+    # show a histogram of output pitch space.
+    p = graph.plot.HistogramPitchSpace(score)
+    p.title = label + ' - histogram'
+    p.run()  # with defaults and proper configuration, will open graph
+
+    # show a histogram of pitch class
+    p = graph.plot.HistogramPitchClass(score)
+    # p.title = label + ' - histogram-pitchClass-count'
+    p.title = label + ' - histogram'
+    p.run()  # with defaults and proper configuration, will open graph
+
+    # show a histogram of quarter lengths
+    p = graph.plot.HistogramQuarterLength(score)
+    p.title = label + ' - histogram'
+    p.run()  # with defaults and proper configuration, will open graph
+
+    # show a A graph of events, sorted by pitch space, over time
+    p = graph.plot.HorizontalBarPitchSpaceOffset(score)
+    p.title = label + ' - graph'
+    p.run()  # with defaults and proper configuration, will open graph
+
+
 def main():
     """
     parse command line arguments
@@ -423,8 +451,9 @@ def main():
         # if note: update song_section_values
         if type(n) == music21.note.Note:
             # if type(n) != music21.note.Rest:
-            song_section_values.update(n, first_note_of_section)
-            if first_note_of_section == True: first_note_of_section = False
+            if not n.duration.isGrace:
+                song_section_values.update(n, first_note_of_section)
+                if first_note_of_section == True: first_note_of_section = False
 
     # print data for last section
     if first_section_found:
@@ -442,6 +471,9 @@ def main():
     else:
         song_section_values.print_class_variable()
 
+    # show graphs
+    label = 'Input ' + mxlfile_normalised_name
+    show_histograms(a_song, label)
 
 if __name__ == '__main__':
 
