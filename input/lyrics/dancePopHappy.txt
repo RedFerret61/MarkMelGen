@@ -1,18 +1,18 @@
 verse 1
-all the girls are cra-zy you know
-down-town on the dance line
-and we dance yeah we dance now
-oh we dance we love it yeah
+all the girls are cra-zy you know           # 8 syllables
+down-town on the dance line                 # 6 syllables
+and we dance yeah we dance down low         #   copy(verse,1)
+oh we dance we love it                      #   copy(verse,2)
 
 prechorus
-i dance with you
-just make me dance
+i dance with you                            # 4 syllables
+just make me dance                          # 	invert(prechorus, 1, G3)
 
 chorus
-sounds to the mu-sic how you dance
-and i like you all night long i like you
-dance na na dance
-dance na na dance
+sounds to the mu-sic how you dance          # 8 syllables
+i like you all night long i like            #   invert(chorus, 1, C5)
+dance na na dance                           #
+dance na na dance                           # 	transpose(prechorus,1,-2)
 
 verse 2
 we can dance to our ster-e-o
@@ -31,8 +31,8 @@ dance na na dance
 dance na na dance
 
 bridge
-to-night we gon-na dance
-feel the beat to the mu-sic
+to-night we gon-na dance                    # 6 syllables
+feel the beat the mu-sic                    #   copy(bridge,1)
 
 chorus
 sounds to the mu-sic how you dance

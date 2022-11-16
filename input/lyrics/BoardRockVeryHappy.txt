@@ -1,41 +1,41 @@
 verse 1
-twen-ty three brand new fi-gures on board
-twen-ty three brand new fi-gures on board
-twen-ty three brand new fi-gures on board
-some are funk-y some are neat
+twen-ty three brand new fi-gures on board               # 9 syllables
+twen-ty three brand new fi-gures on board               #   copy(verse,1)
+twen-ty three brand new fi-gures on board               #   transpose(verse,1,4)
+some are funk-y some are neat                           # 7 syllables
 
 prechorus
-this is your cal-ling are you read-y to jump on board 
-moun-tain bike or car
+this is your cal-ling are you read-y to jump on board   # 13 syllables
+moun-tain bike or car                                   # 5 syllables
 
 chorus
-it all hap-pened so fast but it changed my whole life
-i just had to mix it up and jump on board
-i got my skate board on me i got my skate board
-i got my skate board on me i got my
+it all hap-pened so fast but it changed my whole life   # 12 syllables
+i just had to mix it up and jump on                     # 10 syllables
+i got my skate board on me i got my skate board         #      copy(chorus,1)
+i got my skate board on me i got my                     #      copy(chorus,2)
 
 verse 2
-now the witch doc-tor had plen-ty on his desk
-and plen-ty more to flesh out
-and when it came my turn to see the board
-i was ver-y much in pri-son
+the witch doc-tor had some on his desk                  # 9 syllables x3, last 7 syllables
+plen-ty more to flesh out if nee-ded
+when it came my turn to see the board
+i was sent to skate pri-son
 
 prechorus
-a-ny-bo-dy who ev-er had to work all day long
-a-ny-bo-dy who ev-er had to strug-gle to get paid
+a-ny-bo-dy who ev-er had to work all day long           # 13 syllables
+strug-gle to get paid                                   # 5 syllables
 
 chorus
-it all hap-pened so fast but it changed my whole life
-i just had to mix it up and jump on board
-i got my skate board on me i got my skate board
-i got my skate board on me i got my
+it all hap-pened so fast but it changed my whole life   # 12 syllables
+i just had to mix it up and jump on                     # 10 syllables
+i got my skate board on me i got my skate board         #      copy(chorus,1)
+i got my skate board on me i got my                     #      copy(chorus,2)
 
 bridge
-i just have to step up
-i got-ta get i got-ta get back to the draw-ing board
+i just have to step up                                  # 6 syllables
+i got-ta get i got-ta get back to the draw-ing board    # 14 syllables
 
 chorus
-it all hap-pened so fast but it changed my whole life
-i just had to mix it up and jump on board
-i got my skate board on me i got my skate board
-i got my skate board on me i got my
+it all hap-pened so fast but it changed my whole life   # 12 syllables
+i just had to mix it up and jump on                     # 10 syllables
+i got my skate board on me i got my skate board         #      copy(chorus,1)
+i got my skate board on me i got my                     #      copy(chorus,2)

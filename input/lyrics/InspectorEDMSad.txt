@@ -1,31 +1,37 @@
-verse 1
-if you start to in-spec-tor
-how do i in-spec-tor sit-ting here
-come and have a in-spec-tor round
-i want you to get a in-spec-tor at my life
+VERSE 1
+if you be-gin to in-spec-tor                                # 8 syllable
+how do i be-lieve sit-ting here                             #   invert(verse, 1,F2)
+come and have an in-spec-tor round                           #   reverse(verse,1)
+i want you to get in my life                                #   invert(verse, 3,F2)
 
-prechorus
-what i want is a man that is not mean
-for mak-ing all your ma-ma and your dad-dy in-spec-tor bad
+PRECHORUS 1
+do not be mean to me                                        # 6 syllable
+your mum and dad are bad                                    #   transpose(prechorus,1,3)
 
-chorus
-in-spec-tor at you come on and in-spec-tor at me
-yeah yeah yeah i re-mem-ber
-in-spec-tor at you come on and in-spec-tor at me
-yeah yeah i re-mem-ber
+CHORUS 1
+in-spec-tor at you come on and in-spec-tor at me            # 13 syllable
+yeah yeah yeah i re-mem-ber                                 # 7 syllable
+in-spec-tor at you come on and in-spec-tor at me            #   copy(chorus,1)
+yeah yeah yeah i re-mem-ber                                 #   copy(chorus,2)
 
-verse 2
-i in-spec-tor in the mir-ror at my-self
+VERSE 2
+look in the mir-ror at my-self                              # 8,8,8,8 syllables
 see a clea-rer re-a-li-ty
-and we can on-ly solve
-on-ly if we reach a-bove and if we in-spec-tor in-side
+on-ly you can solve the pu-zzle
+on-ly if we feel it in-side
 
-prechorus
-oh in-spec-tor at those stars
+PRECHORUS 2
+in-spec-tor at those stars                                  # 6,6 syllables
 they blin-ded me for you
 
-chorus
-in-spec-tor at you come on and in-spec-tor at me
+CHORUS 2
+in-spec-tor at you come on and in-spec-tor at me            # 13,7,13,7 syllables
 yeah yeah yeah i re-mem-ber
 in-spec-tor at you come on and in-spec-tor at me
-yeah yeah i re-mem-ber
+yeah yeah yeah i re-mem-ber
+
+VERSE 3 (same as first)
+if you be-gin to in-spec-tor                                # 8,8,8,8 syllables
+how do i be-lieve sit-ting here
+come and have an in-spec-tor round
+i want you to get in my life

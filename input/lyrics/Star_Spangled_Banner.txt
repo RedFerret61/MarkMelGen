@@ -1,9 +1,13 @@
-verse 1
-o say can you see by the dawns ear-ly light
-what so proud-ly we haild at the twi-lights last glea-ming
-whose broad stripes and bright stars through the per-il-ous fight
-oer the ram-parts we watchd were so gal-lant-ly stream-ing
-and the rock-ets red glare the bombs burst-ing in air
-gave proof through the night that our flag was still there
-o say does that star-span-gled ban-ner yet wave
-oer the land of the free and the home of the brave
+VERSE 1
+o say can you see by the dawns ear-ly light                         # 11 syllables
+what so proud-ly we haild at the twi-lights last glea-ming          # 13 syllables
+whose broad stripes and bright stars through the per-il-ous fight   #   copy(verse,1)
+oer the ram-parts we watchd were so gal-lant-ly stream-ing          #   copy(verse,2)
+
+PRECHORUS 1
+and the rock-ets red glare the bombs burst-ing in air               # 12 syllables
+gave proof through the night that our flag was still there          # 11 syllables
+
+CHORUS 1
+o say does that star-span-gled ban-ner yet wave                     # 12 syllables
+oer the land of the free and the home of the brave                  # 12 syllables

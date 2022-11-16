@@ -1,59 +1,67 @@
 intro
-1 2 3
-1 2 3 4 5 6
-1 2 3
-1 2 3 4 5 6
+1 2 3                                                       # 3 syllables
+1 2 3 4 5 6                                                 # 6 syllables
+1 2 3                                                       #   copy(intro,1)
+1 2 3 4 5 6                                                 #   copy(intro,2)
 
 verse 1
-be-lla can make you make you scream and shout
-yea to be real
-be-lla said she likes my style hood
-i can make you come a-live read-y to go
+be-lla can make you make you scream and shout               # 10 syllables
+yea to be real, yea to be real                              # 8 syllables
+be-lla said she likes my style hood                         #   transpose(verse,2,5)
+can make you come a-live read-y to go                       #   transpose(verse,1,4)
 
 prechorus 1
-i can hear eve-ry night the way be-lla moves
-be-lla turns it a-round no mat-ter what i do
+i can hear eve-ry night the way be-lla moves                # 11 syllables
+she turns it a-round no mat-ter what i do                   #   invert(prechorus, 1, E4)
 
 chorus 1
-be-lla said be-lla had no mem-o-ry
-of the first time be-lla met me
-i knew love was re-al
-be-lla said be-lla had no mem-o-ry
+be-lla said be-lla had no mem-o-ry                          # 10 syllables
+of the first time be-lla met me                             # 8 syllables
+i knew love was re-ally re-al                               #   copy(chorus,2)
+be-lla said be-lla had no mem-o-ry                          #   copy(chorus,1)
 
 verse 2
-and then you heard it on the ra-di-o
-a girl meets boy
+and then you heard it on the ra-di-o                        # 10,8,8,10 syllables
+a girl meets boy, a boy meets girl
 be-lla wants to go with the girl
-be-lla won-ders if be-lla can do it right
+be-lla won-ders if she can do it right
 
 prechorus 2
-be-lla the ooh girl that i been wai-ting on
-oh oh she's the girl that i have been wai-ting on
+be-lla the ooh girl that i been wai-ting on                 # 11,11 syllables
+oh she's the girl that i have been wai-ting on
 
 chorus 2
-be-lla said be-lla had no mem-o-ry
+be-lla said be-lla had no mem-o-ry                          # 10,8,8,10 syllables
 of the first time be-lla met me
-i knew love was re-al
+i knew love was re-ally re-al
 be-lla said be-lla had no mem-o-ry
 
 solo 1
-1 2 3 4 5 6 7 8
-1 2 3 4 5 6
-1 2 3 4 5 6 7 8
-1 2 3 4 5 6
+1 2 3 4 5 6 7 8                                             #
+1 2 3 4 5 6                                                 #
+1 2 3 4 5 6 7 8                                             #   invert(solo, 1, C5)
+1 2 3 4 5 6                                                 #   invert(solo, 2, C5)
 
 bridge 1
-be-lla is so beau-ti-ful though be-lla may be on-ly a girl
-be-lla has a book in-side her hand
+be-lla is so beau-ti-ful                                    # 8 syllables
+though be-lla is on-ly a girl                               #   reverse(bridge,1)
+be-lla has a book                                           # 5 syllables
+that's in-side her head                                     #   reverse(bridge,3)
 
 chorus 3
-be-lla said be-lla had no mem-o-ry
+be-lla said be-lla had no mem-o-ry                          # 10,8,8,10 syllables
 of the first time be-lla met me
-i knew love was re-al
+i knew love was re-ally re-al
 be-lla said be-lla had no mem-o-ry
 
-outro
+intro 2
+1 2 3                                                       # 3,6,3,6 syllables
+1 2 3 4 5 6
 1 2 3
+1 2 3 4 5 6
+
+intro 3
+1 2 3                                                       # 3,6,3,6 syllables
 1 2 3 4 5 6
 1 2 3
 1 2 3 4 5 6

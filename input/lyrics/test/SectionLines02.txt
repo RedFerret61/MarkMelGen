@@ -28,31 +28,32 @@ Outro 1
 
 
 
-Intro 2
+
+iNtRo 2
 a
 a b
 
-Verse 2
+vERSE 2
 a b c
 a b c d
 
-Prechorus 2
+PrechoruS 2
 a b c d e
 a b c d e f
 
-Chorus 2
+ChoRus 2
 a b c d e f g
 a b c d e f g h
 
-Bridge 2
+BriDge 2
 a b c d e f g h i
 a b c d e f g h i j
 
-Solo 2
+SolO 2
 a b c d e f g h i j k
 a b c d e f g h i j k l
 
-Outro 2
+outRo 2
 a b c d e f g h i j k l m
 a b c d e f g h i j k l m n
 

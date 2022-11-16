@@ -1,41 +1,41 @@
 verse 1
-eve-ry-bod-y try-na par-ty like oh oh
-eve-ry-bod-y try-na par-ty like oh oh
-i saw your moth-er she goes to the par-ty
-i would think we should make out and have a drink
+eve-ry-bod-y try-na par-ty like oh oh               # 11 syllables
+eve-ry-bod-y try-na par-ty like oh oh               #   invert(verse, 1, E4)
+i saw your moth-er she goes to the par-ty           #   reverse(verse,2)
+i would think we should make out and have a drink   #   invert(verse, 3, E4)
 
 prechorus 1
-we could be deaf and dumb at this par-ty
-at this par-ty
+we could be deaf and dumb at this par-ty time       #   transpose(verse,1,3)
+at this par-ty                                      # 4 syllables
 
 chorus 1
-come on let the par-ty be-gin
-come on let the par-ty be-gin
-this par-ty is o-ver
-where the drinks were strong
+come on let the par-ty be-gin                       # 8 syllables
+come on let the par-ty be-gin                       # copy(chorus,1)
+this par-ty is o-ver                                # 6 syllables
+the drinks were ve-ry strong                        # copy(chorus,3)
 
 verse 2
-this could be the time for two to par-ty
+this could be the time for two to par-ty on         # 11 syllables all lines
 this could be the sig-nal if you want me to
 this could be the sig-nal if you want me to
 this could be the sig-nal if you want me to
 
 prechorus 2
-how long can we go to mess up the song that we sing
-all we are on-ly dy-ing they make no sense
+how long can we mess up the song that we sing       # 11 syllables
+we are dy-ing                                       # 4 syllables
 
 chorus 2
-come on let the par-ty be-gin
-come on let the par-ty be-gin
-this par-ty is o-ver
-where the drinks were strong
+come on let the par-ty be-gin                       # 8 syllables
+come on let the par-ty be-gin                       #   copy(chorus,1)
+this par-ty is o-ver                                # 6 syllables
+the drinks were ve-ry strong                        #   copy(chorus,3)
 
 bridge 1
-he must like to par-ty all the time
-he must like to par-ty all the time
+he must like to par-ty all the time                 # 9 syllables
+he must like to par-ty all the time                 #   transpose(bridge,1,-4)
 
 chorus 3
-come on let the par-ty be-gin
-come on let the par-ty be-gin
-this par-ty is o-ver
-where the drinks were strong
+come on let the par-ty be-gin                       # 8 syllables
+come on let the par-ty be-gin                       #   copy(chorus,1)
+this par-ty is o-ver                                # 6 syllables
+the drinks were ve-ry strong                        #   copy(chorus,3)

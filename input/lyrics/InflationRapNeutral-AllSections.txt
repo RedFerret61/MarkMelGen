@@ -1,61 +1,58 @@
 intro
-1 2 
-1 2 3 4 
-1 2 
-1 2 3 4 
+1 2 3                                                   # 3 syllables
+1 2 3 4 5 6 7                                           # 7 syllables
+1 2  3                                                  #   transpose(intro,1,-3)
+1 2 3 4 5 6 7                                           #   transpose(intro,2,-4)
 
 verse 1
-i knew you when you were twice the in-fla-tion
-i knew you when you were twice the in-fla-tion
-and you still turn the lights off
-you know the sit-u-a-tion is se-ri-ous
+i knew you when you were two                            # 7 syllables
+i knew you when you were twice the in-fla-tion          # 11 syllables
+and you still turn the lights blue                      #   transpose(verse,1,3)
+you know it's a se-ri-ous sit-u-a-tion                  #   transpose(verse,2,4)
 
-prechorus
-i am a rock of a dif-fer-ent in-fla-tion
-i rock on the wind
-
-chorus
-just my kind of mor-ning
-the in-fla-tion of a smile
-i am a wo-man she is a man
-come down in in-fla-tion, come in-side my gym karma
+chorus 1
+just my kind of mor-ning                                # 6 syllables
+the in-fla-tion of a smile                              # 7 syllables
+i am a wo-man man                                       #   invert(chorus, 1, C5)
+come in-side my gym kar-ma                              #   invert(chorus, 2, C5)
 
 verse 2
 
-i made a plan-et the in-fla-tion of mars
-and then i saw it for the first time
-the goal is to have a good day
-some-times it helps you see the world with a dif-fer-ent in-fla-tion
-
-prechorus 2
-i thought a-bout Christ and i grew qui-et in my bed
-in fact it was like i had grown a new in-fla-tion
+i made a plan-et like mars                                # 7,11,7,11 syllables
+and then i saw it for the ve-ry first time
+we want well spaced i-so-bars
+some-times it helps to hear a diff-er-rent chime
 
 chorus 2
-just my kind of mor-ning
+just my kind of mor-ning                                # 6,7,6,7 syllables
 the in-fla-tion of a smile
-i am a wo-man she is a man
-come down in in-fla-tion, come in-side my gym karma
+i am a wo-man man
+come in-side my gym kar-ma
+
+intro 2
+1 2 3                                                   # 3,7,3,7 syllables
+1 2 3 4 5 6 7
+1 2  3
+1 2 3 4 5 6 7
 
 bridge
-he had all the an-swers
-could make the pain go a-way
+he had all the an-swers                                 # 6 syllables
+made the pain go a-way                                  #   copy(bridge,1)
 
+intro 3
+1 2 3                                                   # 3,7,3,7 syllables
+1 2 3 4 5 6 7
+1 2  3
+1 2 3 4 5 6 7
 
-solo 1
-1 2 3 4 5 6 
-1 2 3 4 
-1 2 3 4 5 6 
-1 2 3 4 
-
-chorus
-just my kind of mor-ning
+chorus 3
+just my kind of mor-ning                                # 6,7,6,7 syllables
 the in-fla-tion of a smile
-i am a wo-man she is a man
-come down in in-fla-tion, come in-side my gym karma
+i am a wo-man man
+come in-side my gym kar-ma
 
-outro
-1 2 3 4 
-1 2 
-1 2 3 4 
-1 2
+intro 4
+1 2 3                                                   # 3,7,3,7 syllables
+1 2 3 4 5 6 7
+1 2  3
+1 2 3 4 5 6 7

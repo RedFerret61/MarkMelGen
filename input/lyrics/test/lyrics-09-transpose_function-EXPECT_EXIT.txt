@@ -1,0 +1,63 @@
+intro 1
+1 2 3 4														# transpose
+
+intro 2
+a b c d 
+
+Verse 1
+So I'm still in love with you 								#   transpos( verse, 1, 0)
+Yet is in love with you e-nough								#   transpos( verse, 1, -33)
+Yet in love with you I am too 								# 	transpos( verse, 1, 33)
+Yet I love you true-ly    									#	transpos( verse, 1) 
+
+PreChorus 1
+When you love your tick-et o 								# 	transpos( verse, 0, 32)
+But you love your life too o 								# 	transpos( verse, verse, -32)                    
+
+Chorus 1
+Love stand-ing still, love stand strong 
+Love stand though the na-tions rise         				# 	transpos( vers, 330000, -32) 
+Love stand-ing still, love stand strong 					#   transpos( VERSE)
+And say the grea-test love of all        					# 	transpos( )
+
+Verse 2
+Oh, now eve-ry-bod-y sing,									#   transpose(intro, 1, 2
+I, I, I feel good a-bout love   													                                            
+And to-geth-er we went like this    
+Will I love you hon-ey?
+
+PreChorus 2
+Than the way you love me now
+Than the way you love me now
+
+Chorus 2
+Love stand-ing still, love stand strong
+Love stand though the na-tions rise
+Love stand-ing still, love stand strong
+And say the grea-test love of all
+
+Bridge 1
+Eve-ry time you feel a-lone out there in the night
+And pull you in and love you so hard a-gainst your will		# transpose(pre-chorus,1,2)
+
+Solo 1
+1 2 3 4 5 6 7 8
+
+Chorus 3
+Love stand-ing still, love stand strong
+Love stand though the na-tions rise
+Love stand-ing still, love stand strong
+And say the grea-test love of all
+
+Bridge 2
+Eve-ry time you feel a-lone out there in the night
+And pull you in and love you so hard a-gainst your will
+
+Solo 2
+1 2 3 4 5 6 7 8
+
+outro 1
+1 2
+
+outro 2
+a b

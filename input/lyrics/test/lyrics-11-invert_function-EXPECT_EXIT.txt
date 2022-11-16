@@ -1,0 +1,63 @@
+intro 1
+1 2 3 4														# invert
+
+intro 2
+a b c d 
+
+Verse 1
+So I'm still in love with you 								#   inver( verse, 1, 0)
+Yet is in love with you e-nough								#   invert( verse, 1, C#1000)
+Yet in love with you I am too 								# 	invert( verse, 1, C--1)
+Yet I love you true-ly    									#	inver( verse, 1) 
+
+PreChorus 1
+When you love your tick-et o 								# 	inver( verse, 0, C4)
+But you love your life too o 								# 	inver( verse, verse, C4)                    
+
+Chorus 1
+Love stand-ing still, love stand strong 
+Love stand though the na-tions rise         				# 	inver( vers, 330000, C4) 
+Love stand-ing still, love stand strong 					#   inver( VERSE)
+And say the grea-test love of all        					# 	inver( )
+
+Verse 2
+Oh, now eve-ry-bod-y sing,									#   invert(intro, 1, 2
+I, I, I feel good a-bout love   													                                            
+And to-geth-er we went like this    
+Will I love you hon-ey?
+
+PreChorus 2
+Than the way you love me now
+Than the way you love me now
+
+Chorus 2
+Love stand-ing still, love stand strong
+Love stand though the na-tions rise
+Love stand-ing still, love stand strong
+And say the grea-test love of all
+
+Bridge 1
+Eve-ry time you feel a-lone out there in the night
+And pull you in and love you so hard a-gainst your will		# invert(pre-chorus,1,C4)
+
+Solo 1
+1 2 3 4 5 6 7 8
+
+Chorus 3
+Love stand-ing still, love stand strong
+Love stand though the na-tions rise
+Love stand-ing still, love stand strong
+And say the grea-test love of all
+
+Bridge 2
+Eve-ry time you feel a-lone out there in the night
+And pull you in and love you so hard a-gainst your will
+
+Solo 2
+1 2 3 4 5 6 7 8
+
+outro 1
+1 2
+
+outro 2
+a b

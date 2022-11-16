@@ -1,11 +1,23 @@
 verse 1
-a-las my love ye-ee do me wrong
-to-oo cast me off dis-cur-te-ous-ly
-and i have lo-ved you so-oo long
-de-light-ing in your com-pa-ny-ee-ee
+a-las my love ye-ee do me wrong             # 9 syllables
+to-oo cast me off dis-cur-te-ous-ly         # 10 syllables
+and i have lo-ved you so-oo long            #   copy(verse,1)
+de-light-ing in your com-pa-ny-ee-ee        #   copy(verse,2)
 
-chorus
-green-slee-eves wa-as all my joy
+chorus 1
+green-slee-eves wa-as all my joy            # 8  syllables
+and who but green-sleeves wa-as my de-light # 10 syllables
+green-sleeves was my heart of go-old        #   copy(chorus,1)
+and who but the la-dy-ee green-slee-eves    #   copy(chorus,2)
+
+verse last
+Green-slee-eves now fare-well a-di-eu       # 9, 10, 9, 10 syllables
+Go-od I pra-ay to-oo pro-sper thee
+For I am sti-ill thy lo-ver true
+We-el-come on-ce a-gain and love me
+
+chorus last
+green-slee-eves wa-as all my joy            # 8, 10, 8, 10 syllables
 and who but green-sleeves wa-as my de-light
-green-sleeves was my heart of gold
+green-sleeves was my heart of go-old
 and who but the la-dy-ee green-slee-eves

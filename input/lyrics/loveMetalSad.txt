@@ -1,34 +1,34 @@
 intro
-1 2 3 4
-1 2 3 4 5 6 7 8
-1 2 3 4
-1 2 3 4 5 6 7 8
+1 2 3 4 5 6                         #
+1 2 3 4 5 6 7                       #
+1 2 3 4 5 6                         # 	reverse(intro,1)
+1 2 3 4 5 6 7                       #   invert(intro, 2, D5)
 
 verse 1
-i like you and you love me too
-be-tter that you love me less
-be-tter you hate me more
-love me or hate me babe
+i like you and you love me too      # 8 syllables
+its be-tter that you love me less   #   copy(verse,1)
+be-tter you hate me more            # 6 syllables
+love me or hate me babe             #   copy(verse,3)
 
 prechorus
-this love of which i write
-am I a-lone in fee-ling
+this love of which i write          #   copy(intro,3)
+am I a-lone in fee-ling             #   copy(intro,4)
 
 chorus
-those whom the la-zy souls love
-laying on the gal-lows
-i know this love will pre-vail
-i know this love will pre-vail
+those whom the la-zy souls love     # 7 syllables
+lay-ing on the gal-lows             # 6 syllables
+i know this love will pre-vail      # invert(chorus, 1, C5)
+i know this love will pre-vail      # transpose(chorus,3,-3)
 
 verse 2
-I am a-blaze un-der your love
-let me burn a lit-tle while
-oh you make me jeal-ous
-you fool me you love me
+I am a-blaze un-der your love       # 8 syllables
+let me burn a lit-tle while         # 8 syllables
+oh you make me jeal-ous             # 6 syllables
+you fool me you love me             # 6 syllables
 
 prechorus
-the day i said good-bye
-the pain i love dis-ap-pears
+the day i said good-bye             # 6 syllables
+the pain i love dis-ap-pears        # 7 syllables
 
 chorus
 those whom the la-zy souls love
@@ -37,8 +37,8 @@ i know this love will pre-vail
 i know this love will pre-vail
 
 bridge
-all that i love has to die
-for some-thing to live for
+all that i love has to die          # 7 syllables
+thats some-thing else to live for   #   copy(bridge,1)
 
 chorus
 those whom the la-zy souls love
@@ -47,7 +47,7 @@ i know this love will pre-vail
 i know this love will pre-vail
 
 intro
-1 2 3 4
-1 2 3 4 5 6 7 8
-1 2 3 4
-1 2 3 4 5 6 7 8
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6
+1 2 3 4 5 6 7
