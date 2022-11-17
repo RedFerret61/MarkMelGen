@@ -7,6 +7,10 @@ MarkMelGen allows the user to add some structure with lyrical sections (intro, v
 and line functions (such as copy, transpose, invert and reverse)
 to develop the Markov melodies and so compose more memorable songs.
 
+MarkMelGen demonstration video:
+
+[![MarkMelGen video](assets/images/youtube1.png)](https://www.youtube.com/watch?v=cAxGzUqxgFw "MarkMelGen video")
+
 MarkMelGen has been tested on: 
 * Windows 10 21H2  
   - MarkMelGen 1.0.0 with MuseScore 3.6.2, Python 3.10.8, music21 v 8.1.0
@@ -52,7 +56,11 @@ Download for Windows and run installer.
 * For example
   * Python 3.10.8 worked for me with music21 version 8.1.0
   * Python 3.10.0 did not work for me with music21 version 7.1.0 (numpy not compatible)
-  * Python 3.9.6 worked for me with music21 versions 6.7.1 and 7.1.0 
+  * Python 3.9.6 worked for me with music21 versions 6.7.1 and 7.1.0   
+  
+(if you have an old version of python you don't need then Start, search, add, click on Add or remove programs, click on the old Python version, Uninstall, Uninstall, Close. You may need to manually remove the old version from your path: e.g. Start, search, env, Edit the system environment variables, Environment Variables..., User variables, Path, Edit..., select line with the old python scripts e.g ...Python39\Scripts\, Delete, select old python e.g. ...Python39\, Delete, OK x3)
+
+  
 
 2. Browse to https://www.python.org/downloads/windows
     
@@ -61,7 +69,7 @@ Download for Windows and run installer.
     Select "Add Python to PATH". Install.
 
 
-3. Check it works: Start, search, cmd, click on Command Prompt, type:
+3. Check the new Python works: Start, search, cmd, click on Command Prompt, type:
    
     python --version
 
@@ -87,14 +95,12 @@ if you have problems and want to try different versions. Uninstall music21 with:
 
    pip uninstall music21
 
-Uninstall Python by opening Control Panel, Click "Uninstall a Program", Scroll down to Python and click uninstall for each version you don't want anymore.
-
 To upgrade music21 at a later date to the latest version, 'pip uninstall music21' then 'pip install music21' again.
 
 ### MarkMelGen Windows installation
 
 #### Install MarkMelGen on Windows
- Download release zip to desired directory for MarkMelGen e.g.C:\Users\paul\Music and
+ Download release zip to desired directory for MarkMelGen e.g. C:\Users\paul\Music and
  unzip with right click Extract All ... 
  (this creates a folder with the name of the zip file).
 #### Run MarkMelGen on Windows 
