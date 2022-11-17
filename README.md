@@ -286,14 +286,14 @@ The default python on Ubuntu 20.04 is compatible.
 
         pip3 install music21
 
-    # or to upgrade music21 e.g. from 7.1.0 to 8.1.0
+3. or to upgrade music21 e.g. from 7.1.0 to 8.1.0
 
         pip3 uninstall music21
         pip3 install music21
 
 
 
-3. Check music21 version installed with:
+4. Check music21 version installed with:
 
        pip3 list
 
@@ -1302,7 +1302,7 @@ Note: Generally an invert is more recognisable than a reverse, and a reverse is 
 
     INTRO
     1 2 3 4
-    1 2 3 4												    # 	reverse(intro,1)
+    1 2 3 4							# 	reverse(intro,1)
     
     VERSE 1
     So I'm still in love with you                           # 7 syllables
