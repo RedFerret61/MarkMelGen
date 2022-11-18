@@ -135,6 +135,12 @@ Provided MuseScore is installed to the default location, recent output should be
 When finished, Close MuseScore.
 
 
+MarkMelGen configurations demonstration video:
+
+[![MarkMelGen video](assets/images/youtube2.png)](https://www.youtube.com/watch?v=NSwdJdkqDRk "MarkMelGen configurations video")
+
+
+
 #### Run MarkMelGen test files
 
  In a Command Prompt window type run_conf_test to run the configuration files in the conf directory e.g.:
