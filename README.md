@@ -13,7 +13,7 @@ MarkMelGen demonstration video:
 
 MarkMelGen has been tested on: 
 * Windows 10 21H2  
-  - MarkMelGen 1.0.0 with MuseScore 3.6.2, Python 3.10.8, music21 v 8.1.0
+  - MarkMelGen 1.0.0 with MuseScore 4.0.0, Python 3.10.8, music21 v 8.1.0
     (where versions obtained using on Windows: Start winver, MarkMelGen: first line of standard output or top right of output MusicXML, MuseScore: Help About..., python: python --version music21: pip list)
 * macOS Big Sur 11.6.1 
   - MarkMelGen 0.9.0 with MuseScore 3.6.2, Python 3.10.0, music21 v 7.1.0 
