@@ -9,9 +9,13 @@ MarkMelGen allows the user to add some structure with lyrical sections (intro, v
 and line functions (such as copy, transpose, invert and reverse)
 to develop the Markov melodies and so compose more memorable songs.
 
+MarkMelGen demonstration video for v2.0.0:
+
+[![MarkMelGen 2.0.0 video](assets/images/mmg_logo_2.png)](https://www.youtube.com/watch?v=hHcUs8nMzY0 "MarkMelGen 2.0.0 video")
+
 MarkMelGen demonstration video for v1.0.0:
 
-[![MarkMelGen video](assets/images/youtube1.png)](https://www.youtube.com/watch?v=cAxGzUqxgFw "MarkMelGen video")
+[![MarkMelGen 1.0.0 video](assets/images/youtube1.png)](https://www.youtube.com/watch?v=cAxGzUqxgFw "MarkMelGen 1.0.0 video")
 
 MarkMelGen has been tested on: 
 * Windows 11 24H2 (OS Build 26100.3476)
