@@ -5,7 +5,7 @@
 #               This license does not apply to other content
 #               distributed with this package.
 #
-# Copyright:    MarkMelGen is "Copyright © 2022 Paul Wardley Davies"
+# Copyright:    MarkMelGen is "Copyright © 2025 Paul Wardley Davies"
 #               and is freely licensed under the GNU Lesser
 #               General Public License v3 or subsequent versions,
 #               reprinted below.
@@ -16,7 +16,7 @@ MarkMelGen (version 0.1 and later) may be distributed according to the terms of 
 
 ---
 
-Copyright (c) 2022 Paul Wardley Davies
+Copyright (c) 2025 Paul Wardley Davies
 All rights reserved
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND

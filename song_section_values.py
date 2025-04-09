@@ -8,26 +8,17 @@
 #
 # free and open-source software, Paul Wardley Davies, see MarkMelGen/license.txt
 
-# usage: song_section_values.py [-h] [-m MXLFILE]
-#
-# optional arguments:
-#   -h, --help            show this help message and exit
-#   -m MXLFILE, --music MXLFILE
-#                         music file path, relative to current working directory e.g. input/music/sectioned/music.mxl
-#                         MusicXML files are .mxl for compressed files.
-#                         The MuiscXML file must contain staff text words to identify the section start point:
-#                         'intro', 'verse', 'prechorus', 'chorus', 'solo', 'bridge', 'outro'
-#                         'In MuseScore, to create staff text choose a location by selecting a note or rest and then use the menu option Add → Text → Staff Text, or use the shortcut Ctrl+T ',
-
 # standard libraries
 import argparse
 import bisect
 from fractions import Fraction
+import glob
 import math
 import music21
 from music21 import *
 import os
 import re
+import shutil
 import sys
 
 class SongSectionValues:
@@ -54,7 +45,9 @@ class SongSectionValues:
         SongSectionValues.number_of_song_sections += 1
 
     # class instantiation automatically invokes __init__
-    def __init__(self, song_key):
+    # def __init__(self, song_key):
+    def __init__(self, song_key, config_file_path=None):
+
         """
         takes song_key
         and initialises section data
@@ -64,8 +57,11 @@ class SongSectionValues:
         SongSectionValues.song_key = song_key
 
         # set instance variable unique to each instance
+        self.config_file_path = config_file_path
         self.dur_prev = 0
         self.note_prev = None
+        self.name = None # add name attribute
+ 
 
         self.DURATION_SET = []
         self.DUR_PREV_DIFF = 0
@@ -224,26 +220,40 @@ class SongSectionValues:
 
 
     def print(self):
-        print('')
-        print('# section', self.number_of_song_sections, 'name      =', self.name)
+        output = []
+        output.append('')
+        output.append(f'# section {self.number_of_song_sections} name      = {self.name}')
 
-        truncated_section_name = truncate_section(self.name)
-        printable_name = '[song_' + truncated_section_name + ']'
-        print(printable_name)
+        # truncated_section_name = truncate_section(self.name)
+        # printable_name = f'[song_{truncated_section_name}]'
 
-        print('DURATION_SET =', self.DURATION_SET)
-        print('DUR_LEAST =', self.DUR_LEAST)
-        print('DUR_LONGEST =', self.DUR_LONGEST)
-        print('DUR_PREV_DIFF =', self.DUR_PREV_DIFF)
-        print('DUR_RATIONAL =', self.DUR_RATIONAL)
-        print('DUR_TUPLET =', self.DUR_TUPLET)
-        print('REST_NOTE_LINE_OFFSET =', self.REST_NOTE_LINE_OFFSET)
-        print('TONES_ON_KEY =', self.TONES_ON_KEY)
-        print('TONE_PREV_INTERVAL =', self.TONE_PREV_INTERVAL)
-        print('TONE_RANGE_BOTTOM =', self.TONE_RANGE_BOTTOM)
-        print('TONE_RANGE_TOP =', self.TONE_RANGE_TOP)
-        print('TONE_SCALE_SET =', self.TONE_SCALE_SET)
-        print('')
+        # Update the section header with a comment prefix
+        printable_name = get_next_section()
+        output.append(printable_name)
+
+        output.append(f'{section_prefix}DURATION_SET = {self.DURATION_SET}')
+        output.append(f'{section_prefix}DUR_LEAST = {self.DUR_LEAST}')
+        output.append(f'{section_prefix}DUR_LONGEST = {self.DUR_LONGEST}')
+        output.append(f'{section_prefix}DUR_PREV_DIFF = {self.DUR_PREV_DIFF}')
+        output.append(f'{section_prefix}DUR_RATIONAL = {self.DUR_RATIONAL}')
+        output.append(f'{section_prefix}DUR_TUPLET = {self.DUR_TUPLET}')
+        output.append(f'{section_prefix}REST_NOTE_LINE_OFFSET = {self.REST_NOTE_LINE_OFFSET}')
+        output.append(f'{section_prefix}TONES_ON_KEY = {self.TONES_ON_KEY}')
+        output.append(f'{section_prefix}TONE_PREV_INTERVAL = {self.TONE_PREV_INTERVAL}')
+        output.append(f'{section_prefix}TONE_RANGE_BOTTOM = {self.TONE_RANGE_BOTTOM}')
+        output.append(f'{section_prefix}TONE_RANGE_TOP = {self.TONE_RANGE_TOP}')
+        output.append(f'{section_prefix}TONE_SCALE_SET = {self.TONE_SCALE_SET}')
+        output.append('')
+
+        # Print to console
+        for line in output:
+            print(line)
+
+        # Append to config file if path is provided
+        if self.config_file_path:
+            with open(self.config_file_path, 'a') as f:
+                for line in output:
+                    f.write(line + '\n')
 
     def print_class_variable(self):
         print('# ------------------------------------------------------------------------------------------------------')
@@ -253,6 +263,35 @@ class SongSectionValues:
         print('# name    =', SongSectionValues.structure_by_name[:-1])
         print('# initial =', self.structure_by_name_initial)
         print('# letter  =', self.structure_by_letter)
+
+# Define the order of sections
+section_order = [
+    '[song_intro]',
+    '[song_verse]',
+    '[song_prechorus]',
+    '[song_chorus]',
+    '[song_solo]',
+    '[song_bridge]',
+    '[song_outro]'
+]
+
+# Initialize a counter to keep track of the current section
+section_counter = 0
+section_counter_total = 0
+section_prefix = ''
+
+# Function to get the next section in order
+def get_next_section():
+    global section_counter
+    global section_counter_total
+    global section_prefix
+    section_counter_total += 1
+    section = section_order[section_counter]
+    if section_counter_total > len(section_order):
+        section_prefix = '# '
+        section = section_prefix + section
+    section_counter = (section_counter + 1) % len(section_order)
+    return section
 
 def is_section(content):
     """
@@ -281,6 +320,7 @@ def truncate_section(name):
     for sec in  section_name:
         if name.lower().startswith(sec):
             return sec
+    return name  # Return the original name if no match is found
 
 
 def show_histograms(score, label):
@@ -309,47 +349,35 @@ def show_histograms(score, label):
     p.title = label + ' - graph'
     p.run()  # with defaults and proper configuration, will open graph
 
+# ...existing code...
 
-def main():
+def process_entire_song(a_song, song_key, config_file_path):
     """
-    parse command line arguments
-    read mxl
-    normalise stream
-    write normalised stream
+    Process the entire song to get the values without sections
+    """
+    song_section_values = SongSectionValues(song_key, config_file_path)
+    first_note_of_section = True
+    song_section_values.name = "entire_song"  # Set a default name for the entire song section
+    song_section_values.set_section("entire_song") # add a name for the entire song
+    for n in a_song.stripTies().flatten():
+        if type(n) == music21.note.Note:
+            if not n.duration.isGrace:
+                song_section_values.update(n, first_note_of_section)
+                if first_note_of_section:
+                    first_note_of_section = False
 
-    for each stream element
-        if time sig: read time sig
-        if text: read section name
-            if not first section:
-                song_section_values.print()
-            init SongSectionValues
-        if note: read note: song_section_values.update()
     song_section_values.print()
+
+# def process_mxl_file(mxlfile, display_graphs):
+def process_mxl_file(mxlfile, display_graphs, config_file_path):
     """
-
-    # Specify command line arguments.
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--mxlfile',
-                        help='music file path, relative to current working directory e.g. input/music/sectioned/music.mxl '
-                            '(MusicXML files with the extension .mxl are compressed files). '
-                            'The MusicXML file must contain staff text words at the section start note: '
-                            'INTRO, VERSE, PRECHORUS, CHORUS, SOLO, BRIDGE or OUTRO. '
-                            'In MuseScore, to create staff text: select section start note and then use the menu option Add → Text → Staff Text, or use the shortcut Ctrl+T. ',
-                        default='',
-                        type=str)
-
-    # print the help message only if no arguments are supplied on the command line
-    if len(sys.argv) == 1:
-        parser.print_help(sys.stderr)
-        sys.exit(1)
-
-    # Parse command line arguments.
-    args = parser.parse_args()
+    Process a single mxl file
+    """
     print('')
-    print("mxlfile fully qualified      :", args.mxlfile)
+    print("mxlfile fully qualified      :", mxlfile)
 
     # read mxl
-    a_song = music21.converter.parse(args.mxlfile)
+    a_song = music21.converter.parse(mxlfile)
     # a_song.show('text')
 
     # normalise stream
@@ -379,20 +407,21 @@ def main():
 
     # a_song.show('text')
 
-    # remove file extension from filename, normalise filename and add file extension
-    mxlfile_basename = os.path.basename(args.mxlfile)
-    mxlfile_normalised_name = os.path.splitext(mxlfile_basename)[0] + '_in_C.mxl'
+    # Remove the following lines to avoid writing the normalized stream to a file
+    # # remove file extension from filename, normalise filename and add file extension
+    # mxlfile_basename = os.path.basename(mxlfile)
+    # mxlfile_normalised_name = os.path.splitext(mxlfile_basename)[0] + '_in_C.mxl'
 
-    # get path without filename e.g.
-    # 1. blank if no path (file in cwd) mxlfile_path               :
-    # 2. if has path                    mxlfile_path               : private/input/music/sectioned
-    mxlfile_path = os.path.dirname(args.mxlfile)
-    # print("mxlfile_path                 :", mxlfile_path)
-    mxlfile_normalised_name_path = os.curdir + os.sep + mxlfile_path + os.sep + mxlfile_normalised_name
-    print("mxlfile_normalised_output      :", mxlfile_normalised_name_path)
+    # # get path without filename e.g.
+    # # 1. blank if no path (file in cwd) mxlfile_path               :
+    # # 2. if has path                    mxlfile_path               : private/input/music/sectioned
+    # mxlfile_path = os.path.dirname(mxlfile)
+    # # print("mxlfile_path                 :", mxlfile_path)
+    # mxlfile_normalised_name_path = os.curdir + os.sep + mxlfile_path + os.sep + mxlfile_normalised_name
+    # print("mxlfile_normalised_output      :", mxlfile_normalised_name_path)
 
-    # write normalised stream
-    a_song.write(fp=mxlfile_normalised_name_path) # write normalised score to musicxml file
+    # # write normalised stream
+    # a_song.write(fp=mxlfile_normalised_name_path) # write normalised score to musicxml file
 
     print('Reading mxlfile_normalised...')
     print('Looking for sections: intro, verse, prechorus, chorus, solo, bridge, or outro... ')
@@ -402,63 +431,36 @@ def main():
     first_note_of_section = True
     songTimeSig = None
 
-    song_section_values = SongSectionValues(song_key)
+    # song_section_values = SongSectionValues(song_key)
+    song_section_values = SongSectionValues(song_key, config_file_path)
+
 
     # for each element in stream
-    for n in a_song.flat:
+    for n in a_song.stripTies().flatten():
 
         if type(n) == music21.meter.TimeSignature:
             song_section_values.set_time_sig(n)
 
-            # get the time signatures
-            # first = True
-            # for tSig in a_song.getTimeSignatures():
-            #     if first:
-            #         songTimeSig = tSig
-                    # print('First Time Signature:',
-                    #       songTimeSig)  # eg First Time Signature: <music21.meter.TimeSignature 4/4>
-                    # ts = songTimeSig  # first time signature
-                    # print('Time signature numerator =', ts.numerator, ' denominator =', ts.denominator, ' beatCount',
-                    #       ts.beatCount)
-                    # found_time_signature = True
-                    # song_section_values.set_time_sig(songTimeSig)
-                    # first = False
-                # else:
-                #     print('Other Time Signature:', tSig)
-
         if type(n) == music21.expressions.TextExpression:
-            # print('music21.expressions.TextExpression')
             if is_section(n.content):
                 first_note_of_section = True
                 if first_section_found:
                     song_section_values.print()
 
-                # if found_time_signature:
-                #     song_section_values = SongSectionValues(song_key, songTimeSig)
-                song_section_values = SongSectionValues(song_key)
-
-                # else:
-                #     print('exit: Error, edit mxl and insert Time Signature before first section name')
-                #     sys.exit()
-                #     #song_section_values = SongSectionValues(song_key, songTimeSig)
-                #     pass
-
+                # song_section_values = SongSectionValues(song_key)
+                song_section_values = SongSectionValues(song_key, config_file_path)
                 song_section_values.set_section(n.content)
 
                 if not first_section_found:
                     first_section_found = True
 
-        # if note: update song_section_values
         if type(n) == music21.note.Note:
-            # if type(n) != music21.note.Rest:
             if not n.duration.isGrace:
                 song_section_values.update(n, first_note_of_section)
                 if first_note_of_section == True: first_note_of_section = False
 
-    # print data for last section
     if first_section_found:
         song_section_values.print()
-    # if (number_of_sections_found) == 0:
     if not first_section_found:
         print('')
         print('Warning: Error number_of_sections_found = 0 ##########################################################')
@@ -468,13 +470,120 @@ def main():
         print('intro, verse, prechorus, chorus, solo, bridge or outro. ')
         print('In MuseScore, to create staff text choose a location by selecting a note or rest and then use the menu option Add → Text → Staff Text, or use the shortcut Ctrl+T.')
 
+        # Process the entire song if no sections are found
+        process_entire_song(a_song, song_key, config_file_path)
+
     else:
         song_section_values.print_class_variable()
 
-    # show graphs
-    label = 'Input ' + mxlfile_normalised_name
-    show_histograms(a_song, label)
+    if display_graphs:
+        # label = 'Input ' + mxlfile_normalised_name
+        label = 'Input ' + mxlfile
+        show_histograms(a_song, label)
+
+def copy_and_rename_config(base_dir, conf_dir, directory=None, mxlfile=None):
+    # Determine the new config filename
+    if directory:
+        new_conf_filename = f"{os.path.basename(directory)}.conf"
+    elif mxlfile:
+        new_conf_filename = f"{os.path.splitext(os.path.basename(mxlfile))[0]}.conf"
+    else:
+        print("Error: Either directory or mxlfile must be provided.")
+        sys.exit(1)
+
+    # Paths
+    base_conf_path = os.path.join(base_dir, "MarkMelGen.conf")
+    new_conf_path = os.path.join(conf_dir, new_conf_filename)
+
+    # Copy and rename the config file
+    try:
+        shutil.copy(base_conf_path, new_conf_path)
+        print(f"Copied and renamed config file to {new_conf_path}")
+    except Exception as e:
+        print(f"Error copying and renaming config file: {e}")
+        sys.exit(1)
+
+    # Delete lines from [song_intro] to the end of the file
+    try:
+        with open(new_conf_path, 'r') as file:
+            lines = file.readlines()
+
+        with open(new_conf_path, 'w') as file:
+            for line in lines:
+                if line.strip() == "[song_intro]":
+                    break
+                file.write(line)
+        print(f"Deleted lines from [song_intro] to the end of the file in {new_conf_path}")
+    except Exception as e:
+        print(f"Error deleting lines from [song_intro] to the end of the file: {e}")
+        sys.exit(1)
+
+    return new_conf_path
+
+
+def main():
+    """
+    parse command line arguments
+    read mxl or directory of mxl files
+    normalise stream
+    write normalised stream
+    process each file
+    """
+
+    # Specify command line arguments.
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--mxlfile',
+                        help='music file path, relative to current working directory e.g. input/music/sectioned/music.mxl '
+                            '(MusicXML files with the extension .mxl are compressed files). '
+                            'The MusicXML file must contain staff text words at the section start note: '
+                            'INTRO, VERSE, PRECHORUS, CHORUS, SOLO, BRIDGE or OUTRO. '
+                            'In MuseScore, to create staff text: select section start note and then use the menu option Add → Text → Staff Text, or use the shortcut Ctrl+T. ',
+                        default='',
+                        type=str)
+    parser.add_argument('-d', '--directory',
+                        help='directory containing music files with the extension .mxl',
+                        default='',
+                        type=str)
+    parser.add_argument('--display-graphs', 
+                        help='Display graphs (i.e. call show_histograms)', 
+                        action='store_true')
+
+    # print the help message only if no arguments are supplied on the command line
+    if len(sys.argv) == 1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
+
+    # Parse command line arguments.
+    args = parser.parse_args()
+
+    
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    conf_dir = os.path.join(base_dir, "conf")
+
+    # Ensure the conf directory exists
+    if not os.path.exists(conf_dir):
+        os.makedirs(conf_dir)
+
+    # Copy and rename the config file
+    new_conf_path = copy_and_rename_config(base_dir, conf_dir, args.directory, args.mxlfile)
+
+
+    if args.mxlfile:
+        process_mxl_file(args.mxlfile, args.display_graphs, new_conf_path)
+    elif args.directory:
+        mxl_files = glob.glob(os.path.join(args.directory, '*.mxl'))
+        num_sections = len(section_order)
+        num_files = len(mxl_files)
+
+        # Duplicate files if there are not enough to fill the sections
+        if num_files < num_sections:
+            mxl_files = (mxl_files * (num_sections // num_files + 1))[:num_sections]
+
+        for mxlfile in mxl_files:
+            process_mxl_file(mxlfile, args.display_graphs, new_conf_path)
+    else:
+        print("Error: Please provide either a music file or a directory containing music files.")
+        sys.exit(1)
 
 if __name__ == '__main__':
-
     main()

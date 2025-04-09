@@ -4,8 +4,8 @@ echo MarkMelGen default run.
 echo.   
 echo When you are finished running MarkMelGen: 
 echo.  
-echo Close MuseScore and 
-echo on taskbar right click on Photos and Close all windows.
+echo Close MuseScore  
 echo.  
 pause Press a key to continue...
-python MarkMelGen.py
+python MarkMelGen.py -c conf/v2.0.0/classical_classical_2.conf
+

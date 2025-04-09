@@ -90,10 +90,9 @@ def main():
             # print('-s found so no score. i.e. override DISPLAY_SCORE = False')
             program_arguments = program_arguments + '-s '
 
-    program_fully_qualified = "python MarkMelGen.py" + program_arguments
-    if platform.system() == 'Linux':
-        # print('Linux')
-        program_fully_qualified = "python3 MarkMelGen.py" + program_arguments
+    program_fully_qualified = "python3 MarkMelGen.py" + program_arguments
+    if "Windows" in platform.system():        
+        program_fully_qualified = "python MarkMelGen.py" + program_arguments
         
     # print('program_fully_qualified', program_fully_qualified)
 
