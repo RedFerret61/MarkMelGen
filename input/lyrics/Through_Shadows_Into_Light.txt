@@ -1,0 +1,50 @@
+INTRO
+1 2 3 4 5 6 
+1 2 3 4	5 6  							    # 	copy(intro,1)
+
+VERSE 1
+I set my feet up-on the road,				# 8 syllables
+Not know-ing where it bends.				# 6 syllables
+The whis-pers call from days un-known,		#   copy(verse,1)
+Where si-lence nev-er ends.					#   copy(verse,2)
+
+VERSE 2
+The past be-hind, a dis-tant haze,			# 8 syllables
+Its echoes pull me back again.				# 6 syllables
+I chase the dawn through end-less ways,		#   copy(verse,1)
+And walk the sun-lit track.					#   copy(verse,2)
+
+CHORUS 1
+Through sha-dows, in-to light,				# 6 syllables
+I chase the day, I leave the night.			# 8 syllables
+Eve-ry step, a tale un-told,				# 7 syllables
+A wea-ry heart, a hand to hold.				#   copy(chorus,2)
+
+SOLO                                        # invert more recognisable than reverse, and reverse more recognisable than reverse invert
+1 2 3 4 5 6 7 
+1 2 3 4 5 6 7               		        #   invert(solo, 1, G4)
+
+VERSE 3
+The ri-ver knows the path it takes,			# 8 syllables
+Yet ne-ver stays the same.					# 6 syllables
+I wan-der too, through my mis-takes,		#   copy(verse,1)
+Yet still, I know my name.					#   copy(verse,2)
+
+BRIDGE 1
+The stars will fade, the sky will turn,		# 8 syllables
+The dark will lose its hold.				# 6 syllables
+And though the night still bids me learn,	#   copy(bridge,1)
+I'll walk the road I chose.					#   copy(bridge,2)
+
+CHORUS 2
+Through sha-dows, in-to light,				# 6 syllables
+I chase the day, I leave the night.			# 8 syllables
+Eve-ry step, a tale un-told,				# 7 syllables
+No lon-ger lost, but mov-ing bold.			#   copy(chorus,2)
+
+OUTRO 1
+1 2 3 4	5 6								    # 	
+1 2 3 4 5 6								    # 	transpose(outro,1,-2)
+1 2 3 4 5 6								    # 	transpose(outro,1,-4)
+1 2 3 4	5 6 							    # 	transpose(outro,1,-8)
+

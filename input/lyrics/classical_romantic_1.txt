@@ -1,0 +1,68 @@
+# classical_romantic_1
+
+INTRO
+He walks a-lone through mis-ty streets			# 8 syllables
+A dream-er lost in nights so sweet				# 	reverse(intro,1)	
+A heart that beats for love so true				# 8 syllables
+A soul that longs for skies so blue				# 	reverse(intro,3)
+
+VERSE 1
+He writes his name in old love notes			# 8 syllables
+A wan-der-er in tales he wrote					# 	copy(verse,1)
+The world spins fast, but he stays still		# 8 syllables
+He waits for fate, he bends his will			# 	copy(verse,3)
+
+PRECHORUS
+He sings to stars that light the sea			# 8 syllables
+A heart be-tween a dream and free				# 	transpose(prechorus,1,3)
+
+CHORUS
+Oh, love, it calls him through the night		# 8 syllables
+He walks through fire, he walks through light	# 	copy(chorus,1)
+A clas-sic heart, a dream-er's way				# 	copy(chorus,1)
+He'll chase the dawn, he'll chase the day		# 	copy(chorus,1)
+
+VERSE 2
+He tells his sto-ries through the rain			# 8,8,8,8 syllables
+A soul un-bowed, yet touched by pain			# 
+He loves like po-ets wrote be-fore				# 
+A man who seeks, but asks no more				# 
+
+PRECHORUS
+He sings to stars that light the sea			# 8,8 syllables
+A heart be-tween a dream and free				# 
+
+CHORUS
+Oh, love, it calls him through the night		# 8,8,8,8 syllables
+He walks through fire, he walks through light	# 
+A clas-sic heart, a dream-er's way				# 
+He'll chase the dawn, he'll chase the day		# 
+
+SOLO
+1 2 3 4 5 6 7 8									# 8 syllables
+1 2 3 4 5 6 7 8									# 	reverse(solo,1)
+
+BRIDGE
+Time moves on, but he stands tall				# 8 syllables
+Still be-liev-ing, through it all				# 	copy(bridge, 1)
+
+VERSE 3
+A let-ter left on win-dow panes					# 8,8,8,8 syllables
+A dream that nev-er fades or wanes				# 
+He waits be-neath the moon-lit sky				# 
+For love to find him by and by					# 
+
+PRECHORUS
+He sings to stars that light the sea			# 8,8 syllables
+A heart be-tween a dream and free				# 
+
+CHORUS
+Oh, love, it calls him through the night		# 8,8,8,8 syllables
+He walks through fire, he walks through light	# 
+A clas-sic heart, a dream-er's way				# 
+He'll chase the dawn, he'll chase the day		# 
+
+OUTRO
+A soul who loves in end-less time				# 8 syllables
+A heart that waits for love to climb			# 	reverse(outro,1)
+

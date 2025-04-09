@@ -1,0 +1,77 @@
+# Eastbound in the Heat
+
+INTRO                                   
+Wheels roll slow-ly down the line       # 7
+Leav-ing all the clouds be-hind         # 	reverse(intro,1)
+Sun climbs up and starts to shine       # 	copy(intro,1)
+Gold-en rays like liq-uid wine         	# 	transpose(intro,2,-2)
+
+VERSE 1
+We drive East to chase the sun         	# 7
+Run from storms and col-der run        	# 7
+Win-ter winds have had their fun       	# 	copy(verse,1)
+Now it's time for burn-ing tongues     	# 	reverse(verse,2)
+
+PRECHORUS
+Heat ris-es from the tar          		# 7
+Sweat like a sin-ner's scar       		# 	transpose(prechorus,1,2)
+
+CHORUS
+Hot as an ov-en now       				# 6
+Feel it on ev-'ry brow      			# 	copy(chorus,1)
+Sun laughs at all be-low    			# 6
+Turn up the ra-di-o        				# 	copy(chorus,3)
+
+VERSE 2
+Dust kicks up be-hind our tires      # 9
+Rag-ing like some lost de-sires      # 9
+Heat waves dance on roads un-tamed   # 9
+Burn-ing bright in flam-ing frames   # 9
+
+PRECHORUS
+Heat ris-es from the tar          # 7
+Sweat like a sin-ner's scar       # 7
+
+CHORUS
+Hot as an ov-en now         # 6,6,6,6
+Feel it on ev-'ry brow      # 
+Sun laughs at all be-low    # 
+Turn up the ra-di-o         # 
+
+SOLO
+1 2 3 4 5 6 7							#	copy(intro,1)
+1 2 3 4	5 6 7					        # 	reverse(intro,1)
+
+BRIDGE
+The sun looks down on the peo-ple be-low            # 10,10,10,10
+They are drip-pin' with sweat, mov-in' so slow      # 	transpose(bridge,1,-3)
+Sur-pri-sing wea-ther greets me each morn-in'       # 
+Gold light pours down, with no signs of war-nin'    # 	transpose(bridge,1,3)
+
+VERSE 3
+Moon-rise finds us by the sea       # 9
+Breez-es hum through palm leaf trees    # 9
+Warm night air holds me so tight     # 9
+Flick-er-ing like camp-fire light    # 9
+
+PRECHORUS
+Heat ris-es from the tar          # 7
+Sweat like a sin-ner's scar       # 7
+
+CHORUS
+Hot as an ov-en now         # 6,6,6,6
+Feel it on ev-'ry brow      # 
+Sun laughs at all be-low    # 
+Turn up the ra-di-o         # 
+
+CHORUS
+Hot as an ov-en now         # 6,6,6,6
+Feel it on ev-'ry brow      # 
+Sun laughs at all be-low    # 
+Turn up the ra-di-o         # 
+
+OUTRO
+Wheels roll slow-ly down the line       # copy(intro,1)
+Leav-ing all the clouds be-hind         # copy(intro,2)
+Sun climbs up and starts to shine       # copy(intro,3)
+Gold-en rays like liq-uid wine          # copy(intro,4)

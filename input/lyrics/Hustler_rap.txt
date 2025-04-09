@@ -1,0 +1,77 @@
+# Hustler_rap
+
+INTRO
+Hus-tlers move, we ne-ver rest			    # 7 syl-la-bles
+Side gigs stack, I make it best			    # reverse(intro,1)
+Clock-in late but cash still flows			# copy(intro,1)
+Flip that stack, watch how it grows			# reverse(intro,1)
+
+VERSE 1
+Dawn to dusk, I'm on the grind			    # 7 syl-la-bles
+Nine-to-five then cash on-line			    # copy(verse,1)
+Sell-ing beats and flip-ping kicks			# 7 syl-la-bles
+Code by night, make mon-ey quick			# copy(verse,3)
+
+PRECHORUS
+Move that weight, no time to stall			# 7 syl-la-bles
+Hus-tle hard, I want it all			        # transpose(prechorus,1, 2)
+Stack it up and count it twice			    # 7 syl-la-bles
+Ev-'ry play, I'm roll-ing dice			    # transpose(prechorus,3, 2)
+
+CHORUS
+Hus-tle, grind, stack that dough		    # 6,6,7,7 syl-la-bles
+Ev-'ry move, watch it grow			        # copy(chorus,1)
+Mul-ti-ple streams, stay-ing paid			# 
+I Built this all, I'm self-made			    # copy(chorus,3)
+
+VERSE 2
+Drop-ships move, I'm on the net		        # 7 syl-la-bles
+Pro-fits rise, ain't seen 'em yet			# 7 syl-la-bles
+Stocks and coins, I flip them fast			# 7 syl-la-bles
+Le-gend grows, I'm built to last			# 7 syl-la-bles
+
+PRECHORUS 1
+Move that weight, no time to stall			# 7 syl-la-bles
+Hus-tle hard, I want it all			        # 7 syl-la-bles
+Stack it up and count it twice			    # 7 syl-la-bles
+Ev-'ry play, I'm roll-ing dice			    # 7 syl-la-bles
+
+CHORUS
+Hus-tle, grind, stack that dough		    # 6 syl-la-bles
+Ev-'ry move, watch it grow			        # 6 syl-la-bles
+Mul-ti-ple streams, stay-ing paid			# 7 syl-la-bles
+I Built this all, I'm self-made			    # 7 syl-la-bles
+
+SOLO                                         # invert more recognisable than reverse, and reverse more recognisable than reverse invert
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8                             # invert(solo, 1, C5)                         
+
+BRIDGE
+Late nights, dream-ing 'bout the cash		# 7 syl-la-bles
+Fast life, nev-er com-ing last			    # copy(bridge, 1)
+Chain so bright, my fu-ture's set			# reverse(bridge, 1)
+No re-grets, just cut the check			    # copy(bridge, 3)
+
+VERSE 3
+Ev-'ry plan gon' turn to gold			    # 7 syl-la-bles
+What's the risk? The game is bold			# 7 syl-la-bles
+Count my wins, they nev-er end			    # 7 syl-la-bles
+Flip that grind, then do a-gain			    # 7 syl-la-bles
+
+PRECHORUS 2
+Move that weight, no time to stall			# 7 syl-la-bles
+Hus-tle hard, I want it all			        # 7 syl-la-bles
+Stack it up and count it twice			    # 7 syl-la-bles
+Ev-'ry play, I'm roll-ing dice			    # 7 syl-la-bles
+
+CHORUS
+Hus-tle, grind, stack that dough		    # 6 syl-la-bles
+Ev-'ry move, watch it grow			        # 6 syl-la-bles
+Mul-ti-ple streams, stay-ing paid			# 7 syl-la-bles
+I Built this all, I'm self-made			    # 7 syl-la-bles
+
+OUTRO
+Cash keeps flow-ing, on my way			    # copy(intro,1)
+Ne-ver broke, I found the way		    	# copy(intro,2)
+Hus-tle big, no look-ing back			    # copy(intro,3)
+Count the wins, I stay on track			    # copy(intro,4)

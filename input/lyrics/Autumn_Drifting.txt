@@ -1,0 +1,79 @@
+# Autumn_Drifting
+
+INTRO
+Drift-ing down the road     					# 5 syllables
+Gold-en leaves un-fold    						# 5 syllables
+
+VERSE 1
+Sun-light fil-ter-ing through the trees  		# 8, 8, 7, 7  syllables
+Wind is danc-ing with fall-en leaves  			# 	copy(verse,1)
+Old maps torn, soft in our hands  			    # 7 syllables
+Seek-ing warmth in un-known lands  				# 	copy(verse,3)
+
+PRECHORUS
+No more grey skies   							# 4 syllables
+No more cold nights   							# 	transpose(prechorus,1,3)
+We keep mov-ing   								# 4 syllables
+Chas-ing sun-light   							# 	transpose(prechorus,1,-6)
+
+CHORUS
+Roll-ing south  								# 4 syllables
+Through the breeze  							# 	copy(chorus,1)
+Bound for warmth  								# 	copy(chorus,1)
+Aut-umn dreams  								#   transpose(chorus,1,3)
+
+VERSE 2
+Crack-ing roads like veins on a leaf  			# 8,8,7,7 syllables
+Red and or-ange hues paint the streets  		# 
+The air hums with sum-mer's ghost  				# 
+We move on, we love the most  					# 
+
+PRECHORUS
+No more grey skies   							# 4 syllables
+No more cold nights   							# 4 syllables
+We keep mov-ing   								# 4 syllables
+Chas-ing sun-light   							# 4 syllables
+
+CHORUS
+Roll-ing south  								# 4 syllables
+Through the breeze  							# 4 syllables
+Bound for warmth  								# 4 syllables
+Aut-umn dreams  								# 4 syllables
+
+SOLO
+1 2 3 4 5 										# 	copy(intro,1)
+1 2 3 4 5 										# 	copy(intro,2)
+
+BRIDGE
+The Mist-cov-ered land-scapes fade from our view    # 10,10,8,8 syllables
+The Days grow short-er, but our hearts are new      # 	transpose(bridge, 1, 5)
+No mat-ter winds, fol-low the light  	            # 	
+Hand in hand, through this end-less flight  	    # 	transpose(bridge, 3, 4)
+
+VERSE 3
+Ra-di-o hums a soft re-frain  					# 8,8,7,7 syllables
+Mem-o-ries fall just like the rain  			# 
+We hold on, a life so free  					# 
+On the road, just you and me  					# 
+
+PRECHORUS
+No more grey skies   							# 4 syllables
+No more cold nights   							# 4 syllables
+We keep mov-ing   								# 4 syllables
+Chas-ing sun-light   							# 4 syllables
+
+CHORUS
+Roll-ing south  								# 4 syllables
+Through the breeze  							# 4 syllables
+Bound for warmth  								# 4 syllables
+Aut-umn dreams  								# 4 syllables
+
+CHORUS
+Roll-ing south  								# 4 syllables
+Through the breeze  							# 4 syllables
+Bound for warmth  								# 4 syllables
+Aut-umn dreams  								# 4 syllables
+
+OUTRO
+Drift-ing down the road   						# 	copy(intro,1)
+Gold-en leaves un-fold   						# 	copy(intro,2)

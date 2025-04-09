@@ -1,0 +1,77 @@
+# Rollin North - Springs Rebirth
+
+INTRO
+1 2 3 4 5 6
+1 2 3 4 5 6									                        # 	reverse(intro,1)
+
+VERSE 1
+The sky back home is a dull gray sheet han-gin low 				# AABBA 12,12,8,8,12 syllables
+Bags are packed, so these old bones have some room to grow 	    # 	copy(verse,1)
+The Wheels hum stea-dy, hea-ter groans 							# 
+Spring is up where the wild wind blows 				            #   copy(verse,3)
+And e-ver-green pines stand tall where the cold streams flow    # 	copy(verse,1)
+
+PRECHORUS
+Steel and rust 														# 3,4,4,4 syllables
+Our trus-ty frame 													# 4
+Ain't run-nin' from 												# 	copy(prechorus,2)
+Just cha-sin' change 												#  	copy(prechorus,2)
+
+CHORUS
+North we ride 														# 3
+Through the thaw 													# 	transpose(chorus,1, -3)
+No more gray 														# 	transpose(chorus,1, 3)
+Just spring's raw law 												# 4
+
+VERSE 2
+Like a seed cracked o-pen when frost fi-nal-ly breaks           # AABBA 12,12,8,8,12 syllables
+And this old rig creaks but it's got just what it takes         # 
+Mud-sprayed win-dows, ra-di-o's whine                           # 
+Sun's dif-fer-ent, daff-o-dils climb                            #
+And the pur-ple hills shake off win-ter's tired old grime       # 
+
+PRECHORUS
+Steel and rust          # 3
+Our tru-sty frame       # 4
+Ain't run-nin' from     # 4
+Just cha-sin' change    # 4
+
+CHORUS
+North we ride # 3
+Through the thaw # 2
+No more gray # 3
+Just spring's raw law # 4
+
+SOLO
+1 2 3 4 5 6
+1 2 3 4 5 6									                        # 	reverse(intro,1)
+
+BRIDGE
+Ain't no moun-tain we ain't crawled up slo-ow 						# 10, 12, 10, 12
+Like sap in the ma-ple, we rise up with the road 					# 
+Yeah, the years got weight, but the wheels still turn 				# 	copy(bridge, 1)
+And the fire in our hearts? Hell, it's star-tin' to burn 			# 	copy(bridge, 2)
+
+VERSE 3
+The grey clouds back home can keep their ti-red old song            # AABBA 12,12,8,8,12 syllables
+We are fol-low-in' wild geese where the spring runs long            # 
+Ti-res whis-per, our eng-ine prays                                  # 
+The road's our church,  the dawn our grace                          # 
+And ev-er-y mile's a wrin-kle time won't e-rase                     # 
+
+PRECHORUS
+Steel and rust          # 3
+Our tru-sty frame       # 4
+Ain't run-nin' from     # 4
+Just cha-sin' change    # 4
+
+CHORUS (x2)
+North we ride # 3
+Through the thaw # 2
+No more gray # 3
+Just spring's raw law # 4
+
+OUTRO
+1 2 3 4 5 6
+1 2 3 4 5 6									                        # 	reverse(intro,1)
+

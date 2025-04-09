@@ -1,0 +1,76 @@
+# Dust_and_Starlight
+
+INTRO
+1 2 3 4 5
+1 2 3 4	5									# copy(intro,1)
+
+VERSE 1
+The sky here burns a dif-fer-ent blue, 		# 9,4,9,4 syllables
+No earth-ly hue. 							# 4 syllables
+The stars do not twin-kle, they just stare, # 	copy(verse,1)
+So cold and bare. 							# 	copy(verse,2)
+
+PRECHORUS
+I miss the rain, 							# 4,4,4,4 syllables
+Your laugh-ter's tune, 						# 	transpose(prechorus,1,-2)
+This crat-er's womb 						# 	transpose(prechorus,1,-3)
+Feels like a tomb. 							# 	transpose(prechorus,1,-4)
+
+CHORUS
+Oh, love, are you lis-ten-ing? 				# 7,3,3,3 syllables
+I'm just dust, 								# 3 syllables
+I still trust 							    # 	transpose(chorus,2, 5)
+You're my light. 							# 	copy(chorus,2)
+
+VERSE 2
+I plant-ed some seeds from home last spring, 	# 9,4,9,4  syllables
+They won't take wing. 						    #
+The ground's too salt-y, the air's too thin, 	#
+Noth-ing is in. 								#
+
+PRECHORUS
+Ra-di-o's dead, 							# 4,4,4,4 syllables
+No sig-nal left, 							#
+Just ghosts and steps, 						# 
+And my last breath. 						#
+
+CHORUS
+Oh, love, are you lis-ten-ing? 				# 7,3,3,3 syllables
+I'm just dust, 								#
+I still trust 							    #
+You're my light. 							#
+
+SOLO
+1 2 3 5 6 7
+
+BRIDGE
+Some-day they'll find this bro-ken ship and read my scrawled good-bye, 		# 14 syllables
+But to-night, I'll dream you're ly-ing be-side me in the sky.  		        #   copy(bridge, 1)
+
+VERSE 3
+The sun-set, it lasts for for-ty days, 		# 9,4,9,4 syllables
+A crim-son blaze. 							#
+I name the bright peaks for you my dear 	#
+Though you're not here. 					#
+
+PRECHORUS
+Time is a trick, 							# 4,4,4,4 syllables
+The clocks all failed, 						#
+My heart's de-railed, 						#
+But love's not frail. 						#
+
+CHORUS
+Oh, love, are you lis-ten-ing? 				# 7,3,3,3 syllables
+I'm just dust, 								#
+I still trust 							    #
+You're my light. 							#
+
+CHORUS
+Oh, love, are you lis-ten-ing? 				# 7,3,3,3 syllables
+I'm just dust, 								#
+I still trust 							    #
+You're my light. 							#
+
+OUTRO
+1 2 3 4
+1 2 3 4										# 	copy(outro,1)
