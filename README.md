@@ -1,5 +1,5 @@
 # MarkMelGen 2.0.0
-[![MarkMelGen logo](assets/images/mmg_logo_1.png)]
+![MarkMelGen logo](assets/images/mmg_logo_1.png)
 
 MarkMelGen is a Markov Melody Generation python program that 
 given lyrics and configuration data, uses melody styles to 
@@ -11,7 +11,7 @@ to develop the Markov melodies and so compose more memorable songs.
 
 MarkMelGen demonstration video for v2.0.0:
 
-[![MarkMelGen 2.0.0 video](assets/images/mmg_logo_2.png)](https://www.youtube.com/watch?v=hHcUs8nMzY0 "MarkMelGen 2.0.0 video")
+[![MarkMelGen 2.0.0 video](assets/images/youtube_MMG_2_0_0.png)](https://www.youtube.com/watch?v=hHcUs8nMzY0 "MarkMelGen 2.0.0 video")
 
 MarkMelGen demonstration video for v1.0.0:
 
@@ -401,8 +401,8 @@ The default python on Ubuntu 22.04.03 is compatible.
 
 ### Mido & showscore Ubuntu installation
 
-pip3 install mido
-pip3 install showscore
+    pip3 install mido
+    pip3 install showscore
 
 #### Install MarkMelGen on Ubuntu
  Download release zip to desired directory for MarkMelGen and unzip.
@@ -1500,4 +1500,4 @@ graph LR
 ```
 
 
-[![MarkMelGen logo](assets/images/mmg_logo_2.png)]
+![MarkMelGen logo](assets/images/mmg_logo_2.png)
