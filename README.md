@@ -24,6 +24,14 @@ cd MarkMelGen
 pip3 install -r requirements.txt
 python3 -m music21.configure
 ```
+
+Note: if 'pip3' is not recognized
+```bash
+cd MarkMelGen
+py -m pip install -r requirements.txt
+python3 -m music21.configure
+```
+
 ## Short workflow
 Run the MarkMelGen toolchain using a basic configuration file to run tools once (more details in the [mel_harm_gen repository](https://github.com/RedFerret61/mel_harm_gen)).
 
