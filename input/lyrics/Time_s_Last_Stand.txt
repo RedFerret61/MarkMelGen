@@ -1,0 +1,61 @@
+# Time_s_Last_Stand.txt
+# Time's Last Stand / In-to the Void / Rise from Ash-es
+INTRO
+The earth trem-bles be-neath our feet #
+As the final hour draws near, com-plete # transpose(intro,1,4)
+
+VERSE
+In the shad-ows of a dy-ing world #
+Where the last hopes have been unfurled # invert(verse,1,Eb4)
+Steel and con-crete rise like mon-u-ments #
+To hu-man-i-ty's last de-fi-ance # reverse(verse,3)
+
+PRECHORUS
+We are fall-ing, we are ris-ing #
+Through the dark-ness, com-pro-mis-ing # transpose(prechorus,1,-2)
+
+CHORUS
+Time's last stand a-gainst e-ter-ni-ty #
+Fight-ing for our mor-tal-i-ty # invert(chorus,1,Bb4)
+In the si-lence af-ter the storm #
+A new world waits to be born # reverse(chorus,3)
+
+VERSE
+Dreams col-lapse like burn-ing tow-ers # 7 syllables
+In these fi-nal, des-per-ate hours # transpose(verse,2,3)
+Yet from ru-ins we shall build a-gain # 8 syllables
+Hope sur-vives where an-gels fear to tread # invert(verse,4,F4)
+
+PRECHORUS
+We are fall-ing, we are ris-ing # 8 syllables
+Through the dark-ness, com-pro-mis-ing # 8 syllables
+
+CHORUS
+Time's last stand a-gainst e-ter-ni-ty # 9 syllables
+Fight-ing for our mor-tal-i-ty # 8 syllables
+In the si-lence af-ter the storm # 8 syllables
+A new world waits to be born # 7 syllables
+
+SOLO
+In the shad-ows of a dy-ing world # copy(verse,1)
+Where the last hopes have been unfurled # invert(verse,2,Eb4)
+Steel and con-crete rise like mon-u-ments # transpose(verse,3,5)
+To hu-man-i-ty's last de-fi-ance # reverse(verse,4)
+
+BRIDGE
+From the ash-es of what we knew #
+Some-thing dark-er will break through # invert(bridge,1,G4)
+No re-demp-tion, no sweet re-lease #
+On-ly war dis-guised as peace # transpose(bridge,3,-3)
+
+CHORUS
+Time's last stand a-gainst e-ter-ni-ty # 9 syllables
+Fight-ing for our mor-tal-i-ty # 8 syllables
+In the si-lence af-ter the storm # 8 syllables
+A new world waits to be born # 7 syllables
+
+OUTRO
+The earth trem-bles be-neath our feet # 8 syllables
+As the final hour draws near, com-plete # transpose(intro,2,6)
+We rise, we fall, we rise a-gain # 7 syllables
+In the end-less cy-cle with-out end # reverse(outro,3)

@@ -1,0 +1,56 @@
+# Echoes_of_Tomorrow
+# Echoes of Tomorrow / When Stars Collide / The Edge of Infinity
+
+INTRO
+In the si-lence be-fore the storm                        #
+When the world holds its breath and waits               # copy(intro,1)
+
+VERSE 1
+Through the shad-ows of what we've known                #
+Walk-ing paths that lead us home                        # copy(verse,1)
+Ev-ery foot-step writes our name                        # transpose(verse,1,+3)6gyft
+In the dust of yes-ter-day                             # copy(verse,2)
+But to-mor-row calls us forth                           # invert(verse,1,D4)
+To the light be-yond the north                          # copy(verse,4)
+
+CHORUS 1
+We are the ech-oes of to-mor-row                        #
+Ris-ing from the ash-es of our sor-row                  # copy(chorus,1)
+When the stars col-lide a-bove us                       # transpose(chorus,1,+5)
+We will find the strength to love us                    # copy(chorus,2)
+At the edge of in-fin-i-ty                             # transpose(chorus,3,-2)
+We dis-cov-er who we're meant to be                     # copy(chorus,4)
+
+VERSE 2
+In the fire of break-ing chains                         # 7,6,7,6,7,7 syllables
+Feel the thun-der in our veins                          # copy(verse,1)
+Ev-ery scar be-comes a crown                            # transpose(verse,1,+3)
+Lift-ing spir-its from the ground                       # copy(verse,2)
+Through the dark-ness we will soar                      # invert(verse,1,D4)
+To the light worth fight-ing for                        # copy(verse,4)
+
+CHORUS 2
+We are the ech-oes of to-mor-row                        # 9,10,7,8,7,10 syllables
+Ris-ing from the ash-es of our sor-row                  # copy(chorus,1)
+When the stars col-lide a-bove us                       # transpose(chorus,1,+5)
+We will find the strength to love us                    # copy(chorus,2)
+At the edge of in-fin-i-ty                             # transpose(chorus,3,-2)
+We dis-cov-er who we're meant to be                     # copy(chorus,4)
+
+BRIDGE
+Time un-folds like gold-en wings                        #
+Car-ry-ing our whis-pered dreams                        # copy(bridge,1)
+Through the void where hope takes flight                # transpose(bridge,1,+4)
+Turn-ing dark-ness in-to light                          # copy(bridge,2)
+
+CHORUS 3
+We are the ech-oes of to-mor-row                        # 9,10,7,8,7,10 syllables
+Ris-ing from the ash-es of our sor-row                  # copy(chorus,1)
+When the stars col-lide a-bove us                       # transpose(chorus,1,+5)
+We will find the strength to love us                    # copy(chorus,2)
+At the edge of in-fin-i-ty                             # transpose(chorus,3,-2)
+We dis-cov-er who we're meant to be                     # copy(chorus,4)
+
+OUTRO
+In the si-lence af-ter the storm                        # transpose(intro,1,+3)
+When the world ex-hales and dreams                      # copy(intro,1)

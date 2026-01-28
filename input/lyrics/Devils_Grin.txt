@@ -1,0 +1,80 @@
+# Devils_Grin
+# Concrete Jungle Blues / Devil's Grin / Whiskey Bent Highway
+
+INTRO  
+(E-lec-tric-gui-tar-cuts-the-night-air)                       #  
+(Like-a-sharp-raz-or-on-a-stone-stair)                       # transpose(intro,1,+2)  
+
+VERSE 1  
+Street-light-sweat-on-the-bro-ken-glass                      #  
+Scar-let-slip-show-in'-as-she-walked-on-past                  # transpose(verse,1,+3)  
+Got-that-devil's-grin-a-twist-in-her-strut                   # invert(verse,1,C4)  
+Said-"Hey-dar-lin'-ain-t-your-kind-of-cut?"                  # transpose(verse,2,-2)  
+Smell-of-cheap-per-fume-and-old-booze                         # copy(verse,3)  
+Got-noth-in'-left-in-side-to-lose                             # transpose(verse,4,+4)  
+
+PRECHORUS 1  
+She-said-"Life's-a-dice-roll-ba-by-just-throw-em"            #  
+"Down-in-the-gut-ter-where-the-lonely-go-em"                  # invert(verse,5,D4)  
+"Feel-that-heat-start-in-to-build?"                          # transpose(prechorus,2,-5)  
+"Come-on-take-what-I-can-give?"                              # transpose(verse,6,+2)  
+
+CHORUS 1  
+Oh-yeah-she-got-me-mov-in'-like-a-shot-gun-blast              #  
+Con-crete-jun-gle-blues-got-me-mov-in'-fast                   # transpose(chorus,1,+4)  
+Ain-t-no-saint-just-a-bad-de-cision                           # invert(verse,3,E4)  
+Burn-in'-up-on-her-fu-eled-am-bi-tion                         # transpose(chorus,2,-3)  
+Yeah-she-got-that-de-vil's-grin                               # copy(prechorus,4)  
+Pull-in'-me-right-back-in-a-gain                              # invert(chorus,4,A4)  
+
+VERSE 2  
+Back-room-rhum-ba-where-the-shad-ows-dance                    #  
+Lost-my-watch-and-my-last-good-chance                         # copy(verse,2)  
+Whis-key-words-slurr-in'-soft-and-low                         # transpose(verse,5,+2)  
+Told-me-pla-ces-I-did-n't-wan-na-go                           # invert(verse,6,F4)  
+Fin-gers-trail-in'-like-cig-a-rette-smoke                     # copy(verse,3)  
+Prome-is-es-made-to-be-broke                                  # transpose(verse,4,-3)  
+
+PRECHORUS 2  
+She-said-"For-get-the-morn-in'-aft-er-pains"                  #  
+"Let-the-city-wash-a-way-the-stains"                          # transpose(prechorus,1,+2)  
+"Feel-that-rhy-thm-tak-in'-hold?"                            # copy(prechorus,3)  
+"Trade-your-soul-for-my-street-gold?"                         # transpose(prechorus,4,-4)  
+
+CHORUS 2  
+Oh-yeah-she-got-me-mov-in'-like-a-shot-gun-blast              # 10,9,8,8,6,7 syllables  
+Con-crete-jun-gle-blues-got-me-mov-in'-fast                   # copy(chorus,2)  
+Ain-t-no-saint-just-a-bad-de-cision                           # copy(chorus,3)  
+Burn-in'-up-on-her-fu-eled-am-bi-tion                         # copy(chorus,4)  
+Yeah-she-got-that-de-vil-s-grin                               # copy(chorus,5)  
+Pull-in'-me-right-back-in-a-gain                              # copy(chorus,6)  
+
+BRIDGE  
+(Sun-rip-pin'-through-the-blinds-like-a-knife)                #  
+(Left-me-strand-ed-in-my-own-wrecked-life)                    # invert(bridge,1,Bb4)  
+Emp-ty-bot-tle-stain-in'-the-sheet                            # transpose(verse,1,-5)  
+Noth-in'-sweet-noth-in'-sweet                                 # invert(chorus,3,G4)  
+Just-that-ech-o-in-my-skull                                   # copy(bridge,3)  
+Of-that-de-vil's-grin-so-beau-ti-ful                          # transpose(chorus,5,-4)  
+
+SOLO  
+(Oh-yeah-she-got-me-mov-in'-like-a-shot-gun-blast)            # copy(chorus,1)  
+(Con-crete-jun-gle-blues-got-me-mov-in'-fast)                 # copy(chorus,2)  
+(Ain-t-no-saint-just-a-bad-de-cision)                         # copy(chorus,3)  
+(Burn-in'-up-on-her-fu-eled-am-bi-tion)                       # copy(chorus,4)  
+(Yeah-she-got-that-de-vil-s-grin)                             # copy(chorus,5)  
+(Pull-in'-me-right-back-in-a-gain)                            # copy(chorus,6)  
+
+CHORUS 3  
+Oh-yeah-she-got-me-mov-in'-like-a-shot-gun-blast              # 10,9,8,8,6,7 syllables  
+Con-crete-jun-gle-blues-got-me-mov-in'-fast                   # copy(chorus,2)  
+Ain-t-no-saint-just-a-bad-de-cision                           # copy(chorus,3)  
+Burn-in'-up-on-her-fu-eled-am-bi-tion                         # copy(chorus,4)  
+Yeah-she-got-that-de-vil-s-grin                               # copy(chorus,5)  
+Pull-in'-me-right-back-in-a-gain                              # copy(chorus,6)  
+
+OUTRO  
+Pull-in'-me-right-back-in-a-gain...                           # transpose(chorus,6,+7)  
+(De-vil's-grin...De-vil's-grin...)                            # invert(bridge,6,G4)  
+Con-crete...jun-gle...blues...                                # copy(chorus,2)  
+(Gui-tar-feed-back-fades-to-si-lence)                         # transpose(intro,1,-5)

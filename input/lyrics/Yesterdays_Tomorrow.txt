@@ -1,0 +1,73 @@
+# Yesterdays_Tomorrow
+# Pen-ny Lane Re-vis-it-ed / Love Is All A-round / Yes-ter-day's To-mor-row
+
+INTRO
+La la la la la la la                                       #
+La la la la la la la                                       # copy(intro,1)
+
+VERSE 1
+Walk-ing down the street where mem-o-ries grow             #
+See-ing all the fac-es that I used to know                # copy(verse,1)
+Chil-dren play-ing games be-neath the oak                 # transpose(verse,1,2)
+Life's a gen-tle, sweet-ly spo-ken joke                   # copy(verse,3)
+
+PRECHORUS 1
+And the sun shines bright to-day                          #
+Wash-ing all my fears a-way                               # copy(prechorus,1)
+
+CHORUS 1
+Yes-ter-day's to-mor-row here                            #
+Danc-ing through the at-mos-phere                        # copy(chorus,1)
+Hold me close and don't let go                           # transpose(chorus,1,4)
+That's the on-ly thing I know                            # copy(chorus,3)
+
+VERSE 2
+Sit-ting by the fire-place dream-ing dreams               # 8,8,7,8 syllables
+Noth-ing's quite the way it real-ly seems
+Mu-sic box-es play their tune
+Un-der-neath the sil-ver moon
+
+PRECHORUS 2
+And the sun shines bright to-day                          # 7,7 syllables
+Wash-ing all my fears a-way
+
+CHORUS 2
+Yes-ter-day's to-mor-row here                            # 7,8,7,8 syllables
+Danc-ing through the at-mos-phere
+Hold me close and don't let go
+That's the on-ly thing I know
+
+BRIDGE 1
+When the world gets too con-fus-ing                       #
+And you feel like you're los-ing                         # copy(bridge,1)
+All the mag-ic that you knew                             # transpose(bridge,1,-3)
+Just re-mem-ber love is true                             # invert(bridge,3,G4)
+
+CHORUS 3
+Yes-ter-day's to-mor-row here                            # 7,8,7,8 syllables
+Danc-ing through the at-mos-phere
+Hold me close and don't let go
+That's the on-ly thing I know
+
+SOLO
+Walk-ing down the street where mem-o-ries grow             # copy(verse,1)
+See-ing all the fac-es that I used to know                # copy(verse,2)
+Chil-dren play-ing games be-neath the oak                 # copy(verse,3)
+Life's a gen-tle, sweet-ly spo-ken joke                   # copy(verse,4)
+
+BRIDGE 2
+When the world gets too con-fus-ing                       # 8,8,7,7 syllables
+And you feel like you're los-ing
+All the mag-ic that you knew
+Just re-mem-ber love is true
+
+CHORUS 4
+Yes-ter-day's to-mor-row here                            # 7,8,7,8 syllables
+Danc-ing through the at-mos-phere
+Hold me close and don't let go
+That's the on-ly thing I know
+
+OUTRO
+La la la la la la la                                       # copy(intro,1)
+La la la la la la la                                       # transpose(outro,1,5)
+La la la la la la la                                       # reverse(intro,1)

@@ -1,0 +1,50 @@
+# When_the_Morning_Breaks
+# Shadows in the Rain / When the Morning Breaks / Love Left Behind
+
+INTRO
+In the qui-et of the night                              #
+When the world has gone to sleep                        #
+
+VERSE 1
+I sit be-side this emp-ty win-dow                       #
+Watch-ing shad-ows dance and sway                       #
+All the mem-o-ries come flood-ing                       # copy(intro,1)
+Of the words we could-n't say                           # transpose(intro,2,-2)
+
+CHORUS 1  
+But I'm still here wait-ing for the light               #
+To break through all this end-less night                #
+Though you're gone I feel you in my heart               # transpose(verse,1,+5)
+We were meant for more than fall-ing a-part             # invert(verse,2,D4)
+
+VERSE 2
+Used to laugh un-til we cried                           # 7 syllables
+Now I cry un-til I'm numb                               # copy(verse,2)
+All the prom-is-es we whis-pered                        # transpose(verse,3,+3)
+Now they're songs that can't be sung                    # invert(verse,4,C4)
+
+CHORUS 2
+But I'm still here wait-ing for the light               # 9,8,9,10 syllables
+To break through all this end-less night                # copy(chorus,2)
+Though you're gone I feel you in my heart               # copy(chorus,3)  
+We were meant for more than fall-ing a-part             # copy(chorus,4)
+
+BRIDGE
+May-be time will heal these bro-ken dreams              #
+May-be love ain't al-ways what it seems                 # transpose(bridge,1,-1)
+But I'll hold on to what we used to be                  # copy(verse,1)
+'Til the morn-ing sets my spir-it free                  # invert(chorus,2,F4)
+
+SOLO
+In the qui-et of the night                              # copy(intro,1)
+When the world has gone to sleep                       # copy(intro,2)
+
+CHORUS 3
+But I'm still here wait-ing for the light               # 9,8,9,10 syllables
+To break through all this end-less night                # copy(chorus,2)
+Though you're gone I feel you in my heart               # copy(chorus,3)
+We were meant for more than fall-ing a-part             # copy(chorus,4)
+
+OUTRO
+In the qui-et of the night                              # copy(intro,1)
+I'll keep wait-ing for the light                        # transpose(chorus,1,+2)

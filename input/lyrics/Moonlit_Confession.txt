@@ -1,0 +1,67 @@
+# Moonlit_Confession.txt
+# Back to De-cem-ber / Tied with a Scar / Moon-lit Con-fes-sion
+
+INTRO
+Moon-light spill-ing on the floor                         #
+Still wait-ing by your door                               # copy(intro,1)
+
+VERSE 1
+I wore red and you wore doubt                             #
+Both too proud to talk it out                             # copy(verse,1)
+Late-night words we left un-said                          # transpose(verse,1,2)
+Still ring-ing in my head                                 # copy(verse,3)
+
+PRECHORUS 1
+You pulled a-way, I let you go                            #
+Now I'm lost in what I know                               # copy(prechorus,1)
+
+CHORUS 1
+This is me say-ing I'm sor-ry now                         #
+Wish-ing I could turn time a-round                        # copy(chorus,1)
+Ev-'ry tear I cried was true                              # transpose(chorus,1,4)
+Still in love with los-ing you                            # copy(chorus,3)
+
+VERSE 2
+Friends all say I should move on                          # 8,8,8,6 syllables
+But they don't know what is gone
+Pic-tures burn but mem-ories stay
+You were my one yes-ter-day
+
+PRECHORUS 2
+You pulled a-way, I let you go                            # 8,8 syllables
+Now I'm lost in what I know
+
+CHORUS 2
+This is me say-ing I'm sor-ry now                         # 8,8,8,7 syllables
+Wish-ing I could turn time a-round
+Ev-'ry tear I cried was true
+Still in love with los-ing you
+
+BRIDGE 1
+If I could take one step back in time                     #
+I'd kiss you in that sil-ly line                          # copy(bridge,1)
+Re-write ev-'ry mis-take we made                         # transpose(bridge,1,-2)
+Keep you close and nev-er fade                           # copy(bridge,3)
+
+CHORUS 3
+This is me say-ing I'm sor-ry now                         # 8,8,8,7 syllables
+Wish-ing I could turn time a-round
+Ev-'ry tear I cried was true
+Still in love with los-ing you
+
+SOLO
+I wore red and you wore doubt                             # copy(verse,1)
+Both too proud to talk it out                             # copy(verse,2)
+Late-night words we left un-said                          # copy(verse,3)
+Still ring-ing in my head                                 # copy(verse,4)
+
+CHORUS 4
+This is me say-ing I'm sor-ry now                         # 8,8,8,7 syllables
+Wish-ing I could turn time a-round
+Ev-'ry tear I cried was true
+Still in love with los-ing you
+
+OUTRO
+Moon-light spill-ing on the floor                         # copy(intro,1)
+Still wait-ing by your door                               # transpose(outro,1,3)
+Still wait-ing by your door                               # reverse(outro,2)

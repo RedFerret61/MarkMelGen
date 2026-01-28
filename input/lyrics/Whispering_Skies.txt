@@ -1,0 +1,67 @@
+# Whispering_Skies
+# Whis-per-ing Skies / When the Day Be-gins / Moon-light Me-lo-dy
+
+INTRO  
+Ooh la la la la la la                              #  
+Ooh la la la la la la                              #  
+
+VERSE 1  
+In a sun-ny morn-ing a-rise                        #  
+Like a breeze that whis-pers through the pines       #  
+I re-mem-ber the laugh-ter in your voice            # transpose(verse,1,4)  
+And my heart beats clos-er at your name              # copy(verse,3)  
+
+PRECHORUS 1  
+Let the warn-ing si-lence break a-way                #  
+Be-cause love is stir-ring in our souls              # copy(prechorus,1)  
+
+CHORUS 1  
+You and I will soar where dreams a-wake             #  
+Hold-ing fast to ev-er-last-ing hope                # copy(chorus,1)  
+Through the night we find our way a-cross           # transpose(chorus,1,5)  
+Hear the mu-sic soft-ly guide our hearts            # copy(chorus,3)  
+
+VERSE 2  
+In moon-lit gar-den flow-ers gleam                   # 8,8,8,8 syllables  
+Stars hum soft, clear in emp-ty skies  
+Lost in dreams of your soft smile  
+And hold fast to prom-is-es made  
+
+PRECHORUS 2  
+Let the warn-ing si-lence break a-way                # 9,9 syllables  
+Be-cause love is stir-ring in our souls  
+
+CHORUS 2  
+You and I will soar where dreams a-wake             # 9,9,9,9 syllables  
+Hold-ing fast to ev-er-last-ing hope  
+Through the night we find our way a-cross  
+Hear the mu-sic soft-ly guide our hearts  
+
+BRIDGE 1  
+When the world seems lost in end-less night           #  
+We-ll find a spark to turn our dark to light         # copy(bridge,1)  
+And our hearts will dance be-yond the stars          # transpose(bridge,1,-2)  
+Sing-ing songs of hope that nev-er fade a-way        # copy(bridge,3)  
+
+CHORUS 3  
+You and I will soar where dreams a-wake             # 9,9,9,9 syllables  
+Hold-ing fast to ev-er-last-ing hope  
+Through the night we find our way a-cross  
+Hear the mu-sic soft-ly guide our hearts  
+
+SOLO  
+In a sun-ny morn-ing a-rise                        # copy(verse,1)  
+Like a breeze that whis-pers through the pines       # copy(verse,2)  
+I re-mem-ber the laugh-ter in your voice            # copy(verse,3)  
+And my heart beats clos-er at your name              # copy(verse,4)  
+
+CHORUS 4  
+You and I will soar where dreams a-wake             # 9,9,9,9 syllables  
+Hold-ing fast to ev-er-last-ing hope  
+Through the night we find our way a-cross  
+Hear the mu-sic soft-ly guide our hearts  
+
+OUTRO  
+Ooh la la la la la la                              # copy(intro,1)  
+Ooh la la la la la la                              # transpose(outro,1,2)  
+Ooh la la la la la la                              # invert(outro,1,C5)

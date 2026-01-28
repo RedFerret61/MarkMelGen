@@ -1,0 +1,61 @@
+# What_a_Wonderful_Moon
+# What a Won-der-ful Moon / Hello Dol-ly Blues / When the Saints Come Swing-ing
+INTRO
+Well hel-lo there, ba-by, ain't life grand #
+With a trum-pet in my heart and love in my hand # transpose(intro,1,4)
+
+VERSE
+Down in New Or-leans where the jazz was born #
+I learned to play my horn from dusk till dawn # invert(verse,1,Bb4)
+The riv-er-boat was rock-ing to the beat #
+While all the folks were tap-ping with their feet # reverse(verse,3)
+
+PRECHORUS
+Oh yeah, oh yeah, that's what I say #
+Mu-sic makes ev-ery-thing o-kay # transpose(prechorus,1,-2)
+
+CHORUS
+What a won-der-ful world when you're by my side #
+Like a brass band march-ing full of joy and pride # invert(chorus,1,F4)
+Scat that mel-o-dy, ba-by, scat it loud #
+Make this old heart hap-py and proud # reverse(chorus,3)
+
+VERSE
+From Chi-ca-go to the Cotton Club stage # 8 syllables
+I've been play-ing jazz through ev-ery age # transpose(verse,2,3)
+Hot Five, Hot Sev-en, blow that sweet re-frain # 9 syllables
+Jazz will wash a-way all your pain # invert(verse,4,C4)
+
+PRECHORUS
+Oh yeah, oh yeah, that's what I say # 7 syllables
+Mu-sic makes ev-ery-thing o-kay # 7 syllables
+
+CHORUS
+What a won-der-ful world when you're by my side # 9 syllables
+Like a brass band march-ing full of joy and pride # 9 syllables
+Scat that mel-o-dy, ba-by, scat it loud # 8 syllables
+Make this old heart hap-py and proud # 7 syllables
+
+SOLO
+Down in New Or-leans where the jazz was born # copy(verse,1)
+I learned to play my horn from dusk till dawn # invert(verse,2,Bb4)
+The riv-er-boat was rock-ing to the beat # transpose(verse,3,5)
+While all the folks were tap-ping with their feet # reverse(verse,4)
+
+BRIDGE
+When the saints come march-ing through that door #
+They'll be danc-ing on the ball-room floor # invert(bridge,1,G4)
+Grab your part-ner, swing them 'round and 'round #
+Let that dix-ie-land joy be found # transpose(bridge,3,-3)
+
+CHORUS
+What a won-der-ful world when you're by my side # 9 syllables
+Like a brass band march-ing full of joy and pride # 9 syllables
+Scat that mel-o-dy, ba-by, scat it loud # 8 syllables
+Make this old heart hap-py and proud # 7 syllables
+
+OUTRO
+Well hel-lo there, ba-by, ain't life grand # 8 syllables
+With a trum-pet in my heart and love in my hand # transpose(intro,2,6)
+Yeah, yeah, yeah, that's the way to be # 7 syllables
+Jazz and love will set you free # reverse(outro,3)

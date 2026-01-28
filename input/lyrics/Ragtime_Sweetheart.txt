@@ -1,0 +1,61 @@
+# Ragtime_Sweetheart
+# Rag-time Sweet-heart / Dan-cing Down Main Street / The Syn-co-pat-ed Blues
+INTRO
+Down in Se-da-lia where the rag-time plays #
+Ev-ery-bod-y's danc-ing through their hap-py days # transpose(intro,1,3)
+
+VERSE
+I got a gal who loves to syn-co-pate #
+She moves her feet in time, she's nev-er late # invert(verse,1,C4)
+When the pia-no man starts play-ing that sweet song #
+She grabs my hand and pulls me right a-long # reverse(verse,3)
+
+PRECHORUS
+Come on, hon-ey, let's do the cake-walk dance #
+Give your lov-ing man just one more chance # transpose(prechorus,1,-2)
+
+CHORUS
+Rag-time sweet-heart, won't you be mine #
+Step to the left, then step in line # invert(chorus,1,F4)
+When the mu-sic starts to bounce and swing #
+You make my fool-ish heart want to sing # reverse(chorus,3)
+
+VERSE
+At the county fair where the ban-jo rings # 8 syllables
+All the folk are danc-ing while the min-strel sings # transpose(verse,2,2)
+Cotton dress-es swirl-ing in the sum-mer heat # 9 syllables
+Ev-ery-bod-y's mov-ing to that rag-time beat # invert(verse,4,G4)
+
+PRECHORUS
+Come on, hon-ey, let's do the cake-walk dance # 8 syllables
+Give your lov-ing man just one more chance # 8 syllables
+
+CHORUS
+Rag-time sweet-heart, won't you be mine # 7 syllables
+Step to the left, then step in line # 7 syllables
+When the mu-sic starts to bounce and swing # 8 syllables
+You make my fool-ish heart want to sing # 8 syllables
+
+SOLO
+I got a gal who loves to syn-co-pate # copy(verse,1)
+She moves her feet in time, she's nev-er late # invert(verse,2,C4)
+When the pia-no man starts play-ing that sweet song # transpose(verse,3,4)
+She grabs my hand and pulls me right a-long # reverse(verse,4)
+
+BRIDGE
+From Chi-ca-go down to New Or-leans #
+Rag-time's play-ing in the dance hall scenes # invert(bridge,1,Bb4)
+Scott-ish jigs and Irish reels may be fine #
+But give me syn-co-pa-tion ev-ery time # transpose(bridge,3,-3)
+
+CHORUS
+Rag-time sweet-heart, won't you be mine # 7 syllables
+Step to the left, then step in line # 7 syllables
+When the mu-sic starts to bounce and swing # 8 syllables
+You make my fool-ish heart want to sing # 8 syllables
+
+OUTRO
+Down in Se-da-lia where the rag-time plays # 9 syllables
+Ev-ery-bod-y's danc-ing through their hap-py days # transpose(intro,2,5)
+Rag-time sweet-heart, you're the one for me # 8 syllables
+Dance with me for all e-ter-ni-ty # reverse(outro,3)

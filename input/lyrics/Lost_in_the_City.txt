@@ -1,0 +1,65 @@
+# Lost in the Cit-y 
+# / Al-ter-nate Tues-days / What the World Needs Now is You
+INTRO
+Walk-ing down Fifth Av-e-nue at half past three #
+Won-der-ing if you'll ev-er think of me # transpose(intro,1,3)
+
+VERSE
+I see cou-ples hold-ing hands in Cen-tral Park #
+While I'm still search-ing for that miss-ing spark # invert(verse,1,Eb4)
+Ev-ery rain-drop on my win-dow seems to say #
+You're the one who got a-way # reverse(verse,3)
+
+PRECHORUS
+May-be I should call you #
+May-be I should write # transpose(prechorus,1,-2)
+May-be if I try hard #
+I can make it right # invert(prechorus,3,G4)
+
+CHORUS
+Lost in the cit-y with-out your love #
+Like a song with-out words I'm dream-ing of # copy(chorus,1)
+All these peo-ple rush-ing by me #
+But no-bod-y can see what I need # reverse(chorus,3)
+
+VERSE
+Cock-tail par-ties filled with emp-ty con-ver-sa-tion # 11 syllables
+Can't re-place this lone-ly des-per-a-tion # transpose(verse,2,4)
+Tax-i-cabs and ne-on lights blur through my tears # 10 syllables
+Think-ing of our hap-py years # invert(verse,4,F4)
+
+PRECHORUS
+May-be I should call you # 6 syllables
+May-be I should write # 5 syllables
+May-be if I try hard # 6 syllables
+I can make it right # 5 syllables
+
+CHORUS
+Lost in the cit-y with-out your love # 8 syllables
+Like a song with-out words I'm dream-ing of # 8 syllables
+All these peo-ple rush-ing by me # 7 syllables
+But no-bod-y can see what I need # 8 syllables
+
+SOLO
+I see cou-ples hold-ing hands in Cen-tral Park # copy(verse,1)
+While I'm still search-ing for that miss-ing spark # invert(verse,2,Eb4)
+Ev-ery rain-drop on my win-dow seems to say # transpose(verse,3,5)
+You're the one who got a-way # reverse(verse,4)
+
+BRIDGE
+Some-times love is just a mat-ter of tim-ing #
+Some-times hearts need per-fect rhym-ing # invert(bridge,1,Bb4)
+If I could turn back time #
+I'd make you mine # transpose(bridge,3,-4)
+
+CHORUS
+Lost in the cit-y with-out your love # 8 syllables
+Like a song with-out words I'm dream-ing of # 8 syllables
+All these peo-ple rush-ing by me # 7 syllables
+But no-bod-y can see what I need # 8 syllables
+
+OUTRO
+Walk-ing down Fifth Av-e-nue at half past three # 9 syllables
+Won-der-ing if you'll ev-er think of me # transpose(intro,2,6)
+Lost in the cit-y, lost with-out you # 8 syllables
+Hop-ing that your heart is lost here too # reverse(outro,3)

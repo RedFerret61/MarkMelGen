@@ -1,0 +1,67 @@
+# Yellow_Sunshine_Day
+# Yel-low Sun-shine Day / Love is Here to Stay / Walk-ing Down the Lane
+
+INTRO
+Na na na na na na na                                       #
+Na na na na na na na                                       # copy(intro,1)
+
+VERSE 1
+Walk-ing down the lane with you to-day                     #
+Watch-ing all the chil-dren come out to play               # copy(verse,1)
+Sun-shine on your face makes ev-ery-thing bright          # transpose(verse,1,3)
+Tell me that you'll stay with me to-night                 # copy(verse,3)
+
+PRECHORUS 1
+Take my hand and we'll run a-way                          #
+To a place where we can al-ways stay                      # copy(prechorus,1)
+
+CHORUS 1
+It's a yel-low sun-shine day                              #
+Love is here and here to stay                             # copy(chorus,1)
+Noth-ing's gon-na bring us down                          # transpose(chorus,1,4)
+Hap-pi-ness is all a-round                               # copy(chorus,3)
+
+VERSE 2
+In the mead-ow where the dai-sies grow                    # 8,8,8,8 syllables
+Dance with me be-fore we have to go
+Kiss me soft-ly un-der-neath the tree
+Tell me that you'll al-ways love just me
+
+PRECHORUS 2
+Take my hand and we'll run a-way                          # 8,8 syllables
+To a place where we can al-ways stay
+
+CHORUS 2
+It's a yel-low sun-shine day                              # 7,7,7,7 syllables
+Love is here and here to stay
+Noth-ing's gon-na bring us down
+Hap-pi-ness is all a-round
+
+BRIDGE 1
+When the win-ter winds are blow-ing cold                  #
+And the sto-ries have all been told                      # copy(bridge,1)
+We'll re-mem-ber this sweet sum-mer time                 # transpose(bridge,1,-2)
+When you prom-ised to be mine                            # copy(bridge,3)
+
+CHORUS 3
+It's a yel-low sun-shine day                              # 7,7,7,7 syllables
+Love is here and here to stay
+Noth-ing's gon-na bring us down
+Hap-pi-ness is all a-round
+
+SOLO
+Walk-ing down the lane with you to-day                     # copy(verse,1)
+Watch-ing all the chil-dren come out to play               # copy(verse,2)
+Sun-shine on your face makes ev-ery-thing bright          # copy(verse,3)
+Tell me that you'll stay with me to-night                 # copy(verse,4)
+
+CHORUS 4
+It's a yel-low sun-shine day                              # 7,7,7,7 syllables
+Love is here and here to stay
+Noth-ing's gon-na bring us down
+Hap-pi-ness is all a-round
+
+OUTRO
+Na na na na na na na                                       # copy(intro,1)
+Na na na na na na na                                       # transpose(outro,1,2)
+Na na na na na na na                                       # invert(outro,1,C5)

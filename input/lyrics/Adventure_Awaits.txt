@@ -1,0 +1,52 @@
+# Adventure_Awaits
+# Adventure Awaits / Journey Through Wonder / The Hero's Dream
+
+INTRO
+Jump-ing through the clouds to-day                       #
+Find-ing new worlds on the way                          #
+
+VERSE 1
+Pack your bag and grab your hat                         #
+Ad-ven-ture waits where dreams are at                   #
+Cas-tles high and val-leys green                        # copy(intro,2)
+Mag-ic in the air un-seen                               # transpose(intro,1,+5)
+
+CHORUS 1
+Come a-long the path un-folds                           #
+Stor-ies wait-ing to be told                            #
+Jump and run through morn-ing light                     # copy(verse,1)
+Ev-ry-thing will be al-right                            # transpose(verse,2,+3)
+
+VERSE 2
+Coins are spar-kling in the sun                         # 7,7,6,7 syllables
+Se-cret doors for ev-ry-one                             # copy(verse,2)
+Pow-er-ups and friend-ly faces                          # transpose(verse,3,-2)
+Hid-den trea-sures in strange places                    # copy(verse,4)
+
+CHORUS 2
+Come a-long the path un-folds                           # 7,7,6,7 syllables
+Stor-ies wait-ing to be told                            # copy(chorus,2)
+Jump and run through morn-ing light                     # copy(chorus,3)
+Ev-ry-thing will be al-right                            # copy(chorus,4)
+
+BRIDGE
+When the night falls down                               #
+And you can-not find your way                          #
+Trust your heart to guide you home                     # transpose(verse,1,-4)
+To-mor-row brings a bright-er day                       # copy(bridge,2)
+
+SOLO
+Pack your bag and grab your hat                         # copy(verse,1)
+Ad-ven-ture waits where dreams are at                   # copy(verse,2)
+Cas-tles high and val-leys green                        # copy(verse,3)
+Mag-ic in the air un-seen                               # copy(verse,4)
+
+CHORUS 3
+Come a-long the path un-folds                           # 7,7,6,7 syllables
+Stor-ies wait-ing to be told                            # copy(chorus,2)
+Jump and run through morn-ing light                     # copy(chorus,3)
+Ev-ry-thing will be al-right                            # copy(chorus,4)
+
+OUTRO
+Jump-ing through the clouds to-day                       # copy(intro,1)
+Ad-ven-ture found a-long the way                        # transpose(intro,2,+2)

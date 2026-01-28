@@ -1,0 +1,63 @@
+# That_September_Night.txt
+# The Scar-f You Left / Ma-ple Street / That Sep-tem-ber Night
+
+INTRO
+Oh, oh-oh, oh-oh-oh #
+Oh, oh-oh, oh-oh-oh # copy(intro,1)
+Oh, oh-oh, oh-oh-oh # transpose(intro,1,2)
+
+VERSE 1
+I found that po-lar-oid from the state fair #
+Your hair was a mess from the au-tumn air # copy(verse,1)
+You were wear-ing my fa-vor-ite sweat-er # transpose(verse,1,5)
+Back when we thought we'd last for-ev-er # copy(verse,3)
+
+PRECHORUS 1
+And I drive by that old cof-fee shop some-times #
+Just to see if your car is still parked out-side # copy(prechorus,1)
+
+CHORUS 1
+And it's just an-oth-er Tues-day af-ter-noon #
+But I'm still stuck in that Sep-tem-ber room # copy(chorus,1)
+Sing-ing a-long to some for-got-ten tune # transpose(chorus,1,4)
+Wish-ing that I could for-get a-bout you # copy(chorus,3)
+
+VERSE 2
+I still re-mem-ber the sound of your laugh # 9,8,9,8 syllables
+And the way you'd trace my name on the glass
+Now it's just a ghost, a pho-to-graph
+Cut-ting my whole heart right in half
+
+PRECHORUS 2
+And I drive by that old cof-fee shop some-times # 10,10 syllables
+Just to see if your car is still parked out-side
+
+CHORUS 2
+And it's just an-oth-er Tues-day af-ter-noon # 10,10,10,10 syllables
+But I'm still stuck in that Sep-tem-ber room
+Sing-ing a-long to some for-got-ten tune
+Wish-ing that I could for-get a-bout you
+
+BRIDGE 1
+And may-be I'm the one who's stuck in place #
+May-be I'm the one you can't re-place # copy(bridge,1)
+And I see your face in ev-ery crowd I see # transpose(bridge,1,-3)
+Does Ma-ple Street ev-er re-mind you of me # copy(bridge,3)
+
+SOLO
+I found that po-lar-oid from the state fair # copy(verse,1)
+Your hair was a mess from the au-tumn air # copy(verse,2)
+You were wear-ing my fa-vor-ite sweat-er # copy(verse,3)
+Back when we thought we'd last for-ev-er # copy(verse,4)
+
+CHORUS 3
+And it's just an-oth-er Tues-day af-ter-noon # 10,10,10,10 syllables
+But I'm still stuck in that Sep-tem-ber room
+Sing-ing a-long to some for-got-ten tune
+Wish-ing that I could for-get a-bout you
+
+OUTRO
+For-get a-bout you, oh-oh # copy(chorus,4)
+For-get a-bout you # reverse(outro,1)
+Yeah, I wish I could for-get a-bout you # transpose(outro,1,5)
+But I can't for-get a-bout you # invert(outro,1,G4)

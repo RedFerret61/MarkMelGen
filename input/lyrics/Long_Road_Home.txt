@@ -1,0 +1,61 @@
+# Long_Road_Home
+# Long-Road-Home / Sha-dows-on-the-High-way / Where-the-Ri-ver-Flows
+
+
+INTRO
+Gold-en-sun on-the-west-ern-sky                          #
+Sha-dows-fall as-the-day-goes-by                         # reverse(intro,1)
+
+
+VERSE 1
+Dri-ftin-down that-long-road-home                        #
+Look-in-for a-place-I-belong                             # copy(verse,1)
+Win-dows-down the-wind-it-sings                          # transpose(verse,1,+5)
+Car-ry-me through-all-these-things                       # invert(verse,2,C4)
+
+
+CHORUS 1
+Take-me-back to-the-place-I-know                         #
+Hearts-run-deep where-the-riv-ers-flow                   # copy(chorus,1)
+Voic-es-rise like-a-friend-ly-song                       # transpose(chorus,1,+7)
+On-this-road I-have-come-so-long                         # invert(chorus,2,D4)
+
+
+VERSE 2
+Ne-on-lights on-the emp-ty-street                        #
+Dreams-un-fold where-the-lost-souls-meet                 # copy(verse,1)
+Moon-light-calls with-a gen-tle-hand                     # transpose(verse,1,-5)
+Guide-me-home to-that-prom-ised-land                     # reverse(verse,2)
+
+
+CHORUS 2
+Take-me-back to-the-place-I-know                         # 8,7,8,6 syllables
+Hearts-run-deep where-the-riv-ers-flow                   # copy(chorus,2)
+Voic-es-rise like-a-friend-ly-song                       # copy(chorus,3)
+On-this-road I-have-come-so-long                         # copy(chorus,4)
+
+
+BRIDGE
+Time-keeps-roll-in like-a-rest-less-train                #
+Ev-ry-mile-it-calls-my-name                              # copy(bridge,1)
+Mem-o-ries like-an-ea-gle's-flight                       # transpose(bridge,1,+4)
+Lift-me-up through-the-lone-ly-night                     # invert(bridge,2,E4)
+
+
+SOLO
+Take-me-back to-the-place-I-know                         # copy(chorus,1)
+Hearts-run-deep where-the-riv-ers-flow                   # copy(chorus,2)
+Voic-es-rise like-a-friend-ly-song                       # copy(chorus,3)
+On-this-road I-have-come-so-long                         # copy(chorus,4)
+
+
+CHORUS 3
+Take-me-back to-the-place-I-know                         # 8,7,8,6 syllables
+Hearts-run-deep where-the-riv-ers-flow                   # copy(chorus,2)
+Voic-es-rise like-a-friend-ly-song                       # copy(chorus,3)
+On-this-road I-have-come-so-long                         # copy(chorus,4)
+
+
+OUTRO
+Gold-en-sun on-the-west-ern-sky                          # copy(intro,1)
+Call-ing-me as-the-road-goes-by                          # transpose(intro,2,+3)

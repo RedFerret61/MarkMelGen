@@ -1,0 +1,50 @@
+# Des-ert Wind Call-ing
+INTRO
+On the edge of the des-ert where the cac-tus grows #
+Where the tum-ble-weed fol-lows where the hot wind blows # transpose(intro,1,3)
+VERSE
+I've been driv-ing through this emp-ty land #
+Try-ing to un-der-stand what went wrong # invert(verse,1,D4)
+Left be-hind the ci-ty lights and noise #
+Search-ing for that qui-et voice with-in # reverse(verse,3)
+PRECHORUS
+May-be I'll find what I'm look-ing for #
+Out here where the ea-gles soar so high # copy(prechorus,1)
+CHORUS
+Des-ert wind is call-ing out my name #
+Tell-ing me I'll nev-er be the same # transpose(chorus,1,-2)
+Un-der-neath these end-less star-ry skies #
+I can see the truth be-hind the lies # invert(chorus,3,F4)
+VERSE
+Used to have it all, or so I thought # 8 syllables
+Mon-ey, fame, and ev-ery-thing I sought # transpose(verse,2,2)
+But the emp-ti-ness kept grow-ing deep in-side # 10 syllables
+Had to leave it all and take this ride # reverse(verse,4)
+PRECHORUS
+May-be I'll find what I'm look-ing for # 8 syllables
+Out here where the ea-gles soar so high # 8 syllables
+CHORUS
+Des-ert wind is call-ing out my name # 8 syllables
+Tell-ing me I'll nev-er be the same # 8 syllables
+Un-der-neath these end-less star-ry skies # 9 syllables
+I can see the truth be-hind the lies # 8 syllables
+SOLO
+I've been driv-ing through this emp-ty land # copy(verse,1)
+Try-ing to un-der-stand what went wrong # invert(verse,2,D4)
+Left be-hind the ci-ty lights and noise # transpose(verse,3,5)
+Search-ing for that qui-et voice with-in # reverse(verse,4)
+BRIDGE
+The sun sets fire to the moun-tain tops #
+And time it seems to slow and nev-er stop # invert(bridge,1,G4)
+I'm find-ing peace in this sol-i-tude #
+Learn-ing how to change my at-ti-tude # transpose(bridge,3,-4)
+CHORUS
+Des-ert wind is call-ing out my name # 8 syllables
+Tell-ing me I'll nev-er be the same # 8 syllables
+Un-der-neath these end-less star-ry skies # 9 syllables
+I can see the truth be-hind the lies # 8 syllables
+OUTRO
+On the edge of the des-ert where the cac-tus grows # 11 syllables
+Where the tum-ble-weed fol-lows where the hot wind blows # transpose(intro,2,7)
+I found my-self out here a-lone #
+Fi-nal-ly found my way back home # invert(outro,3,C4)

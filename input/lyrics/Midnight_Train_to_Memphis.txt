@@ -1,0 +1,67 @@
+# Midnight_Train_to_Memphis.txt
+# Moon-light O-ver Har-lem / So-phis-ti-ca-ted Blues / Mid-night Train to Mem-phis
+
+INTRO
+Ba da ba dum ba doo bop                     #
+Ba da ba dum ba doo wee                     # transpose(intro,1,-3)
+
+VERSE 1
+Moon-light paints the Har-lem street in blue    #
+Whis-pered prom-is-es 'tween me and you         # invert(verse,1,C4)
+Sax-o-phone cries through a smok-y haze         # transpose(verse,1,4)
+Spin-ning dreams from our yes-ter-day's         # copy(verse,3)
+
+PRECHORUS 1
+Oh this cit-y's rhy-thm gets un-der your skin   #
+Steals your heart with its jun-gle grin          # reverse(prechorus,1)
+
+CHORUS 1
+Mid-night train to Mem-phis rolls a-long         #
+Sing-in' soft that same old song                # copy(chorus,1)
+Car-ry-in' my wea-ry soul                      # transpose(chorus,1,-5)
+Where the blue and lov-ers be-long              # copy(chorus,3)
+
+VERSE 2
+Café shad-ows danc-in' slow and deep           # 8,8,8,7 syllables
+Se-crets that the mid-night's sworn to keep
+Pia-no's weep-in' through the dawn's first light
+For the lov-ers lost last night
+
+PRECHORUS 2
+Oh this cit-y's rhy-thm gets un-der your skin   # 9,8 syllables
+Steals your heart with its jun-gle grin         
+
+CHORUS 2
+Mid-night train to Mem-phis rolls a-long        # 8,7,8,7 syllables
+Sing-in' soft that same old song
+Car-ry-in' my wea-ry soul
+Where the blue and lov-ers be-long
+
+BRIDGE 1
+When the clar-i-net stops its cry-in'          #
+And the last drop's gone from my glass         # copy(bridge,1)
+Har-lem's an-gels spread their wings           # transpose(bridge,1,7)
+O-ver eve-ry bro-ken thing                    # copy(bridge,3)
+
+CHORUS 3
+Mid-night train to Mem-phis rolls a-long        # 8,7,8,7 syllables
+Sing-in' soft that same old song
+Car-ry-in' my wea-ry soul
+Where the blue and lov-ers be-long
+
+SOLO
+Moon-light paints the Har-lem street in blue    # copy(verse,1)
+Whis-pered prom-is-es 'tween me and you         # copy(verse,2)
+Sax-o-phone cries through a smok-y haze         # copy(verse,3)
+Spin-ning dreams from our yes-ter-day's         # copy(verse,4)
+
+CHORUS 4
+Mid-night train to Mem-phis rolls a-long        # 8,7,8,7 syllables
+Sing-in' soft that same old song
+Car-ry-in' my wea-ry soul
+Where the blue and lov-ers be-long
+
+OUTRO
+Ba da ba dum ba doo bop                        # copy(intro,1)
+Ba da ba dum ba doo wee                        # transpose(outro,1,-7)
+Ba da ba dum ba doo bop                        # invert(outro,1,G4)

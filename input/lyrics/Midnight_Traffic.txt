@@ -1,0 +1,67 @@
+# Midnight_Traffic.txt
+# Mid-night Traf-fic / Pur-ple Haze Motel / The Gam-bler's Last Hand
+
+INTRO
+Ooh ooh ooh ooh ooh ooh ooh                               #
+Ooh ooh ooh ooh ooh ooh ooh                               # copy(intro,1)
+
+VERSE 1
+Down on Ven-tu-ra where the neon bleeds                   #
+An-oth-er play-er with his se-cret needs                  # copy(verse,1)
+She's count-ing mon-ey in a ho-tel room                   # transpose(verse,1,2)
+While the juke-box plays that lone-ly tune                # copy(verse,3)
+
+PRECHORUS 1
+Tell me ba-by what's your game                            #
+Noth-ing here will be the same                            # copy(prechorus,1)
+
+CHORUS 1
+Mid-night traf-fic on the free-way                        #
+Driv-ing fast but go-ing no-where                         # copy(chorus,1)
+All the an-gels lost their wing-span                      # transpose(chorus,1,4)
+In this Cal-i-for-nia night-mare                          # copy(chorus,3)
+
+VERSE 2
+Sev-en-ty-three was such a gold-en year                   # 8,8,8,7 syllables
+Now the mir-rors show what we most fear
+Coc-tails served with ex-is-ten-tial dread
+While the ghosts of jazz musi-cians play-ing in your head
+
+PRECHORUS 2  
+Tell me ba-by what's your game                            # 7,7 syllables
+Noth-ing here will be the same
+
+CHORUS 2
+Mid-night traf-fic on the free-way                        # 8,8,8,8 syllables
+Driv-ing fast but go-ing no-where
+All the an-gels lost their wing-span
+In this Cal-i-for-nia night-mare
+
+BRIDGE 1
+Ste-reo-phon-ic blues and char-don-nay                    #
+Pret-ty wom-en danc-ing slow-ly fade a-way                # copy(bridge,1)
+In the cor-ner booth a stran-ger counts his chips         # transpose(bridge,1,-3)
+While the wait-ress dreams of oth-er trips                # copy(bridge,3)
+
+CHORUS 3
+Mid-night traf-fic on the free-way                        # 8,8,8,8 syllables  
+Driv-ing fast but go-ing no-where
+All the an-gels lost their wing-span
+In this Cal-i-for-nia night-mare
+
+SOLO
+Down on Ven-tu-ra where the neon bleeds                   # copy(verse,1)
+An-oth-er play-er with his se-cret needs                  # copy(verse,2)
+She's count-ing mon-ey in a ho-tel room                   # copy(verse,3)
+While the juke-box plays that lone-ly tune                # copy(verse,4)
+
+CHORUS 4
+Mid-night traf-fic on the free-way                        # 8,8,8,8 syllables
+Driv-ing fast but go-ing no-where  
+All the an-gels lost their wing-span
+In this Cal-i-for-nia night-mare
+
+OUTRO
+Ooh ooh ooh ooh ooh ooh ooh                               # copy(intro,1)
+Ooh ooh ooh ooh ooh ooh ooh                               # transpose(outro,1,3)
+Ooh ooh ooh ooh ooh ooh ooh                               # invert(outro,1,G4)

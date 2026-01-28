@@ -1,0 +1,60 @@
+# Sa-cred Light Di-vine
+INTRO
+Come ye faith-ful, lift your voic-es high #
+To the throne of grace a-bove the sky # transpose(intro,1,5)
+
+VERSE
+O Al-might-y God, Thy mer-cy flows #
+Like a gen-tle stream through val-leys low # invert(verse,1,D4)
+In the si-lence of the morn-ing prayer #
+We find Thy pres-ence ev-ery-where # reverse(verse,3)
+
+PRECHORUS
+Hal-le-lu-jah, Lord we sing #
+To our ev-er-last-ing King # copy(prechorus,1)
+
+CHORUS
+Sa-cred light di-vine il-lu-mi-nates our way #
+Guid-ing us from dark-ness in-to per-fect day # transpose(chorus,1,-2)
+Let all cre-a-tion bow be-fore Thy glo-rious throne #
+For Thou art God Al-might-y, Thou a-lone # invert(chorus,3,F4)
+
+VERSE
+When trib-u-la-tion comes to test our faith # 9 syllables
+Thy stead-fast love shall keep us safe from wrath # transpose(verse,2,3)
+Through the val-ley of the shad-ow deep # 8 syllables
+Thy rod and staff our souls in safe-ty keep # reverse(verse,4)
+
+PRECHORUS
+Hal-le-lu-jah, Lord we sing # 6 syllables
+To our ev-er-last-ing King # 6 syllables
+
+CHORUS
+Sa-cred light di-vine il-lu-mi-nates our way # 11 syllables
+Guid-ing us from dark-ness in-to per-fect day # 10 syllables
+Let all cre-a-tion bow be-fore Thy glo-rious throne # 11 syllables
+For Thou art God Al-might-y, Thou a-lone # 8 syllables
+
+SOLO
+O Al-might-y God, Thy mer-cy flows # copy(verse,1)
+Like a gen-tle stream through val-leys low # invert(verse,2,D4)
+In the si-lence of the morn-ing prayer # transpose(verse,3,4)
+We find Thy pres-ence ev-ery-where # reverse(verse,4)
+
+BRIDGE
+When the trump-et sounds on judg-ment day #
+All the right-eous shall re-joice and say # invert(bridge,1,G4)
+Ho-ly, ho-ly is the Lord of Hosts #
+Praised by an-gels and the heav-en-ly hosts # transpose(bridge,3,-3)
+
+CHORUS
+Sa-cred light di-vine il-lu-mi-nates our way # 11 syllables
+Guid-ing us from dark-ness in-to per-fect day # 10 syllables
+Let all cre-a-tion bow be-fore Thy glo-rious throne # 11 syllables
+For Thou art God Al-might-y, Thou a-lone # 8 syllables
+
+OUTRO
+Come ye faith-ful, lift your voic-es high # 8 syllables
+To the throne of grace a-bove the sky # transpose(intro,2,7)
+A-men, A-men, let all the peo-ple say # 8 syllables
+Praise Him now and through e-ter-ni-ty # invert(outro,3,C4)

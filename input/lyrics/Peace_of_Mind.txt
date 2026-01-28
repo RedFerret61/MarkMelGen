@@ -1,0 +1,61 @@
+# Peace_of_Mind.txt
+# Glass On-ion Sky / Peace of Mind / Dream of You
+
+INTRO
+La la la la la la la                                       #
+La la la la la la la                                       # copy(intro,1)
+
+VERSE 1
+In the soft morn-ing light I stare                         #
+At the emp-ty chair, you're not there                      # copy(verse,1)
+Won-der-ing if you'll ev-er come                           # transpose(verse,1,-2)
+Or if I'm al-ways left a-lone                              # copy(verse,3)
+
+PRECHORUS 1
+And the world spins round and round                         #
+With-out a care, in the air                                # copy(prechorus,1)
+
+CHORUS 1
+All I want is peace of mind                                #
+All I need's a sign you're there                           # copy(chorus,1)
+Give me strength to car-ry on                              # 
+When hope is gone, I'm a-fraid                             # copy(chorus,3)
+
+VERSE 2
+Yel-low sub-ma-rine dreams a-way                           # 8,8,8,8 syllables
+In the blue be-tween night and day
+New-york ci-ty's cry-ing loud
+Through the e-cho-ing crowd
+
+PRECHORUS 2
+And the world spins round and round                         # 7,7 syllables
+With-out a care, in the air
+
+CHORUS 2
+All I want is peace of mind                                # 7,7,7,7 syllables
+All I need's a sign you're there
+Give me strength to car-ry on
+When hope is gone, I'm a-fraid
+
+BRIDGE 1
+Some-times I feel like a bro-ken man                       #
+Walk-ing through the pour-ing rain                         # copy(bridge,1)
+Search-ing for the truth in-side                           # transpose(bridge,1,-3)
+Where my hid-den fears re-side                             # copy(bridge,3)
+
+SOLO
+In the soft morn-ing light I stare                         # copy(verse,1)
+At the emp-ty chair, you're not there                      # copy(verse,2)
+Won-der-ing if you'll ev-er come                           # copy(verse,3)
+Or if I'm al-ways left a-lone                              # copy(verse,4)
+
+CHORUS 3
+All I want is peace of mind                                # 7,7,7,7 syllables
+All I need's a sign you're there
+Give me strength to car-ry on
+When hope is gone, I'm a-fraid
+
+OUTRO
+Dream of you... ooh ooh ooh                                # 
+Dream of you... ooh ooh ooh                                # transpose(outro,1,4)
+Dream of you... ooh ooh ooh                                # invert(outro,1,G4)

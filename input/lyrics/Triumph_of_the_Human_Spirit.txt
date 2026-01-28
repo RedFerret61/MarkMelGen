@@ -1,0 +1,60 @@
+# Tri-umph of the Hu-man Spir-it / Storm and Vi-cto-ry / Rise A-bove the Dark-ness
+INTRO
+From the depths of dark-est night we rise #
+Like thun-der crash-ing through the storm-y skies # transpose(intro,1,5)
+
+VERSE
+Though the moun-tains trem-ble at our feet #
+And tem-pests rage with fury wild and fleet # invert(verse,1,Bb4)
+We shall not yield to des-ti-ny's cruel hand #
+But forge our fate through cour-age bold and grand # reverse(verse,3)
+
+PRECHORUS
+Hear the call of free-dom's might-y song #
+It lifts us up when hope seems al-most gone # transpose(prechorus,1,-4)
+
+CHORUS
+Rise, rise, ye souls of fire and steel #
+Let all the world your pow-er feel # invert(chorus,1,F4)
+Through suf-fer-ing we find our strength #
+We'll go to an-y glo-rious length # reverse(chorus,3)
+
+VERSE
+When ty-rants seek to break the hu-man will # 9 syllables
+Our spir-its burn de-fi-ant-ly still # transpose(verse,2,3)
+Like Prom-e-the-us bring-ing light to earth # 9 syllables
+We'll show the world what free-dom's tru-ly worth # invert(verse,4,G4)
+
+PRECHORUS
+Hear the call of free-dom's might-y song # 8 syllables
+It lifts us up when hope seems al-most gone # 9 syllables
+
+CHORUS
+Rise, rise, ye souls of fire and steel # 7 syllables
+Let all the world your pow-er feel # 7 syllables
+Through suf-fer-ing we find our strength # 7 syllables
+We'll go to an-y glo-rious length # 8 syllables
+
+SOLO
+Though the moun-tains trem-ble at our feet # copy(verse,1)
+And tem-pests rage with fury wild and fleet # invert(verse,2,Bb4)
+We shall not yield to des-ti-ny's cruel hand # transpose(verse,3,4)
+But forge our fate through cour-age bold and grand # reverse(verse,4)
+
+BRIDGE
+From a-shes of de-feat we shall as-cend #
+Our no-ble quest shall nev-er know an end # invert(bridge,1,D4)
+Like ea-gles soar-ing high a-bove the storm #
+We'll break the chains of ev-ery ty-rant's form # transpose(bridge,3,-2)
+
+CHORUS
+Rise, rise, ye souls of fire and steel # 7 syllables
+Let all the world your pow-er feel # 7 syllables
+Through suf-fer-ing we find our strength # 7 syllables
+We'll go to an-y glo-rious length # 8 syllables
+
+OUTRO
+From the depths of dark-est night we rise # 8 syllables
+Like thun-der crash-ing through the storm-y skies # transpose(intro,2,7)
+Tri-umph-ant, we shall stand for ev-er-more # 9 syllables
+Vic-to-ri-ous in this bat-tle we have wore # reverse(outro,3)

@@ -1,0 +1,60 @@
+# Veil_of_the_Sky
+# Veil-of-the-Sky / Wings-of-Mem-o-ry / Stars-in-the-Rain
+
+INTRO
+O-ver-the-si-lent-hor-i-zon                        #
+Sha-dows-fall-but-dreams-still-gleam               #
+
+VERSE 1
+Walk-ing-be-neath-the-crim-son-trees               #
+Soft-ly-the-wind-it-car-ries-pleas                 # copy(verse,1)
+Whis-pers-of-fates-that-once-were-sung             # transpose(verse,1,+5)
+Tears-of-the-past-still-on-my-tongue               # invert(verse,2,C4)
+
+PRECHORUS 1
+O-ver-moun-tains-the-voice-it-cries                #
+Call-ing-me-where-the-lan-tern-lies                # copy(prechorus,1)
+
+CHORUS 1
+Shine-in-the-dark-ness-bright-as-day               #
+Hearts-will-re-mem-ber-come-what-may               # copy(chorus,1)
+Time-is-a-riv-er-nev-er-still                      # transpose(chorus,1,+7)
+Flow-ing-be-yond-the-strength-of-will              # reverse(chorus,2)
+
+VERSE 2
+Fad-ed-re-mains-of-songs-un-said                   # copy(verse,1)
+Danc-ing-through-fields-where-hope-has-bled        # transpose(verse,2,-5)
+Moon-light-a-bove-re-veals-the-path                # copy(verse,3)
+Turn-ing-the-sand-to-si-lent-glass                 # transpose(verse,4,+3)
+
+PRECHORUS 2
+From-the-depths-of-the-sea-I-hear                  # copy(prechorus,1)
+One-echo-car-ried-true-and-clear                   # transpose(prechorus,2,+4)
+
+CHORUS 2
+Shine-in-the-dark-ness-bright-as-day               # 8,7,8,6 syllables
+Hearts-will-re-mem-ber-come-what-may               # copy(chorus,2)
+Time-is-a-riv-er-nev-er-still                      # copy(chorus,3)
+Flow-ing-be-yond-the-strength-of-will              # copy(chorus,4)
+
+BRIDGE
+Fall-ing-through-stars-the-sky-un-folds            # copy(verse,1)
+Names-of-the-lost-are-soft-ly-told                 # transpose(verse,2,+7)
+Dreams-that-be-come-the-keys-of-song               # copy(verse,3)
+Lead-ing-me-back-where-I-be-long                   # transpose(verse,4,-3)
+
+SOLO
+Shine-in-the-dark-ness-bright-as-day               # copy(chorus,1)
+Hearts-will-re-mem-ber-come-what-may               # copy(chorus,2)
+Time-is-a-riv-er-nev-er-still                      # copy(chorus,3)
+Flow-ing-be-yond-the-strength-of-will              # copy(chorus,4)
+
+CHORUS 3
+Shine-in-the-dark-ness-bright-as-day               # 8,7,8,6 syllables
+Hearts-will-re-mem-ber-come-what-may               # copy(chorus,2)
+Time-is-a-riv-er-nev-er-still                      # copy(chorus,3)
+Flow-ing-be-yond-the-strength-of-will              # copy(chorus,4)
+
+OUTRO
+O-ver-the-si-lent-hor-i-zon                        # copy(intro,1)
+Sha-dows-rise-but-light-re-mains                   # transpose(intro,2,+3)

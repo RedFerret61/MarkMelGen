@@ -1,0 +1,61 @@
+# Mister_Abernathy.txt
+# The Mar-i-gold Man / Tues-day at Four / Mis-ter Ab-er-na-thy
+INTRO
+Da da da da, da da da da                                                                                                   #
+Da da da da, da da da da                                                                                                   # copy(intro,1)
+
+VERSE 1
+Mis-ter Ab-er-na-thy wakes at dawn                                                              #
+Puts his worn out pair of well-ies on                                                           #
+Steps out on the damp and dew-y lawn                                                            # transpose(verse,1,2)
+'Til the morn-ing light is near-ly gone                                                         # copy(verse,3)
+
+PRECHORUS 1
+And the pa-per boy on his rust-y bike                                                           #
+Does-n't look at all like some-one you would like                                               # copy(prechorus,1)
+
+CHORUS 1
+Oh, the world keeps turn-ing round and round                                             #
+But he keeps his knees down on the ground                                                #
+Find-ing peace in things he's new-ly found                                               # transpose(chorus,1,-3)
+With-out e-ver mak-ing an-y sound                                                        # copy(chorus,3)
+
+VERSE 2
+La-dy Pim-ble from house num-ber two                                                            # 8,8,8,8 syllables
+Peeks out through her win-dow pane of blue
+She thinks he is lone-ly, it is true
+But he's got a job he has to do
+
+PRECHORUS 2
+And the milk-man hums a hap-py tune                                                                 # 8,11 syllables
+He could stare at all his flow-ers 'til the af-ter-noon
+
+CHORUS 2
+Oh, the world keeps turn-ing round and round                                      # 8,8,8,8 syllables
+But he keeps his knees down on the ground
+Find-ing peace in things he's new-ly found
+With-out e-ver mak-ing an-y sound
+
+BRIDGE 1
+And it does-n't seem to mat-ter much at all                                           #
+If the rain be-gins to fall                                                           #
+He's got a wall to keep the frost out                                                 # transpose(bridge,1,-5)
+Some-thing he can't be with-out                                                       # copy(bridge,3)
+
+SOLO
+Mis-ter Ab-er-na-thy wakes at dawn                                                                  # copy(verse,1)
+Puts his worn out pair of well-ies on                                                               # copy(verse,2)
+Steps out on the damp and dew-y lawn                                                                # copy(verse,3)
+'Til the morn-ing light is near-ly gone                                                             # copy(verse,4)
+
+CHORUS 3
+Oh, the world keeps turn-ing round and round                     # 8,8,8,8 syllables
+But he keeps his knees down on the ground
+Find-ing peace in things he's new-ly found
+With-out e-ver mak-ing an-y sound
+
+OUTRO
+Da da da da, da da da da                                          # copy(intro,1)
+Ah, ah, ah, ah, Mis-ter Ab-er-na-thy                              # reverse(verse,1)
+Da da da da, da da da da                                          # invert(intro,1,D4)
+Da da da da, da da da da                                          # transpose(outro,1,-12)

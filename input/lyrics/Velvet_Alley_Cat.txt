@@ -1,0 +1,54 @@
+# Velvet_Alley_Cat
+# Velvet Alley Cat / Sawdust & Spite / Chipped Tooth Grin
+
+INTRO
+Heard-you-com-in'-down-the-lane #
+Tap-pin'-on-my-win-dow-pane #
+
+VERSE 1
+Got-those-five-inch-heels-and-a-ser-pent's-smile #
+Smoke-curls-from-your-lips,-stay-a-lit-tle-while # copy(intro,1)
+Got-a-look-in-your-eye-says-you-know-the-score # transpose(verse,1,-2)
+Heard-you-left-your-last-man-bleed-in'-on-the-floor # invert(verse,1,A4)
+
+CHORUS 1
+You're-a-vel-vet-al-ley-cat,-prow-lin'-in-the-night #
+Got-your-claws-out,-ba-by,-look-in'-for-a-fight # copy(verse,1)
+Yeah,-you-purr-so-sweet-ly-when-you-get-your-way # transpose(chorus,1, +3)
+But-you'll-be-long-gone,-yeah,-by-the-break-of-day # reverse(intro,2)
+
+VERSE 2
+Whis-per-words-like-hon-ey,-drip-pin'-poi-son-sweet # 10,9,9,10 syllables
+Danc-in'-through-the-sha-dows-on-your-grace-ful-feet # copy(verse,1)
+You-told-me-all-your-trou-bles,-spun-a-silk-en-lie # transpose(verse,2,-4)
+Saw-the-re-flec-tion-of-a-dev-il-in-your-eye # invert(chorus,1,G3)
+
+CHORUS 2
+You're-a-vel-vet-al-ley-cat,-prow-lin'-in-the-night # 10,9,9,10 syllables
+Got-your-claws-out,-ba-by,-look-in'-for-a-fight # copy(chorus,2)
+Yeah,-you-purr-so-sweet-ly-when-you-get-your-way # copy(chorus,3)
+But-you'll-be-long-gone,-yeah,-by-the-break-of-day # copy(chorus,4)
+
+BRIDGE
+And-I-should-know-bet-ter,-yeah-I-should-turn-and-run #
+But-play-in'-with-your-fire,-oh-it's-just-too-much-fun # transpose(verse,1,-7)
+An-oth-er-moth-drawn-to-your-dead-ly-flame # copy(chorus,1)
+Just-an-oth-er-fool-who's-scream-in'-out-your-name # reverse(verse,2)
+
+SOLO
+You're-a-vel-vet-al-ley-cat,-prow-lin'-in-the-night # copy(chorus,1)
+Got-your-claws-out,-ba-by,-look-in'-for-a-fight # copy(chorus,2)
+Yeah,-you-purr-so-sweet-ly-when-you-get-your-way # copy(chorus,3)
+But-you'll-be-long-gone,-yeah,-by-the-break-of-day # copy(chorus,4)
+
+CHORUS 3
+You're-a-vel-vet-al-ley-cat,-prow-lin'-in-the-night # 10,9,9,10 syllables
+Got-your-claws-out,-ba-by,-look-in'-for-a-fight # copy(chorus,2)
+Yeah,-you-purr-so-sweet-ly-when-you-get-your-way # copy(chorus,3)
+But-you'll-be-long-gone,-yeah,-by-the-break-of-day # copy(chorus,4)
+
+OUTRO
+A-vel-vet-al-ley-cat #
+Yeah,-watch-her-go-now # transpose(intro,1,+5)
+Tap-pin'-on-my-win-dow-pane # copy(intro,2)
+She's-gone-a-gain,-yeah,-gone-a-gain # invert(chorus,4,C2)

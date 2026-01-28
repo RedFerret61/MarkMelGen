@@ -1,0 +1,61 @@
+# Shadows_On_The_Highway
+# Shad-ows-On-The-High-way / The-Wind-Knows-Your-Name / Tales-From-A-Rust-ed-Moon
+
+
+INTRO  
+The-riv-er-runs-thin-on-a-cold-gray-morn-ing                  #  
+Dust-on-my-boots-and-my-pock-et-worn                           # copy(intro,1)  
+
+
+VERSE 1  
+I-met-a-strange-man-play-in'cards-by-the-track                 #  
+He-said 'Son-take-a-load-don't-you-ev-er-look-back'             # copy(verse,1)  
+Rain-on-the-tin-roof-like-a-steel-string-crash                  #  
+And-the-night-keeps-a-roll-in'with-a-whis-per-and-a-splash      # copy(verse,3)  
+
+
+CHORUS 1  
+Oh-the-wind-knows-your-name-when-the-town-forgets-you           #  
+It-will-sing-through-the-bri-ar-till-the-morn-ing-dew           # copy(chorus,1)  
+Keep-your-hands-on-the-wheel-and-your-heart-on-the-line         #  
+There's-a-ghost-on-the-high-way-till-the-end-of-time            # copy(chorus,3)  
+
+
+VERSE 2  
+The-train-left-the-sta-tion-with-the-sun-in-its-eye              # 8,7,8,6 syllables  
+A-fid-dle-played-low-like-a-crow's-lonely-cry                    # copy(verse,2)  
+I-saw-a-girl-in-red-shoes-by-the-tele-phone-pole                 # copy(verse,3)  
+She-said 'Ev-ry-word-you-speak-is-a-piece-of-your-soul'          # copy(verse,4)  
+
+
+CHORUS 2  
+Oh-the-wind-knows-your-name-when-the-town-forgets-you            # 8,7,8,6 syllables  
+It-will-sing-through-the-bri-ar-till-the-morn-ing-dew            # copy(chorus,2)  
+Keep-your-hands-on-the-wheel-and-your-heart-on-the-line          # copy(chorus,3)  
+There's-a-ghost-on-the-high-way-till-the-end-of-time             # copy(chorus,4)  
+
+
+BRIDGE  
+Lan-terns-float-down-the-black-ri-ver's-spine                    #  
+Word-less-songs-turn-the-wa-ter-to-wine                          # copy(bridge,1)  
+You-can-bet-all-your-silver-on-a-gy-psy's-sign                    #  
+But-you-can't-stop-the-train-nor-the-pas-sage-of-time             # copy(bridge,3)  
+
+
+SOLO *(instrumental on Chorus)*  
+Oh-the-wind-knows-your-name-when-the-town-forgets-you            # copy(chorus,1)  
+It-will-sing-through-the-bri-ar-till-the-morn-ing-dew            # copy(chorus,2)  
+Keep-your-hands-on-the-wheel-and-your-heart-on-the-line          # copy(chorus,3)  
+There's-a-ghost-on-the-high-way-till-the-end-of-time             # copy(chorus,4)  
+
+
+CHORUS 3  
+Oh-the-wind-knows-your-name-when-the-town-forgets-you            # 8,7,8,6 syllables  
+It-will-sing-through-the-bri-ar-till-the-morn-ing-dew            # copy(chorus,2)  
+Keep-your-hands-on-the-wheel-and-your-heart-on-the-line          # copy(chorus,3)  
+There's-a-ghost-on-the-high-way-till-the-end-of-time             # copy(chorus,4)  
+
+
+OUTRO  
+The-riv-er-runs-thin-on-a-cold-gray-morn-ing                     # copy(intro,1)  
+Dust-on-my-boots-but-my-heart-ain't-worn                         # copy(intro,2)  

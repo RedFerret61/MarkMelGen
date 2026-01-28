@@ -1,0 +1,87 @@
+# Another_Monday_In_Lyndhurst
+# Just A Room With A View / Where Do The Summers Go? / Another Monday In Lyndhurst
+
+Just A Room With A View / Where Do The Summers Go? / Another Monday In Lyndhurst
+INTRO
+An-oth-er Mon-day #
+In this small Eng-lish town #
+The clock strikes three #
+And rain comes down # copy(intro,2)
+
+VERSE 1
+The shop-fronts gleam #
+A wet-slate grey #
+And peo-ple hur-ry # 8 syllables
+On their way # 6 syllables
+They don't see me # copy(verse,1)
+Be-hind the glass # 5 syllables
+Just watch-ing mo-ments # copy(verse,3)
+As they pass # 4 syllables
+
+PRECHORUS 1
+And oh #
+The tel-e-phone #
+For-gets my name #
+And I sup-pose # invert(prechorus,2,C4)
+That you're the one to blame # 8 syllables
+
+CHORUS 1
+Some-one should tell the clouds #
+That yes-ter-day was clear #
+And some-one should tell my heart # transpose(chorus,1,-2)
+That you are still not here # 7 syllables
+It's just a room with a view # copy(chorus,2)
+Of tears and af-ter-noon # 7 syllables
+
+VERSE 2
+I read the news #
+From page to page #
+A world keeps turn-ing # transpose(verse,1,+3)
+On a stage # 3 syllables
+But my small world # copy(verse,2)
+Is stand-ing still # 5 syllables
+And I pre-tend # transpose(verse,3,-4)
+It al-ways will # 5 syllables
+
+PRECHORUS 2
+And so # # 8,7,8,6 syllables
+I pour the tea # copy(prechorus,2)
+I wait in vain # copy(prechorus,3)
+I think I see # invert(prechorus,4,C4)
+Your face a-gainst the pane # copy(prechorus,5)
+
+CHORUS 2
+Some-one should tell the clouds # # 8,7,8,7 syllables
+That yes-ter-day was clear # copy(chorus,2)
+And some-one should tell my heart # transpose(chorus,1,-2)
+That you are still not here # copy(chorus,4)
+It's just a room with a view # copy(chorus,5)
+Of tears and af-ter-noon # copy(chorus,6)
+
+BRIDGE
+May-be to-mor-row the sun will break through #
+And I'll walk out that door #
+With-out a thought of you # 7 syllables
+But who am I try-ing to fool? # copy(bridge,2)
+
+SOLO
+Some-one should tell the clouds # copy(chorus,1)
+That yes-ter-day was clear # copy(chorus,2)
+And some-one should tell my heart # copy(chorus,3)
+That you are still not here # copy(chorus,4)
+It's just a room with a view # copy(chorus,5)
+Of tears and af-ter-noon # copy(chorus,6)
+
+CHORUS 3
+Some-one should tell the clouds # # 8,7,8,7 syllables
+That yes-ter-day was clear # copy(chorus,2)
+And some-one should tell my heart # transpose(chorus,1,-2)
+That you are still not here # copy(chorus,4)
+It's just a room with a view # copy(chorus,5)
+Of tears and af-ter-noon # copy(chorus,6)
+
+OUTRO
+An-oth-er Mon-day # copy(intro,1)
+Just rain fall-ing down # reverse(intro,2)
+Just rain # 2 syllables
+Fall-ing down # 3 syllables

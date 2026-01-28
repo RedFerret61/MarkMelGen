@@ -1,0 +1,62 @@
+# The_Last_Bus_from_the_Pier.txt
+# This Damp Tues-day / A Cat-a-logue of Sighs / The Last Bus from the Pier
+
+INTRO
+(Jang-ling gui-tar riff) #
+(Jang-ling gui-tar riff) # copy(intro,1)
+
+VERSE 1
+The sta-tion ca-fe clock reads four #
+I've seen this ve-ry scene be-fore # copy(verse,1)
+A rain-streaked pane, a tat-tered book # transpose(verse,1,3)
+You nev-er spare a sin-gle look # copy(verse,3)
+
+PRECHORUS 1
+And the tea in this cup is grim and cold #
+A sto-ry that is best left un-told # copy(prechorus,1)
+
+CHORUS 1
+And oh, this town's a great mis-take #
+A heart that heav-en could not break # copy(chorus,1)
+Would shat-ter with a sin-gle word # transpose(chorus,1,5)
+The sweet-est sound I've ev-er heard # copy(chorus,3)
+
+VERSE 2
+The girl be-hind the coun-ter sighs # 8,8,8,8 syllables
+With hope-less-ness deep in her eyes
+She knows my or-der, knows my name
+To-mor-row it will be the same
+
+PRECHORUS 2
+And the tea in this cup is grim and cold # 8,8 syllables
+A sto-ry that is best left un-told
+
+CHORUS 2
+And oh, this town's a great mis-take # 8,8,8,8 syllables
+A heart that heav-en could not break
+Would shat-ter with a sin-gle word
+The sweet-est sound I've ev-er heard
+
+BRIDGE 1
+Must I ride the late bus home a-gain? #
+A-lone with the cold and the driv-ing rain # copy(bridge,1)
+Some peo-ple have got so much love to give # transpose(bridge,1,-3)
+But I've bare-ly got the will to live # copy(bridge,3)
+
+SOLO
+The sta-tion ca-fe clock reads four # copy(verse,1)
+I've seen this ve-ry scene be-fore # copy(verse,2)
+A rain-streaked pane, a tat-tered book # copy(verse,3)
+You nev-er spare a sin-gle look # copy(verse,4)
+
+CHORUS 3
+And oh, this town's a great mis-take # 8,8,8,8 syllables
+A heart that heav-en could not break
+Would shat-ter with a sin-gle word
+The sweet-est sound I've ev-er heard
+
+OUTRO
+The sweet-est sound I've ev-er heard #
+The sweet-est sound I've ev-er heard # copy(outro,1)
+Oh, this crush-ing, crush-ing town # transpose(outro,1,-5)
+Oh, this town... # invert(outro,3,G4)

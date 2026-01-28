@@ -1,0 +1,67 @@
+# A_Thousand_Faces
+# Ghost in the Ma-chine / A Thou-sand Fa-ces / The Ci-ty Sleeps
+
+INTRO
+Dum dum da da da dum dum da da #
+Dum dum da da da dum dum da da # copy(intro,1)
+
+VERSE 1
+A lone-ly fig-ure in the pour-ing rain #
+A thou-sand fa-ces all re-flect his pain # copy(verse,1)
+He walks the streets a-gainst the ci-ty's hum # transpose(verse,1,2)
+A ghost in the ma-chine where he's from # copy(verse,3)
+
+PRECHORUS 1
+The ne-on lights all blur in-to a haze #
+Lost in the crowd for days and end-less days # copy(prechorus,1)
+
+CHORUS 1
+He's just a shad-ow in this i-ron maze #
+A fleet-ing glimpse that no one ev-er stays # copy(chorus,1)
+He's search-ing for a truth he can-not find # transpose(chorus,1,5)
+Leav-ing on-ly ech-oes of his mind # copy(chorus,3)
+
+VERSE 2
+He sees the world through pane-less win-dow frames # 8,8,8,8 syllables
+And whis-pers all the long-for-got-ten names
+He's haunt-ed by the dreams he left be-hind
+A fug-i-tive of a dif-fer-ent kind
+
+PRECHORUS 2
+The ne-on lights all blur in-to a haze # 8,8 syllables
+Lost in the crowd for days and end-less days
+
+CHORUS 2
+He's just a shad-ow in this i-ron maze # 8,8,8,8 syllables
+A fleet-ing glimpse that no one ev-er stays
+He's search-ing for a truth he can-not find
+Leav-ing on-ly ech-oes of his mind
+
+BRIDGE 1
+The pave-ment stretch-es out a mile too long #
+A lone-ly road where he does not be-long # copy(bridge,1)
+He'd trade it all to find a place to rest # transpose(bridge,1,-2)
+To put his wea-ry spir-it to the test # copy(bridge,3)
+
+CHORUS 3
+He's just a shad-ow in this i-ron maze # 8,8,8,8 syllables
+A fleet-ing glimpse that no one ev-er stays
+He's search-ing for a truth he can-not find
+Leav-ing on-ly ech-oes of his mind
+
+SOLO
+A lone-ly fig-ure in the pour-ing rain # copy(verse,1)
+A thou-sand fa-ces all re-flect his pain # copy(verse,2)
+He walks the streets a-gainst the ci-ty's hum # copy(verse,3)
+A ghost in the ma-chine where he's from # copy(verse,4)
+
+CHORUS 4
+He's just a shad-ow in this i-ron maze # 8,8,8,8 syllables
+A fleet-ing glimpse that no one ev-er stays
+He's search-ing for a truth he can-not find
+Leav-ing on-ly ech-oes of his mind
+
+OUTRO
+Dum dum da da da dum dum da da # copy(intro,1)
+Dum dum da da da dum dum da da # transpose(outro,1,2)
+Dum dum da da da dum dum da da # invert(outro,1,C4)

@@ -1,0 +1,61 @@
+# Sweet Ser-e-nade
+INTRO
+Come, let us dance be-neath the gold-en sun #
+Where mel-o-dies and sweet re-frain-s are spun # transpose(intro,1,4)
+
+VERSE
+In gar-dens where the night-in-gale doth sing #
+Her voice like sil-ver bells up-on the wing # invert(verse,1,E4)
+The gen-tle breeze through blos-som-ing trees #
+Car-ries love's sweet whis-pers on the breeze # reverse(verse,3)
+
+PRECHORUS
+La la la, joy-ful hearts re-joice #
+Lift-ed up by mu-sic's gen-tle voice # copy(prechorus,1)
+
+CHORUS
+Sweet ser-e-nade of spring-time's glo-ry #
+Tell-ing love's e-ter-nal, ten-der sto-ry # transpose(chorus,1,-3)
+Dance, my dear-est, while the vi-o-lins play #
+In this per-fect, gold-en, mag-ic-al day # invert(chorus,3,G4)
+
+VERSE
+Fair maid-ens with their rib-bons bright and new # 9 syllables
+Dance with court-ly gen-tle-men so true # transpose(verse,2,2)
+Their laugh-ter rings like crys-tal chan-de-liers # 9 syllables
+Bring-ing joy to all who gath-er here # reverse(verse,4)
+
+PRECHORUS
+La la la, joy-ful hearts re-joice # 7 syllables
+Lift-ed up by mu-sic's gen-tle voice # 8 syllables
+
+CHORUS
+Sweet ser-e-nade of spring-time's glo-ry # 9 syllables
+Tell-ing love's e-ter-nal, ten-der sto-ry # 9 syllables
+Dance, my dear-est, while the vi-o-lins play # 9 syllables
+In this per-fect, gold-en, mag-ic-al day # 9 syllables
+
+SOLO
+In gar-dens where the night-in-gale doth sing # copy(verse,1)
+Her voice like sil-ver bells up-on the wing # invert(verse,2,E4)
+The gen-tle breeze through blos-som-ing trees # transpose(verse,3,5)
+Car-ries love's sweet whis-pers on the breeze # reverse(verse,4)
+
+BRIDGE
+When eve-ning shadows soft-ly fall #
+And stars be-gin their heav-en-ly call # invert(bridge,1,D4)
+Still the mu-sic lin-gers in the air #
+A sym-pho-ny be-yond all earthly care # transpose(bridge,3,-2)
+
+CHORUS
+Sweet ser-e-nade of spring-time's glo-ry # 9 syllables
+Tell-ing love's e-ter-nal, ten-der sto-ry # 9 syllables
+Dance, my dear-est, while the vi-o-lins play # 9 syllables
+In this per-fect, gold-en, mag-ic-al day # 9 syllables
+
+OUTRO
+Come, let us dance be-neath the gold-en sun # 9 syllables
+Where mel-o-dies and sweet re-frain-s are spun # transpose(intro,2,6)
+La la la, let joy-ful voic-es ring # 7 syllables
+In praise of love and all the joy it brings # invert(outro,3,F4)
+

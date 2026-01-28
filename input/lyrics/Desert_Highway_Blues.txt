@@ -1,0 +1,90 @@
+# Des-ert High-way Blues
+INTRO
+There's a lone-ly stretch of as-phalt       # 8 syllables
+Wind-ing through the des-ert night          # 6 syllables
+Where the tum-ble-weed keeps roll-ing       #   copy(intro, 1)
+And the stars shine way too bright          #   copy(intro, 2)
+
+VERSE 1
+I was driv-ing through Ne-va-da             # 8 syllables
+In my rust-ed Chev-ro-let                   # 6 syllables
+Think-ing 'bout the girl I left be-hind     #   copy(verse, 1)
+And the debts I'll nev-er pay               #   copy(verse, 2)
+She had eyes like morn-ing dia-monds        #   transpose(verse, 1, 3)
+And a heart made out of stone               #   transpose(verse, 2, 3)
+Now I'm chas-ing west-ern sun-sets          #   copy(verse, 1)
+Try-ing to find my way back home            #   copy(verse, 2)
+
+PRECHORUS
+The ra-di-o keeps play-ing                  # 7 syllables
+Those old famil-iar songs                   # 6 syllables
+Tell-ing me I'm go-ing                      #   copy(prechorus, 2)
+Some-where I don't be-long                  #   transpose(prechorus, 2, -2)
+
+CHORUS
+On this des-ert high-way                    # 6 syllables
+Where the lost souls ride                   # 5 syllables
+Run-ning from to-mor-row                    #   copy(chorus, 1)
+With no-where left to hide                  #   copy(chorus, 2)
+The mi-rage keeps call-ing                  #   transpose(chorus, 1, 4)
+But it's just an-oth-er lie                 #   invert(chorus, 1, C4)
+On this des-ert high-way                    #   copy(chorus, 1)
+Where the dream-ers come to die             #   copy(chorus, 6)
+
+VERSE 2
+Passed a bil-lion dol-lar ca-si-no     # 8 syllables  # copy(verse, 1)
+Full of brok-en prom-is-es     # 6 syllables  # copy(verse, 2)
+Where the neon lights are flash-ing     # 8 syllables  # transpose(verse, 1, -3)
+Like fad-ed mem-or-ies     # 6 syllables  # transpose(verse, 2, -3)
+Met a girl in Reno with a     # 8 syllables  # copy(verse, 5)
+Suit-case full of shattered dreams     # 6 syllables  # copy(verse, 6)
+Said she came here look-ing for     # 8 syllables  # copy(verse, 7)
+Some-thing more than what it seems     # 6 syllables  # copy(verse, 8)
+
+PRECHORUS
+The ra-di-o keeps play-ing     # 7 syllables
+Those old famil-iar songs     # 6 syllables
+Tell-ing me I'm go-ing     # 6 syllables
+Some-where I don't be-long     # 6 syllables
+
+CHORUS
+On this des-ert high-way     # 6 syllables
+Where the lost souls ride     # 5 syllables
+Run-ning from to-mor-row     # 6 syllables
+With no-where left to hide     # 5 syllables
+The mi-rage keeps call-ing     # 6 syllables
+But it's just an-oth-er lie     # 6 syllables
+On this des-ert high-way     # 6 syllables
+Where the dream-ers come to die     # 6 syllables
+
+SOLO
+(In-stru-men-tal break with gui-tar so-lo)     # 11 syllables
+
+BRIDGE
+May-be some-day I'll find           # 5 syllables
+What I'm look-ing for               # 5 syllables
+Some-thing real be-hind             # copy(bridge, 1)
+These neon-lit doors                # copy(bridge, 2)
+But to-night I'm just an-oth-er     # transpose(verse, 1, -5)
+Stran-ger pass-ing through          # transpose(verse, 2, -5)
+Car-ry-ing all this bag-gage        # copy(bridge, 5)
+That I can't un-do                  # reverse(bridge, 2)
+
+CHORUS
+On this des-ert high-way     # 6 syllables  # copy(chorus, 1)
+Where the lost souls ride     # 5 syllables  # copy(chorus, 2)
+Run-ning from to-mor-row     # 6 syllables  # copy(chorus, 3)
+With no-where left to hide     # 5 syllables  # copy(chorus, 4)
+The mi-rage keeps call-ing     # 6 syllables  # copy(chorus, 5)
+But it's just an-oth-er lie     # 6 syllables  # copy(chorus, 6)
+On this des-ert high-way     # 6 syllables  # copy(chorus, 7)
+Where the dream-ers come to die     # 6 syllables  # copy(chorus, 8)
+
+OUTRO
+There's a lone-ly stretch of as-phalt       # copy(intro, 1)
+Wind-ing through the des-ert night          # copy(intro, 2)
+Where the lost keep on search-ing           # transpose(intro, 2, -4)
+For some-thing that feels right             # transpose(chorus, 2, 2)
+Yeah, they keep on search-ing               # copy(outro, 3)
+But they nev-er find the light              # invert(outro, 3, G4)
+

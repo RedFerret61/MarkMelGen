@@ -1,0 +1,62 @@
+# When the Har-vest Moon Fades
+INTRO
+Down by the riv-er where the wil-lows bend #
+Watch-ing the cur-rent car-ry dreams a-way # transpose(intro,1,4)
+
+VERSE
+There's a rust-ed train track run-ning through my mind #
+Left there by the peo-ple I have lost # invert(verse,1,E4)
+Old pho-to-graphs are fad-ing with the years #
+Mem-o-ries like au-tumn leaves just blow a-way # reverse(verse,3)
+
+PRECHORUS
+Time keeps roll-ing on #
+Like an old sad song # copy(prechorus,1)
+
+CHORUS
+When the har-vest moon fades in-to the dawn #
+All the ghost-ly voic-es seem to call my name # transpose(chorus,1,-3)
+Tell-ing me the sto-ries of the ones be-fore #
+Who walked this land and felt the same sweet pain # invert(chorus,3,G4)
+
+VERSE
+Farm-house win-dows glow-ing in the dusk # 8 syllables
+Grand-pa's chair sits emp-ty by the door # transpose(verse,2,2)
+Fields of gold are turn-ing brown and dry # 8 syllables
+Na-ture's way of tell-ing us we're mor-tal # reverse(verse,4)
+
+PRECHORUS
+Time keeps roll-ing on # 5 syllables
+Like an old sad song # 5 syllables
+
+CHORUS
+When the har-vest moon fades in-to the dawn # 9 syllables
+All the ghost-ly voic-es seem to call my name # 9 syllables
+Tell-ing me the sto-ries of the ones be-fore # 9 syllables
+Who walked this land and felt the same sweet pain # 9 syllables
+
+SOLO
+There's a rust-ed train track run-ning through my mind # copy(verse,1)
+Left there by the peo-ple I have lost # invert(verse,2,E4)
+Old pho-to-graphs are fad-ing with the years # transpose(verse,3,5)
+Mem-o-ries like au-tumn leaves just blow a-way # reverse(verse,4)
+
+BRIDGE
+May-be when I'm old-er I will un-der-stand #
+Why the heart keeps ach-ing for what's gone # invert(bridge,1,D4)
+But to-night I'll sit here with my old gui-tar #
+And sing the songs my fa-ther used to hum # transpose(bridge,3,-2)
+
+CHORUS
+When the har-vest moon fades in-to the dawn # 9 syllables
+All the ghost-ly voic-es seem to call my name # 9 syllables
+Tell-ing me the sto-ries of the ones be-fore # 9 syllables
+Who walked this land and felt the same sweet pain # 9 syllables
+
+OUTRO
+Down by the riv-er where the wil-lows bend # 9 syllables
+Watch-ing the cur-rent car-ry dreams a-way # transpose(intro,2,6)
+Time keeps roll-ing like that old sad song # 8 syllables
+Car-ry-ing us all a-long the way # invert(outro,3,F4)
+
+

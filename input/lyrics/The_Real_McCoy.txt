@@ -1,0 +1,67 @@
+# The_Real_McCoy
+# # Pearl Di-ver / Cop-per Sky / The Real McCoy
+
+INTRO
+Doo-doo-doo in Cop-per Sky                                #
+Doo-doo-doo the clouds roll by                             # copy(intro,1)
+
+VERSE 1
+Down by the docks where the hush mon-ey flows             #
+Steam from the gut-ter and the neon glows                 # copy(verse,1)
+Sid and Lou play five-card sin in the rain                # transpose(verse,1,2)
+Ev-ery jack bets high, ev-ery queen feigns pain           # copy(verse,3)
+
+PRECHORUS 1
+We saw the pearl di-ver smile                             #
+Right be-fore he sank a mile                              # copy(prechorus,1)
+
+CHORUS 1
+Ain't no luck in the Real Mc-Coy                          #
+Just a gold-toothed laugh and a bro-ken toy               # copy(chorus,1)
+They trade you dreams for a fifth of gin                  # transpose(chorus,1,4)
+And leave you danc-ing in the spin                        # copy(chorus,3)
+
+VERSE 2
+Moon-light falls on a flam-ing car                        # 9,8,8,7 syllables
+Jones lit the fuse at the Zig-Zag Bar
+El-la plays the crys-tal glass with grace
+But sings for no one in this place
+
+PRECHORUS 2
+We saw the pearl di-ver smile                             # 7,7 syllables
+Right be-fore he sank a mile
+
+CHORUS 2
+Ain't no luck in the Real Mc-Coy                          # 8,9,8,7 syllables
+Just a gold-toothed laugh and a bro-ken toy
+They trade you dreams for a fifth of gin
+And leave you danc-ing in the spin
+
+BRIDGE 1
+Whis-key dreams and fake good-byes                        #
+Spin like tapes in old ca-sat-te skies                    # copy(bridge,1)
+The crook's con-fess-ion's re-cord-ed clean               # transpose(bridge,1,-4)
+But no one's sure just what it means                      # copy(bridge,3)
+
+CHORUS 3
+Ain't no luck in the Real Mc-Coy                          # 8,9,8,7 syllables
+Just a gold-toothed laugh and a bro-ken toy
+They trade you dreams for a fifth of gin
+And leave you danc-ing in the spin
+
+SOLO
+Down by the docks where the hush mon-ey flows             # copy(verse,1)
+Steam from the gut-ter and the neon glows                 # copy(verse,2)
+Sid and Lou play five-card sin in the rain                # copy(verse,3)
+Ev-ery jack bets high, ev-ery queen feigns pain           # copy(verse,4)
+
+CHORUS 4
+Ain't no luck in the Real Mc-Coy                          # 8,9,8,7 syllables
+Just a gold-toothed laugh and a bro-ken toy
+They trade you dreams for a fifth of gin
+And leave you danc-ing in the spin
+
+OUTRO
+Doo-doo-doo in Cop-per Sky                                # copy(intro,1)
+Doo-doo-doo the clouds roll by                             # transpose(outro,1,-2)
+Doo-doo-doo, we won-der why                               # invert(outro,1,E4)

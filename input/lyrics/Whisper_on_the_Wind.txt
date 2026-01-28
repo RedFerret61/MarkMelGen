@@ -1,0 +1,80 @@
+# Whisper_on_the_Wind
+# Whis-per-in-the-Wind / Gold-en-Chain / Edge-of-To-mor-row
+
+INTRO  
+Shad-ows-dance-on-the-wall                    #  
+Soft-ly-whis-per-ing-call                     # copy(intro,1)  
+Shad-ows-dance-on-the-wall                    # transpose(intro,1,+2)  
+Soft-ly-whis-per-ing-call                     # copy(intro,2)  
+
+VERSE 1  
+Yester-day's-dust-on-the-win-dow-pane         #  
+We-trace-pat-terns-in-the-rain                # transpose(verse,1,-3)  
+You-said-this-love-would-nev-er-change        #  
+But-si-lence-fell-like-someth-ing-strange     # copy(verse,3)  
+
+PRECHORUS 1  
+Gold-en-chain-a-round-your-heart              #  
+Pull-ing-us-a-part-from-the-start             # transpose(prechorus,1,+5)  
+Prom-is-es-like-bro-ken-glass                 #  
+Cut-ting-deep-er-as-we-pass                   # invert(verse,4,C4)  
+
+CHORUS 1  
+Oh-dar-ling-can-you-hear-the-rain-fall?       #  
+Like-tears-up-on-our-bed-room-wall            # transpose(chorus,1,-4)  
+This-gold-en-chain-it-binds-and-burns         #  
+At-ev-ry-turn-the-lesson-learns               # copy(chorus,3)  
+We're-on-the-edge-of-to-mor-row               #  
+But-to-day-is-full-of-sor-row                 # reverse(chorus,5)  
+
+VERSE 2  
+Moon-light-spills-through-the-cur-tain-crack   #  
+Paint-ing-lines-up-on-your-back               # transpose(verse,1,+7)  
+We-both-know-this-road-by-heart               #  
+But-still-don't-know-where-to-start           # invert(verse,2,G4)  
+
+PRECHORUS 2  
+Sil-ver-threads-of-mem-o-ry                   #  
+Spin-ning-what-we-used-to-be                  # transpose(prechorus,1,-2)  
+Voic-es-ech-o-in-the-hall                     #  
+Noth-ing-left-to-break-our-fall               # copy(prechorus,3)  
+
+CHORUS 2  
+Oh-dar-ling-can-you-hear-the-rain-fall?       # 9,8,8,7,8,7 syllables  
+Like-tears-up-on-our-bed-room-wall            # copy(chorus,2)  
+This-gold-en-chain-it-binds-and-burns         # copy(chorus,3)  
+At-ev-ry-turn-the-lesson-learns               # copy(chorus,4)  
+We're-on-the-edge-of-to-mor-row               # copy(chorus,5)  
+But-to-day-is-full-of-sor-row                 # copy(chorus,6)  
+
+BRIDGE  
+Des-ert-wind-blows-through-the-room           #  
+Sweep-ing-up-the-per-fume-gloom               # transpose(bridge,1,+4)  
+All-our-ghosts-they-dance-a-gain              #  
+To-the-rhythm-of-the-pain                     # invert(bridge,3,E4)  
+Can-we-mend-what-time-un-did?                 #  
+Close-the-lid-on-what-we-hid                 # transpose(bridge,5,-7)  
+
+SOLO  
+Oh-dar-ling-can-you-hear-the-rain-fall?       # copy(chorus,1)  
+Like-tears-up-on-our-bed-room-wall            # copy(chorus,2)  
+This-gold-en-chain-it-binds-and-burns         # copy(chorus,3)  
+At-ev-ry-turn-the-lesson-learns               # copy(chorus,4)  
+We're-on-the-edge-of-to-mor-row               # copy(chorus,5)  
+But-to-day-is-full-of-sor-row                 # copy(chorus,6)  
+
+CHORUS 3  
+Oh-dar-ling-can-you-hear-the-rain-fall?       # 9,8,8,7,8,7 syllables  
+Like-tears-up-on-our-bed-room-wall            # copy(chorus,2)  
+This-gold-en-chain-it-binds-and-burns         # copy(chorus,3)  
+At-ev-ry-turn-the-lesson-learns               # copy(chorus,4)  
+We're-on-the-edge-of-to-mor-row               # copy(chorus,5)  
+But-to-day-is-full-of-sor-row                 # copy(chorus,6)  
+
+OUTRO  
+Shad-ows-dance-on-the-wall                    # copy(intro,1)  
+Soft-ly-whis-per-ing-call                     # transpose(outro,1,+3)  
+Edge-of-to-mor-row...                         #  
+Edge-of-to-mor-row...                         # copy(outro,3)  
+Chain-break...rain-fall...                    #  
+Chain-break...rain-fall...                    # transpose(outro,5,-2)

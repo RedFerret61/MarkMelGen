@@ -1,0 +1,94 @@
+# Adventure_Calls.txt
+# Ad-ven-ture Calls 1 / He-ro's Jour-ney 2 / Quest Be-yond 3
+
+INTRO
+Through the mead-ows green and wide                    #
+Where the morn-ing sun-light shines                    # copy(intro,1)
+A he-ro's tale be-gins to-day                          #
+As des-ti-ny a-ligns                                   # copy(intro,2)
+
+VERSE
+In a vil-lage small and peace-ful                     #
+Where the gen-tle breez-es blow                       #
+Lives a youth with dreams of glo-ry                   #
+Wait-ing for his chance to grow                       # copy(verse,2)
+With a sword up-on his shoul-der                      #
+And a heart both brave and true                       #
+He will face the dark-est dan-gers                    #
+See his quest-ing jour-ney through                    # copy(verse,6)
+
+PRECHORUS
+Now the wind is call-ing soft-ly                      #
+Through the an-cient oak trees tall                   #
+Ad-ven-ture waits be-yond the ho-ri-zon               #
+He must an-swer des-ti-ny's call                      # copy(prechorus,2)
+
+CHORUS
+Rise up, rise up, brave war-ri-or                     #
+The world needs you to-day                            #
+Through for-ests deep and moun-tains high             #
+You'll find the right-eous way                        # copy(chorus,2)
+With cour-age burn-ing in your heart                  #
+And wis-dom as your guide                             #
+The leg-end starts with one small step                #
+With friends stand-ing by your side                   # copy(chorus,6)
+
+VERSE
+Past the crys-tal lakes re-flect-ing                  # 9 syllables
+Stars that dance in sky a-bove                        # 6 syllables
+Through the caves where e-choes whis-per              # 8 syllables
+Tales of an-cient trea-sured love                     # 6 syllables
+Every chal-lenge makes him strong-er                  # 8 syllables
+Every tri-al builds his soul                          # 6 syllables
+For the pow-er deep with-in him                       # 8 syllables
+Helps him reach his no-ble goal                       # 6 syllables
+
+PRECHORUS
+Now the wind is call-ing soft-ly                      # 8 syllables
+Through the an-cient oak trees tall                   # 7 syllables
+Ad-ven-ture waits be-yond the ho-ri-zon               # 11 syllables
+He must an-swer des-ti-ny's call                      # 8 syllables
+
+CHORUS
+Rise up, rise up, brave war-ri-or                     # 8 syllables
+The world needs you to-day                            # 6 syllables
+Through for-ests deep and moun-tains high             # 8 syllables
+You'll find the right-eous way                        # 6 syllables
+With cour-age burn-ing in your heart                  # 8 syllables
+And wis-dom as your guide                             # 6 syllables
+The leg-end starts with one small step                # 8 syllables
+With friends stand-ing by your side                   # 7 syllables
+
+BRIDGE
+When the shad-ows grow much dark-er                   #
+And hope seems lost and gone                          #
+Re-mem-ber all the love that guides you               #
+Your spir-it car-ries on                              # copy(bridge,2)
+For ev-ery end's a new be-gin-ning                    #
+Each sun-set brings the dawn                          # copy(bridge,2)
+
+CHORUS
+Rise up, rise up, brave war-ri-or                     # 8 syllables
+The world needs you to-day                            # 6 syllables
+Through for-ests deep and moun-tains high             # 8 syllables
+You'll find the right-eous way                        # 6 syllables
+With cour-age burn-ing in your heart                  # 8 syllables
+And wis-dom as your guide                             # 6 syllables
+The leg-end starts with one small step                # 8 syllables
+With friends stand-ing by your side                   # 7 syllables
+
+SOLO
+In a vil-lage small and peace-ful                     # copy(verse,1)
+Where the gen-tle breez-es blow                       # copy(verse,2)
+Lives a youth with dreams of glo-ry                   # copy(verse,3)
+Wait-ing for his chance to grow                       # copy(verse,4)
+With a sword up-on his shoul-der                      # copy(verse,5)
+And a heart both brave and true                       # copy(verse,6)
+He will face the dark-est dan-gers                    # copy(verse,7)
+See his quest-ing jour-ney through                    # copy(verse,8)
+
+OUTRO
+Through the mead-ows green and wide                    # 7 syllables
+Where the eve-ning stars now shine                    # 7 syllables
+The he-ro's tale will live for-ev-er                  #
+In this song of yours and mine                        # copy(outro,2)

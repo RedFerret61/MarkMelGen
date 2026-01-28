@@ -1,0 +1,79 @@
+# Starlight_on_the_Pier
+# Star-light-on-the-Pier / Glass-Hearts-and-Gold-Shoes / When-the-Piano-Knows
+
+
+INTRO  
+Gold-en-lamps-on-the-mid-night-sea                    #  
+Shine-like-dreams-that-are-call-ing-me                #  
+Gold-en-lamps-on-the-mid-night-sea                    # copy(intro,1)  
+Shine-like-dreams-that-are-call-ing-me                # copy(intro,2)  
+
+
+VERSE 1  
+Rain-on-the-roof-makes-a-vel-vet-song                 #  
+Keys-in-my-hand-where-the-notes-be-long               #  
+Rain-on-the-roof-makes-a-vel-vet-song                 # copy(verse,1)  
+Moon-light-danc-es-on-a-crim-son-tide                 #  
+
+
+PRECHORUS 1  
+Ev-ry-step-takes-me-clos-er-to-you                    #  
+Like-a-chor-ded-pray-er-in-the-morn-ing-dew           #  
+Ev-ry-step-takes-me-clos-er-to-you                    # copy(prechorus,1)  
+Like-a-chor-ded-pray-er-in-the-morn-ing-dew           # copy(prechorus,2)  
+
+
+CHORUS 1  
+This-is-the-night-we-burn-like-fire                   #  
+Hearts-on-the-wind-lift-higher-and-higher             #  
+This-is-the-night-we-burn-like-fire                   # copy(chorus,1)  
+Un-lock-ing-the-world-that-you-gave-to-me             #  
+
+
+VERSE 2  
+Glass-in-the-rain-catch-es-can-dle-light              #  
+Your-eyes-are-a-map-in-the-blue-of-night              #  
+Glass-in-the-rain-catch-es-can-dle-light              # copy(verse,1)  
+We-sing-like-the-sto-ries-we-nev-er-told              #  
+
+
+PRECHORUS 2  
+Ev-ry-step-takes-me-clos-er-to-you                    # 8,7,8,6 syllables  
+Like-a-chor-ded-pray-er-in-the-morn-ing-dew           # copy(prechorus,2)  
+Ev-ry-step-takes-me-clos-er-to-you                    # copy(prechorus,1)  
+Like-a-chor-ded-pray-er-in-the-morn-ing-dew           # copy(prechorus,2)  
+
+
+CHORUS 2  
+This-is-the-night-we-burn-like-fire                   # 8,7,8,6 syllables  
+Hearts-on-the-wind-lift-higher-and-higher             # copy(chorus,2)  
+This-is-the-night-we-burn-like-fire                   # copy(chorus,1)  
+Un-lock-ing-the-world-that-you-gave-to-me             # copy(chorus,4)  
+
+
+BRIDGE  
+Oh-the-pi-a-no-knows-my-name                          #  
+It-sings-it-back-in-a-gold-en-frame                   #  
+Oh-the-pi-a-no-knows-my-name                          # copy(bridge,1)  
+Nev-er-let-go-nev-er-let-go                           #  
+
+
+SOLO  
+This-is-the-night-we-burn-like-fire                   # copy(chorus,1)  
+Hearts-on-the-wind-lift-higher-and-higher             # copy(chorus,2)  
+This-is-the-night-we-burn-like-fire                   # copy(chorus,1)  
+Un-lock-ing-the-world-that-you-gave-to-me             # copy(chorus,4)  
+
+
+CHORUS 3  
+This-is-the-night-we-burn-like-fire                   # 8,7,8,6 syllables  
+Hearts-on-the-wind-lift-higher-and-higher             # copy(chorus,2)  
+This-is-the-night-we-burn-like-fire                   # copy(chorus,1)  
+Un-lock-ing-the-world-that-you-gave-to-me             # copy(chorus,4)  
+
+
+OUTRO  
+Gold-en-lamps-on-the-mid-night-sea                    # copy(intro,1)  
+Shine-like-dreams-that-are-call-ing-me                # copy(intro,2)  
+Gold-en-lamps-on-the-mid-night-sea                    # copy(intro,1)  
+Shine-like-dreams-that-are-call-ing-me                # copy(intro,2)  

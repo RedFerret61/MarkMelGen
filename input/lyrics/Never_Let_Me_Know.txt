@@ -1,0 +1,80 @@
+# Never_Let_Me_Know
+# Shad-ows-of-You / Bro-ken-in-Si-lence / Nev-er-Let-Me-Know
+
+INTRO
+Dark-ness-falls-a-cross-the-room                   #
+Soft-ly-I-re-mem-ber-you                          #
+
+
+
+VERSE 1
+You-left-a-trace-that-ne-ver-fades                 #
+My-heart-still-ches-es-thru-the-blades             # copy(intro,2)
+Of-ev-ry-night-when-dreams-re-turn                 # transpose(intro,1,+4)
+The-fire-still-burns-but-will-not-learn            # invert(intro,2,C4)
+
+
+
+PRECHORUS 1
+I-try-to-run-but-your-voice-stays                  #
+It-echoes-soft-in-the-bro-ken-ways                 # copy(verse,2)
+
+
+
+CHORUS 1
+I-am-call-ing-out-in-shad-ows                      #
+But-you-ne-ver-let-me-know                         # copy(verse,1)
+I-am-fall-ing-through-the-si-lence                 # transpose(verse,3,-3)
+Still-I-can-not-let-you-go                         # reverse(verse,4)
+
+
+
+VERSE 2
+The-rain-it-beats-up-on-my-skin                    # transpose(verse,1,+3)
+It-sounds-like-words-you-left-within               # copy(verse,2)
+The-clos-er-I-come-to-the-light                    # invert(verse,3,D4)
+The-deep-er-I-fall-in-to-the-night                 # reverse(verse,4)
+
+
+
+PRECHORUS 2
+I-try-to-hide-but-your-hand-clings                 # transpose(prechorus,1,-2)
+I-hear-the-break-of-for-got-ten-strings            # copy(prechorus,2)
+
+
+
+CHORUS 2
+I-am-call-ing-out-in-shad-ows                      # 8,7,8,6 syllables
+But-you-ne-ver-let-me-know                         # copy(chorus,2)
+I-am-fall-ing-through-the-si-lence                 # copy(chorus,3)
+Still-I-can-not-let-you-go                         # copy(chorus,4)
+
+
+
+BRIDGE
+If-I-could-turn-the-years-a-way                    # transpose(verse,1,+5)
+I-would-still-choo-se-you-to-stay                  # invert(verse,2,E4)
+But-ev-ry-step-just-leads-to-pain                  # reverse(verse,3)
+The-sun-will-rise-and-fall-a-gain                  # copy(verse,4)
+
+
+
+SOLO
+I-am-call-ing-out-in-shad-ows                      # copy(chorus,1)
+But-you-ne-ver-let-me-know                         # copy(chorus,2)
+I-am-fall-ing-through-the-si-lence                 # copy(chorus,3)
+Still-I-can-not-let-you-go                         # copy(chorus,4)
+
+
+
+CHORUS 3
+I-am-call-ing-out-in-shad-ows                      # 8,7,8,6 syllables
+But-you-ne-ver-let-me-know                         # copy(chorus,2)
+I-am-fall-ing-through-the-si-lence                 # copy(chorus,3)
+Still-I-can-not-let-you-go                         # copy(chorus,4)
+
+
+
+OUTRO
+Dark-ness-falls-a-cross-the-room                   # copy(intro,1)
+But-I-am-not-re-mem-ber-ing-you                    # transpose(intro,2,+5)

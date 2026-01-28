@@ -1,0 +1,61 @@
+# Desert_Moon_Rising
+# The Good, the Bad, and Time / Once Up-on a Mem-o-ry / Desert Moon Ris-ing
+INTRO
+In the des-ert where the dust devils dance #
+Two gun-fight-ers meet by fate, not chance # transpose(intro,1,4)
+
+VERSE
+Tum-ble-weed rolls past the can-ti-na door #
+Where whis-pers tell of what has come be-fore # invert(verse,1,F4)
+The har-mon-i-ca plays a lone-ly tune #
+Un-der-neath the blood-red des-ert moon # reverse(verse,3)
+
+PRECHORUS
+Time stands still in this for-got-ten place #
+Where hon-or and re-venge come face to face # transpose(prechorus,1,-2)
+
+CHORUS
+Ride a-way, ride a-way, cow-boy bold #
+Your sto-ry's one that will nev-er grow old # invert(chorus,1,Bb4)
+In the land where le-gends are born and die #
+Un-der-neath the end-less west-ern sky # reverse(chorus,3)
+
+VERSE
+Church bells ring a-cross the emp-ty plain # 8 syllables
+Ech-o-ing like ghosts of joy and pain # transpose(verse,2,3)
+A wom-an waits with tears up-on her face # 8 syllables
+For a love that time can-not e-rase # invert(verse,4,G4)
+
+PRECHORUS
+Time stands still in this for-got-ten place # 8 syllables
+Where hon-or and re-venge come face to face # 9 syllables
+
+CHORUS
+Ride a-way, ride a-way, cow-boy bold # 8 syllables
+Your sto-ry's one that will nev-er grow old # 9 syllables
+In the land where le-gends are born and die # 9 syllables
+Un-der-neath the end-less west-ern sky # 8 syllables
+
+SOLO
+Tum-ble-weed rolls past the can-ti-na door # copy(verse,1)
+Where whis-pers tell of what has come be-fore # invert(verse,2,F4)
+The har-mon-i-ca plays a lone-ly tune # transpose(verse,3,5)
+Un-der-neath the blood-red des-ert moon # reverse(verse,4)
+
+BRIDGE
+In Si-ci-ly or in the wild, wild west #
+Some men are cursed, some men are blessed # invert(bridge,1,D4)
+But mu-sic tells the tale that words can-not #
+Of love and loss, and what time has for-got # transpose(bridge,3,-3)
+
+CHORUS
+Ride a-way, ride a-way, cow-boy bold # 8 syllables
+Your sto-ry's one that will nev-er grow old # 9 syllables
+In the land where le-gends are born and die # 9 syllables
+Un-der-neath the end-less west-ern sky # 8 syllables
+
+OUTRO
+In the des-ert where the dust devils dance # 9 syllables
+Two gun-fight-ers meet by fate, not chance # transpose(intro,2,6)
+The mu-sic fades but the leg-end lives on # 9 syllables
+Like the des-ert wind at the break of dawn # reverse(outro,3)

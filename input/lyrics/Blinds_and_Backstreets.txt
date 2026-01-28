@@ -1,0 +1,66 @@
+INTRO
+1 2 3 										# (Guitar riff - a dirty, bluesy lick) 
+1 2 3 4 5 6									#
+1 2 3										# 	copy(intro,1)
+1 2 3 4 5 6									# 	copy(intro,2)
+
+VERSE 1
+Sun-light bleed-in' through the blinds,  	# 7,7,8,8 syllables
+A-noth-er night left be-hind.  				# 	transpose(verse,1,3)
+The taste of whis-key on my tongue,  		# 	
+A sad, old song that's al-ways sung.  		# 	transpose(verse,3,-3) 
+
+PRECHORUS
+She walked in like a hur-ri-cane,  			# 8,9,8,9 syllables
+She was Driv-in' me al-most in-sane.  		# 
+With eyes that burned like coal-mine fire,  # copy(prechorus,1)
+Rais-in' my tem-per-a-ture high-er.  		# copy(prechorus,2)
+
+CHORUS
+Oh, this town's a roll-in' stone,  			# 7,7,8,8 syllables
+Leav-in' good hearts all a-lone.  			# 	transpose(chorus,1,4)
+Yeah, love's a gam-ble, dice are thrown,  	# 
+I'm just try-in' to get back home.  		# 	transpose(chorus,3,8)
+
+VERSE 2
+Down some back-street, dark and grim,  		# 7 syllables
+Chas-in' af-ter some sweet whim.  			# 7 syllables
+She prom-ised me the moon and stars,  		# 8 syllables
+Left me with noth-in' but the scars.  		# 8 syllables
+
+PRECHORUS
+She moved like shad-ows in the night,  		# 8 syllables
+And She van-ished in the morn-ing light.  	# 9 syllables
+Her laugh, a crack-le in the air,  			# 8 syllables
+Now just a mem-o-ry I can't bear.  			# 9 syllables
+
+CHORUS
+Oh, this town's a roll-in' stone,  			# 7 syllables
+Leav-in' good hearts all a-lone.  			# 7 syllables
+Yeah, love's a gam-ble, dice are thrown,  	# 8 syllables
+I'm just try-in' to get back home.  		# 8 syllables
+
+SOLO										# (Guitar solo - raw, blues-infused with a touch of swagger and feedback)
+1 2 3 										# 	copy(intro,1)
+1 2 3 4 5 6									#	copy(intro,2)
+1 2 3										# 	copy(intro,3)
+1 2 3 4 5 6									# 	copy(intro,4)
+
+BRIDGE
+My soul's a lit-tle bit frayed,  			# 7,7,7,7 syllables
+Like a cheap suit that's been swayed.  		# 	invert(bridge, 1, C5)
+But there's a fire deep in-side,  			# 	copy(bridge,1)
+That this old world just can't hide.  		# 	reverse(bridge,2)
+
+CHORUS
+Oh, this town's a roll-in' stone,  			# 7 syllables
+Leav-in' good hearts all a-lone.  			# 7 syllables
+Yeah, love's a gam-ble, dice are thrown,  	# 8 syllables
+I'm just try-in' to get back home.  		# 8 syllables
+
+OUTRO										# Roll-in' on... roll-in' on.., Yeah, roll-in' on... 'til the dawn..
+1 2 3 										# 	copy(intro,1)
+1 2 3 4 5 6									#	copy(intro,2)
+1 2 3										# 	copy(intro,3)
+1 2 3 4 5 6									# 	copy(intro,4)
+

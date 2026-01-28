@@ -1,0 +1,62 @@
+# Telephone_Priest.txt
+# News-pa-per Tax-i / Pen-guin Wait-er / Tel-e-phone Priest
+
+INTRO
+Go-ing down, down, down, down, down #
+Go-ing down, down, down, down, down # copy(intro,1)
+
+VERSE 1
+News-pa-per tax-i is wait-ing for me #
+He's made out of yes-ter-day's mis-er-y # copy(verse,1)
+A pen-guin wait-er is pour-ing the sea # transpose(verse,1,3)
+Says 'have a nice day, sir, the o-cean is free' # copy(verse,2)
+
+PRECHORUS 1
+And I look in the mir-ror to see #
+But the mir-ror is look-ing at me # copy(prechorus,1)
+
+CHORUS 1
+I know you know me but I don't know who's there #
+Stand-ing on sun-shine and breath-ing the air # copy(chorus,1)
+They're sell-ing tick-ets to go no-where fast # transpose(chorus,1,5)
+The fu-ture is o-ver, it's all in the past # copy(chorus,3)
+
+VERSE 2
+A tel-e-phone priest rings a crack in the sky # 10,9,10,11 syllables
+He's got all the ans-wers but does-n't know why
+The queen of the sub-way is wear-ing my hair
+She smiles at the peo-ple who are-n't real-ly there
+
+PRECHORUS 2
+And I look in the mir-ror to see # 7,7 syllables
+But the mir-ror is look-ing at me
+
+CHORUS 2
+I know you know me but I don't know who's there # 11,10,11,11 syllables
+Stand-ing on sun-shine and breath-ing the air
+They're sell-ing tick-ets to go no-where fast
+The fu-ture is o-ver, it's all in the past
+
+BRIDGE 1
+Tell me the truth, if the truth is a game #
+Is win-ning and los-ing ex-act-ly the same? # copy(bridge,1)
+I'm climb-ing the lad-der but the lad-der is gone # transpose(bridge,1,-2)
+And I have to keep sing-ing this ver-y same song # copy(bridge,2)
+
+SOLO
+News-pa-per tax-i is wait-ing for me # copy(verse,1)
+He's made out of yes-ter-day's mis-er-y # copy(verse,2)
+A pen-guin wait-er is pour-ing the sea # copy(verse,3)
+Says 'have a nice day, sir, the o-cean is free' # copy(verse,4)
+
+CHORUS 3
+I know you know me but I don't know who's there # 11,10,11,11 syllables
+Stand-ing on sun-shine and breath-ing the air
+They're sell-ing tick-ets to go no-where fast
+The fu-ture is o-ver, it's all in the past
+
+OUTRO
+It's all in the past # copy(chorus,4)
+It's all in the past # reverse(outro,1)
+It's all in the past # invert(outro,1,C4)
+It's all in the past # transpose(outro,1,-5)

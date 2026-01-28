@@ -1,0 +1,67 @@
+# One_Loves_Call.txt
+# One Love's Call / Rise Up, Dread / Riv-ers of Free-dom
+
+INTRO
+Yeah, yeah, oh yeah                                       #
+Yeah, yeah, oh yeah                                       # copy(intro,1)
+
+VERSE 1
+I see the chil-dren in the street                         #
+With no shoes on their bleed-ing feet                     # copy(verse,1)
+The sys-tem holds them in de-spair                        # transpose(verse,1,2)
+But we must show them that we care                        # copy(verse,3)
+
+PRECHORUS 1
+Can you feel the sun a-ris-in'?                           #
+Can you feel the love a-com-in'?                          # copy(prechorus,1)
+
+CHORUS 1
+One love call-in', can you hear it?                       #
+Gath-er 'round, we must now share it                      # copy(chorus,1)
+We must break the chains that bind us                     # transpose(chorus,1,4)
+Then live in joy, yes, live in bliss                      # copy(chorus,3)
+
+VERSE 2
+The riv-ers flow to the sea, so free                      # 8,8,8,8 syllables
+Just like our souls were meant to be
+The moun-tains high and the val-leys low
+In eve-ry heart, the love will grow
+
+PRECHORUS 2
+Can you feel the sun a-ris-in'?                           # 7,7 syllables
+Can you feel the love a-com-in'?                          
+
+CHORUS 2
+One love call-in', can you hear it?                       # 8,8,8,8 syllables
+Gath-er 'round, we must now share it
+We must break the chains that bind us
+Then live in joy, yes, live in bliss
+
+BRIDGE 1
+When the rain has stopped a-fall-in'                      #
+And the bat-tle's end is call-in'                         # copy(bridge,1)
+We'll stand firm on the high-er ground                    # transpose(bridge,1,-2)
+With love, the on-ly truth we've found                    # copy(bridge,3)
+
+CHORUS 3
+One love call-in', can you hear it?                       # 8,8,8,8 syllables
+Gath-er 'round, we must now share it
+We must break the chains that bind us
+Then live in joy, yes, live in bliss
+
+SOLO
+I see the chil-dren in the street                         # copy(verse,1)
+With no shoes on their bleed-ing feet                     # copy(verse,2)
+The sys-tem holds them in de-spair                        # copy(verse,3)
+But we must show them that we care                        # copy(verse,4)
+
+CHORUS 4
+One love call-in', can you hear it?                       # 8,8,8,8 syllables
+Gath-er 'round, we must now share it
+We must break the chains that bind us
+Then live in joy, yes, live in bliss
+
+OUTRO
+Yeah, yeah, oh yeah                                       # copy(intro,1)
+Yeah, yeah, oh yeah                                       # transpose(outro,1,2)
+Yeah, yeah, oh yeah                                       # invert(outro,1,C5)

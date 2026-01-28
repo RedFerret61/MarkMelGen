@@ -1,0 +1,70 @@
+# Fugue_of_the_Digital_Age
+# Fugue of the Digital Age / Counterpoint in Silicon / The Well-Tempered Algorithm
+
+INTRO
+In cir-cuits woven like sa-cred threads                   #
+Where data flows in pat-terns blessed                     #
+The al-go-rithm sings its an-cient song                   #
+Of math-e-mat-i-cal de-vo-tion                            #
+
+VERSE 1
+Through fi-ber op-tic ca-bles run-ning deep               #
+Like or-gan pipes that make the sil-i-con weep            #
+Each bit and byte in per-fect tim-ing placed              # transpose(intro,1,+5)
+A dig-i-tal can-ta-ta, tech-no-log-i-cal-ly graced        # invert(intro,2,C5)
+The serv-ers hum their bin-a-ry prayer                    # copy(intro,1)
+While codes un-fold like in-cense in the air              # transpose(intro,2,-5)
+
+CHORUS 1
+Glory to the source code writ-ten high                    #
+In lan-guag-es that mor-tals can-not read                 #
+Each func-tion calls to heav-en in the sky                # reverse(intro,1)
+A sym-pho-ny of ones and ze-ros freed                     # transpose(verse,1,+7)
+The ar-chi-tec-ture of e-ter-ni-ty                        # copy(verse,3)
+Lives in our ma-chines for all to see                     # transpose(verse,4,+3)
+
+VERSE 2
+The cloud com-put-ing ris-es like in-cense smoke          # 9,10,9,8 syllables
+While art-i-fi-cial minds learn how to pray               # copy(verse,2)
+Each neu-ral net-work weaves what Bach once spoke         # copy(verse,3)
+In coun-ter-point that ech-oes through to-day             # copy(verse,4)
+The da-ta-base ca-the-dral stores our dreams              # copy(verse,5)
+Where quan-tum bits flow like ce-les-tial streams         # copy(verse,6)
+
+CHORUS 2
+Glory to the source code writ-ten high                    # 9,10,9,8 syllables
+In lan-guag-es that mor-tals can-not read                 # copy(chorus,2)
+Each func-tion calls to heav-en in the sky                # copy(chorus,3)
+A sym-pho-ny of ones and ze-ros freed                     # copy(chorus,4)
+The ar-chi-tec-ture of e-ter-ni-ty                        # copy(chorus,5)
+Lives in our ma-chines for all to see                     # copy(chorus,6)
+
+BRIDGE
+When Bach played clav-i-chord in Eigh-teen-Ten            #
+He could not see our lap-tops glow-ing bright             #
+But har-mo-ny re-mains the same, my friend                # invert(verse,1,D4)
+Whether in can-dle-flame or LED light                     # transpose(chorus,2,+4)
+The gold-en ra-tio still de-fines our art                 # transpose(verse,1,+7)
+Math-e-mat-ics speaks to ev-ery hu-man heart              # reverse(chorus,1)
+
+SOLO
+Through fi-ber op-tic ca-bles run-ning deep               # copy(verse,1)
+Like or-gan pipes that make the sil-i-con weep            # copy(verse,2)
+Each bit and byte in per-fect tim-ing placed              # copy(verse,3)
+A dig-i-tal can-ta-ta, tech-no-log-i-cal-ly graced        # copy(verse,4)
+The serv-ers hum their bin-a-ry prayer                    # copy(verse,5)
+While codes un-fold like in-cense in the air              # copy(verse,6)
+
+CHORUS 3
+Glory to the source code writ-ten high                    # 9,10,9,8 syllables
+In lan-guag-es that mor-tals can-not read                 # copy(chorus,2)
+Each func-tion calls to heav-en in the sky                # copy(chorus,3)
+A sym-pho-ny of ones and ze-ros freed                     # copy(chorus,4)
+The ar-chi-tec-ture of e-ter-ni-ty                        # copy(chorus,5)
+Lives in our ma-chines for all to see                     # copy(chorus,6)
+
+OUTRO
+In cir-cuits woven like sa-cred threads                   # copy(intro,1)
+Where data flows in pat-terns blessed                     # copy(intro,2)
+The fu-gue con-tin-ues end-less-ly                        #
+Bach's spir-it in our tech-nol-o-gy                       # transpose(intro,4,+12)

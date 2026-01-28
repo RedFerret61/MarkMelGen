@@ -1,0 +1,61 @@
+# Rain-drops on My Soul 
+# Noc-turne for a Lost Love / Rain-drops on My Soul / Mel-an-chol-y Waltz
+INTRO
+In the qui-et of the eve-ning hour #
+When shad-ows dance like fall-ing flow-ers # transpose(intro,1,3)
+
+VERSE
+I sit be-side the eb-o-ny keys #
+And let my fin-gers find the mel-o-dies # invert(verse,1,Db4)
+That speak the words my heart can-not say #
+Of love that slipped like mu-sic away # reverse(verse,3)
+
+PRECHORUS
+Each note a tear, each chord a sigh #
+Float-ing up-ward to the star-lit sky # transpose(prechorus,1,-2)
+
+CHORUS
+Play, sweet pia-no, sing my lone-ly song #
+Of ten-der mo-ments that have come and gone # invert(chorus,1,Ab4)
+In mi-nor keys I find my tru-est voice #
+When si-lence was my on-ly, on-ly choice # reverse(chorus,3)
+
+VERSE
+The can-dle flick-ers by the mu-sic stand # 9 syllables
+Like mem-o-ries I can-not un-der-stand # transpose(verse,2,4)
+Polish lul-la-bies my moth-er sang # 8 syllables
+Still ech-o where the cry-stal chan-de-liers hang # invert(verse,4,F4)
+
+PRECHORUS
+Each note a tear, each chord a sigh # 7 syllables
+Float-ing up-ward to the star-lit sky # 8 syllables
+
+CHORUS
+Play, sweet pia-no, sing my lone-ly song # 8 syllables
+Of ten-der mo-ments that have come and gone # 9 syllables
+In mi-nor keys I find my tru-est voice # 8 syllables
+When si-lence was my on-ly, on-ly choice # 8 syllables
+
+SOLO
+I sit be-side the eb-o-ny keys # copy(verse,1)
+And let my fin-gers find the mel-o-dies # invert(verse,2,Db4)
+That speak the words my heart can-not say # transpose(verse,3,5)
+Of love that slipped like mu-sic away # reverse(verse,4)
+
+BRIDGE
+Some-times the no-ble heart must break #
+For beau-ty's and for art-is-try's sake # invert(bridge,1,Eb4)
+In Po-land's fields or Pa-ris streets #
+The soul finds what the spir-it needs # transpose(bridge,3,-3)
+
+CHORUS
+Play, sweet pia-no, sing my lone-ly song # 8 syllables
+Of ten-der mo-ments that have come and gone # 9 syllables
+In mi-nor keys I find my tru-est voice # 8 syllables
+When si-lence was my on-ly, on-ly choice # 8 syllables
+
+OUTRO
+In the qui-et of the eve-ning hour # 9 syllables
+When shad-ows dance like fall-ing flow-ers # transpose(intro,2,6)
+The pia-no sings what words can-not say # 8 syllables
+Of love that lives though you have gone away # reverse(outro,3)

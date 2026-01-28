@@ -1,0 +1,67 @@
+# Midnight_Serenade.txt
+# Sil-ver Hori-zon / Mid-night Se-ren-ade / Moon-lit Ri-ver
+
+INTRO  
+La la la la la la la                                       #  
+La la la la la la la                                       # copy(intro,1)  
+
+VERSE 1  
+Soft whis-pered no-tes float through sun-set air            #  
+Moon-lit me-lo-dy en-twines each sigh-ing heart            # copy(verse,1)  
+Night-em-braced pas-sion paints our dreams a-new            # transpose(verse,1,4)  
+Hand-in-hand we will dance be-yond all time                # copy(verse,3)  
+
+PRECHORUS 1  
+Let mu-sic guide us through the si-lent night              #  
+Where our souls are lit with en-dless light                 # copy(prechorus,1)  
+
+CHORUS 1  
+Here is our mo-ment now to shine                           #  
+Hearts sync in-time with the drums soft rhyme               # copy(chorus,1)  
+Lan-terns of hope ig-nite de-light                          # transpose(chorus,1,5)  
+Ev-er al-ways we soar be-yond the night                    # copy(chorus,3)  
+
+VERSE 2  
+Gold-en notes a-wake dawn-ing light                         # 8,7,8,7 syllables  
+Soft dr-ums per-cuss a gen-tle beat  
+Hearts re-joice with harp-ed strings clear  
+Dreams e-mer-ge, hope draws near  
+
+PRECHORUS 2  
+Mu-sic cleans-es strife a-way                               # 7,7 syllables  
+Car-ry us where joy un-furls  
+
+CHORUS 2  
+Here is our mo-ment now to shine                           # 8,7,8,8 syllables  
+Hearts sync with drums in soft rhyme  
+Lan-terns of hope ig-nite de-light  
+Ev-er al-ways we soar through night  
+
+BRIDGE 1  
+In qui-et shades we find our tru-est voice                  #  
+Whis-per-ed dreams re-turn to guide our choice              # copy(bridge,1)  
+And so we stand with pas-sion re-kind-ling                  # transpose(bridge,1,-2)  
+Spir-it and soul in glo-ri-ous u-nion                      # copy(bridge,3)  
+
+CHORUS 3  
+Here is our mo-ment now to shine                           # 8,7,8,8 syllables  
+Hearts sync with drums in soft rhyme  
+Lan-terns of hope ig-nite de-light  
+Ev-er al-ways we soar through night  
+
+SOLO  
+Soft whis-pered no-tes float through sun-set air            # copy(verse,1)  
+Moon-lit me-lo-dy en-twines each sigh-ing heart            # copy(verse,2)  
+Night-em-braced pas-sion paints our dreams a-new            # copy(verse,3)  
+Hand-in-hand we will dance be-yond all time                # copy(verse,4)  
+
+CHORUS 4  
+Here is our mo-ment now to shine                           # 8,7,8,8 syllables  
+Hearts sync with drums in soft rhyme  
+Lan-terns of hope ig-nite de-light  
+Ev-er al-ways we soar through night  
+
+OUTRO  
+La la la la la la la                                       # copy(intro,1)  
+La la la la la la la                                       # transpose(outro,1,5)  
+La la la la la la la                                       # invert(outro,1,C5)  

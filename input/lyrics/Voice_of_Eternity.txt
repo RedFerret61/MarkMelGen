@@ -1,0 +1,54 @@
+# Voice_of_Eternity
+# O-Sa-cred-Light / Tears-of-Re-demp-tion / Voice-of-E-ter-ni-ty
+
+---
+
+INTRO
+O-ra-tion-ris-es-high                                   #
+O-ver-shad-owed-sky                                     # transpose(intro,1,+5)
+
+VERSE 1
+Lord-of-mer-cy-take-my-soul                             #
+Guide-me-through-the-veil-of-night                      # invert(verse,1,C4)
+Grant-me-grace-that-makes-me-whole                      # reverse(verse,1)
+Shine-e-ter-nal-hol-y-light                             # transpose(verse,2,+3)
+
+CHORUS 1
+Bless-ing-comes-from-Hea-ven's-throne                   #
+Peace-is-giv-en-not-my-own                              # transpose(chorus,1,+7)
+Hearts-are-raised-in-sac-red-song                       # reverse(chorus,1)
+God's-e-ter-ni-ty-is-strong                             # invert(chorus,2,D4)
+
+VERSE 2
+Cross-of-wood-on-hill-so-steep                          #
+Car-ry-weight-of-hu-man-strife                          # invert(verse,1,D4)
+Shad-ows-fall-where-an-gels-weep                        # reverse(verse,2)
+Love-re-deems-the-breath-of-life                        # transpose(verse,3,-4)
+
+CHORUS 2
+Bless-ing-comes-from-Hea-ven's-throne                   # 8,7,8,6 syllables
+Peace-is-giv-en-not-my-own                              # copy(chorus,2)
+Hearts-are-raised-in-sac-red-song                       # copy(chorus,3)
+God's-e-ter-ni-ty-is-strong                             # copy(chorus,4)
+
+BRIDGE
+Rise-o-soul-and-shed-the-pain                           #
+Faith-will-break-the-iron-chain                         # invert(bridge,1,E4)
+Hope-re-sounds-a-mid-the-choir                          # transpose(bridge,1,+5)
+Lift-ing-ev-er-high-er                                  # reverse(bridge,2)
+
+SOLO
+Bless-ing-comes-from-Hea-ven's-throne                   # copy(chorus,1)
+Peace-is-giv-en-not-my-own                              # copy(chorus,2)
+Hearts-are-raised-in-sac-red-song                       # copy(chorus,3)
+God's-e-ter-ni-ty-is-strong                             # copy(chorus,4)
+
+CHORUS 3
+Bless-ing-comes-from-Hea-ven's-throne                   # 8,7,8,6 syllables
+Peace-is-giv-en-not-my-own                              # copy(chorus,2)
+Hearts-are-raised-in-sac-red-song                       # copy(chorus,3)
+God's-e-ter-ni-ty-is-strong                             # copy(chorus,4)
+
+OUTRO
+O-ra-tion-ris-es-high                                   # copy(intro,1)
+Shine-e-ter-nal-hol-y-light                             # transpose(verse,4,+3)

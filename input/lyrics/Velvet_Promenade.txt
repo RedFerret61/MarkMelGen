@@ -1,0 +1,53 @@
+# Velvet_Promenade
+# Sapphire Silhouette / Velvet Promenade / Boulevard Blue
+
+INTRO
+The ci-ty sighs a sap-phire tune #
+Be-neath a la-zy, hang-ing moon # transpose(intro,1,-5)
+
+VERSE 1
+We stroll a-long the av-e-nue #
+The street-lights cast a gold-en hue #
+Each foot-step marks a soft re-frain # copy(verse,1)
+A sweet per-cus-sion in the rain # invert(verse,2,A4)
+
+CHORUS 1
+This vel-vet prom-e-nade with you #
+Paints ev-ery shad-ow some-thing new #
+A sym-pho-ny the night-time plays # transpose(chorus,1,+5)
+Lost in the glo-ry of these days # copy(chorus,2)
+
+VERSE 2
+The sax-o-phone be-gins to weep #
+While all the rest-less bou-le-vards sleep # transpose(verse,2,-3)
+Your laugh-ter cuts the ha-zy air # copy(verse,3)
+A jew-el bright be-yond com-pare # reverse(verse,4)
+
+CHORUS 2
+This vel-vet prom-e-nade with you # 8,9,8,7 syllables
+Paints ev-ery shad-ow some-thing new # copy(chorus,2)
+A sym-pho-ny the night-time plays # copy(chorus,3)
+Lost in the glo-ry of these days # copy(chorus,4)
+
+BRIDGE
+Some folks chase dreams that fade too fast #
+They build a world that can-not last # transpose(bridge,1,+2)
+But this sweet mo-ment, soft and low #
+Is all the par-a-dise I'll know # invert(bridge,2,C5)
+
+SOLO
+This vel-vet prom-e-nade with you # copy(chorus,1)
+Paints ev-ery shad-ow some-thing new # copy(chorus,2)
+A sym-pho-ny the night-time plays # copy(chorus,3)
+Lost in the glo-ry of these days # copy(chorus,4)
+
+CHORUS 3
+This vel-vet prom-e-nade with you # 8,9,8,7 syllables
+Paints ev-ery shad-ow some-thing new # copy(chorus,2)
+A sym-pho-ny the night-time plays # transpose(chorus,3,+7)
+Lost in the glo-ry of these days # copy(chorus,4)
+
+OUTRO
+The sap-phire tune... fades out of view... # copy(intro,1)
+On this vel-vet prom-e-nade with you # invert(chorus,1,E4)
+Just you... # transpose(intro,2,-12)

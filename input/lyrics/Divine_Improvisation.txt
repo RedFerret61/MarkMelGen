@@ -1,0 +1,67 @@
+# Divine_Improvisation.txt
+# # A-scend-ing Scales / Di-vine Im-prov-i-sa-tion / Sax-o-phone Prayer
+
+INTRO
+Om mani pad-me hum                                         #
+Om mani pad-me hum                                         # copy(intro,1)
+
+VERSE 1
+In the si-lence be-fore the first note sounds            #
+Where the spir-it and mu-sic be-come un-bound            # copy(verse,1)
+Ev-ery breath is a prayer to the sky                     # transpose(verse,1,4)
+Ev-ery tone lifts the soul up high                       # copy(verse,3)
+
+PRECHORUS 1
+Search-ing for that per-fect phrase                      #
+Through the mys-tic jazz-y maze                          # copy(prechorus,1)
+
+CHORUS 1
+Play it from the heart and soul                          #
+Let the mu-sic make you whole                            # copy(chorus,1)
+Sheet-s of sound cas-cade like rain                      # transpose(chorus,1,5)
+Wash-ing a-way all the pain                              # copy(chorus,3)
+
+VERSE 2
+Scales as-cend-ing like in-cense smoke                   # 7,8,7,6 syllables
+Har-mo-nies that heal what once was broke
+Chan-ting through the horn of gold
+Sto-ries that must be told
+
+PRECHORUS 2
+Search-ing for that per-fect phrase                      # 7,7 syllables
+Through the mys-tic jazz-y maze
+
+CHORUS 2
+Play it from the heart and soul                          # 7,7,8,7 syllables
+Let the mu-sic make you whole
+Sheet-s of sound cas-cade like rain
+Wash-ing a-way all the pain
+
+BRIDGE 1
+When the world grows cold and dark                       #
+Mu-sic lights the sa-cred spark                          # copy(bridge,1)
+God speaks through the ten-or's cry                      # transpose(bridge,1,-3)
+Truth that nev-er tells a lie                            # copy(bridge,3)
+
+CHORUS 3
+Play it from the heart and soul                          # 7,7,8,7 syllables
+Let the mu-sic make you whole
+Sheet-s of sound cas-cade like rain
+Wash-ing a-way all the pain
+
+SOLO
+In the si-lence be-fore the first note sounds            # copy(verse,1)
+Where the spir-it and mu-sic be-come un-bound            # copy(verse,2)
+Ev-ery breath is a prayer to the sky                     # copy(verse,3)
+Ev-ery tone lifts the soul up high                       # copy(verse,4)
+
+CHORUS 4
+Play it from the heart and soul                          # 7,7,8,7 syllables
+Let the mu-sic make you whole
+Sheet-s of sound cas-cade like rain
+Wash-ing a-way all the pain
+
+OUTRO
+Om mani pad-me hum                                         # copy(intro,1)
+Om mani pad-me hum                                         # transpose(outro,1,3)
+Om mani pad-me hum                                         # invert(outro,1,G4)

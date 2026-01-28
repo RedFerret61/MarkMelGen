@@ -1,0 +1,56 @@
+# The_Last_Ride
+# The-Last-Ride / Dust-and-Glory / Whis-per-of-Irons
+
+INTRO
+Dark-sun-falls-on-the-emp-ty-land                      #
+Shad-ows-crawl-like-the-dri-fted-sand                  #
+Whis-tles-cry-through-the-crack-ing-stone              #
+Hearts-are-bound-yet-they-ride-a-lone                  # copy(intro,1)
+
+VERSE 1
+Steel-and-leath-er-in-the-burn-ing-heat                #
+Boots-that-crunch-on-the-de-sert-street                # copy(verse,1)
+Eyes-like-riv-ers-that-have-ne-ver-slept               # transpose(verse,1,+5)
+Mem-o-ries-guard-ed-but-ne-ver-kept                    # copy(verse,3)
+
+CHORUS 1
+Ride-on-ride-on-in-the-blood-red-light                 #
+Shad-ows-echo-through-the-end-less-night               # copy(chorus,1)
+One-last-call-from-the-choir-un-seen                   # transpose(chorus,1,+7)
+Guns-and-dreams-where-the-heart-has-been               # copy(chorus,3)
+
+VERSE 2
+Chains-of-si-lence-on-the-cra-cked-old-bell            # 8,8,8,8 syllables
+Sto-ries-drift-like-a-ghost-ly-spell                   # copy(verse,2)
+Smoke-and-ash-in-the-cold-gray-sky                     # copy(verse,3)
+No-one-knows-where-the-dead-men-ride                   # copy(verse,4)
+
+CHORUS 2
+Ride-on-ride-on-in-the-blood-red-light                 # 8,8,8,8 syllables
+Shad-ows-echo-through-the-end-less-night               # copy(chorus,2)
+One-last-call-from-the-choir-un-seen                   # copy(chorus,3)
+Guns-and-dreams-where-the-heart-has-been               # copy(chorus,4)
+
+BRIDGE
+Sil-ver-trum-pets-call-the-war-riors-home              # transpose(verse,1,-5)
+Yet-they-ride-through-the-dust-a-lone                  # copy(bridge,1)
+If-the-sun-falls-low-they-will-not-stay                # copy(bridge,1)
+On-ly-shad-ows-can-guide-the-way                       # transpose(bridge,3,+7)
+
+SOLO
+Ride-on-ride-on-in-the-blood-red-light                 # copy(chorus,1)
+Shad-ows-echo-through-the-end-less-night               # copy(chorus,2)
+One-last-call-from-the-choir-un-seen                   # copy(chorus,3)
+Guns-and-dreams-where-the-heart-has-been               # copy(chorus,4)
+
+CHORUS 3
+Ride-on-ride-on-in-the-blood-red-light                 # 8,8,8,8 syllables
+Shad-ows-echo-through-the-end-less-night               # copy(chorus,2)
+One-last-call-from-the-choir-un-seen                   # copy(chorus,3)
+Guns-and-dreams-where-the-heart-has-been               # copy(chorus,4)
+
+OUTRO
+Dark-sun-falls-on-the-emp-ty-land                      # transpose(intro,1,-5)
+Shad-ows-crawl-like-the-dri-fted-sand                  # copy(intro,2)
+Whis-tles-cry-then-the-night-is-gone                   # transpose(intro,3,+7)
+Hearts-re-main-but-they-ride-a-lone                    # copy(intro,4)

@@ -1,0 +1,87 @@
+# Midnight_Train_to_Nowhere
+# Thun-der Road Blues 1 / Mid-night Train to No-where 2 / Whis-tlin' Past the Grave-yard 3
+INTRO
+Well the whis-tle blows at mid-night hour                    #
+Through the hol-low streets of shame                         #
+Where the neon signs are flick-er-ing                       #
+And no-bo-dy knows your name                                #
+
+VERSE
+I been walk-ing down this lone-ly road                      #
+With my gui-tar and my dreams                               #
+Where the rail-road tracks meet hea-ven                     #
+And no-thing's quite what it seems                          #
+The preach-er man was count-ing mon-ey                      #
+While the sin-ners knelt to pray                           #
+And I asked my-self the ques-tion                          #
+Lord, will there come a bet-ter day?                       #
+
+PRECHORUS
+'Cause the wind keeps blow-ing east-ward                    #
+And the rain keeps fall-ing down                           #
+
+CHORUS
+Take me home on that mid-night train                       #
+Where the lost souls go to hide                            #
+From the trou-bles and the heart-ache                      #
+That we car-ry deep in-side                                #
+Oh the mid-night train keeps roll-ing                      #
+Through the dark-ness of my mind                           #
+Leave the past be-hind me                                  #
+And some peace I hope to find                              #
+
+VERSE
+Now the cy-nics and the dream-ers                          # copy(verse,1)
+They all gath-er 'round the fire                           # copy(verse,2)
+Sing-ing songs of rev-o-lu-tion                            # copy(verse,3)
+While their souls grow ev-er ti-red                        # copy(verse,4)
+The rich man's gold won't save him                         # copy(verse,5)
+When the judg-ment day ar-rives                            # copy(verse,6)
+And the poor man's only trea-sure                          # copy(verse,7)
+Is the love that keeps him a-live                          # copy(verse,8)
+
+PRECHORUS
+'Cause the wind keeps blow-ing east-ward                    # 8 syllables
+And the rain keeps fall-ing down                           # 6 syllables
+
+CHORUS
+Take me home on that mid-night train                       # 8 syllables
+Where the lost souls go to hide                            # 6 syllables
+From the trou-bles and the heart-ache                      # 7 syllables
+That we car-ry deep in-side                                # 6 syllables
+Oh the mid-night train keeps roll-ing                      # 8 syllables
+Through the dark-ness of my mind                           # 6 syllables
+Leave the past be-hind me                                  # 5 syllables
+And some peace I hope to find                              # 6 syllables
+
+BRIDGE
+Well the proph-ets spoke of free-dom                       #
+But they chained us to the ground                          #
+And the truth gets lost in whis-pers                       #
+When there's no-bo-dy a-round                              #
+So I'll keep on walk-ing for-ward                          #
+Though the path is dark and long                           #
+With my heart full of ques-tions                           #
+And my soul full of song                                   #
+
+CHORUS
+Take me home on that mid-night train                       # 8 syllables
+Where the lost souls go to hide                            # 6 syllables
+From the trou-bles and the heart-ache                      # 7 syllables
+That we car-ry deep in-side                                # 6 syllables
+Oh the mid-night train keeps roll-ing                      # 8 syllables
+Through the dark-ness of my mind                           # 6 syllables
+Leave the past be-hind me                                  # 5 syllables
+And some peace I hope to find                              # 6 syllables
+
+SOLO
+I been walk-ing down this lone-ly road                      # copy(verse,1)
+With my gui-tar and my dreams                               # copy(verse,2)
+Where the rail-road tracks meet hea-ven                     # copy(verse,3)
+And no-thing's quite what it seems                          # copy(verse,4)
+
+OUTRO
+Well the whis-tle blows at mid-night hour                   # copy(intro,1)
+Through the hol-low streets of shame                        # copy(intro,2)
+Yeah, the whis-tle blows at mid-night hour                  # transpose(intro,1,2)
+And I'll nev-er be the same                                 # invert(intro,2,G4)

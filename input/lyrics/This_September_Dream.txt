@@ -1,0 +1,53 @@
+# This_September_Dream.txt
+# This Sep-tem-ber Dream / Mid-night Cafe / One More Char-ade
+
+INTRO
+Doo doo doo doo, doo doo doo #
+Doo doo doo doo, doo doo doo # copy(intro,1)
+
+VERSE 1
+The steam-ing cup on the ta-ble top #
+I wish the clock would sim-ply stop # copy(verse,1)
+I see your face in this dim light # transpose(verse,1,2)
+A ghost from some Sep-tem-ber night # copy(verse,3)
+
+CHORUS 1
+And oh, that soft-ly haunt-ing tune #
+Be-neath a pale and ha-zy moon # copy(chorus,1)
+Was it all real, or just a scheme? # invert(chorus,1,C4)
+This sweet Sep-tem-ber dream # copy(chorus,3)
+
+VERSE 2
+You smiled and asked me for the time # 8,8,7,7 syllables
+A simp-le phrase, a per-fect rhyme
+We talked for hours, drank the wine
+And for a mo-ment, you were mine
+
+CHORUS 2
+And oh, that soft-ly haunt-ing tune # 8,8,8,6 syllables
+Be-neath a pale and ha-zy moon
+Was it all real, or just a scheme?
+This sweet Sep-tem-ber dream
+
+BRIDGE 1
+The years drift by, the sea-sons turn #
+A gen-tle les-son I must learn # copy(bridge,1)
+That mem-o-ries may fade and glow # transpose(bridge,1,-3)
+But where they lead, we nev-er know # copy(bridge,3)
+
+SOLO
+The steam-ing cup on the ta-ble top # copy(verse,1)
+I wish the clock would sim-ply stop # copy(verse,2)
+I see your face in this dim light # copy(verse,3)
+A ghost from some Sep-tem-ber night # copy(verse,4)
+
+CHORUS 3
+And oh, that soft-ly haunt-ing tune # 8,8,8,6 syllables
+Be-neath a pale and ha-zy moon
+Was it all real, or just a scheme?
+This sweet Sep-tem-ber dream
+
+OUTRO
+Doo doo doo, Sep-tem-ber dream #
+Doo doo doo doo doo # copy(intro,1)
+Doo doo doo... fade... # transpose(outro,1,5)

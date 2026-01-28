@@ -1,0 +1,63 @@
+# Forever_Dreaming
+# The Call to Ad-ven-ture / For-ev-er Dream-ing / Fly A-way Home
+
+INTRO
+(Doo-doo-doo-doo-doo-doo-doo)                    #
+(Doo-doo-doo-doo-doo-doo-doo)                    #
+
+VERSE 1
+A-sin-gle-star-a-bove-the-sea                    # copy(intro,1)
+Is-wink-ing-down-at-lit-tle-me                   # transpose(intro,2,+4)
+It-tells-of-worlds-be-yond-my-door               # invert(verse,1,C4)
+And-pla-ces-nev-er-seen-be-fore                  # reverse(verse,3)
+
+PRECHORUS 1
+And-though-the-night-seems-dark-and-deep         # transpose(verse,4,+5)
+A-prom-ise-stirs-with-in-my-sleep                # copy(intro,2)
+
+CHORUS 1
+So-I-will-fly-in-to-the-night                    # 7,8,7,8 syllables
+Up-on-the-wind-on-feath-ers-of-light             # transpose(verse,1,-3)
+Through-clouds-of-sil-ver-moon-dust-fall         # invert(chorus,1,C4)
+To-an-swer-to-the-wil-der-ness-call              # copy(verse,4)
+
+VERSE 2
+The-morn-ing-finds-me-far-from-home              # 8,8,9,8 syllables
+A-cross-wide-o-ceans-I-do-roam                   # copy(verse,2)
+Each-un-known-moun-tain-each-un-turned-stone      # transpose(verse,3,+2)
+Is-some-where-I-can-call-my-own                  # invert(verse,4,D4)
+
+PRECHORUS 2
+No-fear-can-hold-me-back-to-day                  # copy(prechorus,1)
+The-guid-ing-star-will-show-the-way              # transpose(prechorus,2,+2)
+
+CHORUS 2
+So-I-will-fly-in-to-the-night                    # 7,8,7,8 syllables
+Up-on-the-wind-on-feath-ers-of-light             # copy(chorus,2)
+Through-clouds-of-sil-ver-moon-dust-fall         # copy(chorus,3)
+To-an-swer-to-the-wil-der-ness-call              # copy(chorus,4)
+
+BRIDGE
+And-if-I-ev-er-lose-my-course                    # transpose(verse,1,+7)
+And-feel-re-morse                                 # invert(bridge,1,C4)
+I'll-think-of-home-and-car-ry-on                 # transpose(chorus,3,-4)
+Un-til-the-fi-nal-night-is-gone                  # copy(verse,4)
+
+SOLO
+So-I-will-fly-in-to-the-night                    # copy(chorus,1)
+Up-on-the-wind-on-feath-ers-of-light             # copy(chorus,2)
+Through-clouds-of-sil-ver-moon-dust-fall         # copy(chorus,3)
+To-an-swer-to-the-wil-der-ness-call              # copy(chorus,4)
+
+CHORUS 3
+So-I-will-fly-in-to-the-night                    # 7,8,7,8 syllables
+Up-on-the-wind-on-feath-ers-of-light             # copy(chorus,2)
+Through-clouds-of-sil-ver-moon-dust-fall         # copy(chorus,3)
+To-an-swer-to-the-wil-der-ness-call              # copy(chorus,4)
+
+OUTRO
+(Doo-doo-doo-doo-doo-doo-doo)                    # copy(intro,1)
+(Doo-doo-doo-doo-doo-doo-doo)                    # copy(intro,2)
+To-an-swer-to-the-call...                        # transpose(chorus,4,-5)
+...the-call...                                   #
+

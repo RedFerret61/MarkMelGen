@@ -1,0 +1,74 @@
+# Rust_in_the_Rain
+# Rust-in-the-Rain / High-Wind-Road / Ashes-on-the-Sky
+
+
+
+INTRO  
+Cold-wind-roll-in-through-the-cot-ton-fields           #  
+Leaves-whis-per-low-in-the-fall-ing-light              # transpose(intro,1,+3)  
+Shad-ows-stretch-long-on-the-old-grain-road            # invert(intro,2,D4)  
+While-train-bells-cry-in-the-night                     # reverse(intro,3)  
+
+
+
+VERSE 1  
+I-walked-that-line-till-the-sol-es-tore-through        #  
+Saw-my-face-in-the-riv-er-bend                         # transpose(verse,1,+2)  
+Hard-times-come-like-a-thun-der-cloud                  # invert(verse,2,C4)  
+But-they-al-ways-roll-on-a-gain                        # reverse(verse,3)  
+
+
+
+CHORUS 1  
+Hold-on-love-we-are-made-of-fire                        #  
+Even-when-the-sky-turns-grey                            # transpose(chorus,1,+5)  
+We-will-stand-on-the-burn-ing-wire                      # invert(chorus,2,E4)  
+Till-the-rain-wash-our-pain-a-way                       # reverse(chorus,3)  
+
+
+
+VERSE 2  
+Smoke-ris-es-slow-from-a-chim-ney-stack                 # 8,7,8,6 syllables  
+Win-ter-birds-cross-a-sil-ver-moon                      # copy(verse,2)  
+Old-dog-howls-at-the-dis-tant-train                     # copy(verse,3)  
+Say-ing-some-one-come-home-soon                         # copy(verse,4)  
+
+
+
+CHORUS 2  
+Hold-on-love-we-are-made-of-fire                        # 8,7,8,6 syllables  
+Even-when-the-sky-turns-grey                            # copy(chorus,2)  
+We-will-stand-on-the-burn-ing-wire                      # copy(chorus,3)  
+Till-the-rain-wash-our-pain-a-way                       # copy(chorus,4)  
+
+
+
+BRIDGE  
+We-have-known-the-blood-and-blame                      #  
+We-have-walked-through-flood-and-flame                 # transpose(bridge,1,-2)  
+Still-the-riv-er-knows-our-name                        # invert(bridge,2,G4)  
+Still-the-night-keeps-burn-ing                         # reverse(bridge,3)  
+
+
+
+SOLO _(instrumental doubling of Chorus)_  
+Hold-on-love-we-are-made-of-fire                       # copy(chorus,1)  
+Even-when-the-sky-turns-grey                           # copy(chorus,2)  
+We-will-stand-on-the-burn-ing-wire                     # copy(chorus,3)  
+Till-the-rain-wash-our-pain-a-way                      # copy(chorus,4)  
+
+
+
+CHORUS 3  
+Hold-on-love-we-are-made-of-fire                       # 8,7,8,6 syllables  
+Even-when-the-sky-turns-grey                           # copy(chorus,2)  
+We-will-stand-on-the-burn-ing-wire                     # copy(chorus,3)  
+Till-the-rain-wash-our-pain-a-way                      # copy(chorus,4)  
+
+
+
+OUTRO  
+Cold-wind-roll-in-through-the-cot-ton-fields           # copy(intro,1)  
+Leaves-whis-per-low-in-the-fall-ing-light              # copy(intro,2)  
+Shad-ows-stretch-long-on-the-old-grain-road            # copy(intro,3)  
+While-train-bells-fade-in-the-night                    # transpose(intro,4,-2)  

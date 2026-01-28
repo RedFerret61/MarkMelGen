@@ -1,0 +1,60 @@
+# Morning_On_The_Hill.txt
+# Say Yes To The Day / Morning On The Hill / Where The Wind Says Go
+
+INTRO
+Soft-winds-stir-the-green-be-fore-the-sun             #
+Day-break-prom-is-es-more-than-fear                    # copy(intro,1)
+
+VERSE 1
+Down-in-the-val-ley-my-cou-rage-wakes                 #
+Sun-on-the-stone-step-warms-my-feet-now                # copy(verse,1)
+Fools-say-keep-still-but-I-must-go-now                 # transpose(verse,1,3)
+Our-hearts-learn-time-by-mov-ing-on                    # copy(verse,2)
+
+PRECHORUS 1
+If-ev-er-there-was-a-sign                              #
+It-whis-pers-go-find-your-kind                         # copy(prechorus,1)
+
+CHORUS 1
+I-will-step-in-to-morn-ing-light                       #
+Where-hill-sides-rise-and-rob-ins-fly                  # copy(chorus,1)
+If-I-sing-heart-the-world-will-hear                    # transpose(chorus,1,5)
+And-call-it-back-to-me                                 # copy(chorus,3)
+
+VERSE 2
+Down-by-the-gate-I-taste-fresh-rain                    #
+Farm-ers-call-hey-but-I-walk-on                        # copy(verse,1)
+Dreams-need-a-foot-step-not-a-chain                    # invert(verse,1,C4)
+Eyes-on-the-ridge-my-doubts-are-gone                   # reverse(verse,2)
+
+PRECHORUS 2
+The-wind-says-choose-and-make-it-true                  #
+The-path-you-take-will-shape-you-too                   # copy(prechorus,1)
+
+CHORUS 2
+I-will-step-in-to-morn-ing-light                       # 8,8,8,6 syllables
+Where-hill-sides-rise-and-rob-ins-fly                  # copy(chorus,1)
+If-I-sing-heart-the-world-will-hear                    # transpose(chorus,1,5)
+And-call-it-back-to-me                                 # copy(chorus,3)
+
+BRIDGE
+I-was-a-whis-per-now-I-am-song                         #
+I-thought-I-was-small-but-I-was-strong                 # copy(bridge,1)
+Hands-o-pen-wide-like-fields-in-spring                 # transpose(bridge,1,-2)
+Hear-me-now-town-I-am-com-ing                          # copy(bridge,3)
+
+SOLO
+I-will-step-in-to-morn-ing-light                       # copy(chorus,1)
+Where-hill-sides-rise-and-rob-ins-fly                  # copy(chorus,2)
+If-I-sing-heart-the-world-will-hear                    # copy(chorus,3)
+And-call-it-back-to-me                                 # copy(chorus,4)
+
+CHORUS 3
+I-will-step-in-to-morn-ing-light                       # 8,8,8,6 syllables
+Where-hill-sides-rise-and-rob-ins-fly                  # copy(chorus,1)
+If-I-sing-heart-the-world-will-hear                    # transpose(chorus,1,5)
+And-call-it-back-to-me                                 # copy(chorus,3)
+
+OUTRO
+Soft-winds-car-ry-the-green-in-sun                     #
+Day-break-keeps-the-prom-ise-here                      # copy(outro,1)

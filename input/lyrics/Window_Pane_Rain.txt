@@ -1,0 +1,72 @@
+# Window_Pane_Rain
+# Win-dow-pane Rain / The Si-lent Clock / Ev-er-y-thing But Good-bye
+
+INTRO
+The-street-lamps-paint-the-wet-as-phalt    #
+In-pools-of-gold-that-brief-ly-last        #
+Be-fore-the-rain-swirls-them-down-the-drain #
+And-wash-es-out-the-yel-low-stain          # transpose(intro,3,-2)
+
+VERSE 1
+I-turn-the-page-of-yes-ter-day             #
+The-pho-tos-fade-to-shades-of-gray          # copy(verse,1)
+A-smil-ing-face-in-sun-ny-weath-er         # copy(verse,2)
+Now-teth-ered-by-a-bro-ken-teth-er          # transpose(verse,3,+2)
+
+PRECHORUS 1
+And-through-the-floor                      #
+I-hear-the-door                            # copy(prechorus,1)
+A-sound-that-is-n't-there-an-y-more        # copy(prechorus,2)
+
+CHORUS 1
+Oh, emp-ty-chair, you-ne-ver-ask-me-why    #
+You just ab-sorb the si-lent-why            # copy(chorus,1)
+And-ev-'ry-creak-ing-board-in-this-old-place
+Seems-to-re-call-a-for-got-ten-face        # copy(chorus,3)
+And the ech-oes that were left here to re-main
+Sing their re-frain                         # copy(chorus,5)
+With-in the-fall-ing-rain                   # copy(chorus,6)
+
+VERSE 2
+I-watch-the-steam-from-my-cof-fee-cup       #
+A-ris-ing-up-on-end-less-loop               # copy(verse,1)
+The-clock-up-on-the-mantle-piece            # copy(verse,2)
+Has-giv-en-up-its-ghost-for-lease           # transpose(verse,3,+4)
+
+PRECHORUS 2
+And-in-the-hall                             # 5,3,8 syllables
+I-think-you-call                            # copy(prechorus,2)
+But-there-is-no-sound-at-all                # transpose(prechorus,3,-2)
+
+CHORUS 2
+Oh, emp-ty-chair, you-ne-ver-ask-me-why    # 8,7,13,11,13,4,7 syllables
+You just ab-sorb the si-lent-why            # copy(chorus,2)
+And-ev-'ry-creak-ing-board-in-this-old-place
+Seems-to-re-call-a-for-got-ten-face        # copy(chorus,4)
+And the ech-oes that were left here to re-main
+Sing their re-frain                         # copy(chorus,6)
+With-in the-fall-ing-rain                   # copy(chorus,7)
+
+BRIDGE
+Time! said the clock, I-am-a-thief          #
+I-trade your joy-for-bit-ter-grief         # copy(bridge,1)
+I-steal-the-mo-ments-right-be-fore-your-eyes
+And-change-them-in-to-mem-o-ry's-dis-guise # copy(bridge,3)
+Un-til-the-pre-sent-is-a-for-eign-land
+And you can't quite re-call who-held-your-hand # copy(bridge,5)
+
+SOLO
+Oh, emp-ty-chair, you-ne-ver-ask-me-why    # copy(chorus,1)
+You just ab-sorb the si-lent-why            # copy(chorus,2)
+And-ev-'ry-creak-ing-board-in-this-old-place
+Seems-to-re-call-a-for-got-ten-face        # copy(chorus,4)
+And the ech-oes that were left here to re-main
+Sing their re-frain                         # copy(chorus,6)
+With-in the-fall-ing-rain                   # copy(chorus,7)
+
+OUTRO
+The-street-lamps-paint-the-wet-as-phalt    # copy(intro,1)
+In-pools-of-gold-that-brief-ly-last        # copy(intro,2)
+Be-fore-the-rain-swirls-them-down-the-drain #
+With-in the-fall-ing...                     #
+...fall-ing-rain...                         # copy(chorus,7)

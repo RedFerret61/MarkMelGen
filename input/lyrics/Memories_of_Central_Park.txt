@@ -1,0 +1,97 @@
+# Memories_of_Central_Park
+# In the Shad-ows of Au-tumn 1 / Mem-o-ries of Cen-tral Park 2 / The Qui-et Hours 3
+VERSE 1
+Walk-ing through the emp-ty park-ways                       #
+Where we used to run and play                               #
+I can hear your voice call-ing                              # transpose(verse,1,5)
+From a dis-tant yes-ter-day                                 # invert(verse,2,G4)
+The old oak tree still stands there                         #
+Like a sen-ti-nel of time                                   #
+Guard-ing se-crets that we whis-pered                       # reverse(verse,5)
+When your heart was next to mine                            # transpose(verse,6,-3)
+
+CHORUS 1
+Oh, the years have turned the pag-es                        #
+Of the sto-ry we be-gan                                     #
+But some mem-o-ries last for-ev-er                          # invert(chorus,1,F4)
+Like foot-prints in the sand                                # transpose(chorus,2,4)
+Though the sea-sons keep on chang-ing                       #
+And we've grown so far a-part                               #
+You're still ech-o-ing with-in me                           # reverse(chorus,5)
+Like a whis-per in my heart                                 # invert(chorus,6,D4)
+
+VERSE 2
+In the cof-fee shop on Mad-i-son                            # 8 syllables
+Where we'd sit for hours and dream                          # 6 syllables
+Plan-ning out our bright to-mor-rows                        # 7 syllables
+Noth-ing was quite what it seemed                           # 6 syllables
+Now the wait-ress doesn't know me                           # 8 syllables
+And the cor-ner booth is gone                               # 6 syllables
+But I still can taste the cof-fee                           # 8 syllables
+From those morn-ings be-fore dawn                           # 6 syllables
+
+CHORUS 2
+Oh, the years have turned the pag-es                        # 8 syllables
+Of the sto-ry we be-gan                                     # 6 syllables
+But some mem-o-ries last for-ev-er                          # 8 syllables
+Like foot-prints in the sand                                # 5 syllables
+Though the sea-sons keep on chang-ing                       # 7 syllables
+And we've grown so far a-part                               # 6 syllables
+You're still ech-o-ing with-in me                           # 7 syllables
+Like a whis-per in my heart                                 # 6 syllables
+
+BRIDGE
+May-be time's a gen-tle heal-er                             #
+May-be love's a last-ing song                               #
+May-be we were meant to meet                                # transpose(bridge,1,-2)
+Just to learn where we be-long                              # reverse(bridge,2)
+In the si-lence of the night-time                           #
+When the world has gone to rest                             #
+I still feel you here be-side me                            # invert(bridge,5,Bb4)
+And I know that we were blessed                             # transpose(bridge,6,6)
+
+CHORUS 3
+Oh, the years have turned the pag-es                        # 8 syllables
+Of the sto-ry we be-gan                                     # 6 syllables
+But some mem-o-ries last for-ev-er                          # 8 syllables
+Like foot-prints in the sand                                # 5 syllables
+Though the sea-sons keep on chang-ing                       # 7 syllables
+And we've grown so far a-part                               # 6 syllables
+You're still ech-o-ing with-in me                           # 7 syllables
+Like a whis-per in my heart                                 # 6 syllables
+
+SOLO
+Walk-ing through the emp-ty park-ways                       # copy(verse,1)
+Where we used to run and play                               # copy(verse,2)
+I can hear your voice call-ing                              # copy(verse,3)
+From a dis-tant yes-ter-day                                 # copy(verse,4)
+The old oak tree still stands there                         # copy(verse,5)
+Like a sen-ti-nel of time                                   # copy(verse,6)
+
+VERSE 3
+Sit-ting by my win-dow now                                  # 6 syllables
+Watch-ing peo-ple pass be-low                               # 6 syllables
+Each one has a sto-ry tell-ing                              # 7 syllables
+Of the love they used to know                               # 6 syllables
+And I won-der if you're think-ing                           # 8 syllables
+Of the prom-is-es we made                                   # 6 syllables
+When the world was full of pos-si-bil-i-ties               # 8 syllables
+And we thought love nev-er fades                            # 6 syllables
+
+CHORUS 4
+Oh, the years have turned the pag-es                        # 8 syllables
+Of the sto-ry we be-gan                                     # 6 syllables
+But some mem-o-ries last for-ev-er                          # 8 syllables
+Like foot-prints in the sand                                # 5 syllables
+Though the sea-sons keep on chang-ing                       # 7 syllables
+And we've grown so far a-part                               # 6 syllables
+You're still ech-o-ing with-in me                           # 7 syllables
+Like a whis-per in my heart                                 # 6 syllables
+
+OUTRO
+In the qui-et hours of eve-ning                             #
+When the cit-y starts to sleep                              #
+I re-mem-ber days of child-hood                             # invert(outro,1,E4)
+And the prom-is-es we'd keep                                # transpose(outro,2,5)
+In the qui-et hours of eve-ning                             # reverse(outro,1)
+I still hear your heart-beat                                # transpose(outro,2,-4)

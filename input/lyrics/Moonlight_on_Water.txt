@@ -1,0 +1,60 @@
+# Moon-light on Wa-ter
+INTRO
+Mist drifts soft-ly through the twi-light air #
+Sil-ver moon-beams dance with-out a care # transpose(intro,1,3)
+
+VERSE
+In the gar-den where the ros-es dream #
+Shad-ows play be-side the qui-et stream # invert(verse,1,Eb4)
+Pur-ple lil-acs bend in eve-ning breeze #
+Whis-per-ing se-crets to the an-cient trees # reverse(verse,3)
+
+PRECHORUS
+Float-ing, drift-ing like a sigh #
+Un-der-neath the vel-vet sky # transpose(prechorus,1,-2)
+
+CHORUS
+Moon-light on wa-ter, shim-mer-ing pale #
+Tell-ing sto-ries with-out words to tell # invert(chorus,1,F4)
+Waves lap gen-tly at the peb-bled shore #
+Dream-ing of things that were be-fore # reverse(chorus,3)
+
+VERSE
+Morn-ing dew on pet-als soft and white # 8 syllables
+Fad-ing slow-ly in the grow-ing light # transpose(verse,2,4)
+But-ter-flies with wings of gold and blue # 8 syllables
+Dance in air as if the world were new # invert(verse,4,Ab4)
+
+PRECHORUS
+Float-ing, drift-ing like a sigh # 6 syllables
+Un-der-neath the vel-vet sky # 6 syllables
+
+CHORUS
+Moon-light on wa-ter, shim-mer-ing pale # 8 syllables
+Tell-ing sto-ries with-out words to tell # 8 syllables
+Waves lap gen-tly at the peb-bled shore # 7 syllables
+Dream-ing of things that were be-fore # 7 syllables
+
+SOLO
+In the gar-den where the ros-es dream # copy(verse,1)
+Shad-ows play be-side the qui-et stream # invert(verse,2,Eb4)
+Pur-ple lil-acs bend in eve-ning breeze # transpose(verse,3,5)
+Whis-per-ing se-crets to the an-cient trees # reverse(verse,4)
+
+BRIDGE
+Colors blend like paint on can-vas wet #
+Hues of mauve and lav-en-der are met # invert(bridge,1,Db4)
+Time dis-solves in-to a gen-tle haze #
+Lost with-in these mys-tic, gold-en rays # transpose(bridge,3,-3)
+
+CHORUS
+Moon-light on wa-ter, shim-mer-ing pale # 8 syllables
+Tell-ing sto-ries with-out words to tell # 8 syllables
+Waves lap gen-tly at the peb-bled shore # 7 syllables
+Dream-ing of things that were be-fore # 7 syllables
+
+OUTRO
+Mist drifts soft-ly through the twi-light air # 8 syllables
+Sil-ver moon-beams dance with-out a care # transpose(intro,2,6)
+Fad-ing in-to si-lence, soft and deep # 8 syllables
+Where the dream-ing wa-ters gen-tly sleep # reverse(outro,3)

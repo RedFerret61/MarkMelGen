@@ -1,0 +1,60 @@
+# La-ment of Or-phe-us
+INTRO
+Ah, cru-el fate that binds my ach-ing heart #
+To love that tears my ver-y soul a-part # transpose(intro,1,4)
+
+VERSE
+O pit-i-less god-dess, Ve-nus fair and bright #
+Why dost thou tor-ment me day and night # invert(verse,1,D4)
+Thy gold-en ar-rows pierce my trem-bling breast #
+De-ny-ing me all peace and gent-le rest # reverse(verse,3)
+
+PRECHORUS
+Ah me, ah me, what an-guish do I bear #
+Lost in de-spair be-yond all mor-tal care # transpose(prechorus,1,-3)
+
+CHORUS
+Weep, ye nymphs and shep-herds of the dell #
+For love hath cast me in-to liv-ing hell # invert(chorus,1,F4)
+No song of birds can ease my bit-ter pain #
+Until my dear-est love re-turns a-gain # reverse(chorus,3)
+
+VERSE
+When dawn breaks forth with ros-y fin-gers mild # 9 syllables
+I think up-on my love, so sweet and wild # transpose(verse,2,2)
+But when the stars ap-pear in heav-en's dome # 9 syllables
+I weep for she who will not jour-ney home # invert(verse,4,G4)
+
+PRECHORUS
+Ah me, ah me, what an-guish do I bear # 8 syllables
+Lost in de-spair be-yond all mor-tal care # 8 syllables
+
+CHORUS
+Weep, ye nymphs and shep-herds of the dell # 8 syllables
+For love hath cast me in-to liv-ing hell # 8 syllables
+No song of birds can ease my bit-ter pain # 8 syllables
+Until my dear-est love re-turns a-gain # 8 syllables
+
+SOLO
+O pit-i-less god-dess, Ve-nus fair and bright # copy(verse,1)
+Why dost thou tor-ment me day and night # invert(verse,2,D4)
+Thy gold-en ar-rows pierce my trem-bling breast # transpose(verse,3,5)
+De-ny-ing me all peace and gent-le rest # reverse(verse,4)
+
+BRIDGE
+Echo, sweet Echo, hear my plain-tive cry #
+And bear my sor-rows to the vault-ed sky # invert(bridge,1,E4)
+Let moun-tains weep and ri-vers cease to flow #
+Until she re-turns to heal my woe # transpose(bridge,3,-2)
+
+CHORUS
+Weep, ye nymphs and shep-herds of the dell # 8 syllables
+For love hath cast me in-to liv-ing hell # 8 syllables
+No song of birds can ease my bit-ter pain # 8 syllables
+Until my dear-est love re-turns a-gain # 8 syllables
+
+OUTRO
+Ah, cru-el fate that binds my ach-ing heart # 8 syllables
+To love that tears my ver-y soul a-part # transpose(intro,2,6)
+Yet still I'll sing though death may be my prize # 9 syllables
+For love im-mor-tal nev-er, nev-er dies # reverse(outro,3)

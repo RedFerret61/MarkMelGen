@@ -1,0 +1,52 @@
+# Timothy's Blue Umbrella / Sunday In The Park / Technicolor Rain
+
+INTRO 
+Rain drops fall-ing down # 
+Paint-ing up the town # transpose(intro,1, 2)
+
+VERSE 1 
+Tim-o-thy walks with a smile on his face # 
+Keep-ing a stead-y and wan-der-ing pace # transpose(verse,1,4) 
+No-bod-y knows where he is go-ing to go # transpose(verse,1,+2) 
+Watch-ing the riv-er and flow-ers that grow # transpose(verse,2,+2)
+
+CHORUS 1 
+Un-der-neath the pa-per sky # 
+See the peo-ple hur-ry by # transpose(chorus,1, 2) 
+Oh what a col-or-ful day # copy(chorus,1) 
+Wash-ing the wor-ries a-way # transpose(chorus,2, 2)
+
+VERSE 2 
+Vel-vet and lace in the win-dow dis-play # copy(verse,1) 
+Turn-ing the grey in to sil-ver and clay # copy(verse,2) 
+Cop-per and green on the roof of the shop # copy(verse,3) 
+Wait-ing un-til all the bus-es will stop # copy(verse,4)
+
+CHORUS 2 
+Un-der-neath the pa-per sky # 7,7,7,7 syllables 
+See the peo-ple hur-ry by # copy(chorus,2) 
+Oh what a col-or-ful day # copy(chorus,3) 
+Wash-ing the wor-ries a-way # copy(chorus,4)
+
+BRIDGE 
+Sun-light breaks through # 
+Shin-ing on you # transpose(bridge,1,5) 
+No-thing is quite what it seems # 
+In-side your dreams # transpose(bridge,3, 3)
+
+SOLO 
+Tim o thy walks with a smile on his face # copy(verse,1) 
+Keep ing a stead y and wan der ing pace # copy(verse,2) 
+No bod y knows where he is go ing to go # copy(verse,3) 
+Watch ing the riv er and flow ers that grow # copy(verse,4)
+
+CHORUS 3 
+Un-der-neath the pa-per sky # 7,7,7,7 syllables 
+See the peo-ple hur-ry by # copy(chorus,2) 
+Oh what a col-or-ful day # copy(chorus,3) 
+Wash-ing the wor-ries a-way # copy(chorus,4)
+
+OUTRO 
+Rain-drops fall-ing down # copy(intro,1) 
+Paint-ing up the town # copy(intro,2) 
+Paint-ing up the town # invert(intro,2,C4)

@@ -1,0 +1,67 @@
+# Wait_for_the_Sun
+# Wait for the Sun / Love in the Lane / This Morn-ing's Smile
+
+INTRO
+Ba ba ba ba ba ba ba                                     #
+Ba ba ba ba ba ba ba                                     # copy(intro,1)
+
+VERSE 1
+Walk-ing down the lit-tle lane                           #
+Think-ing of you once a-gain                             # copy(verse,1)
+All the flow-ers know your name                          # transpose(verse,1,5)
+Ev-ery step just feels the same                          # copy(verse,3)
+
+PRECHORUS 1
+Time won't stop, it nev-er tries                         #
+Still I see you in the skies                             # copy(prechorus,1)
+
+CHORUS 1
+Wait for the sun to rise a-gain                          #
+Hold on through the wind and rain                        # copy(chorus,1)
+Hearts will turn like wheels of gold                     # transpose(chorus,1,4)
+Love is some-thing you can't hold                        # copy(chorus,3)
+
+VERSE 2
+Let-ters left on win-dow-sills                          # 8,8,8,7 syllables
+Read them soft-ly, feel the chills
+Moon-light danc-es on the ground
+Still I hope you're com-ing 'round
+
+PRECHORUS 2
+Time won't stop, it nev-er tries                         # 7,7 syllables
+Still I see you in the skies
+
+CHORUS 2
+Wait for the sun to rise a-gain                          # 8,7,8,7 syllables
+Hold on through the wind and rain
+Hearts will turn like wheels of gold
+Love is some-thing you can't hold
+
+BRIDGE 1
+I hear your voice in the morn-ing breeze                 #
+Com-ing through the qui-et trees                         # copy(bridge,1)
+Ev-ery day a new be-gin-ning song                        # transpose(bridge,1,2)
+Sing-ing that we both be-long                            # copy(bridge,3)
+
+CHORUS 3
+Wait for the sun to rise a-gain                          # 8,7,8,7 syllables
+Hold on through the wind and rain
+Hearts will turn like wheels of gold
+Love is some-thing you can't hold
+
+SOLO
+Walk-ing down the lit-tle lane                           # copy(verse,1)
+Think-ing of you once a-gain                             # copy(verse,2)
+All the flow-ers know your name                          # copy(verse,3)
+Ev-ery step just feels the same                          # copy(verse,4)
+
+CHORUS 4
+Wait for the sun to rise a-gain                          # 8,7,8,7 syllables
+Hold on through the wind and rain
+Hearts will turn like wheels of gold
+Love is some-thing you can't hold
+
+OUTRO
+Ba ba ba ba ba ba ba                                     # copy(intro,1)
+Ba ba ba ba ba ba ba                                     # transpose(outro,1,2)
+Ba ba ba ba ba ba ba                                     # invert(outro,1,C5)
