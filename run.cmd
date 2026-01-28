@@ -7,5 +7,6 @@ echo.
 echo Close MuseScore  
 echo.  
 pause Press a key to continue...
-python MarkMelGen.py -c conf/v2.0.0/classical_classical_2.conf
+REM python MarkMelGen.py -c conf/v2.0.0/classical_classical_2.conf
+python MarkMelGen.py 
 

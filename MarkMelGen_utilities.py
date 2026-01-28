@@ -23,7 +23,7 @@ from mido import *
 from music21 import *
 from music21 import meter
 
-MARKMELGEN_VERSION = "2.0.0"
+MARKMELGEN_VERSION = "3.1.0"
 
 
 def analyze_melody_beats(melody_stream, strip=True):
@@ -1628,3 +1628,11 @@ def normalise_transpose(score):
        return original_score
     else:
         return best_transposed_score
+    
+def log_error_and_pause(error_message):
+    """
+    Writes an error to the log and pauses for user input before continuing.
+    """
+    logger.error(error_message)
+    print(error_message)
+    input("Press Enter to continue...")

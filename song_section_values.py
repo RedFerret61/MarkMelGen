@@ -575,6 +575,10 @@ def main():
         num_sections = len(section_order)
         num_files = len(mxl_files)
 
+        if num_files == 0:
+            print(f"Error: No .mxl files found in the directory '{args.directory}'.")
+            sys.exit(1)
+
         # Duplicate files if there are not enough to fill the sections
         if num_files < num_sections:
             mxl_files = (mxl_files * (num_sections // num_files + 1))[:num_sections]

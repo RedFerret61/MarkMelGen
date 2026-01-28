@@ -35,6 +35,7 @@ import re
 import sys
 import warnings  # Import the warnings module
 
+from datetime import datetime
 from enum import Enum, auto
 from fractions import Fraction
 
@@ -59,7 +60,7 @@ logger = logging.getLogger("MMG")
 
 def setup_logger(loglevel):
     global log_filename  # Declare log_filename as global to modify it
-   
+
     iso_datetime_str = get_iso_datetime_str()
     log_path = "log" + os.sep
     log_filename = f"{log_path}MarkMelGen_log_{iso_datetime_str}.log"
@@ -356,7 +357,7 @@ def add_new_lyrics_to_old_phrase(
                     (note_num + 1),
                     section_name_text,
                 )
-                
+
             note_num = note_num + 1
 
     # if there are more new lyric syllables than old notes, add them to the next note/rest.
@@ -440,9 +441,13 @@ def get_semitone_interval(tone_prev, tone):
         return 0
     if tone_prev.octave == None:
         print("exit: Error get_semitone_interval tone_prev.octave == None ")
+        error_message = f"Error get_semitone_interval tone_prev.octave == None"
+        log_error_and_pause(error_message)
         sys.exit()
     if tone.octave == None:
         print("exit: Error get_semitone_interval tone.octave == None ")
+        error_message = f"Error get_semitone_interval tone.octave == None"
+        log_error_and_pause(error_message)
         sys.exit()
 
     # calculate interval
@@ -955,7 +960,8 @@ def get_note_with_octave(tone_prev, tone_name):
 
 #     return beat_placement
 
-# v2 copilot 
+
+# v2 copilot
 def get_next_beat_placement(n_prev, bpm_key, bpm_transition):
     """
     Generates the next beat placement in a sequence based on the given parameters.
@@ -993,8 +999,10 @@ def get_next_beat_placement(n_prev, bpm_key, bpm_transition):
 
         if DUR_RATIONAL:
             # Allow only beat_placement with denominators 1, 2, 4, 8, 16, 32, etc.
-            if beat_placement >= 0.0 and beat_placement < 1.0 and (
-                beat_placement.denominator & (beat_placement.denominator - 1) == 0
+            if (
+                beat_placement >= 0.0
+                and beat_placement < 1.0
+                and (beat_placement.denominator & (beat_placement.denominator - 1) == 0)
             ):
                 valid = True
                 logger.debug(
@@ -1015,6 +1023,7 @@ def get_next_beat_placement(n_prev, bpm_key, bpm_transition):
         )
 
     return beat_placement
+
 
 def get_next_note(
     note_num,
@@ -1341,6 +1350,8 @@ def get_nameWithOctave_from_cadence_tones(n_prev):
         print(
             "exit: Error get_nameWithOctave_from_cadence_tones called when CADENCE_TONE_FREQUENCY is blank"
         )
+        error_message = f"Error get_nameWithOctave_from_cadence_tones called when CADENCE_TONE_FREQUENCY is blank"
+        log_error_and_pause(error_message)
         sys.exit()
     else:
         # get random cadence tone
@@ -1371,8 +1382,8 @@ def generate_markov_phrase_with_lyrics(
     return a melodic stream with a line of lyrics
     """
     logger.debug(f"gmpwl Duration set: {DURATION_SET} (type: {type(DURATION_SET)})")
-    logger.debug(f"gmpwl Duration set (PER_SECTION): {PER_SECTION_DURATION_SET}") 
-    
+    logger.debug(f"gmpwl Duration set (PER_SECTION): {PER_SECTION_DURATION_SET}")
+
     if gmpwl_call_count == 1:
         logger.debug(
             f"generate_markov_phrase_with_lyrics: sect {sect}, ts {ts}, tone_scale {tone_scale}, tone_mode {tone_mode}, \n---lyric_line--- {lyric_line}"
@@ -1661,6 +1672,11 @@ def is_post_processing_function(s):
 
     result = True
 
+    # Strip characters up to and including the first '#' if present
+    if "#" in s:
+        s = s.split("#", 1)[1].strip()
+    logger.debug(f"is_post_processing_function {s}")
+
     try:
         # print(ast.dump(ast.parse(s, mode='eval'), indent=4))
         ast.dump(ast.parse(s, mode="eval"), indent=4)
@@ -1693,6 +1709,9 @@ def is_post_processing_function(s):
         # # get call attributes
         # call_attributes = get_name_and_args(s)
         # print('call_attributes', call_attributes)
+        if result:
+            logger.debug("Is a function call")
+
     return result
 
 
@@ -1985,6 +2004,8 @@ def get_lyrics(qualified_filename):
                     except BaseException as err:
                         print(f"Unexpected {err=}, {type(err)=}")
                         print("exit: invalid post processing function:", comment)
+                        error_message = f"Unexpected {err=}, {type(err)=}\nexit: invalid post processing function: {comment}"
+                        log_error_and_pause(error_message)
                         sys.exit()
                     call_attributes = get_name_and_args(comment)
 
@@ -1997,6 +2018,8 @@ def get_lyrics(qualified_filename):
                                     "exit: invalid copy, e.g. expect: copy(verse,1) actual parse:",
                                     call_attributes,
                                 )
+                                error_message = f"exit: invalid copy, e.g. expect: copy(verse,1) actual parse: {call_attributes}"
+                                log_error_and_pause(error_message)
                                 sys.exit()
                             else:
                                 print(
@@ -2010,6 +2033,8 @@ def get_lyrics(qualified_filename):
                                     "exit: invalid transpose, e.g. expect: transpose(verse,1,-4) actual parse:",
                                     call_attributes,
                                 )
+                                error_message = f"not valid_invert_post_processing_function {v} exit invalid post processing function: {call_attributes}"
+                                log_error_and_pause(error_message)
                                 sys.exit()
                             else:
                                 print(
@@ -2023,6 +2048,8 @@ def get_lyrics(qualified_filename):
                                     "exit: invalid invert, e.g. expect: invert(verse,1,C4) actual parse:",
                                     call_attributes,
                                 )
+                                error_message = f"not valid_invert_post_processing_function {v} exit invalid post processing function: {call_attributes}"
+                                log_error_and_pause(error_message)
                                 sys.exit()
                             else:
                                 print(
@@ -2036,6 +2063,8 @@ def get_lyrics(qualified_filename):
                                     "exit: invalid reverse, e.g. expect: reverse(verse,1) actual parse:",
                                     call_attributes,
                                 )
+                                error_message = f"Error not valid_reverse_post_processing_function {v} exit invalid post processing function: {call_attributes}"
+                                log_error_and_pause(error_message)
                                 sys.exit()
                             else:
                                 print(
@@ -2827,6 +2856,7 @@ def split_hyphens(lyric_line):
     # print('split_hyphens return syllable_line', syllable_line)
     return syllable_line
 
+
 # v1
 # def valid_duration(dur_prev, dur, dur_on_beat=False):
 #     """
@@ -3085,7 +3115,8 @@ def split_hyphens(lyric_line):
 
 #     return result
 
-#v3 rewrite Gemini
+
+# v3 rewrite Gemini
 def valid_duration(dur_prev, dur, dur_on_beat=False):
     """
     function that takes a duration and
@@ -3108,11 +3139,15 @@ def valid_duration(dur_prev, dur, dur_on_beat=False):
     """
 
     global DURATION_SET  # Ensure DURATION_SET is accessed as a global variable
-    
-    logger.debug(f"valid_duration: dur_prev {dur_prev}, dur {dur}, dur_on_beat {dur_on_beat}, DURATION_SET {DURATION_SET}\t\t start #########################################")      
+
+    logger.debug(
+        f"valid_duration: dur_prev {dur_prev}, dur {dur}, dur_on_beat {dur_on_beat}, DURATION_SET {DURATION_SET}\t\t start #########################################"
+    )
 
     if DUR_LEAST > DUR_LONGEST:
         print("exit: Error DUR_LEAST > DUR_LONGEST")
+        error_message = f"Error DUR_LEAST > DUR_LONGEST: DUR_LEAST {DUR_LEAST} DUR_LONGEST {DUR_LONGEST}"
+        log_error_and_pause(error_message)
         sys.exit()
     # duration is valid until proved invalid
     result = True
@@ -3192,7 +3227,7 @@ def valid_duration(dur_prev, dur, dur_on_beat=False):
         for dur_from_set in DURATION_SET:
             if Fraction(dur) == Fraction(dur_from_set):
                 duration_found = True
-                break # Exit the loop once a match is found
+                break  # Exit the loop once a match is found
         if not duration_found:
             result = False
             reason = (
@@ -3224,6 +3259,7 @@ def valid_duration(dur_prev, dur, dur_on_beat=False):
 
     return result
 
+
 def valid_pitch(n_prev, n, tone_scale, tone_mode):
     """
     function that takes a note and
@@ -3245,6 +3281,8 @@ def valid_pitch(n_prev, n, tone_scale, tone_mode):
 
     if TONES_ON_KEY == True and TONES_OFF_KEY == True:
         print("exit: Error TONES_ON_KEY == True and TONES_OFF_KEY == True")
+        error_message = f"Error TONES_ON_KEY {TONES_ON_KEY} == True and TONES_OFF_KEY {TONES_OFF_KEY} == True"
+        log_error_and_pause(error_message)
         sys.exit()
     if TONE_SCALE_ON_ANHEMITONIC == True and (
         TONES_ON_KEY == True or TONES_OFF_KEY == True
@@ -3252,11 +3290,15 @@ def valid_pitch(n_prev, n, tone_scale, tone_mode):
         print(
             "exit: Error TONE_SCALE_ON_ANHEMITONIC == True and (TONES_ON_KEY == True or TONES_OFF_KEY == True)"
         )
+        error_message = f"Error TONE_SCALE_ON_ANHEMITONIC {TONE_SCALE_ON_ANHEMITONIC} == True and (TONES_ON_KEY {TONES_ON_KEY} == True or TONES_OFF_KEY {TONES_OFF_KEY} == True)"
+        log_error_and_pause(error_message)
         sys.exit()
     if TONE_SCALE_ON_ANHEMITONIC == True and TONE_SCALE_ON_HEMITONIC == True:
         print(
             "exit: Error TONE_SCALE_ON_ANHEMITONIC == True and TONE_SCALE_ON_HEMITONIC == True"
         )
+        error_message = f"Error TONE_SCALE_ON_ANHEMITONIC {TONE_SCALE_ON_ANHEMITONIC} == True and TONE_SCALE_ON_HEMITONIC {TONE_SCALE_ON_HEMITONIC} == True"
+        log_error_and_pause(error_message)
         sys.exit()
     if (TONE_SCALE_SET != [] and TONE_SCALE_ON_ANHEMITONIC == True) or (
         TONE_SCALE_SET != [] and TONE_SCALE_ON_HEMITONIC == True
@@ -3264,6 +3306,8 @@ def valid_pitch(n_prev, n, tone_scale, tone_mode):
         print(
             "exit: Error TONE_SCALE_SET not empty list and TONE_SCALE_ON_ANHEMITONIC == True) or (TONE_SCALE_SET not empty list and TONE_SCALE_ON_HEMITONIC == True) "
         )
+        error_message = f"Error TONE_SCALE_SET {TONE_SCALE_SET} not empty list and TONE_SCALE_ON_ANHEMITONIC {TONE_SCALE_ON_ANHEMITONIC} == True) or (TONE_SCALE_SET {TONE_SCALE_SET} not empty list and TONE_SCALE_ON_HEMITONIC {TONE_SCALE_ON_HEMITONIC} == True) "
+        log_error_and_pause(error_message)
         sys.exit()
 
     # if note is less than TONE_RANGE_BOTTOM or greater than TONE_RANGE_TOP then note is note valid.
@@ -4304,10 +4348,14 @@ def validate_later_lines_per_section(lyrics, section_name_matches, lines_per_sec
 
     if too_many_lines_in_section_repeat:
         print("exit: Error too_many_lines_in_section_repeat. See Warning(s).")
+        error_message = f"Error too_many_lines_in_section_repeat. See Warning(s)."
+        log_error_and_pause(error_message)
         sys.exit()
 
     if wrong_number_of_lines_in_section:
         print("exit: Error wrong_number_of_lines_in_section. See Warning(s).")
+        error_message = f"Error wrong_number_of_lines_in_section. See Warning(s)."
+        log_error_and_pause(error_message)
         sys.exit()
 
     return
@@ -4426,7 +4474,8 @@ def filter_output_stream_for_MuseScore(
     classesToMove=(
         note.Note,
         note.Rest,
-        expressions.TextExpression,
+        # expressions.TextExpression,
+        expressions.RehearsalMark,
         tempo.MetronomeMark,
         key.KeySignature,
         meter.TimeSignature,
@@ -4477,9 +4526,12 @@ def process_lyrics(
 
     global TIME_SIG_WANTED
     logger.debug(f"")
-    logger.debug(f"process_lyrics Duration set: {DURATION_SET} (type: {type(DURATION_SET)})")
-    logger.debug(f"process_lyrics Duration set (PER_SECTION): {PER_SECTION_DURATION_SET}") 
-   
+    logger.debug(
+        f"process_lyrics Duration set: {DURATION_SET} (type: {type(DURATION_SET)})"
+    )
+    logger.debug(
+        f"process_lyrics Duration set (PER_SECTION): {PER_SECTION_DURATION_SET}"
+    )
 
     print("process_lyrics USE_STYLES", USE_STYLES, "Current style", style)
     # input("Press Enter to continue...")
@@ -4512,16 +4564,19 @@ def process_lyrics(
     section_line_num = 0
     sect = None  # Initialize sect to avoid UnboundLocalError
 
-
     for p in range(0, len(lyrics)):
         print("                                           ", lyrics[p])
         if any(x in lyrics[p].casefold() for x in _section_name_matches):
             section_name_text = lyrics[p]
             section_line_num = 0
 
-            te = expressions.TextExpression(lyrics[p].upper())
-            te.placement = "above"
-            p0.append(te)
+            # te = expressions.TextExpression(lyrics[p].upper())
+            # te.placement = "above"
+            # p0.append(te)
+
+            rm = expressions.RehearsalMark(lyrics[p].upper())
+            rm.placement = "above"
+            p0.append(rm)
 
             if lyrics[p].casefold().startswith(("intro")):
                 sect = Section.INTRO
@@ -4644,6 +4699,8 @@ def process_lyrics(
                                 "exit: invalid post processing function:",
                                 call_attributes_list[p],
                             )
+                            error_message = f"Unexpected {err=}, {type(err)=}\nexit: invalid post processing function: {call_attributes_list[p]}"
+                            log_error_and_pause(error_message)
                             sys.exit()
                         a_phrase = add_new_lyrics_to_old_phrase(
                             sect,
@@ -5029,28 +5086,78 @@ def process_lyrics(
         "MarkMelGen " + MARKMELGEN_VERSION + "\n" + CONF_FILENAME + "\n" + d
     )
 
-    # replace any . with _ in output_filename
+    # Build standardized filename components
+    # prefix: <conf>-<music>-<lyrics>
+    config_name = os.path.splitext(CONF_FILENAME)[0]
+    if mxl_files and len(mxl_files) >= 1:
+        music_name = os.path.splitext(mxl_files[0])[0]
+    else:
+        music_name = os.path.splitext(INPUT_MUSIC_FILENAME)[0]
+    lyrics_name = os.path.splitext(INPUT_LYRICS_FILENAME)[0]
+    prefix = f"{config_name}-{music_name}-{lyrics_name}"
+
+    # key: e.g. Am or C
+    try:
+        if song_key.mode == "minor":
+            key_tag = f"{song_key.tonic.name.capitalize()}m"
+        else:
+            key_tag = f"{song_key.tonic.name.capitalize()}"
+    except Exception:
+        key_tag = "KeyUnknown"
+
+    # bpm: prefer songTempo if present, fallback to TEMPO_BPM or 120
+    try:
+        bpm_val = int(songTempo.number)
+    except Exception:
+        try:
+            bpm_val = int(TEMPO_BPM)
+        except Exception:
+            bpm_val = 120
+    bpm_tag = f"bpm{bpm_val}"
+
+    # time signature tag in lower-case: ts4_4
+    ts_tag = f"ts{ts.numerator}_{ts.denominator}"
+
+    # pitch range: low_high (e.g. E2_C4)
+    notes = score.recurse().getElementsByClass(note.Note)
+    if notes and len(notes) > 0:
+        try:
+            min_note = min(notes, key=lambda n: n.pitch.midi).pitch.nameWithOctave
+            max_note = max(notes, key=lambda n: n.pitch.midi).pitch.nameWithOctave
+            pitch_range = f"{min_note}_{max_note}"
+        except Exception:
+            pitch_range = "unknown_range"
+    else:
+        pitch_range = "unknown_range"
+
+    # version tag
+    # version_tag = ""
+
+
+    now = datetime.datetime.now()
+    # Build sub-second timestamp: HHMMSSmmm
+    timestamp = now.strftime("%H%M%S") + f"{now.microsecond // 1000:03d}"
+
+    # Build sub-second timestamp: HHMMSS
+    timestamp = now.strftime("%H%M%S")
+
+    # Construct final output filename
+    output_filename = (
+        f"{prefix}-{timestamp}-{key_tag}-{bpm_tag}-{ts_tag}-{pitch_range}"
+    )
+
+
+    # sanitize: replace any '.' in pieces (e.g. decimal in numbers) with '_'
     output_filename = output_filename.replace(".", "_")
 
-    # logger.info(
-    #     f"\n show_text_in_stream(score, ts) before Save the stream as a MIDI file "
-    # )
-    # show_text_in_stream(score, ts)
-
-    # Save the stream as a MIDI file. Note filtered and split midis look the same.
-    # output_path = OUTPUT_PATH + output_filename + ".mid"
-    # score.write("midi", fp=output_path)
-
-    # logger.info(
-    #     f"\n show_text_in_stream(score, ts) before Save the stream as a .kar file. "
-    # )
-    # show_text_in_stream(score, ts)
-
-    # Save the stream as a .kar file. v1
-    output_path = OUTPUT_PATH + output_filename + "_[k].kar"
-    # output_path = OUTPUT_PATH + output_filename + "_[k].mid"
+    # Save the stream as a .kar file
+    output_path = OUTPUT_PATH + output_filename + ".kar"
     stream_to_midi_with_lyrics(score, output_path)
     kar_filename = output_path
+
+    # Save the stream as a MIDI file
+    output_path = OUTPUT_PATH + output_filename + ".mid"
+    score.write("midi", fp=output_path)
 
     # Save the MIDI file as a musicxml file #  most still have musescore tuple bar errors
     # midi_file_path = output_path
@@ -5114,7 +5221,7 @@ def process_lyrics(
         filtered_score.write("xml", OUTPUT_PATH + output_filename + ".xml")
         compressXML(OUTPUT_PATH + output_filename + ".xml", deleteOriginal=True)
 
-    show_text_in_stream(filtered_score, ts)
+    # show_text_in_stream(filtered_score, ts)
 
     # # Analyze the melody
     # analysis_results = analyze_melody_beats(filtered_score)
@@ -5164,6 +5271,7 @@ def process_lyrics(
         subprocess.run([environment.UserSettings()["musicxmlPath"], kar_filename])
 
     print("MarkMelGen version " + MARKMELGEN_VERSION)
+    logger.debug(f"MarkMelGen version {MARKMELGEN_VERSION}")
 
     return
 
@@ -5254,6 +5362,8 @@ def main():
 
         if mxl_files == []:
             print("exit: Error no mxl_files in INPUT_MUSIC_PATH", INPUT_MUSIC_PATH)
+            error_message = f"Error no mxl_files in INPUT_MUSIC_PATH {INPUT_MUSIC_PATH}"
+            log_error_and_pause(error_message)
             sys.exit()
 
         # append each normalised mxl file to form one long "song"
@@ -5347,6 +5457,16 @@ def main():
             "Using song.recurse().getElementsByClass(meter.TimeSignature)[0] =",
             songTimeSig,
         )
+
+        # --- Add this block to exit if illegal time signature ---
+        if songTimeSig.denominator not in [1, 2, 4, 8, 16, 32, 64]:
+            print(
+                f"exit: Error illegal time signature denominator {songTimeSig.denominator}. Must be a power of 2 for MIDI export."
+            )
+            error_message = f"Error illegal time signature denominator {songTimeSig.denominator}. Must be a power of 2 for MIDI export."
+            log_error_and_pause(error_message)
+            sys.exit()
+        # -------------------------------------------------------
 
         # Get the tempo from the music21 converter.parse .mid
         first = True
@@ -5569,6 +5689,8 @@ def main():
                 print(
                     "Failed to load all transition files. Check the error log for details."
                 )
+                error_message = f"Error: Failed to load all transition files for style {style} from path {style_path}."
+                log_error_and_pause(error_message)
                 sys.exit()
 
             # Set other parameters for process_lyrics
@@ -5924,36 +6046,42 @@ def get_config():
         description="MarkMelGen: A tool for generating Markov melodies."
     )
 
-    # Specify command line arguments.
+    # Specify command line arguments with short options.
     parser.add_argument(
         "-c",
         "--config",
-        help="config file path (default: MarkMelGen.conf)",
+        help="Config file path (default: MarkMelGen.conf)",
         default="MarkMelGen.conf",
         type=str,
     )
 
     # New arguments for controlling score display
-    parser.add_argument("--display-graphs", help="Display graphs", action="store_true")
     parser.add_argument(
-        "--display-html", help="Display HTML score", action="store_true"
+        "-g",
+        "--display-graphs",
+        help="Display graphs",
+        action="store_true",
     )
     parser.add_argument(
-        "--display-mxl", help="Display MuseScore MXL score", action="store_true"
+        "-t",
+        "--display-html",
+        help="Display HTML score",
+        action="store_true",
     )
     parser.add_argument(
-        "--display-kar", help="Display MuseScore KAR score", action="store_true"
+        "-m",
+        "--display-mxl",
+        help="Display MuseScore MXL score",
+        action="store_true",
+    )
+    parser.add_argument(
+        "-k",
+        "--display-kar",
+        help="Display MuseScore KAR score",
+        action="store_true",
     )
 
     # Specify the log level
-
-    # Example log messages
-    # logger.debug(f"Logging to {log_filename} ")
-    # logger.info("Info test message")
-    # logger.warning("Warning test message")
-    # logger.error("Error test message")
-    # logger.critical("Critical test message")
-
     parser.add_argument(
         "-l",
         "--loglevel",
@@ -5967,33 +6095,39 @@ def get_config():
         "-o",
         "--override",
         action="append",
-        help="Override certain configuration settings in the format 'section.key=value'. Can be specified multiple times. e.g. -o paths.INPUT_LYRICS_PATH=input\\lyrics\\ -o filenames.INPUT_LYRICS_FILENAME=Drifting_Stranger.txt -o markmelgen.DISPLAY_GRAPHS=True -o markmelgen.TEMPO_BPM=90.0 -o markmelgen.TIME_SIG_WANTED='6/8' -o markmelgen.DURATION_SET=['0.5','1.25','1.5'] -o markmelgen.USE_STYLES=['early_jazz_1','early_jazz_2']",
+        help="Override certain configuration settings in the format 'section.key=value'. Can be specified multiple times. "
+        "e.g. -o paths.INPUT_LYRICS_PATH=input\\lyrics\\ -o filenames.INPUT_LYRICS_FILENAME=Drifting_Stranger.txt -o "
+        "markmelgen.DISPLAY_GRAPHS=True -o markmelgen.TEMPO_BPM=90.0 -o markmelgen.TIME_SIG_WANTED='6/8' -o "
+        "markmelgen.DURATION_SET=['0.5','1.25','1.5'] -o markmelgen.USE_STYLES=['early_jazz_1','early_jazz_2']",
     )
 
     # Add the style arguments
     parser.add_argument(
+        "-s",
         "--create-style",
         type=str,
         help="Path to input music directory (must be a directory)",
     )
 
     parser.add_argument(
-        "--list-styles", action="store_true", help="List available styles and exit"
+        "-lS",
+        "--list-styles",
+        action="store_true",
+        help="List available styles and exit",
     )
 
-    # parser.add_argument(
-    #     "--use-styles", nargs="+", help="List of styles to use", type=str
-    # )
-
     parser.add_argument(
-        "-v", "--version", action="store_true", help="Show version and exit"
+        "-v",
+        "--version",
+        action="store_true",
+        help="Show version and exit",
     )
 
     # Parse command line arguments.
     args = parser.parse_args()
 
     if args.version:
-        print(f"Processing argument: --version (value: {args.version})")
+        # print(f"Processing argument: --version (value: {args.version})")
         print(MARKMELGEN_VERSION)
         sys.exit()
 
@@ -6012,7 +6146,9 @@ def get_config():
     """Get Config Parameters"""
     config = configparser.ConfigParser(allow_no_value=True)
 
-    config.read(args.config)
+    # config.read(args.config)
+    with open(args.config, encoding="utf-8") as f:
+        config.read_file(f)
 
     CONF_FILENAME = os.path.basename(args.config)
     print("MarkMelGen version " + MARKMELGEN_VERSION)
@@ -6069,6 +6205,8 @@ def get_config():
         except BaseException as err:
             print(f"Unexpected {err=}, {type(err)=}")
             print("exit: Error BEAT_PLACEMENTS_DENIED_SET", BEAT_PLACEMENTS_DENIED_SET)
+            error_message = f"Error in configuration file. BEAT_PLACEMENTS_DENIED_SET {temp_BEAT_PLACEMENTS_DENIED_SET} is not valid."
+            log_error_and_pause(error_message)
             sys.exit()
     print("BEAT_PLACEMENTS_DENIED_SET", BEAT_PLACEMENTS_DENIED_SET)
     # input('Press Enter to continue...')
@@ -6102,6 +6240,8 @@ def get_config():
                 "exit: Error BEAT_PLACEMENTS_DENOMINATOR_DENIED_SET",
                 BEAT_PLACEMENTS_DENOMINATOR_DENIED_SET,
             )
+            error_message = f"Error in configuration file. BEAT_PLACEMENTS_DENOMINATOR_DENIED_SET {temp_BEAT_PLACEMENTS_DENOMINATOR_DENIED_SET} is not valid."
+            log_error_and_pause(error_message)
             sys.exit()
     print(
         "BEAT_PLACEMENTS_DENOMINATOR_DENIED_SET", BEAT_PLACEMENTS_DENOMINATOR_DENIED_SET
@@ -6127,9 +6267,13 @@ def get_config():
                 temp_BEAT_PLACEMENT_DENOMINATOR_MAXIMUM_ALLOWED,
                 "is not an integer",
             )
+            error_message = f"Error in configuration file. BEAT_PLACEMENT_DENOMINATOR_MAXIMUM_ALLOWED {temp_BEAT_PLACEMENT_DENOMINATOR_MAXIMUM_ALLOWED} is not an integer."
+            log_error_and_pause(error_message)
             sys.exit()
     except ValueError as e:
         print("exit:", e)
+        error_message = f"Error in configuration file. BEAT_PLACEMENT_DENOMINATOR_MAXIMUM_ALLOWED {temp_BEAT_PLACEMENT_DENOMINATOR_MAXIMUM_ALLOWED} is not valid."
+        log_error_and_pause(error_message)
         sys.exit()
     print(
         "BEAT_PLACEMENT_DENOMINATOR_MAXIMUM_ALLOWED",
@@ -6181,6 +6325,8 @@ def get_config():
             )
             if cadence_tone_frequency <= 0.0:
                 print("exit: Error CADENCE_TONE_FREQUENCY frequency < 1")
+                error_message = f"Error CADENCE_TONE_FREQUENCY frequency {cadence_tone_frequency} <= 0.0."
+                log_error_and_pause(error_message)
                 sys.exit()
 
         # convert CADENCE_TONE_FREQUENCY to CADENCE_TONE_PROBABILITY
@@ -6234,6 +6380,8 @@ def get_config():
             # print('duration_eq_num=',duration_eq_num,'duration_name=', duration_name,'duration_factor=', duration_factor)
             if duration_factor <= 0.0:
                 print("exit: Error DURATION_EQ factor <= 0.0")
+                error_message = f"Error DURATION_EQ factor {duration_factor} <= 0.0."
+                log_error_and_pause(error_message)
                 sys.exit()
     else:
         DURATION_EQ = ""
@@ -6251,11 +6399,15 @@ def get_config():
         except BaseException as err:
             print(f"Unexpected {err=}, {type(err)=}")
             print("exit: Error DURATION_SET", DURATION_SET)
+            error_message = f"Error DURATION_SET {DURATION_SET} is not a valid list e.g. ['0.5','1.0','1.5']."
+            log_error_and_pause(error_message)
             sys.exit()
 
         # print('Python literal structure for DURATION_SET strings evaluated to:', DURATION_SET, type(DURATION_SET))
         if not isinstance(DURATION_SET, list):
             print("exit: DURATION_SET is not a list e.g. []")
+            error_message = f"Error DURATION_SET {DURATION_SET} is not a list e.g. []."
+            log_error_and_pause(error_message)
             sys.exit()
         for dur_num in range(0, len(DURATION_SET)):
             # print('dur type()', DURATION_SET[dur_num], type(DURATION_SET[dur_num]))
@@ -6266,6 +6418,8 @@ def get_config():
                     temp_dur,
                     " is an integer e.g. 1. Should be a float e.g. 1.0",
                 )
+                error_message = f"Error dur_frac {temp_dur} is an integer e.g. 1. Should be a float e.g. 1.0."
+                log_error_and_pause(error_message)
                 sys.exit()
             try:
                 if not temp_dur.isnumeric():
@@ -6273,6 +6427,8 @@ def get_config():
                     DURATION_SET[dur_num] = dur_frac
             except ValueError:
                 print("exit: ValueError dur_frac", temp_dur, " is not a number")
+                error_message = f"Error dur_frac {temp_dur} is not a number."
+                log_error_and_pause(error_message)
                 sys.exit()
                 # throw ValueError(temp_dur + " is not a number")
             # print("dur_frac", dur_frac)
@@ -6290,6 +6446,8 @@ def get_config():
             DUR_LEAST = Fraction(temp_DUR_LEAST)
     except ValueError:
         print("exit: ValueError DUR_LEAST", temp_DUR_LEAST, " is not a number")
+        error_message = f"Error DUR_LEAST {temp_DUR_LEAST} is not a number."
+        log_error_and_pause(error_message)
         sys.exit()
         # throw ValueError(temp_DUR_LEAST + " is not a number")
     print("DUR_LEAST", DUR_LEAST)
@@ -6303,6 +6461,8 @@ def get_config():
             DUR_LONGEST = Fraction(temp_DUR_LONGEST)
     except ValueError:
         print("exit: ValueError DUR_LONGEST", temp_DUR_LONGEST, " is not a number")
+        error_message = f"Error DUR_LONGEST {temp_DUR_LONGEST} is not a number."
+        log_error_and_pause(error_message)
         sys.exit()
         # throw ValueError(temp_DUR_LONGEST + " is not a number")
     print("DUR_LONGEST", DUR_LONGEST)
@@ -6320,12 +6480,18 @@ def get_config():
 
     if DUR_RATIONAL and DUR_TUPLET:
         print("exit: Error DUR_RATIONAL and DUR_TUPLET cannot both be True ")
+        error_message = f"Error DUR_RATIONAL {DUR_RATIONAL} and DUR_TUPLET {DUR_TUPLET} cannot both be True."
+        log_error_and_pause(error_message)
         sys.exit()
 
     DUR_PREV_DIFF = config["markmelgen"].getfloat("DUR_PREV_DIFF")
     print("DUR_PREV_DIFF", DUR_PREV_DIFF)
     if DUR_PREV_DIFF != 0 and DUR_PREV_DIFF <= 1:
         print("exit: Error DUR_PREV_DIFF != 0 and DUR_PREV_DIFF <= 1 ")
+        error_message = (
+            f"Error DUR_PREV_DIFF {DUR_PREV_DIFF} != 0 and DUR_PREV_DIFF <= 1."
+        )
+        log_error_and_pause(error_message)
         sys.exit()
     PER_SECTION_DUR_PREV_DIFF = [DUR_PREV_DIFF] * PER_SECTION_LIST_LENGTH
 
@@ -6368,6 +6534,10 @@ def get_config():
     print("TONE_ASCENT_MIN_INTERVAL", TONE_ASCENT_MIN_INTERVAL)
     if TONE_ASCENT_MIN_INTERVAL < 2:
         print("exit: Error TONE_ASCENT_MIN_INTERVAL < 2 ")
+        error_message = (
+            f"Error TONE_ASCENT_MIN_INTERVAL {TONE_ASCENT_MIN_INTERVAL} < 2."
+        )
+        log_error_and_pause(error_message)
         sys.exit()
 
     TONE_ASCENT_TRIGGER_EVERY_N_TIMES = config["markmelgen"].getint(
@@ -6383,6 +6553,8 @@ def get_config():
     print("TONE_DESCENT_MAX_INTERVAL", TONE_DESCENT_MAX_INTERVAL)
     if TONE_DESCENT_MAX_INTERVAL < 2:
         print("exit: Error TONE_DESCENT_MAX_INTERVAL < 2 ")
+        error_message = f"Error {TONE_DESCENT_MAX_INTERVAL} < 2."
+        log_error_and_pause(error_message)
         sys.exit()
 
     TONE_DESCENT_TRIGGER_EVERY_N_TIMES = config["markmelgen"].getint(
@@ -6412,6 +6584,8 @@ def get_config():
             )
             if tone_factor <= 0.0:
                 print("exit: Error TONE_EQ factor <= 0.0")
+                error_message = f"Error TONE_EQ factor {tone_factor} <= 0.0 for tone name {tone_name}."
+                log_error_and_pause(error_message)
                 sys.exit()
     else:
         TONE_EQ = ""
@@ -6430,6 +6604,8 @@ def get_config():
             TONE_INTERVAL,
             " should be [smallest | largest | random]",
         )
+        error_message = f"Error TONE_INTERVAL = {TONE_INTERVAL} should be [smallest | largest | random]."
+        log_error_and_pause(error_message)
         sys.exit()
 
     TONES_ON_KEY = config["markmelgen"].getboolean("TONES_ON_KEY")
@@ -6461,6 +6637,8 @@ def get_config():
 
     if n_max.nameWithOctave < n_min.nameWithOctave:
         print("exit: Error in configuration file. TONE_RANGE_TOP < TONE_RANGE_BOTTOM.")
+        error_message = f"Error in configuration file. TONE_RANGE_TOP {TONE_RANGE_TOP} < TONE_RANGE_BOTTOM {TONE_RANGE_BOTTOM}."
+        log_error_and_pause(error_message)
         sys.exit()
 
     TONE_ASCENT_TRIGGER = TONE_RANGE_BOTTOM
@@ -6476,6 +6654,8 @@ def get_config():
         print(
             "exit: Error tone range in semitones must be at least one octave (12 semitones)"
         )
+        error_message = f"Error tone range {TONE_RANGE_BOTTOM} - {TONE_RANGE_TOP} in semitones must be at least one octave (12 semitones)."
+        log_error_and_pause(error_message)
         sys.exit()
 
     print("n_min.octave", n_min.octave, "n_max.octave", n_max.octave)
@@ -6498,10 +6678,14 @@ def get_config():
     )
     if (int(tone_range_oct_min_str) > 9) or (int(tone_range_oct_max_str) > 9):
         print("exit: Error tone range max octave is 9.")
+        error_message = f"Error tone range {tone_range_oct_min_str} - {tone_range_oct_max_str} max octave is 9."
+        log_error_and_pause(error_message)
         sys.exit()
 
     if (int(tone_range_oct_min_str) < 0) or (int(tone_range_oct_max_str) < 0):
         print("exit: Error tone range min octave is 0.")
+        error_message = f"Error tone range {tone_range_oct_min_str} - {tone_range_oct_max_str} min octave is 0."
+        log_error_and_pause(error_message)
         sys.exit()
 
     # TONE_SCALE_NEW = json.loads(config.get("markmelgen", "TONE_SCALE_NEW"))
@@ -6530,6 +6714,8 @@ def get_config():
             except BaseException as err:
                 print(f"Unexpected {err=}, {type(err)=}")
                 print("exit: Error TONE_SCALE_SET tone_name", tone_name)
+                error_message = f"Unexpected {err=}, {type(err)=}\nexit: Error TONE_SCALE_SET tone_name {tone_name}"
+                log_error_and_pause(error_message)
                 sys.exit()
     else:
         TONE_SCALE_SET = ""
@@ -6544,8 +6730,9 @@ def get_config():
     TONE_SCALE_ON_HEMITONIC = config["markmelgen"].getboolean("TONE_SCALE_ON_HEMITONIC")
     print("TONE_SCALE_ON_HEMITONIC", TONE_SCALE_ON_HEMITONIC)
 
-
-    temp_USE_STYLES = config["markmelgen"].get("USE_STYLES", "[]")  # Default to an empty list if not present
+    temp_USE_STYLES = config["markmelgen"].get(
+        "USE_STYLES", "[]"
+    )  # Default to an empty list if not present
     print("string USE_STYLES", temp_USE_STYLES)
 
     if temp_USE_STYLES != "":
@@ -6562,8 +6749,6 @@ def get_config():
     else:
         USE_STYLES = []
     print("USE_STYLES", USE_STYLES)
-
-
 
     # list section keys
     # print('list(config[DEFAULT].keys()))')
@@ -6584,6 +6769,8 @@ def get_config():
         # if section exists in config:
         if not config.has_section(sect.name):
             print("exit: Error in config file. Missing [section name]", sect.name)
+            error_message = f"ValueError {sect.name} section is missing in config file"
+            log_error_and_pause(error_message)
             sys.exit()
         else:
             # print('config.has_section',sect.name)
@@ -6607,12 +6794,16 @@ def get_config():
                             "section_DURATION_SET",
                             section_DURATION_SET,
                         )
+                        error_message = f"Unexpected {err=}, {type(err)=}\nexit: Error section_DURATION_SET {section_DURATION_SET} in section {sect.name}"
+                        log_error_and_pause(error_message)
                         sys.exit()
 
                     # print('Python literal structure for section_DURATION_SET strings evaluated to:', section_DURATION_SET,
                     #       type(section_DURATION_SET))
                     if not isinstance(section_DURATION_SET, list):
                         print("exit: section_DURATION_SET is not a list e.g. []")
+                        error_message = f"section_DURATION_SET is not a list e.g. [] in section {sect.name}"
+                        log_error_and_pause(error_message)
                         sys.exit()
                     for dur_num in range(0, len(section_DURATION_SET)):
                         # print('dur type()', section_DURATION_SET[dur_num], type(section_DURATION_SET[dur_num]))
@@ -6623,6 +6814,8 @@ def get_config():
                                 temp_dur,
                                 " is an integer e.g. 1. Should be a float e.g. 1.0",
                             )
+                            error_message = f"ValueError {sect.name} dur_frac {temp_dur}  is an integer e.g. 1. Should be a float e.g. 1.0"
+                            log_error_and_pause(error_message)
                             sys.exit()
                         try:
                             if not temp_dur.isnumeric():
@@ -6636,6 +6829,8 @@ def get_config():
                                 temp_dur,
                                 " is not a number",
                             )
+                            error_message = f"ValueError {sect.name} dur_frac {temp_dur}  is not a number"
+                            log_error_and_pause(error_message)
                             sys.exit()
                             # throw ValueError(temp_dur + " is not a number")
                         # print("dur_frac", dur_frac)
@@ -6664,6 +6859,8 @@ def get_config():
                         temp_DUR_LEAST,
                         " is not a number",
                     )
+                    error_message = f"ValueError {sect.name} DUR_LEAST {temp_DUR_LEAST}  is not a number"
+                    log_error_and_pause(error_message)
                     sys.exit()
                     # throw ValueError(temp_DUR_LEAST + " is not a number")
                 print(sect.name, "DUR_LEAST", section_DUR_LEAST)
@@ -6685,6 +6882,8 @@ def get_config():
                         temp_DUR_LONGEST,
                         " is not a number",
                     )
+                    error_message = f"exit: ValueError {sect.name} DUR_LONGEST {temp_DUR_LONGEST}  is not a number"
+                    log_error_and_pause(error_message)
                     sys.exit()
                     # throw ValueError(temp_DUR_LONGEST + " is not a number")
                 print(sect.name, "DUR_LONGEST", section_DUR_LONGEST)
@@ -6698,6 +6897,8 @@ def get_config():
                         sect.name,
                         "section_DUR_PREV_DIFF != 0 and section_DUR_PREV_DIFF <= 1 ",
                     )
+                    error_message = f"section_DUR_PREV_DIFF != 0 and section_DUR_PREV_DIFF <= 1 in section {sect.name}"
+                    log_error_and_pause(error_message)
                     sys.exit()
                 print(sect.name, "DUR_PREV_DIFF", section_DUR_PREV_DIFF)
                 PER_SECTION_DUR_PREV_DIFF[sect.value] = section_DUR_PREV_DIFF
@@ -6733,6 +6934,8 @@ def get_config():
                             sect.name,
                             " is not a number",
                         )
+                        error_message = f"ValueError REST_NOTE_LINE_OFFSET {temp_REST_NOTE_LINE_OFFSET} in section {sect.name} is not a number"
+                        log_error_and_pause(error_message)
                         sys.exit()
                 print(sect.name, "REST_NOTE_LINE_OFFSET", section_REST_NOTE_LINE_OFFSET)
                 PER_SECTION_REST_NOTE_LINE_OFFSET[sect.value] = (
@@ -6772,6 +6975,8 @@ def get_config():
                         "exit: Error in configuration file. TONE_RANGE_TOP < TONE_RANGE_BOTTOM. section name",
                         sect.name,
                     )
+                    error_message = f"Error in configuration file. TONE_RANGE_TOP < TONE_RANGE_BOTTOM. section name {sect.name}"
+                    log_error_and_pause(error_message)
                     sys.exit()
 
             if config.has_option(sect.name, "TONE_SCALE_SET"):
@@ -6799,6 +7004,8 @@ def get_config():
                                 "TONE_SCALE_SET tone_name",
                                 tone_name,
                             )
+                            error_message = f"Unexpected {err=}, {type(err)=}\nexit: TONE_SCALE_SET tone_name {sect.name} {tone_name}"
+                            log_error_and_pause(error_message)
                             sys.exit()
                 else:
                     section_TONE_SCALE_SET = ""
@@ -6854,7 +7061,7 @@ def get_config():
         # print(f"INPUT_STYLE_PATH from config: {INPUT_STYLE_PATH}")
 
         # List the styles and exit
-        print(f"Processing argument: --list-styles (value: {args.list_styles})")
+        # print(f"Processing argument: --list-styles (value: {args.list_styles})")
         print(f"Available styles in {INPUT_STYLE_PATH} :")
         style_list = []
         try:
@@ -6865,14 +7072,20 @@ def get_config():
         except FileNotFoundError:
             print(f"Error: Style directory not found at {INPUT_STYLE_PATH}")
         if style_list:
-            print("\nTo configure the use styles, copy & paste the line below to your .conf file :")
+            print(
+                "\nTo configure the use styles, copy & paste the line below to your .conf file :"
+            )
             print(f"USE_STYLES=[{','.join(repr(style) for style in style_list)}]")
-            print("\nTo override .conf styles, copy & paste the line below to your -o override :")
-            print(f"-o markmelgen.USE_STYLES=[{','.join(repr(style) for style in style_list)}]")
+            print(
+                "\nTo override .conf styles, copy & paste the line below to your -o override :"
+            )
+            print(
+                f"-o markmelgen.USE_STYLES=[{','.join(repr(style) for style in style_list)}]"
+            )
         sys.exit()
 
     if args.create_style:
-        print(f"Processing argument: --create_style (value: {args.create_style})")
+        # print(f"Processing argument: --create_style (value: {args.create_style})")
         create_style(args.create_style, DISPLAY_HTML, INPUT_STYLE_PATH)
         sys.exit(0)
 
@@ -6891,7 +7104,9 @@ def get_config():
 
                 if not config.has_section(section):
                     config.add_section(section)
-                config.set(section, key, str(value))  # configparser only stores strings, so we convert back to string.
+                config.set(
+                    section, key, str(value)
+                )  # configparser only stores strings, so we convert back to string.
                 # logger.info(f"Overriding: {section}.{key} with {value} (type: {type(value)})")
 
                 # Check if the override is for USE_STYLES
@@ -6903,7 +7118,7 @@ def get_config():
                         else:
                             # Safely evaluate the string to a Python list
                             temp_USE_STYLES = ast.literal_eval(value)
-                        
+
                         # Ensure the result is a list of strings
                         if not isinstance(temp_USE_STYLES, list):
                             raise ValueError("USE_STYLES must be a list of strings")
@@ -6930,7 +7145,9 @@ def get_config():
         # Execute the assignment based on the flag
         if duration_set_override:
             PER_SECTION_DURATION_SET = [DURATION_SET] * PER_SECTION_LIST_LENGTH
-            logger.debug(f"duration_set_override DURATION_SET: {DURATION_SET} PER_SECTION_DURATION_SET: {PER_SECTION_DURATION_SET}")
+            logger.debug(
+                f"duration_set_override DURATION_SET: {DURATION_SET} PER_SECTION_DURATION_SET: {PER_SECTION_DURATION_SET}"
+            )
 
         # 4. Access the settings (example - showing how to get different types)
         lyrics_path = config.get("paths", "INPUT_LYRICS_PATH", fallback="")
@@ -6947,7 +7164,9 @@ def get_config():
 
         duration_set_str = config.get("markmelgen", "DURATION_SET", fallback="[]")
         DURATION_SET = parse_value(duration_set_str)
-        temp_DURATION_SET = get_duration_set(DURATION_SET)  # Convert to list of Fractions
+        temp_DURATION_SET = get_duration_set(
+            DURATION_SET
+        )  # Convert to list of Fractions
         PER_SECTION_DURATION_SET = [temp_DURATION_SET] * PER_SECTION_LIST_LENGTH
 
         logger.info(f"Using lyrics path: {INPUT_LYRICS_PATH}")
@@ -6957,10 +7176,11 @@ def get_config():
         logger.info(f"Using time sig wanted: {TIME_SIG_WANTED}")
         logger.info(f"Using Display graphs: {DISPLAY_GRAPHS}")
         logger.info(f"Using Duration set: {DURATION_SET} (type: {type(DURATION_SET)})")
-        logger.info(f"Using Duration set (PER_SECTION): {PER_SECTION_DURATION_SET}")  
+        logger.info(f"Using Duration set (PER_SECTION): {PER_SECTION_DURATION_SET}")
         logger.info(f"Using USE_STYLES: {USE_STYLES}")
 
-    return # end of get_config()
+    return  # end of get_config()
+
 
 if __name__ == "__main__":
 

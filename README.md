@@ -1,5 +1,5 @@
-# MarkMelGen 2.0.0
-![MarkMelGen logo](assets/images/mmg_logo_1.png)
+# MarkMelGen
+![MarkMelGen logo](assets/images/mel_harm_gen_logo.png)
 
 MarkMelGen is a Markov Melody Generation python program that 
 given lyrics and configuration data, uses melody styles to 
@@ -9,20 +9,101 @@ MarkMelGen allows the user to add some structure with lyrical sections (intro, v
 and line functions (such as copy, transpose, invert and reverse)
 to develop the Markov melodies and so compose more memorable songs.
 
-MarkMelGen demonstration video for v2.0.0:
+This tool is part of the MarkMelGen ecosystem / toolchain and is part of the latest [MarkMelGen release](https://github.com/RedFerret61/MarkMelGen/releases). Example demos of songs are also available under releases or on [Google Drive](https://drive.google.com/drive/folders/1mAs2iOk60PNB7V41ssSXctc1Ed0hVjTy?usp=drive_link).
+
+# Quick start
+* Download the [latest MarkMelGen toolchain release zip](https://github.com/RedFerret61/MarkMelGen/releases/latest) to desired path and unzip  
+* Install [MuseScore](https://musescore.org/en/download) (more details in install sections below)
+* Install [Python](https://www.python.org/downloads/) (more details in install sections below)
+* Install python libraries and setup music21:
+
+
+```bash
+cd MarkMelGen
+pip3 install -r requirements.txt
+python3 -m music21.configure
+```
+## Short workflow
+Run the MarkMelGen toolchain using a basic configuration file to run tools once (more details in the [mel_harm_gen repository](https://github.com/RedFerret61/mel_harm_gen)).
+
+```bash
+cd ../mel_harm_gen
+python3 mel_harm_gen.py -c mel_harm_gen--override.json5 -o CONFIG=blues_1 -o Lyrics.txt=Black_Cat_Woman.txt -o 120.0=100.0 -o 4/4=3/4
+```
+* Open mel_tran_gen output
+* Open the mxl files in MuseScore
+
+
+## Long workflow
+Run the MarkMelGen toolchain using a comprehensive configuration file to run tools multiple times and choose the best output.
+
+```bash
+python3 mel_harm_gen.py -c melody_repeats-harmony-transform--override.json5 -o CONFIG=conf/v2.0.1/pop_country_1.conf -o Lyrics.txt=Moonlit_Confession.txt -o 120.0=90.0 -o 4/4=4/4 -o STYLE=pop_country_1 -o RANGE=G3-C5
+```
+* Open mel_tran_gen output
+* Open the mxl files in MuseScore
+
+If you want to write your own song, create your lyrics in MarkMelGen input lyrics (see InputLyrics **[below](https://github.com/RedFerret61/MarkMelGen?tab=readme-ov-file#InputLyrics)**).  Choose a CONFIG / STYLE from the list:
+
+```bash
+cd ../MarkMelGen
+python3 MarkMelGen.py -lS
+```
+Override (with -o) the CONFIG, lyrics, BPM, Time Signature, STYLE, and RANGE in the long workflow above.
+
+If you want to create a demo of the song, see "Produce a demo recording (audio)" in [mel_harm_gen README](https://github.com/RedFerret61/mel_harm_gen/blob/main/README.)
+
+# Introduction
+Here is a mental model of the MarkMelGen toolchain:
+
+```plaintext    MarkMelGen:
+1. Lyrics define structure →        MarkMelGen      - Markov Melody Generation      → Melody mxl
+2. Melody defines intent →          VeeHarmGen      - Vertical Harmony Generation   → Harmonized mxl
+3. Harmony defines meaning →        mel_tran_gen    - Melody Transform Generation   → Transformed mxl
+4. Transformation defines polish    mel_harm_gen    - Melody Harmony Generation     - automation
+```
+
+Here is a list of repositories in the MarkMelGen ecosystem and tips on best use :
+
+* **MarkMelGen** - Markov Melody Generation tool that given lyrics and musical styles creates a tune file.
+    - See an Example AI lyric prompt **[below](https://github.com/RedFerret61/MarkMelGen?tab=readme-ov-file#InputLyrics)** 
+        - If you wouldn’t confidently hand the input lyrics to a human songwriter, don’t hand them to MarkMelGen. Ensure that the Input lyrics are "musical".
+    - Adjust rhythmic patterns for better phrasing
+        - For a ballad, use longer durations: -o markmelgen.DURATION_SET=['1.0','2.0','4.0'].
+        - For up-tempo/syncopated styles, include eighths and dotted notes: -o markmelgen.DURATION_SET=['0.5','0.75','1.0'].
+    - Generate multiple output candidates (25 - 100 melodies), then you can select best by: Singability, Phrase clarity, Cadence plausibility.  Aim for 20–40% of runs to produce something worth rehearsing.
+         
+
+
+* **[VeeHarmGen](https://github.com/RedFerret61/VeeHarmGen)** - Vertical Harmony Generation program that given the melody file and musical styles adds chord symbols to create a harmonized output file. Use:
+    - rank -n 75–100 for predictable tonal harmony, nth_outcome 0–3 for variation without chaos.
+    - Narrow the style filters (rock_pop_0a vs rock).
+    - Compare Outputs: Open the resulting .mxl files in MuseScore side-by-side. Often, the best leadsheet is a "Frankenstein" of the verse from Version A and the chorus from Version B.
+        
+
+
+* **[mel_tran_gen](https://github.com/RedFerret61/mel_tran_gen)** - Melody Transform Generation program that processes the above file to adjust melody registers, generate intelligent vocal harmonies (H1/Alto, H2/Tenor), and create "Melodic Answer" fills to bridge gaps between phrases.
+    - Let mel_tran_gen finish the song, not rescue it.
+
+* **[mel_harm_gen](https://github.com/RedFerret61/mel_harm_gen)** - automates the toolchain, running MarkMelGen then VeeHarmGen and mel_tran_gen to produce harmonised output.
+
+# MarkMelGen demonstration video for v3.1.0:
+[![MarkMelGen 3.1.0 video](assets/images/youtube_MMG_3_1_0.png)](https://youtu.be/SOlSYHK972E "MarkMelGen 3.1.0 video")
+
+# MarkMelGen demonstration video for v2.0.0:
 
 [![MarkMelGen 2.0.0 video](assets/images/youtube_MMG_2_0_0.png)](https://www.youtube.com/watch?v=hHcUs8nMzY0 "MarkMelGen 2.0.0 video")
 
-MarkMelGen demonstration video for v1.0.0:
+# MarkMelGen demonstration video for v1.0.0:
 
 [![MarkMelGen 1.0.0 video](assets/images/youtube1.png)](https://www.youtube.com/watch?v=cAxGzUqxgFw "MarkMelGen 1.0.0 video")
 
 MarkMelGen has been tested on: 
-* Windows 11 24H2 (OS Build 26100.3476)
-  - MarkMelGen 2.0.0 with MuseScore 4.5.1, Python 3.13.24, mido 1.3.3, music21 9.5.0, numpy 1.26.4, showscore 0.1.4
-    (where versions obtained using on Windows: Start winver, MarkMelGen: first line of standard output or top right of output MusicXML, MuseScore: Help About..., python: python --version music21: pip list)
+* Windows 11 25H2 (OS Build 26200.7623)
+  - MarkMelGen 3.1.0 with MuseScore 4.6.5, Python 3.14.0, mido 1.3.3, music21 9.9.1, numpy 2.3.5, showscore 0.1.4
+    (where versions obtained using on Windows: Start winver, MarkMelGen: first line of standard output or top right of output MusicXML, MuseScore: Help About..., python: python3 -V music21: pip3 list)
 * macOS Monterey 12.0.1 
-  - MarkMelGen 2.0.0 with MuseScore 3.6.2, Python 3.13.2, mido 1.3.3, music21 v 9.5.0, numpy 1.26.4, showscore 0.1.4 
+  - MarkMelGen 3.1.0 with MuseScore 3.6.2, Python 3.13.2, mido 1.3.3, music21 v 9.5.0, numpy 1.26.4, showscore 0.1.4 
 * Ubuntu 22.04.3 LTS
   - MarkMelGen 2.0.0 with MuseScore 3.2.3, Python 3.10.12 (in venv), music21 v 9.1.0
   (where versions obtained using Ubuntu desktop top right icons, Settings, About. MuseScore: Help About... python: Terminal: Ctrl+Alt+T, python3 --version, music21: pip3 list)
@@ -83,34 +164,43 @@ Here is a simple diagram illustrating the main input and output flow of **MarkMe
    - MarkMelGen uses Markov chains and the provided inputs to generate melodies that match the lyrics and configuration.
 
 3. **Output**:
-   - A MusicXML file containing the generated song with lyrics and melody, ready for playback or further editing in software like MuseScore.
+   - A MusicXML file containing the generated song with lyrics and melody, ready for playback or further editing in software like MuseScore.  
+   - Note: MuseScore 4 includes a Reverb effect in the Mixer panel: 
+        - Go to the Mixer (press F10 or use the Mixer icon).
+        - Aux Sends (0-100%),  Reverb (click On/Off),  effect already there (or you can Audio FX > Muse > Muse Reverb).
+   - Alternative sound fonts are available for MuseScore 4, see
+        - Edit > Preferences > Folders > SoundFonts (Windows/Linux) e.g. C:/Users/pawda/Documents/MuseScore4/SoundFonts
+        - MuseScore > Preferences > SoundFonts (macOS)
+        - Download an .sf2 or .sf3 file e.g. FluidR3 GM  unzip to MuseScore SondFonts folder.
+        -  Restart MuseScore.
+        -  Open the Mixer (F10) and assign the new soundfont to the instrument: e.g. Sound > SoundFonts > FluidR3_GM > Choose automatically
 
+**MarkMelGen Command Line Usage**
 
-**MarkMelGen help**
+    python3 MarkMelGen.py -h
 
-    python MarkMelGen.py -h
-
-    usage: MarkMelGen.py [-h] [-c CONFIG] [--display-graphs] [--display-html] [--display-mxl] [--display-kar] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [-o OVERRIDE] [--create-style CREATE_STYLE] [--list-styles]
-                        [-v]
+    usage: MarkMelGen.py [-h] [-c CONFIG] [-g] [-t] [-m] [-k] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [-o OVERRIDE] [-s CREATE_STYLE]
+                     [-lS] [-v]
 
     MarkMelGen: A tool for generating Markov melodies.
 
     options:
     -h, --help            show this help message and exit
-    -c, --config CONFIG   config file path (default: MarkMelGen.conf)
-    --display-graphs      Display graphs
-    --display-html        Display HTML score
-    --display-mxl         Display MuseScore MXL score
-    --display-kar         Display MuseScore KAR score
+    -c, --config CONFIG   Config file path (default: MarkMelGen.conf)
+    -g, --display-graphs  Display graphs
+    -t, --display-html    Display HTML score
+    -m, --display-mxl     Display MuseScore MXL score
+    -k, --display-kar     Display MuseScore KAR score
     -l, --loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}
                             Set the logging level (default: INFO)
     -o, --override OVERRIDE
-                            Override certain configuration settings in the format 'section.key=value'. Can be specified multiple times. e.g. -o paths.INPUT_LYRICS_PATH=input\lyrics\ -o
-                            filenames.INPUT_LYRICS_FILENAME=Drifting_Stranger.txt -o markmelgen.DISPLAY_GRAPHS=True -o markmelgen.TEMPO_BPM=90.0 -o markmelgen.TIME_SIG_WANTED='6/8' -o
+                            Override certain configuration settings in the format 'section.key=value'. Can be specified multiple times.
+                            e.g. -o paths.INPUT_LYRICS_PATH=input\lyrics\ -o filenames.INPUT_LYRICS_FILENAME=Drifting_Stranger.txt -o
+                            markmelgen.DISPLAY_GRAPHS=True -o markmelgen.TEMPO_BPM=90.0 -o markmelgen.TIME_SIG_WANTED='6/8' -o
                             markmelgen.DURATION_SET=['0.5','1.25','1.5'] -o markmelgen.USE_STYLES=['early_jazz_1','early_jazz_2']
-    --create-style CREATE_STYLE
+    -s, --create-style CREATE_STYLE
                             Path to input music directory (must be a directory)
-    --list-styles         List available styles and exit
+    -lS, --list-styles    List available styles and exit
     -v, --version         Show version and exit
 
 ---
@@ -130,6 +220,7 @@ Download for Windows and run installer.
             e.g. "Music21 v.9.3 is the first release version to officially support both Python 3.12 and Python 3.13"
 
 * For example
+  * Python 3.13.5 worked for me with music21 version 9.7.1
   * Python 3.13.2 worked for me with music21 version 9.5.0 on a Windows 11 x64-based PC after I downloaded and installed Visual Studio Build Tools:
 https://visualstudio.microsoft.com/visual-cpp-build-tools/ and selected C++ build tools during installation.
   * Python 3.12.6 worked for me with music21 version 9.3.0
@@ -138,22 +229,24 @@ https://visualstudio.microsoft.com/visual-cpp-build-tools/ and selected C++ buil
   * Python 3.10.0 did not work for me with music21 version 7.1.0 (numpy not compatible)
   * Python 3.9.6 worked for me with music21 versions 6.7.1 and 7.1.0   
   
-(if you have an old version of python you don't need then Start, search, add, click on Add or remove programs, click on the old Python version, Uninstall, Uninstall, Close. You may need to manually remove the old version from your path: e.g. Start, search, env, Edit the system environment variables, Environment Variables..., User variables, Path, Edit..., select line with the old python scripts e.g ...Python39\Scripts\, Delete, select old python e.g. ...Python39\, Delete, OK x3)
+(if you have an old version of python you don't need then Start, search, Installed, click on Installed Apps, click on the old Python version ..., Uninstall, Uninstall, Close. You may need to manually remove the old version from your path: e.g. Start, search, env, Edit the system environment variables, Environment Variables..., User variables, Path, Edit..., select line with the old python scripts e.g ...Python39\Scripts\, Delete, select old python e.g. ...Python39\, Delete, OK x3)
 
   
 
 2. Browse to https://www.python.org/downloads/windows
     
-    Download desired version (may not be the latest) for your machine e.g. Windows installer (64-bit), and run.
+    Download desired version (may not be the latest) for your machine e.g. Stable Releases, Download Windows installer (64-bit), and run.
     
-    Select "Add Python to PATH". Install.
+    Select Use admin priviledges when installing py.exe
+    Select "Add Python.exe to PATH". Install now.
+    Click Disable Path Length limit.
 
 
 3. Check the new Python works: Start, search, cmd, click on Command Prompt, type:
    
-    python --version
+    python3 --version
 
-    Expect the version to be displayed e.g. Python 3.10.8
+    Expect the version to be displayed e.g. Python 3.13.5
 
 ### Music21 Windows installation
  
@@ -169,7 +262,7 @@ https://visualstudio.microsoft.com/visual-cpp-build-tools/ and selected C++ buil
 
 3. Configure with (press return to accept defaults):
 
-   python -m music21.configure
+   python3 -m music21.configure
 
 if you have problems and want to try different versions. Uninstall music21 with:
 
@@ -180,6 +273,7 @@ To upgrade music21 at a later date to the latest version, 'pip uninstall music21
 ### Other Python libraries Windows installation
 
 pip install mido
+
 pip install showscore
 
 ### MarkMelGen Windows installation
@@ -1125,9 +1219,9 @@ Edit MarkMelGen.conf configuration as desired,
 later sections are commented out with # at the beginning of the line.
 
 
-* Use different configuration files to get different output e.g. on windows (otherwise replace python with python3 )
+* Use different configuration files to get different output e.g. 
 
-      python MarkMelGen.py -c conf/v2.0.0/early_jazz_1.conf
+      python3 MarkMelGen.py -c conf/v2.0.0/early_jazz_1.conf
 
 
 ## InputLyrics
@@ -1137,172 +1231,169 @@ later sections are commented out with # at the beginning of the line.
  intro, verse, prechorus, chorus, solo, bridge, or outro.
  otherwise you can use general AI sites.
 
-
-Example Rhyming patterns:
-* AABB (Couplet Rhyme), ABAB (Alternate Rhyme), ABCB (Ballad Form), AABBA (Limerick Style), AAAA (Monorhyme), AAXA (Slant Variation), XAXA (Loose Form)
-
-Example lyric styles:
-* Narrative Lyrics (Storytelling), Descriptive / Imagery-Based , Emotional / Confessional, Poetic / Abstract, Anthemic / Chant-Like, Conversational / Dialogue-Based, Wordplay / Clever / Humorous, Social / Political Commentary, Minimalist / Repetitive.
-
-Example  song styles that have distinctive lyrical styles:
-* Folk, Blues, Country, Gothic Rock/Post-Punk, Punk Rock, Progressive Rock, Hip-Hop, Jazz Standards, Shoegaze/Dream Pop, Musical Theatre.
-
-
-Example lyric prompts for AI to generate lyrics:
-
-* "Write lyrics that use imagery of...": followed by specific images or metaphors (e.g., "sunlight filtering through leaves," "a storm at sea," "a labyrinth of memories"). 
-* "Write lyrics that include the following keywords:": followed by a list of keywords (e.g., "stars," "shadows," "whispers"). 
-* "Write lyrics that tell a story about...": followed by a brief story outline (e.g., "a cat who travels the world," "a detective solving a mystery"). 
-* "Write lyrics that are both poetic and relatable"
-
-Ways to improve your lyrics:
-
-* Sharpen the Central Metaphor
-* Avoid Clichés
-* Add Sensory Details to Strengthen the Imagery (sounds, colours, personification, movement, emotion)
-* Syllable Efficiency (Trim filler words)
-* Rhyme Originality (Near-rhymes for unease)
-* Pre-Chorus = Urgency
-* Chorus = Contrast
-* Bridge = Emotional Surprise Payoff
-* Outro = Twist
-
 AI sites that can generate lyrics:
 
 * [ChatGPT](https://chatgpt.com/) 
-* [Copilot](https://copilot.microsoft.com/)
-* [Gemini](https://gemini.google.com/)
-* [DeepSeek](https://chat.deepseek.com/)
+* [Copilot](https://copilot.microsoft.com/) (with setting: Think Deeper 30 seconds, wait..., Copy message)
+* [Gemini](https://gemini.google.com/)  (with setting: 3 Pro, Copy response)
+* [DeepSeek](https://chat.deepseek.com/) (setting: DeepThink(R1) (blue when selected), Copy (this ignores thinking))
+* [Claude](https://claude.ai/) (To paste the long prompt: Ctrl+Shift+V)
 
-AI created examples in input/lyrics:
-* "Write a song about a character who is feeling lost and alone, in the style of a folk song" => Drifting_Stranger.txt 
-* "Write a song about a journey of self-discovery, using the keywords 'shadows' and 'light'" => Through_Shadows_Into_Light.txt
-* "Write a song, using an AABB rhyming pattern, about a character who is a hustler and has many side-hustles, in the style of a rap song, with these sections: INTRO VERSE PRECHORUS CHORUS VERSE PRECHORUS CHORUS SOLO BRIDGE VERSE PRECHORUS CHORUS OUTRO". Split each lyric word into syllables e.g. hus-tlers. At the end of each line append a syllable count separated from the lyrics by six tabs  e.g. ly-ric here                     # 3 syllables" => Hustler_rap.txt 
+#### Example AI lyric prompt:
 
-* "Write a song, using an ABAB rhyming pattern, keeping syllable counts the same for lines with the same rhyme, with "A" lines longer than "B" line.  The song os about a character who is a romantic in the classical sense, their situation is they are an astronaut who is stranded alone on a distant planet. Write the song in the narrative style of a pop song, with these sections: INTRO VERSE PRECHORUS CHORUS VERSE PRECHORUS CHORUS SOLO BRIDGE VERSE PRECHORUS CHORUS OUTRO". VERSE 8–10 syllables per line. The PRECHORUS should have a shorter syllable count. CHORUS 6–8 syllables. The BRIDGE should have a longer syllable count.   Split each lyric word into syllables e.g. hus-tlers. At the end of each line append a syllable count separated from the lyrics by six tabs  e.g. ly-ric here                     # 3 syllables" => Dust_and_Starlight.txt
+In Style of [your choice of ARTIST/GENRE] create original Song Lyrics (never repeating lyrical phrases exactly from the original composer) with:
 
-* "Write a song, using an ABCB rhyming pattern, keeping syllable counts the same for lines with the same rhyme, with "A" lines shorter than "B" line. The song is about an old married couple who are travelling south for the autumn, their situation is they are living in a motorhome avoiding the bad weather at home. Write the song in the descriptive style of a folk song, with these sections: INTRO VERSE PRECHORUS CHORUS VERSE PRECHORUS CHORUS SOLO BRIDGE VERSE PRECHORUS CHORUS CHORUS OUTRO". VERSE 10-12 syllables per line. The PRECHORUS should have a shorter syllable count. CHORUS 4–6 syllables. The BRIDGE should have a longer syllable count. Write lyrics that use imagery of autumn.": followed by specific images or metaphors (e.g., "sunlight filtering through leaves," "swirling in the storm," "a Mist-covered landscape". Split each lyric word into syllables e.g. hus-tlers. At the end of each line append a syllable count separated from the lyrics by spaces to allign on the # e.g. ly-ric here         # 3 syllables" => Autumn_Drifiting.txt
+1\. Title Options
+At the top, provide three possible song titles in this format:
 
-* "Write a song, using an AAAA rhyming pattern, keeping syllable counts the same for lines with the same rhyme, with "A" lines the same as any "B" line. The song is about an old married couple who are travelling East for the Summer, their situation is they are living in a motorhome to find better weather than at home. Write the song in the Confessional style of a Country song, with these sections: INTRO VERSE PRECHORUS CHORUS VERSE PRECHORUS CHORUS SOLO BRIDGE VERSE PRECHORUS CHORUS CHORUS OUTRO". VERSE 8-10 syllables per line. The PRECHORUS should have a shorter syllable count. CHORUS 6–8 syllables. The BRIDGE should have a longer syllable count. Write lyrics that use imagery of summer.": followed by hot as an oven metaphors (e.g., "The sun looked down at the people of Earth" "The warm weather greeted me this morning" "You can feel the heat in the streets". Split each lyric word into syllables e.g. hus-tlers. At the end of each line append a syllable count separated from the lyrics by spaces to allign on the # e.g. ly-ric here         # 3 syllables" => Eastbound_in_the_Heat.txt
+`# [Title 1] / [Title 2] / [Title 3]`
 
-* "Write a song, using an AABBA rhyming pattern, keeping syllable counts the same for lines with the same rhyme, with "A" lines longer than "B" line. The song is about an old married couple who are travelling North for the spring, their situation is they are living in a motorhome to find more interesting weather than the dull cloud at home. Write the song in the Emotional style of a Blues song, with these sections: INTRO VERSE PRECHORUS CHORUS VERSE PRECHORUS CHORUS SOLO BRIDGE VERSE PRECHORUS CHORUS CHORUS OUTRO". VERSE 12-14 syllables per line. The PRECHORUS should have a shorter syllable count. CHORUS 2–4 syllables. The BRIDGE should have a medium syllable count. Write lyrics that use imagery of spring.": followed by renewal and growth images or metaphors (e.g., "rising from the ashes" "Our Journey Represents the path of growth and progress" "Climbing a Mountain Represents the challenges and rewards of growth". Split each lyric word into syllables e.g. hus-tlers. At the end of each line append a syllable count separated from the lyrics by spaces to allign on the # e.g. ly-ric here         # 3 syllables" => Rollin North - Springs Rebirth.txt
+2\. Song Sections
+Label each section clearly on its own line (ALL CAPS):
 
+INTRO
+VERSE 1
+PRECHORUS 1
+CHORUS 1
+VERSE 2
+...
+BRIDGE
+SOLO
+OUTRO
+Choose a section order appropriate for the style. Possible patterns include:
 
-If required remove hyphens added to section names (if required change PRE-CHO-RUS to PRECHORUS etc) to get syllabifyied lyrics with section name headers.
+INTRO VERSE 1 CHORUS 1 VERSE 2 CHORUS 2 OUTRO
 
-### INPUT_LYRICS_FILENAME functions
-Comments beginning with # can be added to each lyric filename line.
-A Comment can contain a function to apply to the melody.  The functions can only be used on the first occurrence of each section.
-Section references can only be backwards to previous lines.  It is better to refer to a line that has the same number of syllables
-as the comment line.
+INTRO VERSE 1 CHORUS 1 VERSE 2 CHORUS 2 BRIDGE CHORUS 3 OUTRO
 
+INTRO VERSE 1 PRECHORUS 1 CHORUS 1 VERSE 2 PRECHORUS 2 CHORUS 2 BRIDGE CHORUS 3 OUTRO
 
-e.g. 
-* copy( Section, Line)  
-  * where Section is  ['intro', 'verse', 'prechorus', 'chorus', 'solo', 'bridge', 'outro'] 
-* transpose( Section, Line, GenericInterval )
-  * where GenericInterval range is -32 to 32, Note: 0 illegal
-* invert( Section, Line, Invert_Pitch)
-  * where the Line is inverted diatonically around the Invert_Pitch e.g. C4 
-* reverse( Section, Line)
+INTRO VERSE 1 CHORUS 1 VERSE 2 CHORUS 2 BRIDGE SOLO CHORUS 3 OUTRO
 
-Note: Generally an invert is more recognisable than a reverse, and a reverse is more recognisable than a reverse invert.
+INTRO VERSE 1 CHORUS 1 VERSE 2 CHORUS 2 SOLO BRIDGE CHORUS 3 OUTRO
 
+3\. Lyric Repetition Rules
+Sections with different lyrics each time:
 
-    INTRO
-    1 2 3 4
-    1 2 3 4							                        # 	reverse(intro,1)
-    
-    VERSE 1
-    So I'm still in love with you                           # 7 syllables
-    Yet is in love with you e-nough                         # 8 syllables
-    Yet in love with you I am                               #   copy(verse,1)
-    Yet I do love you so true-ly                            #   copy(verse,2)
-    
-    PRECHORUS 1
-    When you love your tick-et o                            # 7 syllables
-    But you love your life too o                            # 	transpose(prechorus,1,-2)
-    
-    CHORUS 1
-    Love stand-ing still, love stand strong                 # 7 syllables
-    Love stand though the na-tions rise                     #   copy(chorus,1)
-    Love stand-ing still, love stand strong                 # 	transpose(chorus,1, 5)
-    And say the grea-test love of all                       # 8 syllables
-    
-    VERSE 2
-    Oh, now eve-ry-bod-y sing,                              # 7,8,7,8 syllables
-    I, I, I feel good a-bout love
-    To-geth-er we went like this
-    Yes I do love you so hon-ey
-    
-    PRECHORUS 2
-    Than the way you love me now                            # 7 syllables
-    Than the way you love me now                            # 7 syllables
-    
-    CHORUS 2
-    Love stand-ing still, love stand strong                 # 7,7,7,8 syllables
-    Love stand though the na-tions rise
-    Love stand-ing still, love stand strong
-    And say the grea-test love of all
-    
-    SOLO                                                    # invert more recognisable than reverse, and reverse more recognisable than reverse invert
-    1 2 3 4 5 6 7 8
-    1 2 3 4 5 6 7 8              		                    #   invert(solo, 1, C5)
-    1 2 3 4 5 6 7 8            	                            #   reverse(solo, 1)
-    1 2 3 4 5 6 7 8           	                            #   invert(solo, 3, C5)
-    
-    BRIDGE 1
-    Eve-ry time you feel a-lone out there in the night      # 12 syllables
-    I pull you in and love you so just as you like          #   copy(bridge, 1)
-    
-    CHORUS 3
-    Love stand-ing still, love stand strong                 # 7,7,7,8 syllables
-    Love stand though the na-tions rise
-    Love stand-ing still, love stand strong
-    And say the grea-test love of all
-    
-    CHORUS 4
-    Love stand-ing still, love stand strong                 # 7,7,7,8 syllables
-    Love stand though the na-tions rise
-    Love stand-ing still, love stand strong
-    And say the grea-test love of all
-    
-    OUTRO 1
-    1 2 3 4					                                # 	copy(intro,1)
-    1 2 3 4					                                # 	transpose(outro,1,2)
-    1 2 3 4					                                # 	transpose(outro,1,4)
-    1 2 3 4					                                # 	transpose(outro,1,8)
+VERSE 1 vs VERSE 2  completely different lyrics.
+
+PRECHORUS 1 vs PRECHORUS 2 often different lyrics, sometimes repeated.
+
+Sections with same lyrics when repeated:
+
+CHORUS 1, CHORUS 2, CHORUS 3  must have exact same lyrics as CHORUS 1 but must still write the full text for every repeated occurrence (no bare references without lyrics).
+
+INTRO & OUTRO  often use the same material, with small variations allowed.
+
+Special cases:
+
+PRECHORUS may be identical, slightly varied, or completely different.
+
+OUTRO can reuse INTRO or CHORUS lyrics, or have unique lines  but still written in full.
+
+4\. Syllable Breaks
+Hyphenate all words to show syllable divisions:
+morn-ing
+beau-ti-ful
+
+5\. Melody Comments (MarkMelGen Integration)
+Every lyric line must be followed by a # and either:
+
+a melody function call,
+
+a syllable count (if required), or
+
+left blank after # if no function call/comment is needed.
+
+Critical Reference Rule:
+
+Function calls can only reference sections and lines that have already appeared earlier in the lyrics. No forward references are allowed.
+
+If a referenced section has not yet appeared above, you must leave the comment area blank or use a syllable count instead.
+
+For example, in an INTRO you cannot write # copy(verse,1) because VERSE has not yet appeared.
+
+For first occurrence of each section:
+
+First line (and maybe second line)  # followed by blank (no function call).
+
+Remaining lines may use function calls like:
+
+`# copy(verse,1)`
+
+`# transpose(chorus,1,-3)`
+
+For repeated sections:
+
+You must write full lyrics again, even if they are the same as earlier.
+
+The first line of the repeated section should have a syllable count in this format:
+
+`# 8,7,8,6 syllables`
+
+Other lines in the repeated section may use function calls but must also display the actual lyric text before the #.
+
+Example for a repeated chorus:
 
 
-### How to markup a lyric file
+This-is-the-time-the-world-is-new                        # 8,7,8,6 syllables
 
-* Add sections: VERSE, CHORUS etc
-* For each line append: # ? syllables and replace ? with number of syllables in the line
-* If desired, adjust number of syllables in lyric lines or add rhymes
-* Given number of syllables decide on suitable line functions e.g. on verse line 2 append:  #   copy(verse,1)
+Love-is-a-path-the-heart-walks-through                   # transpose(verse,2,+5)
 
-   
-### After running MarkMelGen, check program log output for Warning:Lyric 
-e.g. Logging to log\MarkMelGen_log_2025-04-04_11-42-23.log
-Open log in a text editor and search for Warning:Lyric
+We-have-the-sky-the-fields-the-sea                        # copy(chorus,1)
 
-	Line  1898: 2025-04-04 11:42:23,351 - WARNING - MMG - add_new_lyrics_to_old_phrase:366 - Warning:Lyric-First Section.INTRO line 2 has 7 notes, but later INTRO has 8 syllables. 1 too many.
-	Line  1899: 2025-04-04 11:42:23,352 - WARNING - MMG - add_new_lyrics_to_old_phrase:366 - Warning:Lyric-First Section.INTRO line 2 has 7 notes, but later INTRO has 8 syllables. 1 too many.
+Ev-ry-thing-shines-when-you're-with-me                    # transpose(verse,4,+7)
 
 
-INTRO line 2 reverses line 1 and expects 8 syllables in line 1, but line 1 has a missing syllable hyphen. 
+6\. Melody Function Calls Available
 
-    INTRO
-    He walks a-lone through misty streets			# 8 syllables
-    A dream-er lost in nights so sweet				# 	reverse(intro,1)
+copy(section, line_number)
 
-change to:
+transpose(section, line_number, interval)     # interval: -32 to +32 (not 0)
 
-    INTRO
-    He walks a-lone through mis-ty streets			# 8 syllables
-    A dream-er lost in nights so sweet				# 	reverse(intro,1)	
+invert(section, line_number, pitch)           # pitch examples: C4, D5
 
----
+reverse(section, line_number)
+
+7\. SOLO Section
+The SOLO section should be an instrumental repetition of an earlier section.
+Write out the original lyrics from the chosen section in full, followed by their copy() calls.
+SOLO references must use generic names (e.g., copy(chorus,1) not copy(chorus1,1))
+
+Example:
+
+I-will-step-in-to-morn-ing-light                       # copy(chorus,1)
+
+Where-hill-sides-rise-and-rob-ins-fly                  # copy(chorus,2)
+
+If-I-sing-heart-the-world-will-hear                    # copy(chorus,3)
+
+And-call-it-back-to-me                                 # copy(chorus,4)
+
+8\. Reference Rules
+Function calls can only reference previously written lines in the lyrics.
+
+No forward references.
+
+Section names in function calls must use the generic singular name in lowercase (e.g., "verse", "chorus"). Ignore section numbers (1/2/3) entirely. References apply to the first occurrence of that section type.
+
+If no valid earlier reference exists, do not invent one  leave blank after # or provide a syllable count.
+
+Section repeats (for sections with numbers > 1, e.g. VERSE 2, CHORUS 2 etc) should have no melody function calls as they use the function calls from the first section instance.
+
+9\. Disallowed Characters
+Replace all quotation marks and apostrophes with a single straight quote '.
+Do not separate sections with comments e.g. ---
+The PRECHORUS section name does not contain a hyphen, so use PRECHORUS or prechorus NOT PRE-CHORUS or pre-chorus.
+
+Lastly suggest a fitting  time signature (e.g., 4/4, 3/4 , 6/8 or 12/8 etc ) to go with this piece, based on the lyrical flow.
+
+
+
+#### Refining AI output (if AI has not followed function guidance correctly):
+Redo with more melody function calls on the first occurrence of a section. (Note that subsequent sections use the same melody as the first).
+
+
 
 ## InputMusic
 ### Edit INPUT_MUSIC_FILENAME to have only the melody in one key
@@ -1396,7 +1487,7 @@ to provide section data in a MarkMelGen format configuration file.  If The Music
 not contain staff text words at the section start note then each song provides a section's values. 
 For example this uses .mxl files in the classical_baroque_7 directory to create conf/classical_baroque_7.conf 
 
-    python song_section_values.py -d C:\MarkMelGen\private\input\style\classical_baroque_7
+    python3 song_section_values.py -d C:\MarkMelGen\private\input\style\classical_baroque_7
 
 
 
@@ -1404,14 +1495,14 @@ For example this uses .mxl files in the classical_baroque_7 directory to create 
 
 Example command lines (the equivalent of run_confs.cmd ):
 
-    python MarkMelGen.py -c conf/v2.0.0/classical_baroque_7.conf
-    python MarkMelGen.py -c conf/v2.0.0/classical_classical_2.conf
-    python MarkMelGen.py -c conf/v2.0.0/classical_modern_1.conf
-    python MarkMelGen.py -c conf/v2.0.0/classical_renaissance_9.conf
-    python MarkMelGen.py -c conf/v2.0.0/classical_romantic_1.conf
-    python MarkMelGen.py -c conf/v2.0.0/classical_romantic_5.conf
-    python MarkMelGen.py -c conf/v2.0.0/early_jazz_1.conf
-    python MarkMelGen.py -c conf/v2.0.0/early_jazz_2.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/classical_baroque_7.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/classical_classical_2.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/classical_modern_1.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/classical_renaissance_9.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/classical_romantic_1.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/classical_romantic_5.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/early_jazz_1.conf
+    python3 MarkMelGen.py -c conf/v2.0.0/early_jazz_2.conf
 
 
 Example Song Writing Workflow.
@@ -1426,7 +1517,7 @@ View>Mixer (F10), solo tracks to find melody instrument.
 Edit>Instruments (I), select each unwanted stave, Remove from Score.  File>Export, Export To: MusicXML, Export.
 * If you have two or more input music files consider putting them in a folder and using that. For example to make a style:
 
-    python MarkMelGen.py --create-style private\input\style\classical_baroque_7
+    python3 MarkMelGen.py --create-style private\input\style\classical_baroque_7
 
 * Copy an example an MarkMelGen.conf file and edit to use the above Lyrics and Music files.
 Ensure Lyrics file has desired section headings e.g. verse 1, prechorus 1, chorus 1, bridge etc.
@@ -1459,16 +1550,27 @@ in a style of your choosing e.g. Jazz or New Age.
 * VeeHarmGen is available on GitHub. 
 VeeHarmGen is a Vertical Harmony Generation program that takes an input musicxml file containing a melody and creates output musicxml files with added Chord Symbols.
 
+### Create a melody with MarkMelGen and add Chords with VeeHarmGen
+
+* edit melharmoniser.py to set up configuration, then run in MarkMelGen home directory:
+
+    python3 melharmoniser.py
 
 ## Troubleshooting
 
 ### Output
 
-* If MuseScore display is corrupted e.g. complex tuplets:
-    * try an alternative score display e.g. to your MarkMelGen.py command line append: --display-html 
-    * try displaying the KAR score e.g. to your MarkMelGen.py command line append: --display-kar 
+* If MuseScore display is corrupted e.g. complex tuplets, try:
+    * Changing the Time Signature to get Tuplet Equivalents e.g. 
+        - Triplets (3 in the space of 2). Instead of writing triplets in 4/4, you can use: 12/8, 6/8, or 9/8 time. These naturally divide beats into groups of 3 eighth notes.
+        - Quintuplets (5 in the time of 4 eighths or quarter notes) You can simulate them by: Using 5/8 or 10/8 time. Regular eighth notes behave like quintuplets relative to 4/4. In 5/8, five eighths occur naturally in one measure.
+        - Septuplets (7 in the time of 4 or 6) Use: 7/8 or 7/16
+        - Sextuplets (6 in time of 4)	6/8 or 6/16
+        - Nonuplets (9 in time of 4)	9/8 or 9/16
+    * an alternative score display e.g. to your MarkMelGen.py command line append: --display-html 
+    * displaying the KAR score e.g. to your MarkMelGen.py command line append: --display-kar 
     * Combined example command line: 
-        * python MarkMelGen.py -c conf/classical_modern_1.conf -o "filenames.INPUT_LYRICS_FILENAME=Through_Shadows_Into_Light.txt" --use-styles classical_modern_1 -o markmelgen.TIME_SIG_WANTED='3/4' --display-html --display-kar
+        * python3 MarkMelGen.py -c conf/classical_modern_1.conf -o "filenames.INPUT_LYRICS_FILENAME=Through_Shadows_Into_Light.txt" --use-styles classical_modern_1 -o markmelgen.TIME_SIG_WANTED='3/4' --display-html --display-kar
     * edit .conf, change all DUR_RATIONAL = True, DUR_TUPLET = False e.g
 
 <pre>

@@ -23,7 +23,7 @@ from music21 import meter
 from showscore import show
 
 
-MARKMELGEN_VERSION = "2.0.0"
+
 
 def are_dictionaries_the_same(dict1, dict2):
     """
