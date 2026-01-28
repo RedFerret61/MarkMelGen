@@ -1,5 +1,4 @@
 # MarkMelGen
-![MarkMelGen logo](assets/images/mel_harm_gen_logo.png)
 
 MarkMelGen is a Markov Melody Generation python program that 
 given lyrics and configuration data, uses melody styles to 
@@ -10,6 +9,8 @@ and line functions (such as copy, transpose, invert and reverse)
 to develop the Markov melodies and so compose more memorable songs.
 
 This tool is part of the MarkMelGen ecosystem / toolchain and is part of the latest [MarkMelGen release](https://github.com/RedFerret61/MarkMelGen/releases). Example demos of songs are also available under releases or on [Google Drive](https://drive.google.com/drive/folders/1mAs2iOk60PNB7V41ssSXctc1Ed0hVjTy?usp=drive_link).
+
+![MarkMelGen logo](assets/images/mmg_logo_1.png)
 
 # Quick start
 * Download the [latest MarkMelGen toolchain release zip](https://github.com/RedFerret61/MarkMelGen/releases/latest) to desired path and unzip  
