@@ -8,12 +8,12 @@ MarkMelGen allows the user to add some structure with lyrical sections (intro, v
 and line functions (such as copy, transpose, invert and reverse)
 to develop the Markov melodies and so compose more memorable songs.
 
-This tool is part of the MarkMelGen ecosystem / toolchain and is part of the latest [MarkMelGen release](https://github.com/RedFerret61/MarkMelGen/releases). Example demos of songs are also available under releases or on [Google Drive](https://drive.google.com/drive/folders/1mAs2iOk60PNB7V41ssSXctc1Ed0hVjTy?usp=drive_link).
+This program is part of the MarkMelGen software toolchain for song writers and is part of the latest [MarkMelGen release](https://github.com/RedFerret61/MarkMelGen/releases). Example songs demos are available under [mel_harm_gen release](https://github.com/RedFerret61/mel_harm_gen/releases) or on [Google Drive](https://drive.google.com/drive/folders/1mAs2iOk60PNB7V41ssSXctc1Ed0hVjTy?usp=drive_link).
 
 ![MarkMelGen logo](assets/images/mmg_logo_1.png)
 
 # Quick start
-* Download the [latest MarkMelGen toolchain release zip](https://github.com/RedFerret61/MarkMelGen/releases/latest) to desired path and unzip  
+* Download the [latest MarkMelGen software toolchain for song writers release zip](https://github.com/RedFerret61/MarkMelGen/releases/latest) to desired path and unzip  
 * Install [MuseScore](https://musescore.org/en/download) (more details in install sections below)
 * Install [Python](https://www.python.org/downloads/) (more details in install sections below)
 * Install python libraries and setup music21:
@@ -25,15 +25,13 @@ pip3 install -r requirements.txt
 python3 -m music21.configure
 ```
 
-Note: if 'pip3' is not recognized
+Note: if 'pip3' is not recognized try:
 ```bash
-cd MarkMelGen
 py -m pip install -r requirements.txt
-python3 -m music21.configure
 ```
 
 ## Short workflow
-Run the MarkMelGen toolchain using a basic configuration file to run tools once (more details in the [mel_harm_gen repository](https://github.com/RedFerret61/mel_harm_gen)).
+Run the MarkMelGen software toolchain for song writers using a basic configuration file to run tools once (more details in the [mel_harm_gen repository](https://github.com/RedFerret61/mel_harm_gen)).
 
 ```bash
 cd ../mel_harm_gen
@@ -44,7 +42,7 @@ python3 mel_harm_gen.py -c mel_harm_gen--override.json5 -o CONFIG=blues_1 -o Lyr
 
 
 ## Long workflow
-Run the MarkMelGen toolchain using a comprehensive configuration file to run tools multiple times and choose the best output.
+Run the software toolchain for song writers using a comprehensive configuration file to run tools multiple times and choose the best output.
 
 ```bash
 python3 mel_harm_gen.py -c melody_repeats-harmony-transform--override.json5 -o CONFIG=conf/v2.0.1/pop_country_1.conf -o Lyrics.txt=Moonlit_Confession.txt -o 120.0=90.0 -o 4/4=4/4 -o STYLE=pop_country_1 -o RANGE=G3-C5
@@ -60,10 +58,10 @@ python3 MarkMelGen.py -lS
 ```
 Override (with -o) the CONFIG, lyrics, BPM, Time Signature, STYLE, and RANGE in the long workflow above.
 
-If you want to create a demo of the song, see "Produce a demo recording (audio)" in [mel_harm_gen README](https://github.com/RedFerret61/mel_harm_gen/blob/main/README.)
+If you want to create a demo of the song, see "Produce a demo recording (audio)" in [mel_harm_gen README](https://github.com/RedFerret61/mel_harm_gen/blob/main/README.md)
 
 # Introduction
-Here is a mental model of the MarkMelGen toolchain:
+Here is a mental model of the MarkMelGen software toolchain for song writers:
 
 ```plaintext    MarkMelGen:
 1. Lyrics define structure →        MarkMelGen      - Markov Melody Generation      → Melody mxl
@@ -72,7 +70,7 @@ Here is a mental model of the MarkMelGen toolchain:
 4. Transformation defines polish    mel_harm_gen    - Melody Harmony Generation     - automation
 ```
 
-Here is a list of repositories in the MarkMelGen ecosystem and tips on best use :
+Here is a list of repositories included in the MarkMelGen software toolchain for song writers:
 
 * **MarkMelGen** - Markov Melody Generation tool that given lyrics and musical styles creates a tune file.
     - See an Example AI lyric prompt **[below](https://github.com/RedFerret61/MarkMelGen?tab=readme-ov-file#InputLyrics)** 
