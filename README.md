@@ -37,8 +37,9 @@ Run the MarkMelGen software toolchain for song writers using a basic configurati
 cd ../mel_harm_gen
 python3 mel_harm_gen.py -c mel_harm_gen--override.json5 -o CONFIG=blues_1 -o Lyrics.txt=Black_Cat_Woman.txt -o 120.0=100.0 -o 4/4=3/4
 ```
-* Open mel_tran_gen output
+* Open mel_tran_gen output. 
 * Open the mxl files in MuseScore
+    - Note: Here is a demo with vocal harmonies on [Google Drive](https://drive.google.com/file/d/13CzCbneCLjrmywDkTQBBAqeESUXuc60C/view?usp=drive_link).
 
 
 ## Long workflow
@@ -112,7 +113,7 @@ MarkMelGen has been tested on:
 * macOS Monterey 12.0.1 
   - MarkMelGen 3.1.0 with MuseScore 3.6.2, Python 3.13.2, mido 1.3.3, music21 v 9.5.0, numpy 1.26.4, showscore 0.1.4 
 * Ubuntu 22.04.3 LTS
-  - MarkMelGen 2.0.0 with MuseScore 3.2.3, Python 3.10.12 (in venv), music21 v 9.1.0
+  - MarkMelGen 3.1.0 with MuseScore 3.2.3, Python 3.10.12, mido 1.3.3, music21 v 9.1.0, numpy 1.26.3, showscore 0.1.4 
   (where versions obtained using Ubuntu desktop top right icons, Settings, About. MuseScore: Help About... python: Terminal: Ctrl+Alt+T, python3 --version, music21: pip3 list)
 
 **Table of Contents**
